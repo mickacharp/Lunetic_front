@@ -1,9 +1,10 @@
 import React from "react";
+import ModelCard from "./components/ModelCard";
 
 const App = () => {
   return (
     <div className="container">
-      <h1>Bonjour</h1>
+      <ModelCard />
     </div>
   )
 }

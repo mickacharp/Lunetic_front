@@ -2,4 +2,30 @@
   margin: 0;
   padding: 0;
 }
+
+.modelcard {
+  width: 600px;
+  box-shadow: #252547 -5px 5px 20px;
+}
+.modelcard h2,
+.modelcard p, .modelcard__img {
+  margin-bottom: 5%;
+}
+.modelcard p {
+  color: #999999;
+  text-align: justify;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.modelcard__img {
+  width: 100%;
+}
+.modelcard__button {
+  background-color: transparent;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: solid black 2px;
+}
+
 /*# sourceMappingURL=styles.css.map */
