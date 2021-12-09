@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -150,5 +150,57 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.home {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 100px;
+      grid-template-columns: 1fr 100px;
+  margin-left: 5%;
+}
+
+.home__carrousel {
+  font-size: 2.6rem;
+}
+
+.home__carrousel h2 {
+  color: #afafaf;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.home__carrousel h1 {
+  margin-bottom: 30px;
+  font-family: "Playfair Display", serif;
+}
+
+.home__carrousel p {
+  color: #95989a;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.home__title {
+  position: relative;
+}
+
+.home .black-text {
+  color: black;
+}
+
+.home__text {
+  padding-top: 7%;
+}
+
+.home__underline {
+  position: absolute;
+  height: 11px;
+  width: 240px;
+  background-color: #f89808;
+  top: 84px;
+  left: -4px;
+  z-index: -10;
 }
 /*# sourceMappingURL=styles.css.map */
