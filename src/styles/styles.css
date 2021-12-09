@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #393939;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,21 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/LUNETIC.png';
 
 const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar__logo">
-        <img src={logo} alt="logo-lunetic" />
+        <Link to="/">
+          <img src={logo} alt="logo-lunetic" />
+        </Link>
       </div>
       <div className="test">
         <div className="navbar__menu">
           <ul>
-            <li>Home</li>
-            <li>Concept</li>
-            <li>Opticiens</li>
-            <li>Nous</li>
-            <li>Où nous trouver</li>
-            <li>News</li>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/concept">
+              <li>Concept</li>
+            </Link>
+            <Link to="/opticians">
+              <li>Opticiens</li>
+            </Link>
+            <Link to="/us">
+              <li>Nous</li>
+            </Link>
+            <Link to="/find-us">
+              <li>Où nous trouver</li>
+            </Link>
+            <Link to="/news">
+              <li>News</li>
+            </Link>
           </ul>
         </div>
         <div className="navbar__menu-burger">
