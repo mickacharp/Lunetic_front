@@ -1,0 +1,31 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .letter {
+    height: 70px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .box {
+    height: 35px;
+    width: 35px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .profil {
+    height: 70px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
