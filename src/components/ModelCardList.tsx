@@ -22,6 +22,7 @@ const ModelCardList = () => {
         <ModelCard />
         <ModelCard />
         <ModelCard />
+        <ModelCard />
     </div>
   );
 };
