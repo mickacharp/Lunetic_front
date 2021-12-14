@@ -1,6 +1,13 @@
+.modelcard-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .modelcard {
   width: 600px;
-  box-shadow: rgb(37, 37, 71) -5px 5px 20px;
+  box-shadow: rgb(107, 112, 155) -2px 2px 12px;
+  margin: 10px;
 
   h2,
   p,
