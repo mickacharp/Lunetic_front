@@ -25,7 +25,8 @@
 
 // ModelCard
 .modelcard {
-  width: 400px;
+  min-width: 300px;
+  max-width: 30%;
   box-shadow: rgb(242, 243, 251) -2px 2px 12px;
   margin: 10px;
 

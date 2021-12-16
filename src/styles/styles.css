@@ -25,7 +25,8 @@
 }
 
 .modelcard {
-  width: 400px;
+  min-width: 300px;
+  max-width: 30%;
   box-shadow: #f2f3fb -2px 2px 12px;
   margin: 10px;
 }
