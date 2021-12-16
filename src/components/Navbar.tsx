@@ -10,7 +10,7 @@ const Navbar = () => {
           <img src={logo} alt="logo-lunetic" />
         </Link>
       </div>
-      <div className="test">
+      <div className="navbar__container">
         <div className="navbar__menu">
           <ul>
             <Link to="/">
