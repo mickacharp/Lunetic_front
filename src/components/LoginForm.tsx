@@ -1,15 +1,23 @@
-import React from "react";
-import login_img from "../assets/COQUE_Plan de travail 1.png";
+import React from 'react';
 
 const LoginForm = () => {
   return (
     <div className="login-container">
-        <div className="login-container__img-container">
-            <img src={login_img} alt="login illustration" />
-        </div>
-        <div className="login-container__form"></div>
+      <div className="login-container__img-container"></div>
+      <div className="login-container__form-container">
+        <h1>Se Connecter Avec Une Adresse Email</h1>
+        <form action="">
+          <input type="email" id="login-email" placeholder="EMAIL" />
+          <input type="password" id="login-password" placeholder="MOT DE PASSE" />
+          <br />
+          <input type="button" value="SE CONNECTER" id="login-submit" />
+        </form>
+        <p>MOT DE PASSE OUBLIÉ ?</p>
+        <h1>Pas encore inscrit ?</h1>
+        <p>JE M'INSCRIS</p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default LoginForm;

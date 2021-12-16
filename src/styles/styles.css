@@ -6,24 +6,60 @@
 .login-container {
   display: flex;
   width: 80%;
-  height: 50vh;
+  height: 80vh;
   box-shadow: #69687c 5px 5px 20px;
   margin: auto;
 }
 .login-container__img-container {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 45%;
   height: 100%;
-  background-color: #1a1a95;
+  background-image: url("../assets/COQUE_Plan de travail 1.png");
+  background-position: center;
+  background-size: 130% auto;
+  background-repeat: no-repeat;
 }
-.login-container__img-container img {
+.login-container__form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 55%;
+  height: 100%;
+}
+.login-container__form-container > * {
+  margin-bottom: 5%;
+}
+.login-container__form-container h1 {
+  font-size: 1.5em;
+}
+.login-container__form-container form {
+  width: 80%;
+}
+.login-container__form-container form input {
+  padding: 15px;
+  border: #181818 solid 2px;
+  box-sizing: border-box;
+}
+.login-container__form-container form #login-email {
+  border-right: 0px;
+}
+.login-container__form-container form #login-email,
+.login-container__form-container form #login-password {
+  width: 50%;
+}
+.login-container__form-container form #login-submit {
   width: 100%;
+  background-color: #222222;
+  color: lightgray;
+  cursor: pointer;
 }
-.login-container__form {
-  width: 60%;
-  height: 100%;
-  background-color: #3e6b20;
+.login-container__form-container input,
+.login-container__form-container p {
+  font-size: 0.7em;
+  letter-spacing: 3px;
 }
 
 /*# sourceMappingURL=styles.css.map */
