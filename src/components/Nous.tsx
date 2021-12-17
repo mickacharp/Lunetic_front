@@ -3,11 +3,11 @@ import React from 'react';
 import collaborateurs from '../assets/collaborateurs.png';
 import ellipse from '../assets/ellipse.png';
 import picto_goutte from '../assets/goutte-trait.png';
+import ligneOblique from '../assets/ligne-oblique-grise.png';
 import logo from '../assets/LUNETIC.png';
 import picto_lunettes from '../assets/LUNETIC_Lunette_v2.png';
 import rectangle1 from '../assets/Rectangle-gris-1.png';
 import rectangle2 from '../assets/Rectangle-gris-2.png';
-import ligneOblique from '../assets/ligne-oblique-grise.png';
 
 const Nous = () => {
   return (
