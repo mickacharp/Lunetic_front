@@ -8,7 +8,12 @@
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "npm run lint:format && npm run lint:fix ",
+<<<<<<< HEAD
     "type-check": "tsc"
+=======
+    "type-check": "tsc",
+    "sass": "sass --watch ./src/styles/styles.scss ./src/styles/styles.css"
+>>>>>>> f9666ada12924e76a7e4a783d00324a639f0dcb6
   },
   "dependencies": {
     "react": "^17.0.2",
