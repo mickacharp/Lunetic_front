@@ -31,7 +31,8 @@
   margin: 10px;
 }
 .modelcard h2,
-.modelcard p, .modelcard__img {
+.modelcard p,
+.modelcard__img {
   margin-bottom: 5%;
 }
 .modelcard p {
