@@ -14,7 +14,7 @@ const LoginForm = () => {
         </form>
         <p>MOT DE PASSE OUBLIÉ ?</p>
         <h1>Pas encore inscrit ?</h1>
-        <p>JE M'INSCRIS</p>
+        <p>JE M&apos;INSCRIS</p>
       </div>
     </div>
   );
