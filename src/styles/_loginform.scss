@@ -7,6 +7,7 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
   height: 80vh;
   box-shadow: #69687c 5px 5px 20px;
   margin: auto;
+  position: relative;
 
   &__img-container {
     display: flex;
@@ -66,5 +67,11 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
       font-size: 0.7em;
       letter-spacing: 3px;
     }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
   }
 }

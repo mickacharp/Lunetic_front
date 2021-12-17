@@ -5,6 +5,7 @@ const LoginForm = () => {
     <div className="login-container">
       <div className="login-container__img-container"></div>
       <div className="login-container__form-container">
+        <p className="login-container__close">FERMER</p>
         <h1>Se Connecter Avec Une Adresse Email</h1>
         <form action="">
           <input type="email" id="login-email" placeholder="EMAIL" />

@@ -9,6 +9,7 @@
   height: 80vh;
   box-shadow: #69687c 5px 5px 20px;
   margin: auto;
+  position: relative;
 }
 .login-container__img-container {
   display: flex;
@@ -60,6 +61,11 @@
 .login-container__form-container p {
   font-size: 0.7em;
   letter-spacing: 3px;
+}
+.login-container__close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */
