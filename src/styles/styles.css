@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +14,7 @@
   width: 80%;
   text-align: center;
 }
-.catalogue h1 {
+.catalogue__title {
   text-align: center;
   font-size: 4em;
   margin-bottom: 10%;
@@ -25,13 +27,13 @@
 }
 
 .modelcard {
-  min-width: 300px;
+  min-width: 260px;
   max-width: 30%;
   box-shadow: #f2f3fb -2px 2px 12px;
   margin: 10px;
 }
-.modelcard h2,
 .modelcard p,
+.modelcard__title,
 .modelcard__img {
   margin-bottom: 5%;
 }
@@ -56,6 +58,14 @@
 .modelcard__button:hover {
   background-color: #79232f;
   color: #f4efd8;
+}
+
+@media screen and (max-width: 768px) {
+  .modelcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

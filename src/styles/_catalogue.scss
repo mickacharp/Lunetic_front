@@ -9,7 +9,7 @@
     text-align: center;
   }
 
-  h1 {
+  &__title {
     text-align: center;
     font-size: 4em;
     margin-bottom: 10%;
@@ -25,13 +25,13 @@
 
 // ModelCard
 .modelcard {
-  min-width: 300px;
+  min-width: 260px;
   max-width: 30%;
   box-shadow: rgb(242, 243, 251) -2px 2px 12px;
   margin: 10px;
 
-  h2,
   p,
+  &__title,
   &__img {
     margin-bottom: 5%;
   }
@@ -60,5 +60,15 @@
       background-color: $red;
       color: $beige;
     }
+  }
+}
+
+// RESPONSIVE
+
+@media screen and (max-width: 768px) {
+  .modelcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

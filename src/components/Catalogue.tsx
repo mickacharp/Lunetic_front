@@ -11,7 +11,7 @@ const Catalogue = () => {
         alt="lunettes en-tête catalogue"
         className="catalogue__img"
       />
-      <h1>Catalogue</h1>
+      <h1 className="catalogue__title">Catalogue</h1>
       <ModelCardList />
     </div>
   );
