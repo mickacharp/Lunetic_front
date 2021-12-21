@@ -5,6 +5,69 @@
   padding: 0;
 }
 
+.catalogue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.catalogue__img {
+  width: 80%;
+  text-align: center;
+}
+.catalogue__title {
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 10%;
+}
+
+.modelcard-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modelcard {
+  min-width: 260px;
+  max-width: 30%;
+  box-shadow: #f2f3fb -2px 2px 12px;
+  margin: 10px;
+}
+.modelcard p,
+.modelcard__title,
+.modelcard__img {
+  margin-bottom: 5%;
+}
+.modelcard p {
+  color: #999999;
+  text-align: justify;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.modelcard__img {
+  width: 100%;
+}
+.modelcard__button {
+  background-color: transparent;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: solid black 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.modelcard__button:hover {
+  background-color: #79232f;
+  color: #f4efd8;
+}
+
+@media screen and (max-width: 768px) {
+  .modelcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 a {
   text-decoration: none;
   color: #393939;

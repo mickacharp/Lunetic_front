@@ -6,7 +6,8 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import Sidebar from './components/Sidebar';
-
+import Catalogue from './components/Catalogue';
+    
 const App = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
+          <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/opticians" element={<Home />} />
           <Route path="/us" element={<Nous />} />
           <Route path="/find-us" element={<Home />} />
