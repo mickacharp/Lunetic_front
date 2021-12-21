@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import Sidebar from './components/Sidebar';
-import Catalogue from './components/Catalogue';
-    
+
 const App = () => {
   return (
     <>
