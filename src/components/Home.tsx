@@ -1,6 +1,6 @@
 import React from 'react';
-import Maps from './Maps';
 
+import Maps from './Maps';
 import Sidebar from './Sidebar';
 
 const Home = () => {
