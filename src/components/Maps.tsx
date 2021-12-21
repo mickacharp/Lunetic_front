@@ -1,5 +1,6 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import React from 'react';
+import apiKey from '../../api.js';
 
 import mapsStyles from '../mapsStyle';
 
@@ -20,7 +21,7 @@ const options = {
 const Maps = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'lunetic',
-    googleMapsApiKey: 'AIzaSyAj7bIhidKqNcgh0IT_q0ORqcHH3S7wA6U',
+    googleMapsApiKey: apiKey,
   });
 
   return isLoaded ? (
