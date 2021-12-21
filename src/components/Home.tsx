@@ -1,13 +1,7 @@
 import React from 'react';
 
-import Sidebar from './Sidebar';
-
 const Home = () => {
-  return (
-    <div className="home">
-      <Sidebar />
-    </div>
-  );
+  return <div className="home"></div>;
 };
 
 export default Home;
