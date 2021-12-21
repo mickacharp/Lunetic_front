@@ -376,4 +376,21 @@ a {
             align-items: center;
   }
 }
+
+.maps {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+}
+
+.maps__child1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  -webkit-box-shadow: 0 0 100px 100px white inset;
+          box-shadow: 0 0 100px 100px white inset;
+}
 /*# sourceMappingURL=styles.css.map */
