@@ -6,6 +6,7 @@ import Concept from './components/Concept';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
+import OpticianProfile from './components/OpticianProfile';
 import Sidebar from './components/Sidebar';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/us" element={<Nous />} />
           <Route path="/find-us" element={<Home />} />
           <Route path="/news" element={<Home />} />
+          <Route path="/optician-profile" element={<OpticianProfile />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -20,3 +20,26 @@ $blackTitles: #343434;
 
 $playfair: 'Playfair Display', serif;
 $abrilFatFace: 'Abril Fatface', serif;
+
+// INPUT
+
+$borderRadiusButton: 5px;
+
+@mixin closeTopRight {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+@mixin ButtonBottomRight {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+// DISPLAY
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
