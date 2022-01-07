@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+=======
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 
+>>>>>>> e1d067f9686f60c13303ad87288cc7e6fef0dcfa
 * {
   margin: 0;
   padding: 0;
@@ -92,9 +97,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+<<<<<<< HEAD
+  -webkit-box-pack: right;
+  -ms-flex-pack: right;
+  justify-content: right;
+=======
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+>>>>>>> e1d067f9686f60c13303ad87288cc7e6fef0dcfa
 }
 
 .navbar__logo {
@@ -183,10 +194,15 @@ a {
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-align: end;
+<<<<<<< HEAD
+  -ms-flex-align: end;
+  align-items: flex-end;
+=======
       -ms-flex-align: end;
           align-items: flex-end;
   position: fixed;
   right: 0;
+>>>>>>> e1d067f9686f60c13303ad87288cc7e6fef0dcfa
 }
 
 .sidebar .letter {
@@ -225,6 +241,8 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
+=======
 }
 
 .conceptContainer {
@@ -292,6 +310,7 @@ a {
 .conceptContainer__conceptBottomVisual img {
   margin-left: auto;
   width: 70vw;
+>>>>>>> e1d067f9686f60c13303ad87288cc7e6fef0dcfa
 }
 
 .nous {
@@ -518,6 +537,8 @@ a {
     align-items: center;
   }
 }
+<<<<<<< HEAD
+=======
 
 .home {
   display: -webkit-box;
@@ -685,4 +706,5 @@ a {
   cursor: pointer;
   z-index: 10;
 }
+>>>>>>> e1d067f9686f60c13303ad87288cc7e6fef0dcfa
 /*# sourceMappingURL=styles.css.map */
