@@ -1,16 +1,16 @@
 @mixin fontPlayfairItalic {
   font-family: $playfair;
-  font-weight: 800;
+  font-weight: 700;
   font-style: italic;
 }
 
 @mixin fontPlayfairNormal {
   font-family: $playfair;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
 }
 
-@mixin fontMontserra {
+@mixin fontMontserrat {
   font-family: $montserrat;
   font-weight: 300;
 }
