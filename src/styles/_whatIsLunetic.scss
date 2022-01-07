@@ -1,0 +1,33 @@
+.whatIsLunetic {
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+
+  &__container {
+    position: relative;
+  }
+
+  &__p {
+    font-size: 8.75rem;
+    text-align: center;
+    line-height: 170px;
+    color: $greyF3;
+  }
+
+  &__middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    width: 140%;
+    text-align: center;
+    @include fontPlayfairNormal;
+  }
+
+  // &__medium-square {
+  //   background-image: url('../assets/carre-moyen.png');
+  //   height: 88px;
+  //   width: 88px;
+  // }
+}
