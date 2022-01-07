@@ -1,8 +1,10 @@
-import React from 'react';
-import Sidebar from './Sidebar';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+
+import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+
 import gout from '../assets/gout-little.png';
+import Sidebar from './Sidebar';
 import WhatIsLunetic from './WhatIsLunetic';
 
 const Home = () => {
