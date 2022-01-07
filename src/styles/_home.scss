@@ -73,6 +73,7 @@
 
   &__cube {
     @include fontPlayfair;
+    font-style: normal;
     height: 200px;
     width: 200px;
     background-color: $beige;

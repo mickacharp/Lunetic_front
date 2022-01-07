@@ -13,7 +13,6 @@ const App = () => {
     <>
       <BrowserRouter>
         <Navbar />
-        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
