@@ -5,11 +5,10 @@
 
   &__content {
     flex: 1;
-    height: 500vh;
   }
 
   &__lunetic {
-    @include fontPlayfair;
+    @include fontPlayfairItalic;
     color: $greyAF;
     font-size: 0.8rem;
     text-align: left;
@@ -23,7 +22,7 @@
       display: flex;
 
       h1 {
-        @include fontPlayfair;
+        @include fontPlayfairItalic;
         font-size: 5rem;
         text-align: left;
       }
@@ -72,8 +71,7 @@
   }
 
   &__cube {
-    @include fontPlayfair;
-    font-style: normal;
+    @include fontPlayfairNormal;
     height: 200px;
     width: 200px;
     background-color: $beige;
