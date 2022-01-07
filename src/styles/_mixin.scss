@@ -1,0 +1,10 @@
+@mixin fontPlayfair {
+  font-family: $playfair;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@mixin fontMontserra {
+  font-family: $montserrat;
+  font-weight: 300;
+}
