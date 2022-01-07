@@ -1,13 +1,12 @@
 import React from 'react';
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
 import Home from './components/Home';
+import LoginForm from './components/LoginForm';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
-import LoginForm from './components/LoginForm';
 
 const App = () => {
   return (

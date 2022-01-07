@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +24,7 @@ a {
   align-items: center;
   width: 45%;
   height: 100%;
-  background-image: url("../assets/COQUE_Plan de travail 1.png");
+  background-image: url('../assets/COQUE_Plan de travail 1.png');
   background-position: center;
   background-size: 130% auto;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@ a {
 }
 
 .navbar {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   display: flex;
   position: fixed;
@@ -187,7 +187,7 @@ a {
   height: 500vh;
 }
 .home__lunetic {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-style: italic;
   color: #afafaf;
@@ -201,7 +201,7 @@ a {
   display: flex;
 }
 .home__carousel-1 h1 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-style: italic;
   font-size: 5rem;
@@ -220,7 +220,7 @@ a {
   z-index: -10;
 }
 .home__paragraph {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   margin-top: 2%;
   position: relative;
@@ -243,7 +243,7 @@ a {
   padding-left: 5%;
 }
 .home__cube {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-style: italic;
   font-style: normal;
@@ -260,7 +260,7 @@ a {
   font-size: 1rem;
 }
 .home__arrow {
-  background-image: url("../assets/arrow.png");
+  background-image: url('../assets/arrow.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 15px;
@@ -271,7 +271,7 @@ a {
   transform: translate(-50%, -50%);
 }
 .home__points {
-  background-image: url("../assets/points.png");
+  background-image: url('../assets/points.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 50px;
@@ -292,7 +292,7 @@ a {
   top: 65%;
   left: 37%;
   transform: translate(-50%, -50%);
-  background-image: url("../assets//arrow-left.png");
+  background-image: url('../assets//arrow-left.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -306,7 +306,7 @@ a {
   top: 65%;
   left: 58%;
   transform: translate(-50%, -50%);
-  background-image: url("../assets/arrow-right.png");
+  background-image: url('../assets/arrow-right.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -320,7 +320,7 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 .conceptContainer__mainLogoConcept img {
   width: 63vw;
@@ -543,7 +543,9 @@ a {
   box-shadow: #f2f3fb -2px 2px 12px;
   margin: 10px;
 }
-.modelcard p, .modelcard__title, .modelcard__img {
+.modelcard p,
+.modelcard__title,
+.modelcard__img {
   margin-bottom: 5%;
 }
 .modelcard p {
