@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from './Sidebar';
 
 const LoginForm = () => {
   return (
@@ -17,6 +18,7 @@ const LoginForm = () => {
         <h1>Pas encore inscrit ?</h1>
         <p className="login-container__sign-up">JE M&apos;INSCRIS</p>
       </div>
+      <Sidebar />
     </div>
   );
 };
