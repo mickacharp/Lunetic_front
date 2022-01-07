@@ -4,4 +4,7 @@ dist
 dist-ssr
 *.local
 node_modules/*
+*.css
+*.css.map
 src/styles/*.css
+src/styles/*.css.map
