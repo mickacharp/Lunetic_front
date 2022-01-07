@@ -11,7 +11,7 @@ const Navbar = () => {
           <img src={logo} alt="logo-lunetic" />
         </Link>
       </div>
-      <div className="test">
+      <div className="navbar__container">
         <div className="navbar__menu">
           <ul>
             <Link to="/">
@@ -19,6 +19,9 @@ const Navbar = () => {
             </Link>
             <Link to="/concept">
               <li>Concept</li>
+            </Link>
+            <Link to="/catalogue">
+              <li>Catalogue</li>
             </Link>
             <Link to="/opticians">
               <li>Opticiens</li>
