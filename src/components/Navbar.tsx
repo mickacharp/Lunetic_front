@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import logo from '../assets/LUNETIC.png';
 
 const Navbar = () => {
@@ -18,6 +19,9 @@ const Navbar = () => {
             </Link>
             <Link to="/concept">
               <li>Concept</li>
+            </Link>
+            <Link to="/catalogue">
+              <li>Catalogue</li>
             </Link>
             <Link to="/opticians">
               <li>Opticiens</li>

@@ -8,7 +8,9 @@
         "_mixin.scss",
         "_navbar.scss",
         "_sidebar.scss",
-        "_home.scss"
+        "_home.scss",
+        "_concept.scss",
+        "_nous.scss"
     ],
     "names": [],
     "file": "styles.css"
