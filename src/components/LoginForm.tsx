@@ -1,18 +1,76 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
+
+import IOptician from '../interfaces/IOptician';
 import Sidebar from './Sidebar';
 
 const LoginForm = () => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const navigate: NavigateFunction = useNavigate();
+
+  function redirectHome() {
+    navigate('/');
+  }
+
+  const login = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    axios
+      .post<IOptician>(
+        'http://localhost:7000/api/login',
+        { email, password },
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          withCredentials: true,
+        },
+      )
+      .then((response) => response.data)
+      .then(() => {
+        setErrorMessage('');
+        redirectHome();
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          setErrorMessage('Email ou mot de passe incorrect');
+        } else {
+          setErrorMessage(err);
+        }
+      });
+  };
+
   return (
     <div className="login-container">
       <div className="login-container__img-container"></div>
       <div className="login-container__form-container">
         <p className="login-container__close">FERMER</p>
         <h1>Se Connecter Avec Une Adresse Email</h1>
-        <form action="">
-          <input type="email" id="login-email" placeholder="EMAIL" />
-          <input type="password" id="login-password" placeholder="MOT DE PASSE" />
+        <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => login(e)}>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="EMAIL"
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              setEmail(e.currentTarget.value)
+            }
+            value={email}
+          />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="MOT DE PASSE"
+            onChange={(e: React.FormEvent<HTMLInputElement>) =>
+              setPassword(e.currentTarget.value)
+            }
+            value={password}
+          />
           <br />
-          <input type="button" value="SE CONNECTER" id="login-submit" />
+          <input type="submit" value="SE CONNECTER" id="login-submit" />
+          {errorMessage && <span>{errorMessage}</span>}
         </form>
         <p>MOT DE PASSE OUBLIÉ ?</p>
         <h1>Pas encore inscrit ?</h1>

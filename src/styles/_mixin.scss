@@ -6,6 +6,12 @@
 
 @mixin fontPlayfairNormal {
   font-family: $playfair;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin fontPlayfairTitles {
+  font-family: $playfair;
   font-weight: 700;
   font-style: normal;
 }
