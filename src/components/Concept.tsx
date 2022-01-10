@@ -6,6 +6,7 @@ import visuelConcept from '../assets/concept_image2.png';
 import conceptPicLunettes from '../assets/concept_Lunettes.png';
 import conceptBottomVisual from '../assets/concept_visuel_bas.png';
 import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
+import Sidebar from './Sidebar';
 
 const Concept = () => {
   return (
@@ -82,6 +83,7 @@ const Concept = () => {
       <div className="conceptContainer__conceptBottomVisual">
         <img src={conceptBottomVisual} alt="Lunettes page concept" />
       </div>
+      <Sidebar />
     </div>
   );
 };

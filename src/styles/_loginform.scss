@@ -8,6 +8,7 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
   box-shadow: #69688c 5px 5px 20px;
   margin: auto;
   position: relative;
+  padding-top: 100px;
 
   &__img-container {
     display: flex;

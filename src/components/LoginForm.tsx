@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import IOptician from '../interfaces/IOptician';
+import Sidebar from './Sidebar';
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>('');
@@ -75,6 +76,7 @@ const LoginForm = () => {
         <h1>Pas encore inscrit ?</h1>
         <p className="login-container__sign-up">JE M&apos;INSCRIS</p>
       </div>
+      <Sidebar />
     </div>
   );
 };
