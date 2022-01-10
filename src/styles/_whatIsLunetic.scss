@@ -1,7 +1,13 @@
 .whatIsLunetic {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 7%;
+
+  &__subtitle {
+    position: relative;
+    width: 100%;
+  }
 
   &__container {
     position: relative;
@@ -12,6 +18,7 @@
     text-align: center;
     line-height: 170px;
     color: $greyF3;
+    @include fontMontserrat;
   }
 
   &__middle {
@@ -25,9 +32,65 @@
     @include fontPlayfairNormal;
   }
 
-  // &__medium-square {
-  //   background-image: url('../assets/carre-moyen.png');
-  //   height: 88px;
-  //   width: 88px;
-  // }
+  &__medium-square {
+    background-image: url('../assets/carre-moyen.png');
+    height: 88px;
+    width: 88px;
+    top: 0;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  &__little-square {
+    background-image: url('../assets/carre-moyen.png');
+    height: 63px;
+    width: 63px;
+    top: 80%;
+    right: 15%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  &__content {
+    height: 80vh;
+    position: relative;
+    margin-top: 10%;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 4.7rem;
+    text-transform: uppercase;
+    line-height: 110px;
+    letter-spacing: 30px;
+    @include fontMontserrat;
+  }
+
+  &__number-one {
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    padding-right: 15%;
+  }
+
+  &__number {
+    font-size: 6.3rem;
+    font-family: $abrilFatFace;
+  }
+
+  &__textContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include fontMontserrat;
+    font-size: 1rem;
+    color: $grey71;
+    margin-left: 85px;
+    line-height: 30px;
+  }
 }
