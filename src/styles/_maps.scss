@@ -10,7 +10,14 @@
     top: 0;
     left: 0;
     pointer-events: none;
-
     box-shadow: 0 0 100px 100px white inset;
+  }
+
+  &__h2 {
+    text-align: center;
+    font-size: 3em;
+    padding: 3em;
+    font: $playfair;
+    font-weight: medium;
   }
 }

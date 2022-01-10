@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 * {
   margin: 0;
@@ -76,7 +76,7 @@ a {
 }
 
 .navbar {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,8 +93,8 @@ a {
   display: flex;
   width: 100%;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .navbar__logo {
@@ -183,8 +183,8 @@ a {
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   position: fixed;
   right: 0;
 }
@@ -226,7 +226,72 @@ a {
   -ms-flex-align: center;
   align-items: center;
 }
+.conceptContainer {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+}
 
+.conceptContainer__mainLogoConcept img {
+  width: 63vw;
+}
+
+.conceptContainer__pageTitle {
+  font-size: 6em;
+  font-weight: 700;
+}
+
+.conceptContainer__conceptIntro {
+  font-size: 3em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-weight: bold;
+}
+
+.conceptContainer__visuelConcept img {
+  width: 80vw;
+}
+
+.conceptContainer__conceptDescription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-top: 8em;
+  margin-bottom: 8em;
+}
+
+.conceptContainer__conceptDescription p {
+  max-width: 38%;
+  font-size: 1.2em;
+}
+
+.conceptContainer__conceptVideo {
+  height: 90vh;
+  width: 60vw;
+  background-color: #aaa7a7;
+  margin-top: 8em;
+  margin-bottom: 8em;
+}
+
+.conceptContainer__catchphrase {
+  font-size: 3em;
+  text-align: center;
+  width: 55%;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.conceptContainer__conceptBottomVisual img {
+  margin-left: auto;
+  width: 70vw;
+}
 .nous {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -452,7 +517,6 @@ a {
   }
 }
 
-<<<<<<< HEAD
 .maps {
   position: relative;
   width: 100vw;
@@ -468,7 +532,7 @@ a {
   pointer-events: none;
   -webkit-box-shadow: 0 0 100px 100px white inset;
   box-shadow: 0 0 100px 100px white inset;
-=======
+}
 .home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -479,13 +543,13 @@ a {
 
 .home__content {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   height: 500vh;
 }
 
 .home__lunetic {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-style: italic;
   color: #afafaf;
@@ -503,7 +567,7 @@ a {
 }
 
 .home__carousel-1 h1 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-style: italic;
   font-size: 5rem;
@@ -525,7 +589,7 @@ a {
 }
 
 .home__paragraph {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   margin-top: 2%;
   position: relative;
@@ -553,7 +617,7 @@ a {
 }
 
 .home__cube {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-style: italic;
   height: 200px;
@@ -567,16 +631,16 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1rem;
 }
 
 .home__arrow {
-  background-image: url("../assets/arrow.png");
+  background-image: url('../assets/arrow.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 15px;
@@ -585,11 +649,11 @@ a {
   top: 75%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .home__points {
-  background-image: url("../assets/points.png");
+  background-image: url('../assets/points.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 50px;
@@ -598,7 +662,7 @@ a {
   top: 100%;
   left: 100%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .carousel .slider-wrapper {
@@ -611,8 +675,8 @@ a {
   top: 65%;
   left: 37%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-image: url("../assets//arrow-left.png");
+  transform: translate(-50%, -50%);
+  background-image: url('../assets//arrow-left.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
@@ -626,14 +690,13 @@ a {
   top: 65%;
   left: 58%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-image: url("../assets/arrow-right.png");
+  transform: translate(-50%, -50%);
+  background-image: url('../assets/arrow-right.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 50px;
   width: 50px;
   cursor: pointer;
   z-index: 10;
->>>>>>> e1d067f9686f60c13303ad87288cc7e6fef0dcfa
 }
 /*# sourceMappingURL=styles.css.map */

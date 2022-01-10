@@ -25,34 +25,37 @@ const Maps = () => {
   });
 
   return isLoaded ? (
-    <div className="maps">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        options={options}>
-        {/* Child components, such as markers, info windows, etc. */}
-        <div>
-          {
-            <Marker
-              position={{
-                lat: 43.46352270882575,
-                lng: -1.511119064793627,
-              }}
-            />
-          }
-          {
-            <Marker
-              position={{
-                lat: 43.488885840253936,
-                lng: -1.4927173468971295,
-              }}
-            />
-          }
-        </div>
-      </GoogleMap>
-      <div className="maps__child1"></div>
-    </div>
+    <>
+      <h2 className="maps__h2"> Où nous trouver</h2>
+      <div className="maps">
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={10}
+          options={options}>
+          {/* Child components, such as markers, info windows, etc. */}
+          <div>
+            {
+              <Marker
+                position={{
+                  lat: 43.46352270882575,
+                  lng: -1.511119064793627,
+                }}
+              />
+            }
+            {
+              <Marker
+                position={{
+                  lat: 43.488885840253936,
+                  lng: -1.4927173468971295,
+                }}
+              />
+            }
+          </div>
+        </GoogleMap>
+        <div className="maps__child1"></div>
+      </div>
+    </>
   ) : (
     <></>
   );

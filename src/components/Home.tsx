@@ -73,6 +73,7 @@ const Home = () => {
             </div>
           </Carousel>
         </div>
+        <Maps />
       </div>
       <Sidebar />
     </div>
