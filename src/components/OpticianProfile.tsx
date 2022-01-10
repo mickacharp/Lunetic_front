@@ -1,8 +1,23 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 
 import pictoGoutte from '../assets/PICTO GOUTTE_fond blanc_Plan de travail 1.png';
+import CurrentOpticianContext from '../contexts/CurrentOptician';
+import IOptician from '../interfaces/IOptician';
+import Sidebar from './Sidebar';
 
 const OpticianProfile = () => {
+  const [opticianInfo, setOpticianInfo] = useState<IOptician>();
+  const { idOptician } = useContext(CurrentOpticianContext);
+
+  console.log(idOptician);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:7000/api/opticians/${idOptician}`)
+      .then((results) => results.data)
+      .then((data) => setOpticianInfo(data));
+  }, [idOptician]);
+
   return (
     <div className="optician-profile">
       <div className="optician-profile__info">
@@ -26,7 +41,7 @@ const OpticianProfile = () => {
         <hr />
         <div className="optician-profile__contact">
           <p>
-            mail@mail.com
+            {opticianInfo && opticianInfo.email}
             <br />
             05 59 59 59 59
             <br />
@@ -59,6 +74,7 @@ const OpticianProfile = () => {
           className="optician-profile__edit"
         />
       </div>
+      <Sidebar />
     </div>
   );
 };

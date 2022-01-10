@@ -8,7 +8,6 @@ import LoginForm from './components/LoginForm';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
-import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (

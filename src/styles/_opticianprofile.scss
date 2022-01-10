@@ -9,6 +9,7 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
   width: 80vw;
   margin: auto;
   box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+  padding-top: 100px;
 
   &__info {
     display: flex;
