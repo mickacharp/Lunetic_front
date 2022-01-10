@@ -6,11 +6,17 @@
 
 @mixin fontPlayfairNormal {
   font-family: $playfair;
-  font-weight: 800;
+  font-weight: 400;
   font-style: normal;
 }
 
-@mixin fontMontserra {
+@mixin fontPlayfairTitles {
+  font-family: $playfair;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin fontMontserrat {
   font-family: $montserrat;
   font-weight: 300;
 }

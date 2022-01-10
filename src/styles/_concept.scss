@@ -3,23 +3,34 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  font-family: $playfair;
+  @include fontPlayfairNormal;
   padding-top: 100px;
 
   &__mainLogoConcept img {
     width: 63vw;
   }
 
-  &__pageTitle {
-    font-size: 6em;
-    font-weight: 700;
+  &__subtitles {
+    font-size: 5em;
+    @include fontPlayfairTitles;
   }
 
   &__conceptIntro {
-    font-size: 3em;
-    padding-top: 2em;
+    font-size: 2.5em;
+    padding-top: 4em;
     padding-bottom: 2em;
     font-weight: bold;
+  }
+
+  &__p {
+    font-size: 5.8em;
+    transform: translate(0, -80%);
+    opacity: 0.33;
+    color: $greyCC;
+    text-align: center;
+    @include fontMontserrat;
+    font-weight: bolder;
+    line-height: 1.8;
   }
 
   &__visuelConcept img {
@@ -36,7 +47,31 @@
     p {
       max-width: 38%;
       font-size: 1.2em;
+      text-align: justify;
     }
+  }
+
+  &__orangeLine1 img {
+    width: 6em;
+    position: relative;
+    top: 25em;
+    left: 33em;
+    z-index: 2;
+  }
+
+  &__orangeLine2 img {
+    width: 6em;
+    position: relative;
+    top: 30em;
+    left: 33em;
+  }
+
+  &__orangeLine3 img {
+    width: 6em;
+    position: relative;
+    top: 20em;
+    left: 33em;
+    z-index: 2;
   }
 
   &__conceptVideo {
@@ -45,6 +80,7 @@
     background-color: rgb(170, 167, 167);
     margin-top: 8em;
     margin-bottom: 8em;
+    z-index: 1;
   }
 
   &__catchphrase {
@@ -54,14 +90,53 @@
     font-weight: bold;
     font-style: italic;
     margin-top: 4em;
-    margin-bottom: 4em;
+    // margin-bottom: 3em;
+  }
+
+  &__verticalLine img {
+    height: 8em;
+    position: relative;
+    top: 18em;
+    left: -38em;
+    z-index: 2;
+  }
+
+  &__littleCircle img {
+    height: 2.4em;
+    position: relative;
+    top: 11em;
+    left: -28em;
+    z-index: 2;
+  }
+
+  &__greyLine1 img {
+    height: 2.4em;
+    position: relative;
+    top: 4em;
+    left: 20em;
+    z-index: 2;
+  }
+
+  &__greyLine2 img {
+    height: 10em;
+    position: relative;
+    top: 15em;
+    left: 52em;
   }
 
   &__conceptBottomVisual {
     img {
       margin-left: auto;
       // margin-right: auto;
-      width: 70vw;
+      width: 72vw;
+      position: relative;
     }
+  }
+
+  &__greyLine3 img {
+    height: 9em;
+    position: relative;
+    top: -15em;
+    left: -48em;
   }
 }
