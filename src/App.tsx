@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
 import Home from './components/Home';
+import LoginForm from './components/LoginForm';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
@@ -14,7 +15,6 @@ const App = () => {
     <>
       <BrowserRouter>
         <Navbar />
-        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
@@ -24,6 +24,7 @@ const App = () => {
           <Route path="/find-us" element={<Home />} />
           <Route path="/news" element={<Home />} />
           <Route path="/optician-profile" element={<OpticianProfile />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
       </BrowserRouter>
     </>
