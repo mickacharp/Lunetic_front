@@ -94,7 +94,7 @@
   }
 
   &__verticalLine img {
-    height: 8em;
+    max-height: 8em;
     position: relative;
     top: 18em;
     left: -38em;
@@ -112,8 +112,8 @@
   &__greyLine1 img {
     height: 2.4em;
     position: relative;
-    top: 4em;
-    left: 20em;
+    top: 3em;
+    left: 18em;
     z-index: 2;
   }
 
