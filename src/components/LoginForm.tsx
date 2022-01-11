@@ -34,8 +34,7 @@ const LoginForm = () => {
       )
       .then((response) => response.data)
       .then((data) => {
-        setIdOptician(Number(data.id_optician));
-        console.log(data.id_optician);
+        setIdOptician(data.id_optician);
         setErrorMessage('');
         redirectHome();
       })

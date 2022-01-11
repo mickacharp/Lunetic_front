@@ -15,6 +15,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     display: flex;
     flex-direction: column;
     width: $widthInfo;
+    font-family: 'FuturaPT', sans-serif;
+    font-weight: bold;
   }
 
   &__info-img-container {
@@ -28,19 +30,19 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     object-fit: contain;
   }
 
-  &__address {
-    @include flexCenter;
-    height: $heightInfoTexts;
+  &__info-icons {
+    height: 50%;
+    margin-left: 15%;
   }
 
-  &__contact {
-    @include flexCenter;
+  &__info-containers {
+    display: flex;
+    align-items: center;
     height: $heightInfoTexts;
-  }
-
-  &__administration {
-    @include flexCenter;
-    height: $heightInfoTexts;
+    p {
+      margin-left: 5%;
+      line-height: 1.8rem;
+    }
   }
 
   &__store {
@@ -52,7 +54,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
   &__close {
     @include closeTopRight;
-    font-size: 0.7em;
+    font-family: $fontButton;
+    font-size: 0.8em;
     letter-spacing: 3px;
     cursor: pointer;
   }
@@ -63,8 +66,14 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     object-fit: contain;
   }
 
+  &__store-name {
+    font-family: $playfair;
+    font-size: 4em;
+  }
+
   &__edit {
     @include ButtonBottomRight;
+    font-family: $fontButton;
     border: none;
     border-radius: $borderRadiusButton;
     background: $red;

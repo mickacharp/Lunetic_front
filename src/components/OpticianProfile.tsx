@@ -1,7 +1,11 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import pictoGoutte from '../assets/PICTO GOUTTE_fond blanc_Plan de travail 1.png';
+import profileLocation from '../assets/profile-location.png';
+import profileQuote from '../assets/profile-quotes.png';
+
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
 import Sidebar from './Sidebar';
@@ -10,7 +14,8 @@ const OpticianProfile = () => {
   const [opticianInfo, setOpticianInfo] = useState<IOptician>();
   const { idOptician } = useContext(CurrentOpticianContext);
 
-  console.log(idOptician);
+  const navigate: NavigateFunction = useNavigate();
+
   useEffect(() => {
     axios
       .get(`http://localhost:7000/api/opticians/${idOptician}`)
@@ -23,45 +28,62 @@ const OpticianProfile = () => {
       <div className="optician-profile__info">
         <div className="optician-profile__info-img-container">
           <img
-            src={pictoGoutte}
+            src={opticianInfo?.link_picture}
             alt="profil opticien partenaire Lunetic"
             className="optician-profile__info-img"
           />
         </div>
+
         <hr />
-        <div className="optician-profile__address">
+        <div className="optician-profile__info-containers">
+          <img
+            src={profileLocation}
+            alt="illustration marqueur carte"
+            className="optician-profile__info-icons"
+          />
           <p>
-            123 Fluffypants Lane
+            Adresse : {opticianInfo?.address}
             <br />
-            Pawtown, FL 32789
+            Ville : {opticianInfo?.city}, {opticianInfo?.postal_code}
             <br />
-            123-468-8901
           </p>
         </div>
         <hr />
-        <div className="optician-profile__contact">
+        <div className="optician-profile__info-containers">
+          <img
+            src={profileQuote}
+            alt="illustration guillemets quote"
+            className="optician-profile__info-icons"
+          />
           <p>
-            {opticianInfo && opticianInfo.email}
+            Email : {opticianInfo?.email}
             <br />
-            05 59 59 59 59
+            Fixe : {opticianInfo?.home_phone}
             <br />
-            06 10 20 30 40
+            Mobile : {opticianInfo?.mobile_phone}
           </p>
         </div>
         <hr />
-        <div className="optician-profile__administration">
+        <div className="optician-profile__info-containers">
+          <img
+            src={profileQuote}
+            alt="illustration guillemets quote"
+            className="optician-profile__info-icons"
+          />
           <p>
-            Code FINESS
+            Code FINESS : {opticianInfo?.finess_code}
             <br />
-            Siret
+            SIRET : {opticianInfo?.siret}
             <br />
-            Num TVA
+            Num TVA : {opticianInfo?.vat_number}
           </p>
         </div>
       </div>
 
       <div className="optician-profile__store">
-        <p className="optician-profile__close">FERMER</p>
+        <p className="optician-profile__close" onClick={() => navigate(-1)}>
+          FERMER
+        </p>
         <h1 className="optician-profile__store-name">Nom Magasin</h1>
         <img
           src={pictoGoutte}
