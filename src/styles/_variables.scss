@@ -3,12 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@font-face {
+  font-family: 'FuturaPT';
+  src: url(../fonts/FuturaPTBook.otf);
+}
 
 // FONTS
 
 $playfair: 'Playfair Display', serif;
 $abrilFatFace: 'Abril Fatface', serif;
 $montserrat: 'Montserrat', sans-serif;
+$fontButton: 'Poppins', sans-serif;
+$fontParagraph: 'FuturaPT', sans-serif;
 
 // COLORS
 
@@ -28,11 +35,6 @@ $blackNumbers: #202020;
 $blackTitles: #343434;
 $blackButtons: #2b2b2b;
 $grey71: #717171;
-
-// FONTS
-
-$playfair: 'Playfair Display', serif;
-$abrilFatFace: 'Abril Fatface', serif;
 
 // INPUT
 
