@@ -10,7 +10,6 @@ const OpticianProfile = () => {
   const [opticianInfo, setOpticianInfo] = useState<IOptician>();
   const { idOptician } = useContext(CurrentOpticianContext);
 
-  console.log(idOptician);
   useEffect(() => {
     axios
       .get(`http://localhost:7000/api/opticians/${idOptician}`)
