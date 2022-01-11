@@ -7,6 +7,7 @@ import Home from './components/Home';
 import LoginForm from './components/LoginForm';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
+import OpticianProfile from './components/OpticianProfile';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/us" element={<Nous />} />
           <Route path="/find-us" element={<Home />} />
           <Route path="/news" element={<Home />} />
+          <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
         </Routes>
       </BrowserRouter>
