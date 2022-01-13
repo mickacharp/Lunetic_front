@@ -6,6 +6,8 @@ import Sidebar from './Sidebar';
 import WhatIsLunetic from './WhatIsLunetic';
 import CarouselGlasses from './CarouselGlasses';
 
+import Maps from './Maps';
+
 const Home = () => {
   return (
     <>
@@ -79,6 +81,7 @@ const Home = () => {
       </div>
       <WhatIsLunetic />
       <CarouselGlasses />
+      <Maps />
     </>
   );
 };
