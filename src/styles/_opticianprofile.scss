@@ -3,6 +3,13 @@ $widthStore: calc(100% - $widthInfo);
 $heightInfoImg: 45%;
 $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
+.please-connect {
+  padding-top: 25%;
+  padding-left: 30%;
+  font-size: 50px;
+  font-family: $fontParagraph;
+}
+
 .optician-profile {
   display: flex;
   height: 70vh;
