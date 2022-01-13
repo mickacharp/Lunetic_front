@@ -1,12 +1,18 @@
 @mixin fontPlayfairItalic {
   font-family: $playfair;
-  font-weight: 800;
+  font-weight: 700;
   font-style: italic;
 }
 
 @mixin fontPlayfairNormal {
   font-family: $playfair;
-  font-weight: 800;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin fontPlayfairTitles {
+  font-family: $playfair;
+  font-weight: 700;
   font-style: normal;
 }
 

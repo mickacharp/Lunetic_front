@@ -15,9 +15,11 @@ const Sidebar = () => {
         </div>
       </Link>
       <div className="profil">
-        <div className="box">
-          <img src={profil} alt="profil" />
-        </div>
+        <Link to="/optician-profile">
+          <div className="box">
+            <img src={profil} alt="profil" />
+          </div>
+        </Link>
       </div>
     </div>
   );

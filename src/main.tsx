@@ -4,10 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import { CurrentOpticianContextProvider } from './contexts/CurrentOptician';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CurrentOpticianContextProvider>
+      <App />
+    </CurrentOpticianContextProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
