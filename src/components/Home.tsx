@@ -81,6 +81,7 @@ const Home = () => {
         <Sidebar />
       </div>
       <WhatIsLunetic />
+      <Maps />
     </>
   );
 };
