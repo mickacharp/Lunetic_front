@@ -1,11 +1,14 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-
 import gout from '../assets/gout-little.png';
 import Sidebar from './Sidebar';
 import WhatIsLunetic from './WhatIsLunetic';
+import CarouselGlasses from './CarouselGlasses';
+import glasses1 from '../assets/LUNETTE_03_ARTHUR.png';
+import glasses2 from '../assets/LUNETTE_01_ERIC.png';
+
+import Maps from './Maps';
 
 const Home = () => {
   return (
@@ -68,10 +71,10 @@ const Home = () => {
                 </div>
               </div>
               <div className="home__carousel-2">
-                <p>Comment ça va ?</p>
+                <p>slide 2</p>
               </div>
               <div className="home__carousel-3">
-                <p>Bien</p>
+                <p>slide 3</p>
               </div>
             </Carousel>
           </div>
@@ -79,6 +82,8 @@ const Home = () => {
         <Sidebar />
       </div>
       <WhatIsLunetic />
+      <CarouselGlasses />
+      <Maps />
     </>
   );
 };
