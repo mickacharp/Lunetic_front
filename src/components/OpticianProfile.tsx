@@ -17,87 +17,94 @@ const OpticianProfile = () => {
   const navigate: NavigateFunction = useNavigate();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:7000/api/opticians/${idOptician}`)
-      .then((results) => results.data)
-      .then((data) => setOpticianInfo(data));
+    if (idOptician != 0) {
+      axios
+        .get(`http://localhost:7000/api/opticians/${idOptician}`)
+        .then((results) => results.data)
+        .then((data) => setOpticianInfo(data));
+    }
   }, [idOptician]);
 
   return (
-    <div className="optician-profile">
-      <div className="optician-profile__info">
-        <div className="optician-profile__info-img-container">
-          <img
-            src={opticianInfo?.link_picture}
-            alt="profil opticien partenaire Lunetic"
-            className="optician-profile__info-img"
-          />
-        </div>
+    <>
+      {idOptician == 0 ? (
+        <p className="please-connect">Connectez-vous pour accéder à votre profil</p>
+      ) : (
+        <div className="optician-profile">
+          <div className="optician-profile__info">
+            <div className="optician-profile__info-img-container">
+              <img
+                src={opticianInfo?.link_picture}
+                alt="profil opticien partenaire Lunetic"
+                className="optician-profile__info-img"
+              />
+            </div>
+            <hr />
+            <div className="optician-profile__info-containers">
+              <img
+                src={profileLocation}
+                alt="illustration marqueur carte"
+                className="optician-profile__info-icons"
+              />
+              <p>
+                Adresse : {opticianInfo?.address}
+                <br />
+                Ville : {opticianInfo?.city}, {opticianInfo?.postal_code}
+                <br />
+              </p>
+            </div>
+            <hr />
+            <div className="optician-profile__info-containers">
+              <img
+                src={profileQuote}
+                alt="illustration guillemets quote"
+                className="optician-profile__info-icons"
+              />
+              <p>
+                Email : {opticianInfo?.email}
+                <br />
+                Fixe : {opticianInfo?.home_phone}
+                <br />
+                Mobile : {opticianInfo?.mobile_phone}
+              </p>
+            </div>
+            <hr />
+            <div className="optician-profile__info-containers">
+              <img
+                src={profileQuote}
+                alt="illustration guillemets quote"
+                className="optician-profile__info-icons"
+              />
+              <p>
+                Code FINESS : {opticianInfo?.finess_code}
+                <br />
+                SIRET : {opticianInfo?.siret}
+                <br />
+                Num TVA : {opticianInfo?.vat_number}
+              </p>
+            </div>
+          </div>
 
-        <hr />
-        <div className="optician-profile__info-containers">
-          <img
-            src={profileLocation}
-            alt="illustration marqueur carte"
-            className="optician-profile__info-icons"
-          />
-          <p>
-            Adresse : {opticianInfo?.address}
-            <br />
-            Ville : {opticianInfo?.city}, {opticianInfo?.postal_code}
-            <br />
-          </p>
+          <div className="optician-profile__store">
+            <p className="optician-profile__close" onClick={() => navigate(-1)}>
+              FERMER
+            </p>
+            <h1 className="optician-profile__store-name">{opticianInfo?.company}</h1>
+            <img
+              src={pictoGoutte}
+              alt="logo goutte Lunetic"
+              className="optician-profile__store-img"
+            />
+            <input
+              type="button"
+              value="Éditer votre profil"
+              className="optician-profile__edit"
+            />
+          </div>
+          <Sidebar />
         </div>
-        <hr />
-        <div className="optician-profile__info-containers">
-          <img
-            src={profileQuote}
-            alt="illustration guillemets quote"
-            className="optician-profile__info-icons"
-          />
-          <p>
-            Email : {opticianInfo?.email}
-            <br />
-            Fixe : {opticianInfo?.home_phone}
-            <br />
-            Mobile : {opticianInfo?.mobile_phone}
-          </p>
-        </div>
-        <hr />
-        <div className="optician-profile__info-containers">
-          <img
-            src={profileQuote}
-            alt="illustration guillemets quote"
-            className="optician-profile__info-icons"
-          />
-          <p>
-            Code FINESS : {opticianInfo?.finess_code}
-            <br />
-            SIRET : {opticianInfo?.siret}
-            <br />
-            Num TVA : {opticianInfo?.vat_number}
-          </p>
-        </div>
-      </div>
-
-      <div className="optician-profile__store">
-        <p className="optician-profile__close" onClick={() => navigate(-1)}>
-          FERMER
-        </p>
-        <h1 className="optician-profile__store-name">Nom Magasin</h1>
-        <img
-          src={pictoGoutte}
-          alt="logo goutte Lunetic"
-          className="optician-profile__store-img"
-        />
-        <input
-          type="button"
-          value="Éditer votre profil"
-          className="optician-profile__edit"
-        />
-      </div>
-      <Sidebar />
-    </div>
+      )}
+    </>
   );
 };
 
