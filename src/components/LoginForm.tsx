@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
+import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
 import Sidebar from './Sidebar';
 
@@ -10,6 +11,8 @@ const LoginForm = () => {
   const [password, setPassword] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>();
   const navigate: NavigateFunction = useNavigate();
+
+  const { setIdOptician } = useContext(CurrentOpticianContext);
 
   function redirectHome() {
     navigate('/');
@@ -30,7 +33,8 @@ const LoginForm = () => {
         },
       )
       .then((response) => response.data)
-      .then(() => {
+      .then((data) => {
+        setIdOptician(data.id_optician);
         setErrorMessage('');
         redirectHome();
       })
