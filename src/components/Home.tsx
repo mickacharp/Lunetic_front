@@ -7,6 +7,8 @@ import gout from '../assets/gout-little.png';
 import Sidebar from './Sidebar';
 import WhatIsLunetic from './WhatIsLunetic';
 
+import Maps from './Maps';
+
 const Home = () => {
   return (
     <>
@@ -79,6 +81,7 @@ const Home = () => {
         <Sidebar />
       </div>
       <WhatIsLunetic />
+      <Maps />
     </>
   );
 };
