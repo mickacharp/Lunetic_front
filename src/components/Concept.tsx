@@ -3,16 +3,14 @@ import React from 'react';
 import visuelConcept from '../assets/concept_image2.png';
 import conceptPicLunettes from '../assets/concept_Lunettes.png';
 import conceptBottomVisual from '../assets/concept_visuel_bas.png';
-import greyLineLarge from '../assets/grand-trait-gris.png';
 import orangeLine from '../assets/ligne_orange.png';
 import greyLineMedium from '../assets/moyen-trait-gris.png';
 import greyCircleLittle from '../assets/petit-cercle-gris.png';
 import greyLineLittle from '../assets/petit-trait-gris.png';
 import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
 import greyLineVertical from '../assets/trait-vertical-gris.png';
-import Sidebar from './Sidebar';
 // import ReactPlayer from 'react-player';
-// import conceptVideo1 from '';
+import conceptVideo1 from '../videos/video-1.mp4';
 
 const Concept = () => {
   return (
@@ -61,7 +59,9 @@ const Concept = () => {
       </div>
 
       <div className="conceptContainer__conceptVideo">
-        {/* <ReactPlayer url={conceptVideo1} /> */}
+        <video controls height="100%" width="100%">
+          <source src={conceptVideo1} type="video/mp4" />
+        </video>
       </div>
 
       <div className="conceptContainer__conceptPicLunettes">
@@ -98,7 +98,9 @@ const Concept = () => {
       </div>
 
       <div className="conceptContainer__conceptVideo">
-        {/* <ReactPlayer url={conceptVideo2} /> */}
+        <video controls height="100%" width="100%">
+          <source src={conceptVideo1} type="video/mp4" />
+        </video>
       </div>
 
       <p className="conceptContainer__catchphrase">
@@ -129,8 +131,6 @@ const Concept = () => {
       <div className="conceptContainer__greyLine3">
         <img src={greyLineMedium} alt="Grande ligne oblique grise" />
       </div>
-
-      <Sidebar />
     </div>
   );
 };

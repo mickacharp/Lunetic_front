@@ -11,6 +11,7 @@ const CarouselGlasses = () => {
 
   return (
     <div className="carouselGlasses">
+      <h2 className="carouselGlasses__title">Nos montures</h2>
       <section className="carouselGlasses__slider">
         <input type="radio" name="slider" id="s1" className="carouselGlasses__radio" />
         <input
@@ -41,6 +42,12 @@ const CarouselGlasses = () => {
           <img src={glasses} alt="glasses" height="100%" width="100%" />
         </label>
       </section>
+      <div className="carouselGlasses__orange-line" />
+      <div className="carouselGlasses__grey-points" />
+      <div className="carouselGlasses__little-grey-circle" />
+      <div className="carouselGlasses__grey-quotes" />
+      <div className="carouselGlasses__little-grey-line" />
+      <div className="carouselGlasses__little-grey-circle--2" />
     </div>
   );
 };

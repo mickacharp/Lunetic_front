@@ -7,7 +7,6 @@ import lunettesSimon from '../assets/LUNETTE_02_SIMON.png';
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import lunettesDavid from '../assets/LUNETTE_04_DAVID.png';
 import lunettesLilou from '../assets/LUNETTE_06_LILOU.png';
-import Sidebar from './Sidebar';
 
 const Montures = () => {
   return (
@@ -51,8 +50,6 @@ const Montures = () => {
       <div className="montures__lunettesPresentation1">
         <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
       </div>
-
-      <Sidebar />
     </div>
   );
 };
