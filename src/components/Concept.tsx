@@ -3,7 +3,6 @@ import React from 'react';
 import visuelConcept from '../assets/concept_image2.png';
 import conceptPicLunettes from '../assets/concept_Lunettes.png';
 import conceptBottomVisual from '../assets/concept_visuel_bas.png';
-import greyLineLarge from '../assets/grand-trait-gris.png';
 import orangeLine from '../assets/ligne_orange.png';
 import greyLineMedium from '../assets/moyen-trait-gris.png';
 import greyCircleLittle from '../assets/petit-cercle-gris.png';
