@@ -12,7 +12,7 @@ import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
 import greyLineVertical from '../assets/trait-vertical-gris.png';
 import Sidebar from './Sidebar';
 // import ReactPlayer from 'react-player';
-// import conceptVideo1 from '';
+import conceptVideo1 from '../videos/video-1.mp4';
 
 const Concept = () => {
   return (
@@ -61,7 +61,9 @@ const Concept = () => {
       </div>
 
       <div className="conceptContainer__conceptVideo">
-        {/* <ReactPlayer url={conceptVideo1} /> */}
+        <video controls height="100%" width="100%">
+          <source src={conceptVideo1} type="video/mp4" />
+        </video>
       </div>
 
       <div className="conceptContainer__conceptPicLunettes">
@@ -98,7 +100,9 @@ const Concept = () => {
       </div>
 
       <div className="conceptContainer__conceptVideo">
-        {/* <ReactPlayer url={conceptVideo2} /> */}
+        <video controls height="100%" width="100%">
+          <source src={conceptVideo1} type="video/mp4" />
+        </video>
       </div>
 
       <p className="conceptContainer__catchphrase">

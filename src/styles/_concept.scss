@@ -55,7 +55,7 @@
     width: 6em;
     position: relative;
     top: 25em;
-    left: 33em;
+    left: 38em;
     z-index: 2;
   }
 
@@ -63,24 +63,27 @@
     width: 6em;
     position: relative;
     top: 30em;
-    left: 33em;
+    left: 38em;
   }
 
   &__orangeLine3 img {
     width: 6em;
     position: relative;
     top: 20em;
-    left: 33em;
+    left: 38em;
     z-index: 2;
   }
 
   &__conceptVideo {
-    height: 90vh;
-    width: 60vw;
-    background-color: rgb(170, 167, 167);
+    height: 75vh;
+    width: 70vw;
     margin-top: 8em;
     margin-bottom: 8em;
     z-index: 1;
+
+    video {
+      object-fit: cover;
+    }
   }
 
   &__catchphrase {
