@@ -2,7 +2,6 @@ import React from 'react';
 
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import ModelCardList from './ModelCardList';
-import Sidebar from './Sidebar';
 
 const Catalogue = () => {
   return (
@@ -14,7 +13,6 @@ const Catalogue = () => {
       />
       <h1 className="catalogue__title">Catalogue</h1>
       <ModelCardList />
-      <Sidebar />
     </div>
   );
 };

@@ -9,12 +9,14 @@ import Montures from './components/Montures';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Navbar />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
