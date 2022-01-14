@@ -1,4 +1,5 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
@@ -10,6 +11,8 @@ import petitCercle from '../assets/petit-cercle-rouge.png';
 import apiKey from '../../api.js';
 import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
+import IOptician from '../interfaces/IOptician';
+import Geocode from 'react-geocode';
 
 const containerStyle = {
   width: '100vw',
@@ -44,6 +47,39 @@ const Maps = () => {
     googleMapsApiKey: apiKey,
     libraries: ['places'],
   });
+
+  const [opticiansInfos, setOpticiansInfos] = useState<IOptician>();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/opticians/`)
+      .then((results) => results.data)
+      .then((data) => setOpticiansInfos(data));
+  }, []);
+
+  console.log(opticiansInfos);
+
+  //opticiansInfos.map((optician) => optician.adress && optician.city);
+
+  Geocode.setApiKey(apiKey);
+  Geocode.setLanguage('fr');
+  Geocode.setRegion('fr');
+  // And according to the below google docs in description, ROOFTOP param returns the most accurate result.
+  //Geocode.setLocationType('ROOFTOP');
+
+  // Enable or disable logs. Its optional.
+  Geocode.enableDebug();
+
+  // Get latitude & longitude from address.
+  Geocode.fromAddress('').then(
+    function (response) {
+      const { lat, lng } = response.results[0].geometry.location;
+      console.log(lat, lng);
+    },
+    (error) => {
+      console.error(error);
+    },
+  );
 
   return isLoaded ? (
     <div className="section_ou_nous_trouver">
@@ -97,20 +133,16 @@ const Maps = () => {
             {
               <Marker
                 position={{
-                  lat: 43.46352270882575,
-                  lng: -1.511119064793627,
+                  lat: 43.411215,
+                  lng: -1.623063,
                 }}
-                /* icon={{
-                  url: '../assets/gout.png',
-                  scaledSize: new window.google.maps.Size(30, 30),
-                }} */
               />
             }
             {
               <Marker
                 position={{
-                  lat: 43.488885840253936,
-                  lng: -1.4927173468971295,
+                  lat: 43.4633301,
+                  lng: -1.510909,
                 }}
               />
             }

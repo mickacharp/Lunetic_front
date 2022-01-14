@@ -22,7 +22,7 @@ const LoginForm = () => {
     e.preventDefault();
     axios
       .post<IOptician>(
-        'http://localhost:7000/api/login',
+        'http://localhost:4000/api/login',
         { email, password },
         {
           method: 'POST',
