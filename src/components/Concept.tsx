@@ -10,7 +10,6 @@ import greyCircleLittle from '../assets/petit-cercle-gris.png';
 import greyLineLittle from '../assets/petit-trait-gris.png';
 import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
 import greyLineVertical from '../assets/trait-vertical-gris.png';
-import Sidebar from './Sidebar';
 // import ReactPlayer from 'react-player';
 import conceptVideo1 from '../videos/video-1.mp4';
 
@@ -133,8 +132,6 @@ const Concept = () => {
       <div className="conceptContainer__greyLine3">
         <img src={greyLineMedium} alt="Grande ligne oblique grise" />
       </div>
-
-      <Sidebar />
     </div>
   );
 };
