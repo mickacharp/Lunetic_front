@@ -7,6 +7,8 @@ import lunettesSimon from '../assets/LUNETTE_02_SIMON.png';
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import lunettesDavid from '../assets/LUNETTE_04_DAVID.png';
 import lunettesLilou from '../assets/LUNETTE_06_LILOU.png';
+import MonturesDetails1 from './MonturesDetails1';
+import MonturesDetails2 from './MonturesDetails2';
 
 const Montures = () => {
   return (
@@ -36,15 +38,11 @@ const Montures = () => {
       </div>
 
       <div className="montures__presentation1">
-        <p className="montures__presentationNumber1">01</p>
-        <div className="montures__presentationText1">
-          <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-            roots in a piece of classical Latin literature from 45 BC, making it over 2000
-            years old.
-          </p>
-          <button className="montures__presentationBtn">See more &#x2794;</button>
-        </div>
+        <MonturesDetails1 />
+      </div>
+
+      <div className="montures__presentation2">
+        <MonturesDetails2 />
       </div>
 
       <div className="montures__lunettesPresentation1">
