@@ -1,0 +1,100 @@
+$widthLeftContainer: 45%;
+$widthRightContainer: calc(100% - $widthLeftContainer);
+
+.login-component-container {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+  position: relative;
+  font-family: $fontParagraph;
+  top: 3vh;
+
+  &__img-container {
+    display: flex;
+    align-items: center;
+    width: $widthLeftContainer;
+    height: 100%;
+    background-image: url('../assets/COQUE_Plan de travail 1.png');
+    background-position: center;
+    background-size: 130% auto;
+    background-repeat: no-repeat;
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: $widthRightContainer;
+    height: 100%;
+
+    > * {
+      margin-bottom: 5%;
+    }
+
+    h1 {
+      font-size: 2.5em;
+    }
+
+    form {
+      width: 50%;
+
+      input {
+        padding: 15px;
+        border: rgb(24, 24, 24) solid 2px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      #login-email {
+        border-bottom: none;
+      }
+
+      #login-email,
+      #login-password {
+        width: 100%;
+      }
+
+      #login-submit {
+        width: 100%;
+        background-color: $blackButtons;
+        color: white;
+        margin-top: 15px;
+      }
+    }
+    input,
+    p {
+      font-size: 1em;
+      letter-spacing: 3px;
+    }
+
+    #login-submit,
+    #close,
+    #forgot-pswrd,
+    #signup {
+      cursor: pointer;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  &__sign-up {
+    box-shadow: 0 -3px 0 $greyDB inset;
+    transition: 0.5s;
+    &:hover {
+      box-shadow: 0 -15px 0 $greyDB inset;
+    }
+  }
+}

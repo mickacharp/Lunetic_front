@@ -1,0 +1,129 @@
+.carouselGlasses {
+  padding: 20px;
+  margin: 10% 0;
+  user-select: none;
+  position: relative;
+
+  &__radio {
+    display: none;
+  }
+
+  &__slider {
+    height: 35vw;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+    label {
+      margin: auto;
+      width: 60%;
+      height: 100%;
+      border-radius: 4px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 5.6rem;
+    @include fontPlayfairNormal;
+    font-weight: bold;
+    margin-bottom: 5%;
+  }
+
+  &__orange-line {
+    background-image: url('../assets/ligne_orange.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+  }
+  &__grey-points {
+    background-image: url('../assets/grey-points.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 10%;
+    left: 75%;
+  }
+
+  &__little-grey-circle {
+    background-image: url('../assets/petit-cercle-gris.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+
+    &--2 {
+      background-image: url('../assets/petit-cercle-gris.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      top: 120%;
+      left: 10%;
+    }
+  }
+
+  &__grey-quotes {
+    background-image: url('../assets/grey-quotes.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 30%;
+    left: 60%;
+  }
+
+  &__little-grey-line {
+    background-image: url('../assets/petit-trait-gris.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 120%;
+    left: 35%;
+  }
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide1 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(-70%, -150px, -200px) scale(0.5);
+  opacity: 0.5;
+}
+
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3 {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+  transform: translate3d(0, 150px, 0);
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(70%, -150px, -200px) scale(0.5);
+  opacity: 0.5;
+}
+
+.pointer-events {
+  pointer-events: none;
+}

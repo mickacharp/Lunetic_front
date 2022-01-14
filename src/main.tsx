@@ -1,11 +1,16 @@
+import './styles/styles.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/styles.css';
+
 import App from './App';
+import { CurrentOpticianContextProvider } from './contexts/CurrentOptician';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CurrentOpticianContextProvider>
+      <App />
+    </CurrentOpticianContextProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
