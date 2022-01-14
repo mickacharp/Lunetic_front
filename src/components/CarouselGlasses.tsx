@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+
 import glasses from '../assets/LUNETTE_03_ARTHUR.png';
 import video from '../videos/video-1.mp4';
 

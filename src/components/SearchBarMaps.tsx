@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+import '@reach/combobox/styles.css';
+
 import {
   Combobox,
   ComboboxInput,
-  ComboboxPopover,
   ComboboxList,
   ComboboxOption,
   ComboboxOptionText,
+  ComboboxPopover,
 } from '@reach/combobox';
-import '@reach/combobox/styles.css';
+import React from 'react';
+import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 
 type Props = { panTo: Function };
 

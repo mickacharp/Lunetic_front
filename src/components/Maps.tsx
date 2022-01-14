@@ -1,13 +1,13 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import React, { useEffect, useState } from 'react';
-import carteDepliante from '../assets/carte-depliante.png';
-import points from '../assets/cube-points-gris.png';
-import traitVertical from '../assets/trait.png';
-import cercleGris from '../assets/moyen-cercle-gris.png';
-import traitOblique from '../assets/trait-oblique-gris.png';
-import petitCercle from '../assets/petit-cercle-rouge.png';
+import React, { useState } from 'react';
 
 import apiKey from '../../api.js';
+import carteDepliante from '../assets/carte-depliante.png';
+import points from '../assets/cube-points-gris.png';
+import cercleGris from '../assets/moyen-cercle-gris.png';
+import petitCercle from '../assets/petit-cercle-rouge.png';
+import traitVertical from '../assets/trait.png';
+import traitOblique from '../assets/trait-oblique-gris.png';
 import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
 

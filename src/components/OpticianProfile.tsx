@@ -5,7 +5,6 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 import pictoGoutte from '../assets/PICTO GOUTTE_fond blanc_Plan de travail 1.png';
 import profileLocation from '../assets/profile-location.png';
 import profileQuote from '../assets/profile-quotes.png';
-
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
 
