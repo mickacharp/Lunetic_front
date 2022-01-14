@@ -1,6 +1,6 @@
 $widthInfo: 55%;
 $widthStore: calc(100% - $widthInfo);
-$heightInfoImg: 45%;
+$heightInfoImg: 50%;
 $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
 .profile-component-container {
@@ -10,8 +10,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 }
 
 .please-connect {
-  padding-top: 25%;
-  padding-left: 30%;
+  padding-top: calc(25% - 50px);
+  padding-left: 25%;
   font-size: 50px;
   font-family: $fontParagraph;
 }
@@ -27,9 +27,10 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
   &__info {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     width: $widthInfo;
-    font-family: 'FuturaPT', sans-serif;
-    font-weight: bold;
+    height: 80%;
+    margin: auto;
   }
 
   &__info-img-container {
@@ -44,7 +45,7 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
   }
 
   &__info-icons {
-    height: 50%;
+    height: 80%;
     margin-left: 15%;
   }
 
@@ -56,6 +57,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
       font-size: 1.3em;
       margin-left: 5%;
       line-height: 1.8rem;
+      font-family: 'FuturaPT', sans-serif;
+      font-weight: bold;
     }
   }
 
@@ -68,8 +71,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
   &__close {
     @include closeTopRight;
-    font-family: $fontButton;
-    font-size: 0.8em;
+    font-family: $fontParagraph;
+    font-size: 1em;
     letter-spacing: 3px;
     cursor: pointer;
   }
@@ -82,7 +85,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
   &__store-name {
     font-family: $playfair;
-    font-size: 4em;
+    font-size: 2.5em;
+    text-align: center;
   }
 
   &__edit {
