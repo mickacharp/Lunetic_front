@@ -8,7 +8,6 @@ import profileQuote from '../assets/profile-quotes.png';
 
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
-import Sidebar from './Sidebar';
 
 const OpticianProfile = () => {
   const [opticianInfo, setOpticianInfo] = useState<IOptician>();
@@ -28,7 +27,6 @@ const OpticianProfile = () => {
   return (
     <>
       <div className="profile-component-container">
-        <Sidebar />
         {idOptician == 0 ? (
           <p className="please-connect">Connectez-vous pour accéder à votre profil</p>
         ) : (
