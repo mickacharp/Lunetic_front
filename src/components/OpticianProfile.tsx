@@ -31,7 +31,7 @@ const OpticianProfile = () => {
           <p className="please-connect">Connectez-vous pour accéder à votre profil</p>
         ) : (
           <div className="optician-profile">
-            <div className="optician-profile__info">
+            <div className="optician-profile__store">
               <div className="optician-profile__info-img-container">
                 <img
                   src={opticianInfo?.link_picture}
@@ -40,6 +40,18 @@ const OpticianProfile = () => {
                 />
               </div>
               <hr />
+              <h1 className="optician-profile__store-name">{opticianInfo?.company}</h1>
+              <img
+                src={pictoGoutte}
+                alt="logo goutte Lunetic"
+                className="optician-profile__store-img"
+              />
+            </div>
+
+            <div className="optician-profile__info">
+              <p className="optician-profile__close" onClick={() => navigate(-1)}>
+                FERMER
+              </p>
               <div className="optician-profile__info-containers">
                 <img
                   src={profileLocation}
@@ -83,18 +95,7 @@ const OpticianProfile = () => {
                   Num TVA : {opticianInfo?.vat_number}
                 </p>
               </div>
-            </div>
 
-            <div className="optician-profile__store">
-              <p className="optician-profile__close" onClick={() => navigate(-1)}>
-                FERMER
-              </p>
-              <h1 className="optician-profile__store-name">{opticianInfo?.company}</h1>
-              <img
-                src={pictoGoutte}
-                alt="logo goutte Lunetic"
-                className="optician-profile__store-img"
-              />
               <input
                 type="button"
                 value="Éditer votre profil"
