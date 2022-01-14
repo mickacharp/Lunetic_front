@@ -1,4 +1,5 @@
 import React from 'react';
+
 import pictoGout1 from '../assets/picto-gout.png';
 import pictoGout2 from '../assets/picto-gout-2.png';
 
