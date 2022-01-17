@@ -1,5 +1,4 @@
 import React from 'react';
-import orangeQuotes from '../assets/orange-quotes.png';
 
 const MonturesDetails1 = () => {
   return (
