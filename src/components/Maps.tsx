@@ -13,6 +13,11 @@ import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
 import IOptician from '../interfaces/IOptician';
 import Geocode from 'react-geocode';
+import { getGeocode } from 'use-places-autocomplete';
+
+Geocode.setApiKey(apiKey);
+Geocode.setLanguage('fr');
+Geocode.setRegion('fr');
 
 const containerStyle = {
   width: '100vw',
@@ -50,36 +55,36 @@ const Maps = () => {
 
   const [opticiansInfos, setOpticiansInfos] = useState<IOptician>();
 
+  const [geoCodeArray, setGeoCodeArray] = useState<Array<ICenter>>([]);
+  const [itsOk, setItsOk] = useState<Boolean>(false);
+
   useEffect(() => {
+    const geoCodeArrayTemp: Array<ICenter> = [];
     axios
-      .get(`http://localhost:4000/api/opticians/`)
+      .get<IOptician[]>(`http://localhost:4000/api/opticians/`)
       .then((results) => results.data)
-      .then((data) => setOpticiansInfos(data));
+      .then((data) => {
+        data.map((optician) => {
+          Geocode.fromAddress(optician.city)
+            .then((response) =>
+              geoCodeArrayTemp.push(response.results[0].geometry.location),
+            )
+            .then(() => {
+              setGeoCodeArray(geoCodeArrayTemp);
+              setItsOk(true);
+            });
+        });
+      });
   }, []);
 
-  console.log(opticiansInfos);
-
-  //opticiansInfos.map((optician) => optician.adress && optician.city);
-
-  Geocode.setApiKey(apiKey);
-  Geocode.setLanguage('fr');
-  Geocode.setRegion('fr');
-  // And according to the below google docs in description, ROOFTOP param returns the most accurate result.
-  //Geocode.setLocationType('ROOFTOP');
-
   // Enable or disable logs. Its optional.
-  Geocode.enableDebug();
+  //Geocode.enableDebug();
 
-  // Get latitude & longitude from address.
-  Geocode.fromAddress('').then(
-    function (response) {
-      const { lat, lng } = response.results[0].geometry.location;
-      console.log(lat, lng);
-    },
-    (error) => {
-      console.error(error);
-    },
-  );
+  //geoCodeArray.length && console.log(geoCodeArray.length);
+
+  //geoCodeArray.length && console.log(geoCodeArray);
+
+  //setTimeout(() => console.log(geoCodeArray[0]), 1000);
 
   return isLoaded ? (
     <div className="section_ou_nous_trouver">
@@ -130,7 +135,19 @@ const Maps = () => {
           options={options}>
           {/* Child components, such as markers, info windows, etc. */}
           <div>
-            {
+            {geoCodeArray.length &&
+              geoCodeArray.map((geocode) => {
+                console.log(geocode);
+                return (
+                  <Marker
+                    position={{
+                      lat: geocode.lat,
+                      lng: geocode.lng,
+                    }}
+                  />
+                );
+              })}
+            {/* {
               <Marker
                 position={{
                   lat: 43.411215,
@@ -145,7 +162,15 @@ const Maps = () => {
                   lng: -1.510909,
                 }}
               />
-            }
+            } */}
+            {/* {
+              <Marker
+                position={{
+                  lat: 43.610771,
+                  lng: -1.314267,
+                }}
+              />
+            } */}
           </div>
         </GoogleMap>
         <div className="section_ou_nous_trouver__child1"></div>
