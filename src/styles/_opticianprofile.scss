@@ -103,11 +103,11 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
   &__save-changes {
     position: absolute;
     bottom: 30px;
-    right: 150px;
+    right: 300px;
     font-family: $fontButton;
     border: none;
     border-radius: $borderRadiusButton;
-    background: $red;
+    background: #23794e;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
@@ -118,4 +118,18 @@ hr {
   width: 80%;
   margin: auto;
   border: solid 1px $greyF3;
+}
+
+input[type='text'] {
+  border: $beige solid 1px;
+  border-radius: $borderRadiusButton;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: $fontParagraph;
+  font-size: 0.8em;
+  transition: 0.3s;
+  &:hover {
+    background-color: $beige;
+    border: $red solid 1px;
+  }
 }
