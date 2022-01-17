@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { MouseEventHandler, useContext, useEffect, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import pictoGoutte from '../assets/PICTO GOUTTE_fond blanc_Plan de travail 1.png';
@@ -10,6 +10,21 @@ import IOptician from '../interfaces/IOptician';
 
 const OpticianProfile = () => {
   const [opticianInfo, setOpticianInfo] = useState<IOptician>();
+  const [editProfile, setEditProfile] = useState<boolean>(false);
+  const [saveEdits, setSaveEdits] = useState<boolean>(false);
+
+  const [newLinkPicture, setNewLinkPicture] = useState<string>();
+  const [newCompany, setNewCompany] = useState<string>();
+  const [newAddress, setNewAddress] = useState<string>();
+  const [newCity, setNewCity] = useState<string>();
+  const [newPostalCode, setNewPostalCode] = useState<string>();
+  const [newEmail, setNewEmail] = useState<string>();
+  const [newHomePhone, setNewHomePhone] = useState<string>();
+  const [newMobilePhone, setNewMobilePhone] = useState<string>();
+  const [newFinessCode, setNewFinessCode] = useState<string>();
+  const [newSiret, setNewSiret] = useState<string>();
+  const [newVatNumber, setNewVatNumber] = useState<string>();
+
   const { idOptician } = useContext(CurrentOpticianContext);
 
   const navigate: NavigateFunction = useNavigate();
@@ -21,7 +36,32 @@ const OpticianProfile = () => {
         .then((results) => results.data)
         .then((data) => setOpticianInfo(data));
     }
-  }, [idOptician]);
+  }, [idOptician, saveEdits]);
+
+  const updateOptician = () => {
+    axios.put(
+      `http://localhost:7000/api/opticians/${idOptician}`,
+      {
+        company: newCompany,
+        address: newAddress,
+        postal_code: newPostalCode,
+        city: newCity,
+        email: newEmail,
+        mobile_phone: newMobilePhone,
+        home_phone: newHomePhone,
+        finess_code: newFinessCode,
+        siret: newSiret,
+        vat_number: newVatNumber,
+      },
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true,
+      },
+    );
+  };
 
   return (
     <>
@@ -39,7 +79,17 @@ const OpticianProfile = () => {
                 />
               </div>
               <hr />
-              <h1 className="optician-profile__store-name">{opticianInfo?.company}</h1>
+              <h1 className="optician-profile__store-name">
+                {editProfile ? (
+                  <input
+                    type="text"
+                    placeholder={`${opticianInfo?.company}`}
+                    onChange={(e) => setNewCompany(e.target.value)}
+                  />
+                ) : (
+                  opticianInfo?.company
+                )}
+              </h1>
               <img
                 src={pictoGoutte}
                 alt="logo goutte Lunetic"
@@ -58,9 +108,37 @@ const OpticianProfile = () => {
                   className="optician-profile__info-icons"
                 />
                 <p>
-                  Adresse : {opticianInfo?.address}
+                  Adresse :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.address}`}
+                      onChange={(e) => setNewAddress(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.address
+                  )}
                   <br />
-                  Ville : {opticianInfo?.city}, {opticianInfo?.postal_code}
+                  Ville :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.city}`}
+                      onChange={(e) => setNewCity(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.city
+                  )}
+                  ,{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.postal_code}`}
+                      onChange={(e) => setNewPostalCode(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.postal_code
+                  )}
                   <br />
                 </p>
               </div>
@@ -72,11 +150,38 @@ const OpticianProfile = () => {
                   className="optician-profile__info-icons"
                 />
                 <p>
-                  Email : {opticianInfo?.email}
+                  Email :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.email}`}
+                      onChange={(e) => setNewEmail(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.email
+                  )}
                   <br />
-                  Fixe : {opticianInfo?.home_phone}
+                  Fixe :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.home_phone}`}
+                      onChange={(e) => setNewHomePhone(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.home_phone
+                  )}
                   <br />
-                  Mobile : {opticianInfo?.mobile_phone}
+                  Mobile :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.mobile_phone}`}
+                      onChange={(e) => setNewMobilePhone(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.mobile_phone
+                  )}
                 </p>
               </div>
               <hr />
@@ -87,19 +192,70 @@ const OpticianProfile = () => {
                   className="optician-profile__info-icons"
                 />
                 <p>
-                  Code FINESS : {opticianInfo?.finess_code}
+                  Code FINESS :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.finess_code}`}
+                      onChange={(e) => setNewFinessCode(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.finess_code
+                  )}
                   <br />
-                  SIRET : {opticianInfo?.siret}
+                  SIRET :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.siret}`}
+                      onChange={(e) => setNewSiret(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.siret
+                  )}
                   <br />
-                  Num TVA : {opticianInfo?.vat_number}
+                  Num TVA :{' '}
+                  {editProfile ? (
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.vat_number}`}
+                      onChange={(e) => setNewVatNumber(e.target.value)}
+                    />
+                  ) : (
+                    opticianInfo?.vat_number
+                  )}
                 </p>
               </div>
 
-              <input
-                type="button"
-                value="Éditer votre profil"
-                className="optician-profile__edit"
-              />
+              {!editProfile ? (
+                <input
+                  type="button"
+                  value="Éditer votre profil"
+                  className="optician-profile__edit"
+                  onClick={() => setEditProfile(!editProfile)}
+                />
+              ) : (
+                <>
+                  <input
+                    type="button"
+                    value="Sauvegarder les changements"
+                    className="optician-profile__save-changes"
+                    onClick={() => {
+                      setSaveEdits(!saveEdits);
+                    }}
+                  />
+                  <input
+                    type="button"
+                    value="Valider"
+                    className="optician-profile__edit"
+                    onClick={() => {
+                      setEditProfile(!editProfile);
+                      updateOptician();
+                      setSaveEdits(!saveEdits);
+                    }}
+                  />{' '}
+                </>
+              )}
             </div>
           </div>
         )}

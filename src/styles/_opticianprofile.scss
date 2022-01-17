@@ -99,6 +99,19 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     padding: 10px 20px;
     cursor: pointer;
   }
+
+  &__save-changes {
+    position: absolute;
+    bottom: 30px;
+    right: 150px;
+    font-family: $fontButton;
+    border: none;
+    border-radius: $borderRadiusButton;
+    background: $red;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
 }
 
 hr {
