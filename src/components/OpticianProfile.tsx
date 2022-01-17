@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { MouseEventHandler, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import pictoGoutte from '../assets/PICTO GOUTTE_fond blanc_Plan de travail 1.png';
