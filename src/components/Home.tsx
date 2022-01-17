@@ -1,10 +1,12 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
+
 import gout from '../assets/gout-little.png';
-import WhatIsLunetic from './WhatIsLunetic';
 import CarouselGlasses from './CarouselGlasses';
 import Maps from './Maps';
+import WhatIsLunetic from './WhatIsLunetic';
 
 const Home = () => {
   return (
@@ -20,18 +22,18 @@ const Home = () => {
               showStatus={false}
               showThumbs={false}
               showIndicators={false}
-              renderArrowPrev={(clickHandler, hasPrev, label) => {
+              renderArrowPrev={(clickHandler) => {
                 return (
-                  <span onClick={clickHandler} onKeyDown={clickHandler} role="button">
+                  <button onClick={clickHandler} onKeyDown={clickHandler}>
                     <div className="left-arrow" />
-                  </span>
+                  </button>
                 );
               }}
-              renderArrowNext={(clickHandler, hasPrev, label) => {
+              renderArrowNext={(clickHandler) => {
                 return (
-                  <span onClick={clickHandler} onKeyDown={clickHandler} role="button">
+                  <button onClick={clickHandler} onKeyDown={clickHandler}>
                     <div className="right-arrow" />
-                  </span>
+                  </button>
                 );
               }}>
               <div className="home__carousel-1">
@@ -58,7 +60,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="home__right">
-                  <img src={gout} alt="picture-gout" />
+                  <img src={gout} alt="illustration goutte" />
                   <div className="home__cube">
                     <h2>News</h2>
                     <div className="home__arrow" />
