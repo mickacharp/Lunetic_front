@@ -19,10 +19,10 @@ const App = () => {
         <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/concept" element={<Concept />} />
           <Route path="/montures" element={<Montures />} />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/opticians" element={<Home />} />
+          <Route path="/concept" element={<Concept />} />
           <Route path="/us" element={<Nous />} />
           <Route path="/find-us" element={<Home />} />
           <Route path="/news" element={<Home />} />
