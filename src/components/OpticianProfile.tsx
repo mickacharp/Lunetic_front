@@ -45,7 +45,7 @@ const OpticianProfile = () => {
   useEffect(() => {
     if (idOptician != 0) {
       axios
-        .get(`http://localhost:7000/api/opticians/${idOptician}`)
+        .get(`http://localhost:4000/api/opticians/${idOptician}`)
         .then((results) => results.data)
         .then((data) => setOpticianInfo(data));
     }
