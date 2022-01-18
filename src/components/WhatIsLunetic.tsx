@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import pictoGout1 from '../assets/picto-gout.png';
 import pictoGout2 from '../assets/picto-gout-2.png';
+import PositionYContext from '../contexts/PositionY';
 
 const WhatIsLunetic = () => {
+  const { setNumberDiv2 } = useContext(PositionYContext);
   return (
     <div className="whatIsLunetic">
       <div className="whatIsLunetic__subtitle">
@@ -42,7 +44,7 @@ const WhatIsLunetic = () => {
         </div>
         <div className="whatIsLunetic__text">
           <p>
-            C'est
+            C&apos;est
             <br />
             quoi
             <br />
@@ -53,7 +55,7 @@ const WhatIsLunetic = () => {
         </div>
         <div className="whatIsLunetic__picto">
           <div className="whatIsLunetic__grey-line" />
-          <div className="whatIsLunetic__plane" />
+          <div className="whatIsLunetic__plane" id="3" />
         </div>
         <div className="whatIsLunetic__number-two">
           <div className="whatIsLunetic__number">
@@ -82,7 +84,14 @@ const WhatIsLunetic = () => {
           </div>
         </div>
         <div className="whatIsLunetic__picto-gout-1">
-          <div className="whatIsLunetic__square-grey-points" />
+          <div
+            className="whatIsLunetic__square-grey-points"
+            id="2"
+            ref={(el) => {
+              if (!el) return;
+              setNumberDiv2(el.getBoundingClientRect().top);
+            }}
+          />
           <div className="whatIsLunetic__line-orange" />
           <img src={pictoGout1} alt="picto-gout" />
         </div>

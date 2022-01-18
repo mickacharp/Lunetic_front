@@ -8,7 +8,7 @@ import {
   ComboboxOptionText,
   ComboboxPopover,
 } from '@reach/combobox';
-import React from 'react';
+import React, { useEffect } from 'react';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 
 type Props = { panTo: Function };
