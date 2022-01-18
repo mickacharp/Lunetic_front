@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 
-import pictoGoutte from '../assets/PICTO GOUTTE_fond blanc_Plan de travail 1.png';
 import profileLocation from '../assets/profile-location.png';
 import profileQuote from '../assets/profile-quotes.png';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
@@ -85,13 +84,170 @@ const OpticianProfile = () => {
           <p className="please-connect">Connectez-vous pour accéder à votre profil</p>
         ) : (
           <div className="optician-profile">
-            <div className="optician-profile__store">
-              <div className="optician-profile__info-img-container">
-                <img
-                  src={opticianInfo?.link_picture}
-                  alt="profil opticien partenaire Lunetic"
-                  className="optician-profile__info-img"
-                />
+            <div className="optician-profile__store-name">
+              <h1>
+                {editProfile ? (
+                  <input
+                    type="text"
+                    placeholder={`${opticianInfo?.company}`}
+                    onChange={(e) => setNewCompany(e.target.value)}
+                    readOnly={saveEdits ? false : true}
+                  />
+                ) : (
+                  opticianInfo?.company
+                )}
+              </h1>
+            </div>
+            <div className="optician-profile__container">
+              <div className="optician-profile__info">
+                <p className="optician-profile__close" onClick={() => navigate(-1)}>
+                  FERMER
+                </p>
+
+                <div className="optician-profile__info-containers">
+                  <img
+                    src={profileLocation}
+                    alt="illustration marqueur carte"
+                    className="optician-profile__info-icons"
+                  />
+                  <p>
+                    Adresse :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.address}`}
+                        onChange={(e) => setNewAddress(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.address
+                    )}
+                    <br />
+                    Ville :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.city}`}
+                        onChange={(e) => setNewCity(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.city
+                    )}
+                    ,{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.postal_code}`}
+                        onChange={(e) => setNewPostalCode(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.postal_code
+                    )}
+                    <br />
+                  </p>
+                </div>
+                <hr />
+                <div className="optician-profile__info-containers">
+                  <img
+                    src={profileQuote}
+                    alt="illustration guillemets quote"
+                    className="optician-profile__info-icons"
+                  />
+                  <p>
+                    Email :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.email}`}
+                        onChange={(e) => setNewEmail(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.email
+                    )}
+                    <br />
+                    Fixe :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.home_phone}`}
+                        onChange={(e) => setNewHomePhone(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.home_phone
+                    )}
+                    <br />
+                    Mobile :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.mobile_phone}`}
+                        onChange={(e) => setNewMobilePhone(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.mobile_phone
+                    )}
+                  </p>
+                </div>
+                <hr />
+                <div className="optician-profile__info-containers">
+                  <img
+                    src={profileQuote}
+                    alt="illustration guillemets quote"
+                    className="optician-profile__info-icons"
+                  />
+                  <p>
+                    Code FINESS :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.finess_code}`}
+                        onChange={(e) => setNewFinessCode(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.finess_code
+                    )}
+                    <br />
+                    SIRET :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.siret}`}
+                        onChange={(e) => setNewSiret(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.siret
+                    )}
+                    <br />
+                    Num TVA :{' '}
+                    {editProfile ? (
+                      <input
+                        type="text"
+                        placeholder={`${opticianInfo?.vat_number}`}
+                        onChange={(e) => setNewVatNumber(e.target.value)}
+                        readOnly={saveEdits ? false : true}
+                      />
+                    ) : (
+                      opticianInfo?.vat_number
+                    )}
+                  </p>
+                </div>
+              </div>
+
+              <div className="optician-profile__store">
+                <div className="optician-profile__info-img-container">
+                  <img
+                    src={opticianInfo?.link_picture}
+                    alt="profil opticien partenaire Lunetic"
+                    className="optician-profile__info-img"
+                  />
+                </div>
                 {editProfile && (
                   <>
                     <p>Adresse de la nouvelle image :</p>
@@ -104,165 +260,6 @@ const OpticianProfile = () => {
                   </>
                 )}
               </div>
-              <hr />
-              <h1 className="optician-profile__store-name">
-                {editProfile ? (
-                  <input
-                    type="text"
-                    placeholder={`${opticianInfo?.company}`}
-                    onChange={(e) => setNewCompany(e.target.value)}
-                    readOnly={saveEdits ? false : true}
-                  />
-                ) : (
-                  opticianInfo?.company
-                )}
-              </h1>
-              <img
-                src={pictoGoutte}
-                alt="logo goutte Lunetic"
-                className="optician-profile__store-img"
-              />
-            </div>
-
-            <div className="optician-profile__info">
-              <p className="optician-profile__close" onClick={() => navigate(-1)}>
-                FERMER
-              </p>
-              <div className="optician-profile__info-containers">
-                <img
-                  src={profileLocation}
-                  alt="illustration marqueur carte"
-                  className="optician-profile__info-icons"
-                />
-                <p>
-                  Adresse :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.address}`}
-                      onChange={(e) => setNewAddress(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.address
-                  )}
-                  <br />
-                  Ville :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.city}`}
-                      onChange={(e) => setNewCity(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.city
-                  )}
-                  ,{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.postal_code}`}
-                      onChange={(e) => setNewPostalCode(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.postal_code
-                  )}
-                  <br />
-                </p>
-              </div>
-              <hr />
-              <div className="optician-profile__info-containers">
-                <img
-                  src={profileQuote}
-                  alt="illustration guillemets quote"
-                  className="optician-profile__info-icons"
-                />
-                <p>
-                  Email :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.email}`}
-                      onChange={(e) => setNewEmail(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.email
-                  )}
-                  <br />
-                  Fixe :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.home_phone}`}
-                      onChange={(e) => setNewHomePhone(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.home_phone
-                  )}
-                  <br />
-                  Mobile :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.mobile_phone}`}
-                      onChange={(e) => setNewMobilePhone(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.mobile_phone
-                  )}
-                </p>
-              </div>
-              <hr />
-              <div className="optician-profile__info-containers">
-                <img
-                  src={profileQuote}
-                  alt="illustration guillemets quote"
-                  className="optician-profile__info-icons"
-                />
-                <p>
-                  Code FINESS :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.finess_code}`}
-                      onChange={(e) => setNewFinessCode(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.finess_code
-                  )}
-                  <br />
-                  SIRET :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.siret}`}
-                      onChange={(e) => setNewSiret(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.siret
-                  )}
-                  <br />
-                  Num TVA :{' '}
-                  {editProfile ? (
-                    <input
-                      type="text"
-                      placeholder={`${opticianInfo?.vat_number}`}
-                      onChange={(e) => setNewVatNumber(e.target.value)}
-                      readOnly={saveEdits ? false : true}
-                    />
-                  ) : (
-                    opticianInfo?.vat_number
-                  )}
-                </p>
-              </div>
-
               {!editProfile ? (
                 <input
                   type="button"
@@ -275,7 +272,7 @@ const OpticianProfile = () => {
                   }}
                 />
               ) : saveEdits ? (
-                <>
+                <div>
                   {!newCompany &&
                   !newAddress &&
                   !newCity &&
@@ -306,7 +303,7 @@ const OpticianProfile = () => {
                       setEditProfile(!editProfile);
                     }}
                   />{' '}
-                </>
+                </div>
               ) : (
                 <input
                   type="button"

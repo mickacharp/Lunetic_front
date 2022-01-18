@@ -1,7 +1,8 @@
-$widthInfo: 55%;
+$widthInfo: 60%;
 $widthStore: calc(100% - $widthInfo);
-$heightInfoImg: 50%;
-$heightInfoTexts: calc((100% - $heightInfoImg) / 3);
+$heightStoreName: 20%;
+$heightInfoTexts: calc((100% - $heightStoreName) / 3);
+$heightInfoImg: calc(100% - $heightStoreName);
 
 .profile-component-container {
   width: 80%;
@@ -18,11 +19,28 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
 .optician-profile {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 80vh;
   position: relative;
   box-shadow: rgb(200, 203, 209) 5px 5px 20px;
   top: 3vh;
+
+  &__store-name {
+    @include flexCenter;
+    height: $heightStoreName;
+    h1 {
+      font-family: $playfair;
+      font-size: 4em;
+      text-align: center;
+    }
+  }
+
+  &__container {
+    display: flex;
+    width: 95%;
+    height: 70%;
+  }
 
   &__info {
     display: flex;
@@ -33,6 +51,11 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     margin: auto;
   }
 
+  &__info-img-container,
+  &__info-img {
+    border-radius: $borderRadiusButton;
+  }
+
   &__info-img-container {
     @include flexCenter;
     flex-direction: column;
@@ -40,8 +63,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
   }
 
   &__info-img {
-    width: 80%;
-    height: 80%;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
   }
 
@@ -57,8 +80,9 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     p {
       font-size: 1.3em;
       margin-left: 5%;
-      line-height: 1.8rem;
+      line-height: 2rem;
       font-weight: bold;
+      letter-spacing: 1px;
     }
   }
 
@@ -76,18 +100,6 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     cursor: pointer;
   }
 
-  &__store-img {
-    width: 60%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  &__store-name {
-    font-family: $playfair;
-    font-size: 2.5em;
-    text-align: center;
-  }
-
   &__edit {
     @include ButtonBottomRight;
     font-family: $fontButton;
@@ -101,8 +113,8 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
   &__save-changes {
     position: absolute;
-    bottom: 30px;
-    right: 300px;
+    bottom: 4%;
+    right: 25%;
     font-family: $fontButton;
     border: none;
     border-radius: $borderRadiusButton;
