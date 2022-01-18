@@ -98,13 +98,13 @@ const OpticianProfile = () => {
                 )}
               </h1>
             </div>
-            <div className="optician-profile__container">
-              <div className="optician-profile__info">
+            <div className="optician-profile__data-container">
+              <div className="optician-profile__info-texts-container">
                 <p className="optician-profile__close" onClick={() => navigate(-1)}>
                   FERMER
                 </p>
 
-                <div className="optician-profile__info-containers">
+                <div className="optician-profile__info-subcontainers">
                   <img
                     src={profileLocation}
                     alt="illustration marqueur carte"
@@ -149,7 +149,7 @@ const OpticianProfile = () => {
                   </p>
                 </div>
                 <hr />
-                <div className="optician-profile__info-containers">
+                <div className="optician-profile__info-subcontainers">
                   <img
                     src={profileQuote}
                     alt="illustration guillemets quote"
@@ -194,7 +194,7 @@ const OpticianProfile = () => {
                   </p>
                 </div>
                 <hr />
-                <div className="optician-profile__info-containers">
+                <div className="optician-profile__info-subcontainers">
                   <img
                     src={profileQuote}
                     alt="illustration guillemets quote"
@@ -240,12 +240,12 @@ const OpticianProfile = () => {
                 </div>
               </div>
 
-              <div className="optician-profile__store">
-                <div className="optician-profile__info-img-container">
+              <div className="optician-profile__info-img-container">
+                <div className="optician-profile__profile-picture-container">
                   <img
                     src={opticianInfo?.link_picture}
                     alt="profil opticien partenaire Lunetic"
-                    className="optician-profile__info-img"
+                    className="optician-profile__profile-picture"
                   />
                 </div>
                 {editProfile && (

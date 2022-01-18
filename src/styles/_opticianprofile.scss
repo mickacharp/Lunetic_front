@@ -1,15 +1,18 @@
+// Local SCSS variables
 $widthInfo: 60%;
 $widthStore: calc(100% - $widthInfo);
 $heightStoreName: 20%;
 $heightInfoTexts: calc((100% - $heightStoreName) / 3);
 $heightInfoImg: calc(100% - $heightStoreName);
 
+// Component main container
 .profile-component-container {
   width: 80%;
   margin: auto;
   padding-top: 100px;
 }
 
+// Message when user is not connected
 .please-connect {
   padding-top: calc(25% - 50px);
   padding-left: 25%;
@@ -17,6 +20,7 @@ $heightInfoImg: calc(100% - $heightStoreName);
   font-family: $fontParagraph;
 }
 
+// "Modal" container
 .optician-profile {
   display: flex;
   flex-direction: column;
@@ -36,13 +40,15 @@ $heightInfoImg: calc(100% - $heightStoreName);
     }
   }
 
-  &__container {
+  // contains all info but store-name
+  &__data-container {
     display: flex;
     width: 95%;
     height: 70%;
   }
 
-  &__info {
+  // contains all textual info (i.e. left container of the profile)
+  &__info-texts-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -51,29 +57,12 @@ $heightInfoImg: calc(100% - $heightStoreName);
     margin: auto;
   }
 
-  &__info-img-container,
-  &__info-img {
-    border-radius: $borderRadiusButton;
-  }
-
-  &__info-img-container {
-    @include flexCenter;
-    flex-direction: column;
-    height: $heightInfoImg;
-  }
-
-  &__info-img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-  }
-
   &__info-icons {
     height: 80%;
     margin-left: 15%;
   }
 
-  &__info-containers {
+  &__info-subcontainers {
     display: flex;
     align-items: center;
     height: $heightInfoTexts;
@@ -86,13 +75,32 @@ $heightInfoImg: calc(100% - $heightStoreName);
     }
   }
 
-  &__store {
+  // contains the profile picture and its container (i.e. right container of the profile)
+  &__info-img-container {
     @include flexCenter;
     flex-direction: column;
     width: $widthStore;
     position: relative;
   }
 
+  &__profile-picture-container {
+    @include flexCenter;
+    flex-direction: column;
+    height: $heightInfoImg;
+  }
+
+  &__profile-picture {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__profile-picture-container,
+  &__profile-picture {
+    border-radius: $borderRadiusButton;
+  }
+
+  // Top-right closing button "FERMER"
   &__close {
     @include closeTopRight;
     font-size: 1em;
@@ -100,6 +108,7 @@ $heightInfoImg: calc(100% - $heightStoreName);
     cursor: pointer;
   }
 
+  // Edit-Validate-DropChanges buttons
   &__edit {
     @include ButtonBottomRight;
     font-family: $fontButton;
@@ -111,6 +120,7 @@ $heightInfoImg: calc(100% - $heightStoreName);
     cursor: pointer;
   }
 
+  // SaveChanges button
   &__save-changes {
     position: absolute;
     bottom: 4%;
@@ -129,6 +139,7 @@ p {
   font-family: $fontParagraph;
 }
 
+// Horizontal separators of info-texts subcontainers
 hr {
   width: 80%;
   margin: auto;
