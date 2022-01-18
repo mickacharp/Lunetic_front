@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
+import Contact from './components/Contact';
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
 import Montures from './components/Montures';
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/news" element={<Home />} />
           <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </>

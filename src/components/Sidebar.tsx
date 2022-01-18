@@ -9,11 +9,14 @@ const Sidebar = () => {
   const { idOptician } = useContext(CurrentOpticianContext);
   return (
     <div className="sidebar">
-      <div className="letter">
-        <div className="box">
-          <img src={letter} alt="letter" />
+      <Link to="/contact">
+        <div className="letter">
+          <div className="box">
+            <img src={letter} alt="letter" />
+          </div>
         </div>
-      </div>
+      </Link>
+
       <Link to={idOptician == 0 ? '/login' : '/optician-profile'}>
         <div className="profil">
           <div className="box">
