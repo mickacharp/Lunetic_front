@@ -1,15 +1,16 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import React, { useEffect, useState } from 'react';
-import carteDepliante from '../assets/carte-depliante.png';
-import points from '../assets/cube-points-gris.png';
-import traitVertical from '../assets/trait.png';
-import cercleGris from '../assets/moyen-cercle-gris.png';
-import traitOblique from '../assets/trait-oblique-gris.png';
-import petitCercle from '../assets/petit-cercle-rouge.png';
+import React, { useContext, useState } from 'react';
 
 import apiKey from '../../api.js';
+import carteDepliante from '../assets/carte-depliante.png';
+import points from '../assets/cube-points-gris.png';
+import cercleGris from '../assets/moyen-cercle-gris.png';
+import petitCercle from '../assets/petit-cercle-rouge.png';
+import traitVertical from '../assets/trait.png';
+import traitOblique from '../assets/trait-oblique-gris.png';
 import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
+import PositionYContext from '../contexts/PositionY';
 
 const containerStyle = {
   width: '100vw',
@@ -28,6 +29,7 @@ const options = {
 };
 
 const Maps = () => {
+  const { setNumberDiv4 } = useContext(PositionYContext);
   const [zoom, setZoom] = useState(10);
   const [center, setCenter] = useState<ICenter>({
     lat: 43.46352270882575,
@@ -83,6 +85,10 @@ const Maps = () => {
         className="section_ou_nous_trouver__petit_cercle_rouge"
         src={petitCercle}
         alt="cercle-rouge"
+        ref={(el) => {
+          if (!el) return;
+          setNumberDiv4(el.getBoundingClientRect().top + 300);
+        }}
       />
 
       <SearchBarMaps panTo={panTo} />

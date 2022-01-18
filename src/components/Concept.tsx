@@ -3,7 +3,6 @@ import React from 'react';
 import visuelConcept from '../assets/concept_image2.png';
 import conceptPicLunettes from '../assets/concept_Lunettes.png';
 import conceptBottomVisual from '../assets/concept_visuel_bas.png';
-import greyLineLarge from '../assets/grand-trait-gris.png';
 import orangeLine from '../assets/ligne_orange.png';
 import greyLineMedium from '../assets/moyen-trait-gris.png';
 import greyCircleLittle from '../assets/petit-cercle-gris.png';
@@ -15,7 +14,7 @@ import greyLineVertical from '../assets/trait-vertical-gris.png';
 
 const Concept = () => {
   return (
-    <div className="conceptContainer">
+    <div className="conceptContainer" id="1">
       <div className="conceptContainer__mainLogoConcept">
         <img src={logoVisageConcept} alt="Logo visage page concept" />
       </div>
@@ -29,7 +28,7 @@ const Concept = () => {
         your life
       </p>
 
-      <div className="conceptContainer__visuelConcept">
+      <div className="conceptContainer__visuelConcept" id="2">
         <img src={visuelConcept} alt="Visuel concept Lunetic" />
       </div>
 
@@ -51,7 +50,7 @@ const Concept = () => {
         </p>
       </div>
 
-      <div className="conceptContainer__orangeLine1">
+      <div className="conceptContainer__orangeLine1" id="3">
         <img src={orangeLine} alt="Ligne orange" />
       </div>
 
@@ -96,7 +95,7 @@ const Concept = () => {
         <img src={orangeLine} alt="Ligne orange" />
       </div>
 
-      <div className="conceptContainer__conceptVideo">
+      <div className="conceptContainer__conceptVideo" id="4">
         {/* <ReactPlayer url={conceptVideo2} /> */}
       </div>
 
