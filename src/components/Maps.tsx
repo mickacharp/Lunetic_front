@@ -1,6 +1,6 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
 import traitVertical from '../assets/trait.png';
@@ -12,22 +12,13 @@ import apiKey from '../../api.js';
 import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
 import IOptician from '../interfaces/IOptician';
-import Geocode from 'react-geocode';
-import { getGeocode } from 'use-places-autocomplete';
-
-Geocode.setApiKey(apiKey);
-Geocode.setLanguage('fr');
-Geocode.setRegion('fr');
 
 const containerStyle = {
   width: '100vw',
   height: '100%',
 };
 
-interface ICenter {
-  lat: number;
-  lng: number;
-}
+type Libraries = ('drawing' | 'geometry' | 'localContext' | 'places' | 'visualization')[];
 
 const options = {
   styles: mapsStyles,
@@ -35,56 +26,37 @@ const options = {
   zoomControl: true,
 };
 
+const libraries: Libraries = ['places'];
+
 const Maps = () => {
   const [zoom, setZoom] = useState(10);
-  const [center, setCenter] = useState<ICenter>({
+  const [center, setCenter] = useState<google.maps.LatLngLiteral>({
     lat: 43.46352270882575,
     lng: -1.511119064793627,
   });
 
-  const panTo: Function = (lat: number, lng: number) => {
-    setCenter({ lat, lng });
+  const panTo: Function = (latLng: google.maps.LatLngLiteral) => {
+    setCenter(latLng);
     setZoom(13);
   };
 
   const { isLoaded } = useJsApiLoader({
     id: 'lunetic',
     googleMapsApiKey: apiKey,
-    libraries: ['places'],
+    libraries: libraries,
   });
 
-  const [opticiansInfos, setOpticiansInfos] = useState<IOptician>();
-
-  const [geoCodeArray, setGeoCodeArray] = useState<Array<ICenter>>([]);
-  const [itsOk, setItsOk] = useState<Boolean>(false);
+  const [opticiansInfos, setOpticiansInfos] = useState<Array<IOptician>>();
 
   useEffect(() => {
-    const geoCodeArrayTemp: Array<ICenter> = [];
     axios
       .get<IOptician[]>(`http://localhost:4000/api/opticians/`)
       .then((results) => results.data)
       .then((data) => {
-        data.map((optician) => {
-          Geocode.fromAddress(optician.city)
-            .then((response) =>
-              geoCodeArrayTemp.push(response.results[0].geometry.location),
-            )
-            .then(() => {
-              setGeoCodeArray(geoCodeArrayTemp);
-              setItsOk(true);
-            });
-        });
+        console.log(data);
+        setOpticiansInfos(data);
       });
   }, []);
-
-  // Enable or disable logs. Its optional.
-  //Geocode.enableDebug();
-
-  //geoCodeArray.length && console.log(geoCodeArray.length);
-
-  //geoCodeArray.length && console.log(geoCodeArray);
-
-  //setTimeout(() => console.log(geoCodeArray[0]), 1000);
 
   return isLoaded ? (
     <div className="section_ou_nous_trouver">
@@ -135,42 +107,19 @@ const Maps = () => {
           options={options}>
           {/* Child components, such as markers, info windows, etc. */}
           <div>
-            {geoCodeArray.length &&
-              geoCodeArray.map((geocode) => {
-                console.log(geocode);
+            {opticiansInfos &&
+              opticiansInfos.map((geocode, index: number) => {
+                //console.log(geocode.lat, ',', geocode.lng);
                 return (
                   <Marker
+                    key={index}
                     position={{
-                      lat: geocode.lat,
-                      lng: geocode.lng,
+                      lat: Number(geocode.lat),
+                      lng: Number(geocode.lng),
                     }}
                   />
                 );
               })}
-            {/* {
-              <Marker
-                position={{
-                  lat: 43.411215,
-                  lng: -1.623063,
-                }}
-              />
-            }
-            {
-              <Marker
-                position={{
-                  lat: 43.4633301,
-                  lng: -1.510909,
-                }}
-              />
-            } */}
-            {/* {
-              <Marker
-                position={{
-                  lat: 43.610771,
-                  lng: -1.314267,
-                }}
-              />
-            } */}
           </div>
         </GoogleMap>
         <div className="section_ou_nous_trouver__child1"></div>
