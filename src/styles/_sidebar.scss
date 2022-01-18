@@ -5,8 +5,9 @@
   position: fixed;
   right: 0;
   z-index: 2;
+  padding-top: 100px;
 
-  .letter {
+  &__letter {
     height: 70px;
     width: 100px;
     display: flex;
@@ -15,7 +16,7 @@
     margin-top: 20px;
   }
 
-  .box {
+  &__box {
     height: 35px;
     width: 35px;
 
@@ -24,11 +25,60 @@
     }
   }
 
-  .profil {
+  &__profil {
     height: 70px;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__navigation {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 75%;
+  }
+
+  &__arrow-up {
+    cursor: pointer;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  &__arrow-down {
+    margin-top: 50px;
+    cursor: pointer;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  &__container-anchor {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__anchor {
+    height: 1px;
+    width: 10px;
+    background-color: black;
+    margin-top: 20px;
+  }
+
+  &__anchor-orange {
+    height: 2px;
+    width: 20px;
+    background-color: $orange;
+    margin-top: 20px;
   }
 }

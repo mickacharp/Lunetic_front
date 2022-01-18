@@ -5,11 +5,14 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import { CurrentOpticianContextProvider } from './contexts/CurrentOptician';
+import { PositionYContextProvider } from './contexts/PositionY';
 
 ReactDOM.render(
   <React.StrictMode>
     <CurrentOpticianContextProvider>
-      <App />
+      <PositionYContextProvider>
+        <App />
+      </PositionYContextProvider>
     </CurrentOpticianContextProvider>
   </React.StrictMode>,
   document.getElementById('root'),

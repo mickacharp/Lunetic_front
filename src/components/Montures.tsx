@@ -1,5 +1,10 @@
 import React from 'react';
 
+import MonturesDetailBleu from '../assets/DETAIL_1_LUNETTE_4_BLEU.png';
+import MonturesDetailGris from '../assets/DETAIL_1_LUNETTE_5_GRIS.png';
+import MonturesDetailRouge from '../assets/DETAIL_1_LUNETTE_7_ROUGE.png';
+import MonturesProfilNoir1 from '../assets/FOND_BLANC_GENERAL_LUNETTE_1_NOIR.png';
+import MonturesProfilRouge1 from '../assets/FOND_BLANC_GENERAL_LUNETTE_5_ROUGE.png';
 import lunettesPresentation1 from '../assets/FOND_BLANC_GENERAL_LUNETTE_7_NOIR.png';
 import pictoGoutte from '../assets/gout-little.png';
 import lunettesEric from '../assets/LUNETTE_01_ERIC.png';
@@ -7,7 +12,9 @@ import lunettesSimon from '../assets/LUNETTE_02_SIMON.png';
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import lunettesDavid from '../assets/LUNETTE_04_DAVID.png';
 import lunettesLilou from '../assets/LUNETTE_06_LILOU.png';
-import Sidebar from './Sidebar';
+import pictoGoutteScan from '../assets/PICTO GOUTTE_SCAN_fond blanc.png';
+import MonturesDetails1 from './MonturesDetails1';
+import MonturesDetails2 from './MonturesDetails2';
 
 const Montures = () => {
   return (
@@ -36,23 +43,69 @@ const Montures = () => {
         <img src={pictoGoutte} alt="Picto goutte" />
       </div>
 
-      <div className="montures__presentation1">
-        <p className="montures__presentationNumber1">01</p>
-        <div className="montures__presentationText1">
-          <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-            roots in a piece of classical Latin literature from 45 BC, making it over 2000
-            years old.
-          </p>
-          <button className="montures__presentationBtn">See more &#x2794;</button>
-        </div>
+      <div className="montures__presentationText1">
+        <MonturesDetails1 />
+      </div>
+
+      <div className="montures__presentationText2">
+        <MonturesDetails2 />
       </div>
 
       <div className="montures__lunettesPresentation1">
         <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
       </div>
 
-      <Sidebar />
+      <div className="montures__lunettesCenter1">
+        <img src={lunettesSimon} alt="Monture Simon" />
+      </div>
+
+      <div className="montures__lunettesPresentation2">
+        <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
+      </div>
+
+      <div className="montures__presentation3">
+        <div className="montures__presentationText3">
+          <MonturesDetails1 />
+        </div>
+
+        <div className="montures__pictoGoutteScan">
+          <img src={pictoGoutteScan} alt="Picto goutte scan" />
+        </div>
+      </div>
+
+      <div className="montures__lunettesCenter2">
+        <img src={MonturesProfilNoir1} alt="Monture centre 2" />
+      </div>
+
+      <div className="montures__presentationText4">
+        <MonturesDetails2 />
+      </div>
+
+      <div className="montures__subtitlesStart">START SHOPPING NOW</div>
+
+      <div className="montures__presentationText5">
+        <MonturesDetails2 />
+      </div>
+
+      <div className="montures__presentationText6">
+        <MonturesDetails2 />
+      </div>
+
+      <div className="montures__presentationText7">
+        <MonturesDetails2 />
+      </div>
+
+      <div className="montures__lunettesBottom1">
+        <img src={MonturesDetailBleu} alt="Monture bas 1" />
+      </div>
+
+      <div className="montures__lunettesBottom2">
+        <img src={MonturesDetailGris} alt="Monture bas 2" />
+      </div>
+
+      <div className="montures__lunettesBottom3">
+        <img src={MonturesDetailRouge} alt="Monture bas 3" />
+      </div>
     </div>
   );
 };

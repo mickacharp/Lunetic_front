@@ -4,7 +4,6 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
-import Sidebar from './Sidebar';
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>('');
@@ -49,7 +48,6 @@ const LoginForm = () => {
 
   return (
     <div className="login-component-container">
-      <Sidebar />
       <div className="login-container">
         <div className="login-container__img-container"></div>
         <div className="login-container__form-container">

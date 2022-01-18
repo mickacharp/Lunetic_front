@@ -1,3 +1,5 @@
+// FONTS
+
 @mixin fontPlayfairItalic {
   font-family: $playfair;
   font-weight: 700;
@@ -19,4 +21,18 @@
 @mixin fontMontserrat {
   font-family: $montserrat;
   font-weight: 300;
+}
+
+// INPUT
+
+@mixin closeTopRight {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+@mixin ButtonBottomRight {
+  position: absolute;
+  bottom: 4%;
+  right: 5%;
 }
