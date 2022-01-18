@@ -1,14 +1,18 @@
-$widthInfo: 55%;
+// Local SCSS variables
+$widthInfo: 60%;
 $widthStore: calc(100% - $widthInfo);
-$heightInfoImg: 50%;
-$heightInfoTexts: calc((100% - $heightInfoImg) / 3);
+$heightStoreName: 20%;
+$heightInfoTexts: calc((100% - $heightStoreName) / 3);
+$heightInfoImg: calc(100% - $heightStoreName);
 
+// Component main container
 .profile-component-container {
   width: 80%;
   margin: auto;
   padding-top: 100px;
 }
 
+// Message when user is not connected
 .please-connect {
   padding-top: calc(25% - 50px);
   padding-left: 25%;
@@ -16,15 +20,35 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
   font-family: $fontParagraph;
 }
 
+// "Modal" container
 .optician-profile {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 80vh;
   position: relative;
   box-shadow: rgb(200, 203, 209) 5px 5px 20px;
   top: 3vh;
 
-  &__info {
+  &__store-name {
+    @include flexCenter;
+    height: $heightStoreName;
+    h1 {
+      font-family: $playfair;
+      font-size: 4em;
+      text-align: center;
+    }
+  }
+
+  // contains all info but store-name
+  &__data-container {
+    display: flex;
+    width: 95%;
+    height: 70%;
+  }
+
+  // contains all textual info (i.e. left container of the profile)
+  &__info-texts-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -33,62 +57,58 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     margin: auto;
   }
 
-  &__info-img-container {
-    @include flexCenter;
-    height: $heightInfoImg;
-  }
-
-  &__info-img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-  }
-
   &__info-icons {
     height: 80%;
     margin-left: 15%;
   }
 
-  &__info-containers {
+  &__info-subcontainers {
     display: flex;
     align-items: center;
     height: $heightInfoTexts;
     p {
       font-size: 1.3em;
       margin-left: 5%;
-      line-height: 1.8rem;
-      font-family: 'FuturaPT', sans-serif;
+      line-height: 2rem;
       font-weight: bold;
+      letter-spacing: 1px;
     }
   }
 
-  &__store {
+  // contains the profile picture and its container (i.e. right container of the profile)
+  &__info-img-container {
     @include flexCenter;
     flex-direction: column;
     width: $widthStore;
     position: relative;
   }
 
+  &__profile-picture-container {
+    @include flexCenter;
+    flex-direction: column;
+    height: $heightInfoImg;
+  }
+
+  &__profile-picture {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__profile-picture-container,
+  &__profile-picture {
+    border-radius: $borderRadiusButton;
+  }
+
+  // Top-right closing button "FERMER"
   &__close {
     @include closeTopRight;
-    font-family: $fontParagraph;
     font-size: 1em;
     letter-spacing: 3px;
     cursor: pointer;
   }
 
-  &__store-img {
-    width: 60%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  &__store-name {
-    font-family: $playfair;
-    font-size: 2.5em;
-    text-align: center;
-  }
-
+  // Edit-Validate-DropChanges buttons
   &__edit {
     @include ButtonBottomRight;
     font-family: $fontButton;
@@ -99,10 +119,43 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     padding: 10px 20px;
     cursor: pointer;
   }
+
+  // SaveChanges button
+  &__save-changes {
+    position: absolute;
+    bottom: 4%;
+    right: 25%;
+    font-family: $fontButton;
+    border: none;
+    border-radius: $borderRadiusButton;
+    background: #23794e;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
 }
 
+p {
+  font-family: $fontParagraph;
+}
+
+// Horizontal separators of info-texts subcontainers
 hr {
   width: 80%;
   margin: auto;
   border: solid 1px $greyF3;
+}
+
+input[type='text'] {
+  border: $beige solid 1px;
+  border-radius: $borderRadiusButton;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: $fontParagraph;
+  font-size: 0.8em;
+  transition: 0.3s;
+  &:hover {
+    background-color: $beige;
+    border: $red solid 1px;
+  }
 }

@@ -41,18 +41,6 @@ $greyD9: #d9d9d9;
 
 $borderRadiusButton: 5px;
 
-@mixin closeTopRight {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-}
-
-@mixin ButtonBottomRight {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-}
-
 // DISPLAY
 
 @mixin flexCenter {
