@@ -53,7 +53,7 @@ const OpticianProfile = () => {
 
   const updateOptician = () => {
     axios.put(
-      `http://localhost:7000/api/opticians/${idOptician}`,
+      `http://localhost:4000/api/opticians/${idOptician}`,
       {
         company: newCompany,
         address: newAddress,
