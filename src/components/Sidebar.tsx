@@ -12,14 +12,17 @@ const Sidebar = () => {
   const { idOptician } = useContext(CurrentOpticianContext);
   const { scroll, setScroll, test, numberDiv2, numberDiv3, numberDiv4 } =
     useContext(PositionYContext);
-  console.log(scroll);
+
   return (
     <div className="sidebar">
-      <div className="sidebar__letter">
-        <div className="sidebar__box">
-          <img src={letter} alt="letter" />
+      <Link to="/contact">
+        <div className="sidebar__letter">
+          <div className="sidebar__box">
+            <img src={letter} alt="letter" />
+          </div>
         </div>
-      </div>
+      </Link>
+
       <Link to={idOptician == 0 ? '/login' : '/optician-profile'}>
         <div className="sidebar__profil">
           <div className="sidebar__box">

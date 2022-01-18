@@ -1,8 +1,6 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-
 import React, { useContext, useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-
 import gout from '../assets/gout-little.png';
 import CarouselGlasses from './CarouselGlasses';
 import Maps from './Maps';
@@ -10,7 +8,7 @@ import WhatIsLunetic from './WhatIsLunetic';
 import PositionYContext from '../contexts/PositionY';
 
 const Home = () => {
-  const { setNumberDiv1, setTest } = useContext(PositionYContext);
+  const { setNumberDiv1 } = useContext(PositionYContext);
 
   return (
     <>
@@ -33,16 +31,16 @@ const Home = () => {
               showIndicators={false}
               renderArrowPrev={(clickHandler) => {
                 return (
-                  <span onClick={clickHandler} onKeyDown={clickHandler} role="button">
+                  <button onClick={clickHandler} onKeyDown={clickHandler}>
                     <div className="left-arrow" />
-                  </span>
+                  </button>
                 );
               }}
               renderArrowNext={(clickHandler) => {
                 return (
-                  <span onClick={clickHandler} onKeyDown={clickHandler} role="button">
+                  <button onClick={clickHandler} onKeyDown={clickHandler}>
                     <div className="right-arrow" />
-                  </span>
+                  </button>
                 );
               }}>
               <div className="home__carousel-1">
