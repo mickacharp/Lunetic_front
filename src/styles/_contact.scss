@@ -4,9 +4,9 @@
   grid-template-rows: 1fr 1fr 2fr 3fr;
   width: 80%;
   margin: auto;
-  padding-top: 100px;
   height: 80vh;
   position: relative;
+  top: 8em;
   box-shadow: rgb(200, 203, 209) 5px 5px 20px;
 
   &__close {
