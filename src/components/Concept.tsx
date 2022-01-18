@@ -1,7 +1,8 @@
 import React from 'react';
 
+import baskFlag from '../assets/baskFlag.jpg';
 import visuelConcept from '../assets/concept_image2.png';
-import conceptPicLunettes from '../assets/concept_Lunettes.png';
+import scanPics from '../assets/concept_scanPics.png';
 import conceptBottomVisual from '../assets/concept_visuel_bas.png';
 import orangeLine from '../assets/ligne_orange.png';
 import greyLineMedium from '../assets/moyen-trait-gris.png';
@@ -9,9 +10,6 @@ import greyCircleLittle from '../assets/petit-cercle-gris.png';
 import greyLineLittle from '../assets/petit-trait-gris.png';
 import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
 import greyLineVertical from '../assets/trait-vertical-gris.png';
-import scanPics from '../assets/concept_scanPics.png';
-import baskFlag from '../assets/baskFlag.jpg';
-
 import conceptVideo1 from '../videos/video-1.mp4';
 
 const Concept = () => {
