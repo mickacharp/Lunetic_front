@@ -14,7 +14,7 @@ import conceptVideo1 from '../videos/video-1.mp4';
 
 const Concept = () => {
   return (
-    <div className="conceptContainer">
+    <div className="conceptContainer" id="1">
       <div className="conceptContainer__mainLogoConcept">
         <img src={logoVisageConcept} alt="Logo visage page concept" />
       </div>
@@ -28,7 +28,7 @@ const Concept = () => {
         En couleur
       </p>
 
-      <div className="conceptContainer__visuelConcept">
+      <div className="conceptContainer__visuelConcept" id="2">
         <img src={visuelConcept} alt="Visuel concept Lunetic" />
       </div>
 
