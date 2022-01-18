@@ -35,6 +35,7 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
   &__info-img-container {
     @include flexCenter;
+    flex-direction: column;
     height: $heightInfoImg;
   }
 
@@ -57,7 +58,6 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
       font-size: 1.3em;
       margin-left: 5%;
       line-height: 1.8rem;
-      font-family: 'FuturaPT', sans-serif;
       font-weight: bold;
     }
   }
@@ -71,7 +71,6 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
 
   &__close {
     @include closeTopRight;
-    font-family: $fontParagraph;
     font-size: 1em;
     letter-spacing: 3px;
     cursor: pointer;
@@ -112,6 +111,10 @@ $heightInfoTexts: calc((100% - $heightInfoImg) / 3);
     padding: 10px 20px;
     cursor: pointer;
   }
+}
+
+p {
+  font-family: $fontParagraph;
 }
 
 hr {

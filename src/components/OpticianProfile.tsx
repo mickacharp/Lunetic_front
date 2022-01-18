@@ -50,7 +50,7 @@ const OpticianProfile = () => {
         .then((results) => results.data)
         .then((data) => setOpticianInfo(data));
     }
-  }, [idOptician, saveEdits]);
+  }, [idOptician, saveEdits, editProfile]);
 
   const updateOptician = () => {
     axios.put(
@@ -66,6 +66,7 @@ const OpticianProfile = () => {
         finess_code: newFinessCode,
         siret: newSiret,
         vat_number: newVatNumber,
+        link_picture: newLinkPicture,
       },
       {
         method: 'PUT',
@@ -91,14 +92,26 @@ const OpticianProfile = () => {
                   alt="profil opticien partenaire Lunetic"
                   className="optician-profile__info-img"
                 />
+                {editProfile && (
+                  <>
+                    <p>Adresse de la nouvelle image :</p>
+                    <input
+                      type="text"
+                      placeholder={`${opticianInfo?.link_picture}`}
+                      onChange={(e) => setNewLinkPicture(e.target.value)}
+                      readOnly={saveEdits ? false : true}
+                    />
+                  </>
+                )}
               </div>
               <hr />
               <h1 className="optician-profile__store-name">
-                {editProfile && saveEdits ? (
+                {editProfile ? (
                   <input
                     type="text"
                     placeholder={`${opticianInfo?.company}`}
                     onChange={(e) => setNewCompany(e.target.value)}
+                    readOnly={saveEdits ? false : true}
                   />
                 ) : (
                   opticianInfo?.company
@@ -123,32 +136,35 @@ const OpticianProfile = () => {
                 />
                 <p>
                   Adresse :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.address}`}
                       onChange={(e) => setNewAddress(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.address
                   )}
                   <br />
                   Ville :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.city}`}
                       onChange={(e) => setNewCity(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.city
                   )}
                   ,{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.postal_code}`}
                       onChange={(e) => setNewPostalCode(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.postal_code
@@ -165,33 +181,36 @@ const OpticianProfile = () => {
                 />
                 <p>
                   Email :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.email}`}
                       onChange={(e) => setNewEmail(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.email
                   )}
                   <br />
                   Fixe :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.home_phone}`}
                       onChange={(e) => setNewHomePhone(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.home_phone
                   )}
                   <br />
                   Mobile :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.mobile_phone}`}
                       onChange={(e) => setNewMobilePhone(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.mobile_phone
@@ -207,33 +226,36 @@ const OpticianProfile = () => {
                 />
                 <p>
                   Code FINESS :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.finess_code}`}
                       onChange={(e) => setNewFinessCode(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.finess_code
                   )}
                   <br />
                   SIRET :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.siret}`}
                       onChange={(e) => setNewSiret(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.siret
                   )}
                   <br />
                   Num TVA :{' '}
-                  {editProfile && saveEdits ? (
+                  {editProfile ? (
                     <input
                       type="text"
                       placeholder={`${opticianInfo?.vat_number}`}
                       onChange={(e) => setNewVatNumber(e.target.value)}
+                      readOnly={saveEdits ? false : true}
                     />
                   ) : (
                     opticianInfo?.vat_number
@@ -263,7 +285,8 @@ const OpticianProfile = () => {
                   !newMobilePhone &&
                   !newFinessCode &&
                   !newSiret &&
-                  !newVatNumber ? (
+                  !newVatNumber &&
+                  !newLinkPicture ? (
                     ''
                   ) : (
                     <input
