@@ -1,9 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
+
 import glasses from '../assets/LUNETTE_03_ARTHUR.png';
+import PositionYContext from '../contexts/PositionY';
 import video from '../videos/video-1.mp4';
 
 const CarouselGlasses = () => {
   const [checked, setChecked] = useState(true);
+  const { setNumberDiv3, setNumberDiv4 } = useContext(PositionYContext);
   document.addEventListener('DOMContentLoaded', function () {
     const checkedInput = document.getElementById('s2') as HTMLInputElement;
     setChecked(checkedInput.checked);
@@ -46,8 +49,14 @@ const CarouselGlasses = () => {
       <div className="carouselGlasses__grey-points" />
       <div className="carouselGlasses__little-grey-circle" />
       <div className="carouselGlasses__grey-quotes" />
-      <div className="carouselGlasses__little-grey-line" />
-      <div className="carouselGlasses__little-grey-circle--2" />
+      <div
+        className="carouselGlasses__little-grey-line"
+        ref={(el) => {
+          if (!el) return;
+          setNumberDiv3(el.getBoundingClientRect().top);
+        }}
+      />
+      <div className="carouselGlasses__little-grey-circle--2" id="4" />
     </div>
   );
 };
