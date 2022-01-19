@@ -1,6 +1,11 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+<<<<<<< HEAD
 import React, { useContext, useState } from 'react';
 
+=======
+import axios from 'axios';
+import React, { ReactElement, useEffect, useState, useContext } from 'react';
+>>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
 import apiKey from '../../api.js';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
@@ -10,6 +15,10 @@ import traitVertical from '../assets/trait.png';
 import traitOblique from '../assets/trait-oblique-gris.png';
 import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
+<<<<<<< HEAD
+=======
+import IOptician from '../interfaces/IOptician';
+>>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
 import PositionYContext from '../contexts/PositionY';
 
 const containerStyle = {
@@ -17,10 +26,7 @@ const containerStyle = {
   height: '100%',
 };
 
-interface ICenter {
-  lat: number;
-  lng: number;
-}
+type Libraries = ('drawing' | 'geometry' | 'localContext' | 'places' | 'visualization')[];
 
 const options = {
   styles: mapsStyles,
@@ -28,24 +34,38 @@ const options = {
   zoomControl: true,
 };
 
+const libraries: Libraries = ['places'];
+
 const Maps = () => {
   const { setNumberDiv4 } = useContext(PositionYContext);
   const [zoom, setZoom] = useState(10);
-  const [center, setCenter] = useState<ICenter>({
+  const [center, setCenter] = useState<google.maps.LatLngLiteral>({
     lat: 43.46352270882575,
     lng: -1.511119064793627,
   });
 
-  const panTo: Function = (lat: number, lng: number) => {
-    setCenter({ lat, lng });
+  const panTo: Function = (latLng: google.maps.LatLngLiteral) => {
+    setCenter(latLng);
     setZoom(13);
   };
 
   const { isLoaded } = useJsApiLoader({
     id: 'lunetic',
     googleMapsApiKey: apiKey,
-    libraries: ['places'],
+    libraries: libraries,
   });
+
+  const [opticiansInfos, setOpticiansInfos] = useState<Array<IOptician>>();
+
+  useEffect(() => {
+    axios
+      .get<IOptician[]>(`http://localhost:4000/api/opticians/`)
+      .then((results) => results.data)
+      .then((data) => {
+        console.log(data);
+        setOpticiansInfos(data);
+      });
+  }, []);
 
   return isLoaded ? (
     <div className="section_ou_nous_trouver">
@@ -100,26 +120,19 @@ const Maps = () => {
           options={options}>
           {/* Child components, such as markers, info windows, etc. */}
           <div>
-            {
-              <Marker
-                position={{
-                  lat: 43.46352270882575,
-                  lng: -1.511119064793627,
-                }}
-                /* icon={{
-                  url: '../assets/gout.png',
-                  scaledSize: new window.google.maps.Size(30, 30),
-                }} */
-              />
-            }
-            {
-              <Marker
-                position={{
-                  lat: 43.488885840253936,
-                  lng: -1.4927173468971295,
-                }}
-              />
-            }
+            {opticiansInfos &&
+              opticiansInfos.map((geocode, index: number) => {
+                //console.log(geocode.lat, ',', geocode.lng);
+                return (
+                  <Marker
+                    key={index}
+                    position={{
+                      lat: Number(geocode.lat),
+                      lng: Number(geocode.lng),
+                    }}
+                  />
+                );
+              })}
           </div>
         </GoogleMap>
         <div className="section_ou_nous_trouver__child1"></div>
