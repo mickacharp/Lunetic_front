@@ -1,11 +1,6 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-<<<<<<< HEAD
-import React, { useContext, useState } from 'react';
-
-=======
 import axios from 'axios';
 import React, { ReactElement, useEffect, useState, useContext } from 'react';
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
 import apiKey from '../../api.js';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
@@ -15,10 +10,7 @@ import traitVertical from '../assets/trait.png';
 import traitOblique from '../assets/trait-oblique-gris.png';
 import mapsStyles from '../mapsStyle';
 import SearchBarMaps from './SearchBarMaps';
-<<<<<<< HEAD
-=======
 import IOptician from '../interfaces/IOptician';
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
 import PositionYContext from '../contexts/PositionY';
 
 const containerStyle = {

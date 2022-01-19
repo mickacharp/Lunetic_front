@@ -51,14 +51,9 @@ const Concept = () => {
           utilisons des matériaux biosourcés.
         </p>
 
-<<<<<<< HEAD
-      <div className="conceptContainer__orangeLine1" id="3">
-        <img src={orangeLine} alt="Ligne orange" />
-=======
         <div className="conceptContainer__baskFlag">
           <img src={baskFlag} alt="Drapeau basque" />{' '}
         </div>
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
       </div>
 
       <div className="conceptContainer__orangeLine1">
@@ -90,19 +85,10 @@ const Concept = () => {
         </p>
       </div>
 
-<<<<<<< HEAD
-      <div className="conceptContainer__orangeLine3">
-        <img src={orangeLine} alt="Ligne orange" />
-      </div>
-
-      <div className="conceptContainer__conceptVideo" id="4">
-        {/* <ReactPlayer url={conceptVideo2} /> */}
-=======
       <div className="conceptContainer__conceptVideo">
         <video controls height="100%" width="100%">
           <source src={conceptVideo1} type="video/mp4" />
         </video>
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
       </div>
 
       <p className="conceptContainer__catchphrase">

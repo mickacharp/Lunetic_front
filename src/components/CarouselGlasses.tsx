@@ -6,11 +6,7 @@ import video from '../videos/video-1.mp4';
 
 const CarouselGlasses = () => {
   const [checked, setChecked] = useState(true);
-<<<<<<< HEAD
-  const { setNumberDiv3, setNumberDiv4 } = useContext(PositionYContext);
-=======
   const { setNumberDiv3 } = useContext(PositionYContext);
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
   document.addEventListener('DOMContentLoaded', function () {
     const checkedInput = document.getElementById('s2') as HTMLInputElement;
     setChecked(checkedInput.checked);

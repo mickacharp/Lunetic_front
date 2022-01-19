@@ -1,8 +1,4 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-<<<<<<< HEAD
-
-=======
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
 import React, { useContext, useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 
@@ -13,11 +9,7 @@ import WhatIsLunetic from './WhatIsLunetic';
 import PositionYContext from '../contexts/PositionY';
 
 const Home = () => {
-<<<<<<< HEAD
-  const { setNumberDiv1, setTest } = useContext(PositionYContext);
-=======
   const { setNumberDiv1 } = useContext(PositionYContext);
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
 
   return (
     <>

@@ -12,14 +12,6 @@ const Sidebar = () => {
   const { idOptician } = useContext(CurrentOpticianContext);
   const { scroll, setScroll, test, numberDiv2, numberDiv3, numberDiv4 } =
     useContext(PositionYContext);
-<<<<<<< HEAD
-  console.log(scroll);
-  return (
-    <div className="sidebar">
-      <div className="sidebar__letter">
-        <div className="sidebar__box">
-          <img src={letter} alt="letter" />
-=======
 
   return (
     <div className="sidebar">
@@ -28,7 +20,6 @@ const Sidebar = () => {
           <div className="sidebar__box">
             <img src={letter} alt="letter" />
           </div>
->>>>>>> 54657e93b1fb44327507eb8966fad183ab6a3cbf
         </div>
       </Link>
 
