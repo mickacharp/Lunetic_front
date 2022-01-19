@@ -54,7 +54,6 @@ const Maps = () => {
       .get<IOptician[]>(`http://localhost:4000/api/opticians/`)
       .then((results) => results.data)
       .then((data) => {
-        console.log(data);
         setOpticiansInfos(data);
       });
   }, []);
