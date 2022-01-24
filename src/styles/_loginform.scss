@@ -1,4 +1,4 @@
-$widthLeftContainer: 45%;
+$widthLeftContainer: 50%;
 $widthRightContainer: calc(100% - $widthLeftContainer);
 
 .login-component-container {
@@ -31,49 +31,74 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
     width: $widthRightContainer;
     height: 100%;
-
-    > * {
-      margin-bottom: 5%;
+    margin-left: 100px;
+    h1 {
+      margin-bottom: 2%;
+      font-size: 2.5em;
+      letter-spacing: 4px;
     }
 
-    h1 {
-      font-size: 2.5em;
+    #welcome {
+      margin-bottom: 10%;
+      color: rgb(250, 80, 60);
     }
 
     form {
-      width: 50%;
+      width: 70%;
 
       input {
         padding: 15px;
-        border: rgb(24, 24, 24) solid 2px;
+        border: none;
+        border-bottom: solid 1px rgb(5, 215, 245);
         box-sizing: border-box;
-        text-align: center;
-      }
-
-      #login-email {
-        border-bottom: none;
+        font-family: $fontParagraph;
+        font-size: 1em;
+        letter-spacing: 1px;
+        &:focus {
+          outline: none;
+        }
       }
 
       #login-email,
       #login-password {
         width: 100%;
+        border-radius: $borderRadiusButton $borderRadiusButton 0 0;
+        &::placeholder {
+          color: $greyNavbar;
+        }
       }
 
       #login-submit {
-        width: 100%;
-        background-color: $blackButtons;
+        width: 40%;
+        padding: 8px 16px;
+        margin-bottom: 10%;
+        border: none;
+        border-radius: $borderRadiusButton;
+        background-color: $red;
         color: white;
-        margin-top: 15px;
+        font-family: $fontButton;
       }
     }
-    input,
+
     p {
       font-size: 1em;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
+    }
+
+    input,
+    #forgot-pswrd {
+      margin-top: 20px;
+    }
+
+    #forgot-pswrd {
+      color: $greyAF;
+      text-align: right;
+    }
+
+    #signup {
+      color: $red;
     }
 
     #login-submit,
@@ -88,13 +113,5 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     position: absolute;
     top: 20px;
     right: 30px;
-  }
-
-  &__sign-up {
-    box-shadow: 0 -3px 0 $greyDB inset;
-    transition: 0.5s;
-    &:hover {
-      box-shadow: 0 -15px 0 $greyDB inset;
-    }
   }
 }
