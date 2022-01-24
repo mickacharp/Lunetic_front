@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
 import Sidebar from './components/Sidebar';
+import ContactForm from './components/ContactForm';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-form" element={<ContactForm />} />
         </Routes>
       </BrowserRouter>
     </>
