@@ -8,8 +8,9 @@ import {
   ComboboxOptionText,
   ComboboxPopover,
 } from '@reach/combobox';
-import React from 'react';
+import React, { useEffect } from 'react';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+import { GoogleMap } from '@react-google-maps/api';
 
 type Props = { panTo: Function };
 
@@ -36,7 +37,6 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
               const results = await getGeocode({ address });
               const { lat, lng } = await getLatLng(results[0]);
               panTo(lat, lng);
-              console.log({ lat, lng });
             } catch (error) {
               console.log('error');
             }
