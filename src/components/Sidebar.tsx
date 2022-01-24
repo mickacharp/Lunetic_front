@@ -8,10 +8,14 @@ import profil from '../assets/profil.png';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import PositionYContext from '../contexts/PositionY';
 
-const Sidebar = () => {
+const Sidebar = ({ anchor }: any) => {
   const { idOptician } = useContext(CurrentOpticianContext);
-  const { scroll, setScroll, test, numberDiv2, numberDiv3, numberDiv4 } =
-    useContext(PositionYContext);
+  const { scroll, setScroll } = useContext(PositionYContext);
+
+  const arrayTest = [];
+  for (let i = 1; i <= anchor; i++) {
+    arrayTest.push(i);
+  }
 
   return (
     <div className="sidebar">
@@ -39,15 +43,19 @@ const Sidebar = () => {
           </div>
         </a>
         <div className="sidebar__container-anchor">
-          <div className={scroll === 1 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
-          <div className={scroll === 2 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
-          <div className={scroll === 3 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
-          <div className={scroll === 4 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
+          {arrayTest.map((el) => (
+            <div
+              key={el}
+              className={scroll === el ? 'sidebar__anchor-orange' : 'sidebar__anchor'}
+            />
+          ))}
         </div>
         <a href={`#${scroll}`}>
           <div
             className="sidebar__arrow-down"
-            onClick={() => (scroll === 4 ? setScroll(4) : setScroll(scroll + 1))}>
+            onClick={() =>
+              scroll === anchor ? setScroll(anchor) : setScroll(scroll + 1)
+            }>
             <img src={arrowDown} alt="arrow-down" />
           </div>
         </a>

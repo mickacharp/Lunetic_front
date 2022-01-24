@@ -16,129 +16,133 @@ import pictoGoutteScan from '../assets/PICTO GOUTTE_SCAN_fond blanc.png';
 import PositionYContext from '../contexts/PositionY';
 import MonturesDetails1 from './MonturesDetails1';
 import MonturesDetails2 from './MonturesDetails2';
+import Sidebar from './Sidebar';
 
 const Montures = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4, numberDiv4, test } =
     useContext(PositionYContext);
 
   return (
-    <div
-      className="montures"
-      id="1"
-      ref={(el) => {
-        if (!el) return;
-        setNumberDiv1(el.getBoundingClientRect().top);
-      }}>
-      <div className="montures__headLunettes1">
-        <img src={lunettesEric} alt="Monture Eric" />
-      </div>
-      <div className="montures__headLunettes2">
-        <img src={lunettesSimon} alt="Monture Simon" />
-      </div>
-      <div className="montures__headLunettes3">
-        <img src={lunettesLilou} alt="Monture Lilou" />
-      </div>
-
-      <div className="montures__headLunettes4">
-        <img src={lunettesArthur} alt="Monture Arthur" />
-      </div>
-
-      <div className="montures__headLunettes5">
-        <img src={lunettesDavid} alt="Monture David" />
-      </div>
-
+    <>
+      <Sidebar anchor={4} />
       <div
-        className="montures__subtitles"
-        id="2"
+        className="montures"
+        id="1"
         ref={(el) => {
           if (!el) return;
-          setNumberDiv2(el.getBoundingClientRect().top);
+          setNumberDiv1(el.getBoundingClientRect().top);
         }}>
-        Nos montures
-      </div>
+        <div className="montures__headLunettes1">
+          <img src={lunettesEric} alt="Monture Eric" />
+        </div>
+        <div className="montures__headLunettes2">
+          <img src={lunettesSimon} alt="Monture Simon" />
+        </div>
+        <div className="montures__headLunettes3">
+          <img src={lunettesLilou} alt="Monture Lilou" />
+        </div>
 
-      <div className="montures__pictoGoutte">
-        <img src={pictoGoutte} alt="Picto goutte" />
-      </div>
+        <div className="montures__headLunettes4">
+          <img src={lunettesArthur} alt="Monture Arthur" />
+        </div>
 
-      <div className="montures__presentationText1">
-        <MonturesDetails1 />
-      </div>
+        <div className="montures__headLunettes5">
+          <img src={lunettesDavid} alt="Monture David" />
+        </div>
 
-      <div className="montures__presentationText2">
-        <MonturesDetails2 />
-      </div>
+        <div
+          className="montures__subtitles"
+          id="2"
+          ref={(el) => {
+            if (!el) return;
+            setNumberDiv2(el.getBoundingClientRect().top);
+          }}>
+          Nos montures
+        </div>
 
-      <div className="montures__lunettesPresentation1">
-        <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
-      </div>
+        <div className="montures__pictoGoutte">
+          <img src={pictoGoutte} alt="Picto goutte" />
+        </div>
 
-      <div className="montures__lunettesCenter1">
-        <img src={lunettesSimon} alt="Monture Simon" />
-      </div>
-
-      <div className="montures__lunettesPresentation2">
-        <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
-      </div>
-
-      <div className="montures__presentation3">
-        <div className="montures__presentationText3" id="3">
+        <div className="montures__presentationText1">
           <MonturesDetails1 />
         </div>
 
-        <div className="montures__pictoGoutteScan">
-          <img src={pictoGoutteScan} alt="Picto goutte scan" />
+        <div className="montures__presentationText2">
+          <MonturesDetails2 />
         </div>
-      </div>
 
-      <div className="montures__lunettesCenter2">
-        <img src={MonturesProfilNoir1} alt="Monture centre 2" />
-      </div>
+        <div className="montures__lunettesPresentation1">
+          <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
+        </div>
 
-      <div
-        className="montures__presentationText4"
-        ref={(el) => {
-          if (!el) return;
-          setNumberDiv3(el.getBoundingClientRect().top);
-        }}>
-        <MonturesDetails2 />
-      </div>
+        <div className="montures__lunettesCenter1">
+          <img src={lunettesSimon} alt="Monture Simon" />
+        </div>
 
-      <div className="montures__subtitlesStart" id="4">
-        START SHOPPING NOW
-      </div>
+        <div className="montures__lunettesPresentation2">
+          <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
+        </div>
 
-      <div className="montures__presentationText5">
-        <MonturesDetails2 />
-      </div>
+        <div className="montures__presentation3">
+          <div className="montures__presentationText3" id="3">
+            <MonturesDetails1 />
+          </div>
 
-      <div className="montures__presentationText6">
-        <MonturesDetails2 />
-      </div>
+          <div className="montures__pictoGoutteScan">
+            <img src={pictoGoutteScan} alt="Picto goutte scan" />
+          </div>
+        </div>
 
-      <div className="montures__presentationText7">
-        <MonturesDetails2 />
-      </div>
+        <div className="montures__lunettesCenter2">
+          <img src={MonturesProfilNoir1} alt="Monture centre 2" />
+        </div>
 
-      <div className="montures__lunettesBottom1">
-        <img src={MonturesDetailBleu} alt="Monture bas 1" />
-      </div>
-
-      <div className="montures__lunettesBottom2">
-        <img src={MonturesDetailGris} alt="Monture bas 2" />
-      </div>
-
-      <div className="montures__lunettesBottom3">
-        <img
-          src={MonturesDetailRouge}
-          alt="Monture bas 3"
+        <div
+          className="montures__presentationText4"
           ref={(el) => {
             if (!el) return;
-            setNumberDiv4(el.getBoundingClientRect().top + 4000);
-          }}
-        />
+            setNumberDiv3(el.getBoundingClientRect().top);
+          }}>
+          <MonturesDetails2 />
+        </div>
+
+        <div className="montures__subtitlesStart" id="4">
+          START SHOPPING NOW
+        </div>
+
+        <div className="montures__presentationText5">
+          <MonturesDetails2 />
+        </div>
+
+        <div className="montures__presentationText6">
+          <MonturesDetails2 />
+        </div>
+
+        <div className="montures__presentationText7">
+          <MonturesDetails2 />
+        </div>
+
+        <div className="montures__lunettesBottom1">
+          <img src={MonturesDetailBleu} alt="Monture bas 1" />
+        </div>
+
+        <div className="montures__lunettesBottom2">
+          <img src={MonturesDetailGris} alt="Monture bas 2" />
+        </div>
+
+        <div className="montures__lunettesBottom3">
+          <img
+            src={MonturesDetailRouge}
+            alt="Monture bas 3"
+            ref={(el) => {
+              if (!el) return;
+              setNumberDiv4(el.getBoundingClientRect().top + 4000);
+            }}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

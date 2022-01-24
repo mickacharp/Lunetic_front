@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../assets/LUNETIC.png';
+import PositionYContext from '../contexts/PositionY';
 
 const Navbar = () => {
-  // const handleEvent = () => {
-  //   console.log(window.scrollY);
-  // };
-  // window.addEventListener('scroll', handleEvent);
+  const { setSpecial } = useContext(PositionYContext);
 
   return (
     <div className="navbar">
@@ -19,28 +17,28 @@ const Navbar = () => {
       <div className="navbar__container">
         <div className="navbar__menu">
           <ul>
-            <Link to="/">
+            <Link to="/" onClick={() => setSpecial(false)}>
               <li>Home</li>
             </Link>
-            <Link to="/montures">
+            <Link to="/montures" onClick={() => setSpecial(false)}>
               <li>Montures</li>
             </Link>
-            <Link to="/catalogue">
+            <Link to="/catalogue" onClick={() => setSpecial(true)}>
               <li>Catalogue</li>
             </Link>
-            <Link to="/opticians">
+            <Link to="/opticians" onClick={() => setSpecial(false)}>
               <li>Opticiens</li>
             </Link>
-            <Link to="/concept">
+            <Link to="/concept" onClick={() => setSpecial(false)}>
               <li>Concept</li>
             </Link>
-            <Link to="/us">
+            <Link to="/us" onClick={() => setSpecial(false)}>
               <li>Nous</li>
             </Link>
-            <Link to="/find-us">
+            <Link to="/find-us" onClick={() => setSpecial(false)}>
               <li>Où nous trouver</li>
             </Link>
-            <Link to="/news">
+            <Link to="/news" onClick={() => setSpecial(false)}>
               <li>News</li>
             </Link>
           </ul>
