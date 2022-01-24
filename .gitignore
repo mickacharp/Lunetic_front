@@ -4,12 +4,9 @@ dist
 dist-ssr
 *.local
 node_modules/*
-<<<<<<< HEAD
 api.ts
 *.js
-=======
 *.css
 *.css.map
 src/styles/*.css
 src/styles/*.css.map
->>>>>>> 34987dadb87eeb308e5ed64a7f112e223d84ff67
