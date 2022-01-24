@@ -83,7 +83,7 @@
   &__subtitles {
     grid-column: 2;
     grid-row: 3;
-    font-size: 6em;
+    font-size: 5.6rem;
     text-align: center;
     @include fontPlayfairTitles;
   }
@@ -151,12 +151,11 @@
   &__presentation3 {
     display: flex;
     flex-direction: column;
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 7;
     align-items: center;
-    position: relative;
-    left: -20%;
-    top: -10%;
+    margin-left: 63em;
+    margin-top: -5em;
   }
 
   &__presentationText3 {
@@ -166,7 +165,7 @@
 
   &__pictoGoutteScan {
     img {
-      height: 75%;
+      height: 65%;
       text-align: center;
     }
   }
