@@ -16,4 +16,6 @@ export default interface IOptician {
   siret: string;
   vat_number: string;
   link_picture: string;
+  lat: number;
+  lng: number;
 }

@@ -21,7 +21,7 @@ const LoginForm = () => {
     e.preventDefault();
     axios
       .post<IOptician>(
-        'http://localhost:7000/api/login',
+        'http://localhost:4000/api/login',
         { email, password },
         {
           method: 'POST',
@@ -54,13 +54,13 @@ const LoginForm = () => {
           <p id="close" className="login-container__close">
             FERMER
           </p>
-          <p>DÉJÀ INSCRIT ?</p>
-          <h1>Se connecter avec une adresse email</h1>
+          <h1>OPTICIEN & LUNETIC</h1>
+          <p id="welcome">Bienvenue sur le site Lunetic</p>
           <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => login(e)}>
             <input
               type="email"
               id="login-email"
-              placeholder="EMAIL"
+              placeholder="Email"
               onChange={(e: React.FormEvent<HTMLInputElement>) =>
                 setEmail(e.currentTarget.value)
               }
@@ -69,19 +69,18 @@ const LoginForm = () => {
             <input
               type="password"
               id="login-password"
-              placeholder="MOT DE PASSE"
+              placeholder="Mot de passe"
               onChange={(e: React.FormEvent<HTMLInputElement>) =>
                 setPassword(e.currentTarget.value)
               }
               value={password}
             />
             <br />
-            <input type="submit" value="SE CONNECTER" id="login-submit" />
+            <p id="forgot-pswrd">Mot de passe oublié ?</p>
+            <input type="submit" value="Valider" id="login-submit" />
             {errorMessage && <span>{errorMessage}</span>}
           </form>
-          <p id="forgot-pswrd">MOT DE PASSE OUBLIÉ ?</p>
-          <h1>Pas encore inscrit ?</h1>
-          <p id="signup">JE M&apos;INSCRIS</p>
+          <p id="signup">Créer un compte</p>
         </div>
       </div>
     </div>
