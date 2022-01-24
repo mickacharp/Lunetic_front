@@ -9,8 +9,8 @@ import WhatIsLunetic from './WhatIsLunetic';
 import PositionYContext from '../contexts/PositionY';
 
 const Home = () => {
-  const { setNumberDiv1 } = useContext(PositionYContext);
-
+  const { setNumberDiv1, numberDiv2 } = useContext(PositionYContext);
+  console.log(numberDiv2 + ' fraise');
   return (
     <>
       <div

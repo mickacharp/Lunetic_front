@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import MonturesDetailBleu from '../assets/DETAIL_1_LUNETTE_4_BLEU.png';
 import MonturesDetailGris from '../assets/DETAIL_1_LUNETTE_5_GRIS.png';
@@ -13,12 +13,22 @@ import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import lunettesDavid from '../assets/LUNETTE_04_DAVID.png';
 import lunettesLilou from '../assets/LUNETTE_06_LILOU.png';
 import pictoGoutteScan from '../assets/PICTO GOUTTE_SCAN_fond blanc.png';
+import PositionYContext from '../contexts/PositionY';
 import MonturesDetails1 from './MonturesDetails1';
 import MonturesDetails2 from './MonturesDetails2';
 
 const Montures = () => {
+  const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4, numberDiv4, test } =
+    useContext(PositionYContext);
+
   return (
-    <div className="montures">
+    <div
+      className="montures"
+      id="1"
+      ref={(el) => {
+        if (!el) return;
+        setNumberDiv1(el.getBoundingClientRect().top);
+      }}>
       <div className="montures__headLunettes1">
         <img src={lunettesEric} alt="Monture Eric" />
       </div>
@@ -37,7 +47,15 @@ const Montures = () => {
         <img src={lunettesDavid} alt="Monture David" />
       </div>
 
-      <div className="montures__subtitles">Nos montures</div>
+      <div
+        className="montures__subtitles"
+        id="2"
+        ref={(el) => {
+          if (!el) return;
+          setNumberDiv2(el.getBoundingClientRect().top);
+        }}>
+        Nos montures
+      </div>
 
       <div className="montures__pictoGoutte">
         <img src={pictoGoutte} alt="Picto goutte" />
@@ -64,7 +82,7 @@ const Montures = () => {
       </div>
 
       <div className="montures__presentation3">
-        <div className="montures__presentationText3">
+        <div className="montures__presentationText3" id="3">
           <MonturesDetails1 />
         </div>
 
@@ -77,11 +95,18 @@ const Montures = () => {
         <img src={MonturesProfilNoir1} alt="Monture centre 2" />
       </div>
 
-      <div className="montures__presentationText4">
+      <div
+        className="montures__presentationText4"
+        ref={(el) => {
+          if (!el) return;
+          setNumberDiv3(el.getBoundingClientRect().top);
+        }}>
         <MonturesDetails2 />
       </div>
 
-      <div className="montures__subtitlesStart">START SHOPPING NOW</div>
+      <div className="montures__subtitlesStart" id="4">
+        START SHOPPING NOW
+      </div>
 
       <div className="montures__presentationText5">
         <MonturesDetails2 />
@@ -104,7 +129,14 @@ const Montures = () => {
       </div>
 
       <div className="montures__lunettesBottom3">
-        <img src={MonturesDetailRouge} alt="Monture bas 3" />
+        <img
+          src={MonturesDetailRouge}
+          alt="Monture bas 3"
+          ref={(el) => {
+            if (!el) return;
+            setNumberDiv4(el.getBoundingClientRect().top + 4000);
+          }}
+        />
       </div>
     </div>
   );
