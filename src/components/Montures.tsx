@@ -49,44 +49,48 @@ const Montures = () => {
         <div className="montures__headLunettes5">
           <img src={lunettesDavid} alt="Monture David" />
         </div>
+      </div>
+      <div
+        className="montures__subtitles"
+        id="2"
+        ref={(el) => {
+          if (!el) return;
+          setNumberDiv2(el.getBoundingClientRect().top);
+        }}>
+        Nos montures
+      </div>
 
-        <div
-          className="montures__subtitles"
-          id="2"
-          ref={(el) => {
-            if (!el) return;
-            setNumberDiv2(el.getBoundingClientRect().top);
-          }}>
-          Nos montures
-        </div>
+      <div className="montures__pictoGoutte">
+        <img src={pictoGoutte} alt="Picto goutte" />
+      </div>
 
-        <div className="montures__pictoGoutte">
-          <img src={pictoGoutte} alt="Picto goutte" />
-        </div>
+      <div className="montures__presentationText1">
+        <MonturesDetails1
+          text="Nos montures sont fabriquées sur mesure, à la commande.
+          L’ensemble de la collection est imaginée dans notre studio créatif du Sud-ouest par des opticiens designers."
+        />
+      </div>
 
-        <div className="montures__presentationText1">
-          <MonturesDetails1 />
-        </div>
+      <div className="montures__presentationText2">
+        <MonturesDetails2
+          text="Elles sont réalisées en impression 3D, à partir de matériaux biosourcés, issus de Ricin. 
+        Nos chutes de productions sont recyclées dans de futures montures."
+        />
+      </div>
 
-        <div className="montures__presentationText2">
-          <MonturesDetails2 />
-        </div>
+      <div className="montures__lunettesPresentation1">
+        <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
+      </div>
 
-        <div className="montures__lunettesPresentation1">
-          <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
-        </div>
+      <div className="montures__lunettesCenter1">
+        <img src={lunettesSimon} alt="Monture Simon" />
+      </div>
 
-        <div className="montures__lunettesCenter1">
-          <img src={lunettesSimon} alt="Monture Simon" />
-        </div>
-
-        <div className="montures__lunettesPresentation2">
-          <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
-        </div>
-
+      <div className="montures__lunettesPresentation2">
+        <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
         <div className="montures__presentation3">
-          <div className="montures__presentationText3" id="3">
-            <MonturesDetails1 />
+          <div className="montures__presentationText3">
+            <MonturesDetails1 text="Notre première collection « Wake-up » se veut fun et pop pour réveiller notre quotidien." />
           </div>
 
           <div className="montures__pictoGoutteScan">
@@ -104,7 +108,7 @@ const Montures = () => {
             if (!el) return;
             setNumberDiv3(el.getBoundingClientRect().top);
           }}>
-          <MonturesDetails2 />
+          <MonturesDetails2 text="Nous avons conçu une application qui permet de concevoir instantanément une monture unique, redimensionnée au visage du client et adaptée à ses choix.." />
         </div>
 
         <div className="montures__subtitlesStart" id="4">
@@ -112,15 +116,15 @@ const Montures = () => {
         </div>
 
         <div className="montures__presentationText5">
-          <MonturesDetails2 />
+          <MonturesDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old. Richard McClintock, a Latin  professor at Hampden-Sydney College in Virginia." />
         </div>
 
         <div className="montures__presentationText6">
-          <MonturesDetails2 />
+          <MonturesDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old. Richard McClintock, a Latin  professor at Hampden-Sydney College in Virginia." />
         </div>
 
         <div className="montures__presentationText7">
-          <MonturesDetails2 />
+          <MonturesDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old. Richard McClintock, a Latin  professor at Hampden-Sydney College in Virginia." />
         </div>
 
         <div className="montures__lunettesBottom1">
