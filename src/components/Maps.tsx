@@ -98,7 +98,7 @@ const Maps = () => {
         alt="cercle-rouge"
         ref={(el) => {
           if (!el) return;
-          setNumberDiv4(el.getBoundingClientRect().top + 300);
+          setNumberDiv4(el.getBoundingClientRect().top + 1500);
         }}
       />
 

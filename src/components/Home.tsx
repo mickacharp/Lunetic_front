@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar anchor={4} />
+      <Sidebar anchor={5} />
       <div
         className="home"
         id="1"
