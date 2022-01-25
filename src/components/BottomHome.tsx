@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import luneticCity from '../assets/lunetic-city.png';
 import glasses from '../assets/all-glasses.png';
+import PositionYContext from '../contexts/PositionY';
 
 const BottomHome = () => {
+  const { setNumberDiv5 } = useContext(PositionYContext);
+
   return (
-    <div className="bottom-home">
+    <div
+      className="bottom-home"
+      id="5"
+      ref={(el) => {
+        if (!el) return;
+        setNumberDiv5(el.getBoundingClientRect().top + 3000);
+      }}>
       <div className="bottom-home__paragraph-top">
         <p>
           Contrary to popular belief. Lorem Ipsum is not simply
