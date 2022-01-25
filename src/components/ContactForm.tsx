@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ContactFormPro from './ContactFormPro';
 import ContactFormUser from './ContactFormUser';
 
 const ContactForm = () => {
-  const [isPro, setIsPro] = useState<boolean>(true);
+  const [isPro, setIsPro] = useState<boolean>(false);
 
   return (
     <div className="contactform-component-container">
       <div className="contactform-container">
-        <p id="close" className="contactform-container__close">
-          FERMER
-        </p>
+        <Link to="/">
+          <p id="close" className="contactform-container__close">
+            FERMER
+          </p>
+        </Link>
         <h1>CONTACTER LUNETIC</h1>
         <div className="contactform-container__checkbox">
           <input
