@@ -53,7 +53,7 @@ const CarouselGlasses = () => {
         className="carouselGlasses__little-grey-line"
         ref={(el) => {
           if (!el) return;
-          setNumberDiv3(el.getBoundingClientRect().top);
+          setNumberDiv3(el.getBoundingClientRect().top + 800);
         }}
       />
       <div className="carouselGlasses__little-grey-circle--2" id="4" />
