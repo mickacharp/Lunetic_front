@@ -10,6 +10,8 @@ import rectangle1 from '../assets/Rectangle-gris-1.png';
 import rectangle2 from '../assets/Rectangle-gris-2.png';
 import PositionYContext from '../contexts/PositionY';
 import Sidebar from './Sidebar';
+import leVillage from '../assets/le-village.png';
+import partenaires from '../assets/partenaires-lunetic.png';
 
 const Nous = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
@@ -36,11 +38,11 @@ const Nous = () => {
         <img className="nous__rectangle2" src={rectangle2} alt="" />
 
         <div className="nous__subtitles">
-          <h3 className="nous__h3">Hey! We host all events near you!</h3>
+          <h3 className="nous__h3">Des opticiens nouvelle génération !</h3>
           <p className="nous__p">
-            enjoy <br />
+            Optique <br />
             <br />
-            your life
+            Design, Technologie
           </p>
         </div>
 
@@ -54,6 +56,15 @@ const Nous = () => {
             setNumberDiv2(el.getBoundingClientRect().top + 800);
           }}
         />
+        <p className="nous__intro_bio">
+          Nous sommes des opticiens nouvelle génération, à la fois créateurs/designers,
+          fabricants et distributeurs. Nous rassemblons un savoir-faire d’opticien
+          créateur designer et des briques technologiques afin de proposer une expérience
+          d’achat de lunettes inédite et unique, qui s’adapte aux réels besoins des
+          clients et aux nouvelles tendances de consommation. Au travers de cette nouvelle
+          expérience d’achat, nous cherchons également à produire de façon responsable,
+          respectueuse et locale.
+        </p>
         <div
           className="nous__miniBioContainer"
           id="3"
@@ -61,31 +72,37 @@ const Nous = () => {
             if (!el) return;
             setNumberDiv3(el.getBoundingClientRect().top + 2000);
           }}>
-          <p className="nous__bio1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit illo
-            ipsam alias dolor cum eaque exercitationem, odio sint commodi quisquam tempore
-            deserunt iure ex eligendi amet illum, natus deleniti.
+          <p className="nous__bio3">
+            <h3>David Beddok</h3>
+            # 20 ans d’expérience dans l’optique. <br />
+            # Créateurs de 3 marques de lunettes. <br />
+            # A désigné de nombreuses collections de montures (Optique & Solaire). <br />#
+            Lancement de 2 magasins d’optique dont un concept store à Paris.
           </p>
           <p className="nous__bio2">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, exercitationem
-            fuga hic nulla quam quo vel officia eius, excepturi illo delectus. Sed
-            suscipit vel ipsam illum voluptate voluptatibus voluptatum quia.
-          </p>
-          <p className="nous__bio3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur deleniti
-            labore enim doloribus obcaecati! Repellendus, cumque reiciendis fuga inventore
-            cum officia porro, pariatur quo ea deleniti ex ad, et obcaecati.
-          </p>
-          <p className="nous__bio4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rerum explicabo
-            enim beatae ad cum natus laudantium delectus, molestias officiis aliquid sequi
-            architecto eum doloribus modi! Repudiandae nostrum maiores pariatur.
+            <h3>Deborah Beddok</h3># 20 ans d’expérience dans l’innovation digitale.{' '}
+            <br /># A créé et dirigé une joint-venture entre 2 acteurs majeurs de leurs
+            secteurs. <br /> # A créé et dirigé le Lab d’innovation digitale d’un leader
+            européen de la vente à distance. <br /> # Actuellement en charge de l’Open
+            innovation de la filiale française d’un leader mondial de la santé.
           </p>
           <p className="nous__bio5">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam
-            necessitatibus saepe a asperiores dolorem. Facilis iusto excepturi accusamus
-            optio sit pariatur odio quibusdam numquam aut? Aliquam blanditiis cupiditate
-            aperiam suscipit!
+            <h3>Serge Govindin</h3>
+            # 15 ans d’expérience dans le Design produit et industriel. <br /># 6 ans
+            d’expérience dans la fabrication additive. <br /> # A désigné de nombreuses
+            gammes de produits dans l’aménagement ferroviaire et s’est récemment
+            spécialisé dans le design de dispositifs médicaux.
+          </p>
+          <p className="nous__bio4">
+            <h3>Martial Naudin</h3># Spécialisé depuis plus de 20 ans dans le lancement
+            commercial d’offres et de services. <br /> # accompagne des projets ambitieux
+            ainsi que leurs équipes pour définir leurs stratégies et concevoir leurs
+            offres.
+          </p>
+          <p className="nous__bio1">
+            <h3>Eric Tougard</h3>
+            # Créateur de 2 entreprises dans le développement d’application digitales.
+            <br /># spécialisé dans l’intégration de technologie de scan et d’imagerie 3D.
           </p>
         </div>
         <img className="nous__ligne_oblique_1" src={ligneOblique} alt="" />
@@ -105,18 +122,12 @@ const Nous = () => {
         <img src={ellipse} alt="" className="nous__ellipse" />
 
         <div className="nous__partenaires">
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
-          <img src={logo} alt="" className="nous__logo" />
+          <img src={leVillage} alt="le-village" className="nous__logo" />
+          <img
+            src={partenaires}
+            alt="partenaires-lunetic"
+            className="nous__logos_partenaires"
+          />
         </div>
         <img className="nous__ligne_oblique_2" src={ligneOblique} alt="" />
       </div>
