@@ -1,7 +1,7 @@
 import React from 'react';
 import orangeQuotes from '../assets/orange-quotes.png';
 
-const MonturesDetails2 = ({ text }) => {
+const MonturesDetails2 = ({ text }: any) => {
   return (
     <div className="monturesDetails2">
       <div className="monturesDetails2__number2">02</div>
