@@ -4,45 +4,45 @@ const ContactFormUser = () => {
   return (
     <div className="contactformuser-container">
       <form className="contactformuser-container__form">
-        <label htmlFor="contact-firstname">Votre prénom : </label>
+        <label htmlFor="contact-userfirstname">Votre prénom : </label>
         <input
           type="text"
           name="Prénom"
-          id="contact-firstname"
+          id="contact-userfirstname"
           className="contactformuser-container__firstname"
         />
-        <label htmlFor="contact-lastname">Votre nom : </label>
+        <label htmlFor="contact-userlastname">Votre nom : </label>
         <input
           type="text"
           name="Nom"
-          id="contact-lastname"
+          id="contact-userlastname"
           className="contactformuser-container__lastname"
         />
-        <label htmlFor="contact-email">Votre email : </label>
+        <label htmlFor="contact-useremail">Votre email : </label>
         <input
           type="email"
           name="Email"
-          id="contact-email"
+          id="contact-useremail"
           className="contactformuser-container__email"
         />
-        <label htmlFor="contact-phone">Votre numéro de téléphone : </label>
+        <label htmlFor="contact-userphone">Votre numéro de téléphone : </label>
         <input
           type="tel"
           name="Téléphone"
-          id="contact-phone"
+          id="contact-userphone"
           className="contactformuser-container__phone"
         />
-        <label htmlFor="contact-subject">Motif de votre demande : </label>
+        <label htmlFor="contact-usersubject">Motif de votre demande : </label>
         <input
           type="text"
           name="Motif"
-          id="contact-subject"
+          id="contact-usersubject"
           className="contactformuser-container__subject"
         />
-        <label htmlFor="contact-message">Votre message : </label>
+        <label htmlFor="contact-usermessage">Votre message : </label>
         <textarea
           name="Message"
-          id="contact-message"
+          id="contact-usermessage"
           className="contactformuser-container__message"
         />
       </form>
