@@ -89,4 +89,39 @@
     z-index: 25;
     transform: translateY(-100%);
   }
+
+  &__info_window {
+    h4 {
+      padding-top: 1em;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    a {
+      padding-top: 1em;
+    }
+  }
+
+  &__opening_hours {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.gm-style .gm-style-iw-c {
+  h2 {
+    color: $red;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  img {
+    width: 100%;
+  }
+  font-size: 1.2em;
+  box-shadow: none;
+  width: 350px;
+
+  max-height: none;
 }
