@@ -52,8 +52,6 @@ const Maps = () => {
   const [selected, setSelected] = useState<IOptician>();
   const [opticianHours, setOpticianHours] = useState<Array<IOpeningHour>>();
 
-  console.log(selected);
-
   useEffect(() => {
     axios
       .get<IOptician[]>(`http://localhost:4000/api/opticians/`)
@@ -149,8 +147,7 @@ const Maps = () => {
               position={{ lat: Number(selected.lat), lng: Number(selected.lng) }}
               onCloseClick={() => {
                 setSelected(undefined);
-              }}
-              zIndex={10000000}>
+              }}>
               <div className="section_ou_nous_trouver__info_window">
                 <img src={selected.link_picture} width="100px" alt="" />
                 <h2>{selected.company}</h2>
@@ -185,9 +182,9 @@ const Maps = () => {
 
                   <ul>
                     {opticianHours &&
-                      opticianHours.map((hour) => {
+                      opticianHours.map((hour, index: number) => {
                         return (
-                          <li>
+                          <li key={index}>
                             {hour.start_morning} - {hour.end_morning} /{' '}
                             {hour.start_afternoon} {hour.end_afternoon}{' '}
                           </li>
