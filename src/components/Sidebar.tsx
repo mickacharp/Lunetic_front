@@ -1,21 +1,26 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-
+// import { Link } from 'react-router-dom';
 import arrowDown from '../assets/arrow-down.png';
 import arrowUp from '../assets/arrow-up.png';
-import letter from '../assets/letter.png';
-import profil from '../assets/profil.png';
-import CurrentOpticianContext from '../contexts/CurrentOptician';
+// import letter from '../assets/letter.png';
+// import profil from '../assets/profil.png';
+// import CurrentOpticianContext from '../contexts/CurrentOptician';
 import PositionYContext from '../contexts/PositionY';
+import LetterProfil from './LetterProfil';
+import { Link } from 'react-scroll';
 
-const Sidebar = () => {
-  const { idOptician } = useContext(CurrentOpticianContext);
-  const { scroll, setScroll, test, numberDiv2, numberDiv3, numberDiv4 } =
-    useContext(PositionYContext);
+const Sidebar = ({ anchor }: any) => {
+  // const { idOptician } = useContext(CurrentOpticianContext);
+  const { scroll, setScroll } = useContext(PositionYContext);
+
+  const arrayTest = [];
+  for (let i = 1; i <= anchor; i++) {
+    arrayTest.push(i);
+  }
 
   return (
     <div className="sidebar">
-      <Link to="/contact">
+      {/* <Link to="/contact">
         <div className="sidebar__letter">
           <div className="sidebar__box">
             <img src={letter} alt="letter" />
@@ -29,28 +34,35 @@ const Sidebar = () => {
             <img src={profil} alt="profil" />
           </div>
         </div>
-      </Link>
+      </Link> */}
+      <LetterProfil />
       <div className="sidebar__navigation">
-        <a href={`#${scroll}`}>
-          <div
-            className="sidebar__arrow-up"
-            onClick={() => (scroll === 1 ? setScroll(1) : setScroll(scroll - 1))}>
+        <Link
+          to={`${scroll - 1}`}
+          smooth={true}
+          duration={1000}
+          onClick={() => (scroll === 1 ? setScroll(1) : setScroll(scroll - 1))}>
+          <div className="sidebar__arrow-up">
             <img src={arrowUp} alt="arrow-up" />
           </div>
-        </a>
+        </Link>
         <div className="sidebar__container-anchor">
-          <div className={scroll === 1 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
-          <div className={scroll === 2 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
-          <div className={scroll === 3 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
-          <div className={scroll === 4 ? 'sidebar__anchor-orange' : 'sidebar__anchor'} />
+          {arrayTest.map((el) => (
+            <div
+              key={el}
+              className={scroll === el ? 'sidebar__anchor-orange' : 'sidebar__anchor'}
+            />
+          ))}
         </div>
-        <a href={`#${scroll}`}>
-          <div
-            className="sidebar__arrow-down"
-            onClick={() => (scroll === 4 ? setScroll(4) : setScroll(scroll + 1))}>
+        <Link
+          to={`${scroll + 1}`}
+          smooth={true}
+          duration={1000}
+          onClick={() => (scroll === anchor ? setScroll(anchor) : setScroll(scroll + 1))}>
+          <div className="sidebar__arrow-down">
             <img src={arrowDown} alt="arrow-down" />
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

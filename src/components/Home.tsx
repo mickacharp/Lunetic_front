@@ -1,17 +1,20 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import React, { useContext, useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+
 import gout from '../assets/gout-little.png';
 import CarouselGlasses from './CarouselGlasses';
 import Maps from './Maps';
 import WhatIsLunetic from './WhatIsLunetic';
 import PositionYContext from '../contexts/PositionY';
+import Sidebar from './Sidebar';
 
 const Home = () => {
   const { setNumberDiv1 } = useContext(PositionYContext);
 
   return (
     <>
+      <Sidebar anchor={4} />
       <div
         className="home"
         id="1"

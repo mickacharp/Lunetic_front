@@ -4,20 +4,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
 import Montures from './components/Montures';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
-import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Navbar />
-        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/montures" element={<Montures />} />
@@ -31,6 +30,7 @@ const App = () => {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

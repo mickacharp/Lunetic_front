@@ -1,0 +1,79 @@
+.footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+
+  &__logo {
+    height: 30px;
+    width: 110px;
+    padding-left: 5%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 5%;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    font-family: $fontParagraph;
+
+    li {
+      margin-right: 10%;
+      cursor: pointer;
+    }
+  }
+
+  &__networks {
+    display: flex;
+
+    & > * {
+      height: auto;
+      width: 30px;
+      cursor: pointer;
+    }
+  }
+
+  &__facebook {
+    background-image: url('../assets/facebook.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 2vw;
+
+    &:hover {
+      background-image: url('../assets/facebook-blue.png');
+    }
+  }
+
+  &__twitter {
+    background-image: url('../assets/twitter.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 2vw;
+
+    &:hover {
+      background-image: url('../assets/twitter-blue.png');
+    }
+  }
+
+  &__instagram {
+    background-image: url('../assets/instagram.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url('../assets//instagram-color.png');
+    }
+  }
+}
