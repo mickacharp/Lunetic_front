@@ -15,7 +15,7 @@ import IOpeningHour from '../interfaces/IOpeningHour';
 import PositionYContext from '../contexts/PositionY';
 
 const containerStyle = {
-  width: '100vw',
+  width: '100%',
   height: '100%',
 };
 
