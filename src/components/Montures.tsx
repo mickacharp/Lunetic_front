@@ -19,7 +19,7 @@ import MonturesDetails2 from './MonturesDetails2';
 import Sidebar from './Sidebar';
 
 const Montures = () => {
-  const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4, numberDiv4, test } =
+  const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
     useContext(PositionYContext);
 
   return (
@@ -49,46 +49,48 @@ const Montures = () => {
         <div className="montures__headLunettes5">
           <img src={lunettesDavid} alt="Monture David" />
         </div>
-      </div>
-      <div
-        className="montures__subtitles"
-        id="2"
-        ref={(el) => {
-          if (!el) return;
-          setNumberDiv2(el.getBoundingClientRect().top);
-        }}>
-        Nos montures
-      </div>
 
-      <div className="montures__pictoGoutte">
-        <img src={pictoGoutte} alt="Picto goutte" />
-      </div>
+        <div
+          className="montures__subtitles"
+          id="2"
+          ref={(el) => {
+            if (!el) return;
+            setNumberDiv2(el.getBoundingClientRect().top);
+          }}>
+          Nos montures
+        </div>
 
-      <div className="montures__presentationText1">
-        <MonturesDetails1
-          text="Nos montures sont fabriquées sur mesure, à la commande.
+        <div className="montures__pictoGoutte">
+          <img src={pictoGoutte} alt="Picto goutte" />
+        </div>
+
+        <div className="montures__presentationText1">
+          <MonturesDetails1
+            text="Nos montures sont fabriquées sur mesure, à la commande.
           L’ensemble de la collection est imaginée dans notre studio créatif du Sud-ouest par des opticiens designers."
-        />
-      </div>
+          />
+        </div>
 
-      <div className="montures__presentationText2">
-        <MonturesDetails2
-          text="Elles sont réalisées en impression 3D, à partir de matériaux biosourcés, issus de Ricin. 
+        <div className="montures__presentationText2">
+          <MonturesDetails2
+            text="Elles sont réalisées en impression 3D, à partir de matériaux biosourcés, issus de Ricin. 
         Nos chutes de productions sont recyclées dans de futures montures."
-        />
-      </div>
+          />
+        </div>
 
-      <div className="montures__lunettesPresentation1">
-        <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
-      </div>
+        <div className="montures__lunettesPresentation1">
+          <img src={lunettesPresentation1} alt="Lunettes présentation 1" />
+        </div>
 
-      <div className="montures__lunettesCenter1">
-        <img src={lunettesSimon} alt="Monture Simon" />
-      </div>
+        <div className="montures__lunettesCenter1">
+          <img src={lunettesSimon} alt="Monture Simon" />
+        </div>
 
-      <div className="montures__lunettesPresentation2">
-        <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
-        <div className="montures__presentation3">
+        <div className="montures__lunettesPresentation2">
+          <img src={MonturesProfilRouge1} alt="Lunettes présentation 2" />
+        </div>
+
+        <div className="montures__presentation3" id="3">
           <div className="montures__presentationText3">
             <MonturesDetails1 text="Notre première collection « Wake-up » se veut fun et pop pour réveiller notre quotidien." />
           </div>
@@ -135,15 +137,13 @@ const Montures = () => {
           <img src={MonturesDetailGris} alt="Monture bas 2" />
         </div>
 
-        <div className="montures__lunettesBottom3">
-          <img
-            src={MonturesDetailRouge}
-            alt="Monture bas 3"
-            ref={(el) => {
-              if (!el) return;
-              setNumberDiv4(el.getBoundingClientRect().top + 4000);
-            }}
-          />
+        <div
+          className="montures__lunettesBottom3"
+          ref={(el) => {
+            if (!el) return;
+            setNumberDiv4(el.getBoundingClientRect().top + 4000);
+          }}>
+          <img src={MonturesDetailRouge} alt="Monture bas 3" />
         </div>
       </div>
     </>
