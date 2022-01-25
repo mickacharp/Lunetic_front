@@ -10,6 +10,9 @@ $heightInfoImg: calc(100% - $heightStoreName);
   width: 80%;
   margin: auto;
   padding-top: 100px;
+  p {
+    font-family: $fontParagraph;
+  }
 }
 
 // Message when user is not connected
@@ -133,10 +136,19 @@ $heightInfoImg: calc(100% - $heightStoreName);
     padding: 10px 20px;
     cursor: pointer;
   }
-}
-
-p {
-  font-family: $fontParagraph;
+  input[type='text'] {
+    border: $beige solid 1px;
+    border-radius: $borderRadiusButton;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: $fontParagraph;
+    font-size: 0.8em;
+    transition: 0.3s;
+    &:hover {
+      background-color: $beige;
+      border: $red solid 1px;
+    }
+  }
 }
 
 // Horizontal separators of info-texts subcontainers
@@ -144,18 +156,4 @@ hr {
   width: 80%;
   margin: auto;
   border: solid 1px $greyF3;
-}
-
-input[type='text'] {
-  border: $beige solid 1px;
-  border-radius: $borderRadiusButton;
-  box-sizing: border-box;
-  text-align: center;
-  font-family: $fontParagraph;
-  font-size: 0.8em;
-  transition: 0.3s;
-  &:hover {
-    background-color: $beige;
-    border: $red solid 1px;
-  }
 }
