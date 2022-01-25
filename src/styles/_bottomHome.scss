@@ -1,0 +1,118 @@
+.bottom-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10%;
+  margin-top: -30%;
+
+  &__paragraph-top {
+    width: 60%;
+    margin-bottom: 7%;
+
+    p {
+      @include fontPlayfairItalic;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    width: 75%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__paragraph-bottom {
+    width: 75%;
+    display: flex;
+    margin-top: 5%;
+
+    .first-part {
+      font-family: $fontParagraph;
+      font-size: 6.4rem;
+      color: $greyD5;
+    }
+  }
+
+  &__like {
+    color: black;
+    position: relative;
+    font-size: 6.4rem;
+    margin-left: 1%;
+
+    p {
+      @include fontPlayfairItalic;
+    }
+  }
+
+  &__underline {
+    width: 175px;
+    height: 10px;
+    background-color: $red;
+    position: absolute;
+    top: 77%;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__glasses-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    cursor: pointer;
+  }
+
+  &__glasses {
+    width: 80%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__news {
+    height: 250px;
+    width: 250px;
+    background-color: $red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    p {
+      @include fontPlayfairNormal;
+      font-size: 1.6rem;
+      color: white;
+    }
+  }
+
+  &__arrow {
+    background-image: url('../assets/arrow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 55px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__points {
+    background-image: url('../assets/points-news.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+}

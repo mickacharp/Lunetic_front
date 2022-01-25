@@ -8,13 +8,14 @@ import Maps from './Maps';
 import WhatIsLunetic from './WhatIsLunetic';
 import PositionYContext from '../contexts/PositionY';
 import Sidebar from './Sidebar';
+import BottomHome from './BottomHome';
 
 const Home = () => {
   const { setNumberDiv1 } = useContext(PositionYContext);
 
   return (
     <>
-      <Sidebar anchor={4} />
+      <Sidebar anchor={5} />
       <div
         className="home"
         id="1"
@@ -91,6 +92,7 @@ const Home = () => {
       <WhatIsLunetic />
       <CarouselGlasses />
       <Maps />
+      <BottomHome />
     </>
   );
 };

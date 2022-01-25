@@ -8,13 +8,15 @@ const Catalogue = () => {
   return (
     <>
       <Sidebar anchor={2} />
-      <div className="catalogue">
+      <div className="catalogue" id="1">
         <img
           src={lunettesArthur}
           alt="lunettes en-tête catalogue"
           className="catalogue__img"
         />
-        <h1 className="catalogue__title">Catalogue</h1>
+        <h1 className="catalogue__title" id="2">
+          Catalogue
+        </h1>
         <ModelCardList />
       </div>
     </>
