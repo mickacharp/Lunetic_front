@@ -57,15 +57,38 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 70%;
+    width: 40%;
     margin: auto;
 
     input,
     textarea {
       width: 100%;
     }
+
+    input {
+      padding: 3px;
+      font-size: 1em;
+    }
+
+    textarea {
+      height: 20%;
+      padding: 5px;
+      font-family: $fontButton;
+      border: solid 1px $beige;
+      border-radius: $borderRadiusButton;
+      transition: 0.3s;
+      &:focus {
+        outline: solid 1px $red;
+      }
+      &:hover {
+        background-color: $beige;
+        border: $red solid 1px;
+      }
+    }
+
     label {
       margin-top: 4%;
+      margin-left: 2%;
     }
   }
 }
