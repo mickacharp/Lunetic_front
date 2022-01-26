@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
-
+import React from 'react';
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
-import ModalInfo from './ModalInfo';
 import ModelCardList from './ModelCardList';
 import Sidebar from './Sidebar';
 
