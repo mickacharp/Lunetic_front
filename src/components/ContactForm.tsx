@@ -29,6 +29,7 @@ const ContactForm = () => {
           </label>
         </div>
         {isPro ? <ContactFormPro /> : <ContactFormUser />}
+        <input type="submit" value="Envoyer" id="contact-submit" />
       </div>
     </div>
   );
