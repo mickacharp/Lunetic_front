@@ -12,6 +12,7 @@ import Montures from './components/Montures';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
+import FindUs from './components/FindUs';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
           <Route path="/opticians" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
           <Route path="/us" element={<Nous />} />
-          <Route path="/find-us" element={<Home />} />
+          <Route path="/find-us" element={<FindUs />} />
           <Route path="/news" element={<Home />} />
           <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
