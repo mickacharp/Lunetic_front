@@ -121,6 +121,7 @@ const ContactFormPro = () => {
             placeholder="Ecrivez ici..."
           />
         </div>
+        <input type="submit" value="Envoyer" id="contact-submit-pro" />
       </form>
     </div>
   );

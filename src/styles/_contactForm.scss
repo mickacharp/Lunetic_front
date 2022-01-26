@@ -191,9 +191,12 @@
   }
 }
 
-#contact-submit {
+#contact-submit-guest,
+#contact-submit-pro {
   @include ButtonBottomRight;
+  width: 8%;
   font-family: $fontButton;
+  font-size: 0.8em;
   border: none;
   border-radius: $borderRadiusButton;
   background: $red;
