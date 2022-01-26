@@ -21,6 +21,15 @@ $heightInfoImg: calc(100% - $heightStoreName);
   padding-left: 25%;
   font-size: 50px;
   font-family: $fontParagraph;
+
+  strong {
+    font-weight: normal;
+    text-decoration: underline;
+    transition: 0.5s;
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
 // "Modal" container
