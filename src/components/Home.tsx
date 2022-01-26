@@ -91,7 +91,14 @@ const Home = () => {
       </div>
       <WhatIsLunetic />
       <CarouselGlasses />
-      <Maps />
+      <Maps
+        defaultZoom={10}
+        defaultCenter={{
+          lat: 43.46352270882575,
+          lng: -1.511119064793627,
+        }}
+        mapClassName={'maps_home'}
+      />
       <BottomHome />
     </>
   );
