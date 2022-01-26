@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/modal-info" element={<ModalInfo />} />
+          <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
         </Routes>
         <Footer />
       </BrowserRouter>
