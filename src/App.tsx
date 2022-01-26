@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
+import ModalInfo from './components/ModalInfo';
 import Montures from './components/Montures';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
         </Routes>
         <Footer />
       </BrowserRouter>

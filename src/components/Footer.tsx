@@ -1,8 +1,5 @@
 import React from 'react';
 import logo from '../assets/LUNETIC.png';
-import facebook from '../assets/facebook.png';
-import twitter from '../assets/twitter.png';
-import instagram from '../assets/instagram.png';
 
 const Footer = () => {
   return (
