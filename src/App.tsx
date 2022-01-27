@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
 import Contact from './components/Contact';
