@@ -66,8 +66,6 @@ const Home = () => {
                       <span className="black-text">Lorem Ipsum</span>
                       <br /> has been the industry&apos;s standard dumm
                     </p>
-                    {/* <div className="home__underline-black-1" />
-                <div className="home__underline-black-2" /> */}
                   </div>
                 </div>
                 <div className="home__right">

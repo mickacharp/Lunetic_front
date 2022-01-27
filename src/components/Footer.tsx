@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/LUNETIC.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -10,7 +11,9 @@ const Footer = () => {
       <div className="footer__container">
         <ul>
           <li>Mentions légales</li>
-          <li>Maps</li>
+          <Link to="/find-us">
+            <li>Maps</li>
+          </Link>
         </ul>
         <div className="footer__networks">
           <div className="footer__facebook" />
