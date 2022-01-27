@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ModelCard = ({ idModel, name, mainImg, text }) => {
+type Props = { idModel: number; name: string; mainImg: string; text: string };
+
+const ModelCard: React.FC<Props> = ({ idModel, name, mainImg, text }) => {
   return (
     <div className="modelcard">
       <h2 className="modelcard__title">{name}</h2>
