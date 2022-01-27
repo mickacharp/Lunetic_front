@@ -9,7 +9,7 @@ const ContactFormUser = () => {
   const [guestSubject, setGuestSubject] = useState<string>('');
   const [guestMessage, setGuestMessage] = useState<string>('');
 
-  const sendMail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendGuestMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
       .post(
@@ -36,7 +36,9 @@ const ContactFormUser = () => {
 
   return (
     <div className="contactformuser-container">
-      <form className="contactformuser-container__form" onSubmit={(e) => sendMail(e)}>
+      <form
+        className="contactformuser-container__form"
+        onSubmit={(e) => sendGuestMail(e)}>
         <label htmlFor="contact-userfirstname">Votre prénom : </label>
         <input
           type="text"
