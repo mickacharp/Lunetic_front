@@ -33,6 +33,8 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
       <div className="mapssearchbar">
         <Combobox
           onSelect={async (address) => {
+            setValue(address, false);
+            clearSuggestions();
             try {
               const results = await getGeocode({ address });
               const { lat, lng } = await getLatLng(results[0]);

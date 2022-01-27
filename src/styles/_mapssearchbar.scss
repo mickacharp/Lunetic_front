@@ -13,15 +13,14 @@
     left: 50%;
     transform: translate(-50%);
     z-index: 20;
+    text-align: center;
   }
   input:focus {
     outline-color: none;
     outline: none;
-    padding-left: 1em;
   }
   input::placeholder {
     color: grey;
-    padding-left: 1em;
   }
 }
 [data-reach-combobox-option] {

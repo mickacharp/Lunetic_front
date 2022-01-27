@@ -66,8 +66,6 @@ const Home = () => {
                       <span className="black-text">Lorem Ipsum</span>
                       <br /> has been the industry&apos;s standard dumm
                     </p>
-                    {/* <div className="home__underline-black-1" />
-                <div className="home__underline-black-2" /> */}
                   </div>
                 </div>
                 <div className="home__right">
@@ -91,7 +89,14 @@ const Home = () => {
       </div>
       <WhatIsLunetic />
       <CarouselGlasses />
-      <Maps />
+      <Maps
+        defaultZoom={10}
+        defaultCenter={{
+          lat: 43.46352270882575,
+          lng: -1.511119064793627,
+        }}
+        mapClassName={'maps_home'}
+      />
       <BottomHome />
     </>
   );
