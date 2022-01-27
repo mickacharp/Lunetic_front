@@ -31,7 +31,13 @@ const options = {
 
 const libraries: Libraries = ['places'];
 
-const Maps = (props: any) => {
+type Props = {
+  defaultZoom: number;
+  defaultCenter: { lat: number; lng: number };
+  mapClassName: string;
+};
+
+const Maps: React.FC<Props> = (props) => {
   const { defaultZoom, defaultCenter, mapClassName }: any = props;
 
   const { setNumberDiv4 } = useContext(PositionYContext);
