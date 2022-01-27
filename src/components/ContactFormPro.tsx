@@ -3,17 +3,17 @@ import axios from 'axios';
 import gout from '../assets/gout.png';
 
 const ContactFormPro = () => {
-  const [proFirstname, setProFirstname] = useState<string>('');
-  const [proLastname, setProLastname] = useState<string>('');
-  const [proCompany, setProCompany] = useState<string>('');
-  const [proStreetNumber, setProStreetNumber] = useState<string>('');
-  const [proStreet, setProStreet] = useState<string>('');
-  const [proCity, setProCity] = useState<string>('');
-  const [proPhone, setProPhone] = useState<string>('');
-  const [proMobilePhone, setProMobilePhone] = useState<string>('');
-  const [proEmail, setProEmail] = useState<string>('');
-  const [proSubject, setProSubject] = useState<string>('');
-  const [proMessage, setProMessage] = useState<string>('');
+  const [proFirstname, setProFirstname] = useState<string>();
+  const [proLastname, setProLastname] = useState<string>();
+  const [proCompany, setProCompany] = useState<string>();
+  const [proStreetNumber, setProStreetNumber] = useState<string>();
+  const [proStreet, setProStreet] = useState<string>();
+  const [proCity, setProCity] = useState<string>();
+  const [proPhone, setProPhone] = useState<string>();
+  const [proMobilePhone, setProMobilePhone] = useState<string>();
+  const [proEmail, setProEmail] = useState<string>();
+  const [proSubject, setProSubject] = useState<string>('En savoir plus');
+  const [proMessage, setProMessage] = useState<string>();
 
   const sendProMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,17 +37,17 @@ const ContactFormPro = () => {
       )
       .catch((err) => console.log(err));
 
-    setProFirstname('');
-    setProLastname('');
-    setProCompany('');
-    setProStreetNumber('');
-    setProStreet('');
-    setProCity('');
-    setProPhone('');
-    setProMobilePhone('');
-    setProEmail('');
-    setProSubject('');
-    setProMessage('');
+    setProFirstname(undefined);
+    setProLastname(undefined);
+    setProCompany(undefined);
+    setProStreetNumber(undefined);
+    setProStreet(undefined);
+    setProCity(undefined);
+    setProPhone(undefined);
+    setProMobilePhone(undefined);
+    setProEmail(undefined);
+    setProSubject('En savoir plus');
+    setProMessage(undefined);
   };
 
   return (
@@ -140,7 +140,7 @@ const ContactFormPro = () => {
               id="contact-prophone"
               className="contactformpro-container__phone"
               placeholder="ex: 0559203040"
-              required
+              required={proMobilePhone?.length ? false : true}
               onChange={(e) => setProPhone(e.target.value)}
             />
             <br />
@@ -152,7 +152,7 @@ const ContactFormPro = () => {
               id="contact-promobilephone"
               className="contactformpro-container__mobilephone"
               placeholder="ex: 0610203040"
-              required
+              required={proPhone?.length ? false : true}
               onChange={(e) => setProMobilePhone(e.target.value)}
             />
             <br />
@@ -179,9 +179,9 @@ const ContactFormPro = () => {
             className="contactformpro-container__subject"
             required
             onChange={(e) => setProSubject(e.target.value)}>
-            <option value="">En savoir plus</option>
-            <option value="">Demander un accès</option>
-            <option value="">Contacter le SAV</option>
+            <option value="En savoir plus">En savoir plus</option>
+            <option value="Demander un accès">Demander un accès</option>
+            <option value="Contacter le SAV">Contacter le SAV</option>
           </select>
           <label htmlFor="contact-promessage">Votre message : </label>
           <textarea
