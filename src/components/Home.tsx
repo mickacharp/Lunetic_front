@@ -1,19 +1,28 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import gout from '../assets/gout-little.png';
-import Sidebar from './Sidebar';
-import WhatIsLunetic from './WhatIsLunetic';
-import CarouselGlasses from './CarouselGlasses';
-import glasses1 from '../assets/LUNETTE_03_ARTHUR.png';
-import glasses2 from '../assets/LUNETTE_01_ERIC.png';
 
+import gout from '../assets/gout-little.png';
+import CarouselGlasses from './CarouselGlasses';
 import Maps from './Maps';
+import WhatIsLunetic from './WhatIsLunetic';
+import PositionYContext from '../contexts/PositionY';
+import Sidebar from './Sidebar';
+import BottomHome from './BottomHome';
 
 const Home = () => {
+  const { setNumberDiv1 } = useContext(PositionYContext);
+
   return (
     <>
-      <div className="home">
+      <Sidebar anchor={5} />
+      <div
+        className="home"
+        id="1"
+        ref={(el) => {
+          if (!el) return;
+          setNumberDiv1(el.getBoundingClientRect().top);
+        }}>
         <div className="home__content">
           <div className="home__carousel">
             <Carousel
@@ -24,18 +33,18 @@ const Home = () => {
               showStatus={false}
               showThumbs={false}
               showIndicators={false}
-              renderArrowPrev={(clickHandler, hasPrev, label) => {
+              renderArrowPrev={(clickHandler) => {
                 return (
-                  <span onClick={clickHandler} onKeyDown={clickHandler} role="button">
+                  <button onClick={clickHandler} onKeyDown={clickHandler}>
                     <div className="left-arrow" />
-                  </span>
+                  </button>
                 );
               }}
-              renderArrowNext={(clickHandler, hasPrev, label) => {
+              renderArrowNext={(clickHandler) => {
                 return (
-                  <span onClick={clickHandler} onKeyDown={clickHandler} role="button">
+                  <button onClick={clickHandler} onKeyDown={clickHandler}>
                     <div className="right-arrow" />
-                  </span>
+                  </button>
                 );
               }}>
               <div className="home__carousel-1">
@@ -55,14 +64,12 @@ const Home = () => {
                       <br />
                       printing and typesetting industry.{' '}
                       <span className="black-text">Lorem Ipsum</span>
-                      <br /> has been the industry's standard dumm
+                      <br /> has been the industry&apos;s standard dumm
                     </p>
-                    {/* <div className="home__underline-black-1" />
-                <div className="home__underline-black-2" /> */}
                   </div>
                 </div>
                 <div className="home__right">
-                  <img src={gout} alt="picture-gout" />
+                  <img src={gout} alt="gout" />
                   <div className="home__cube">
                     <h2>News</h2>
                     <div className="home__arrow" />
@@ -79,11 +86,18 @@ const Home = () => {
             </Carousel>
           </div>
         </div>
-        <Sidebar />
       </div>
       <WhatIsLunetic />
       <CarouselGlasses />
-      <Maps />
+      <Maps
+        defaultZoom={10}
+        defaultCenter={{
+          lat: 43.46352270882575,
+          lng: -1.511119064793627,
+        }}
+        mapClassName={'maps_home'}
+      />
+      <BottomHome />
     </>
   );
 };

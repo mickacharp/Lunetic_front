@@ -11,7 +11,7 @@
   }
 
   &__subtitles {
-    font-size: 6em;
+    font-size: 5.6rem;
     @include fontPlayfairTitles;
   }
 
@@ -26,7 +26,7 @@
     font-size: 5.8em;
     transform: translate(0, -80%);
     opacity: 0.33;
-    color: $greyCC;
+    color: $grey95;
     text-align: center;
     @include fontMontserrat;
     font-weight: bolder;
@@ -40,47 +40,61 @@
   &__conceptDescription {
     display: flex;
     width: 80%;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 8em;
     margin-bottom: 8em;
+    font-family: $fontParagraph;
+    padding-right: 3em;
 
     p {
-      max-width: 38%;
-      font-size: 1.2em;
+      max-width: 40%;
+      font-size: 1.5em;
       text-align: justify;
+      padding-left: 6em;
+    }
+  }
+
+  &__baskFlag {
+    img {
+      height: 5vw;
+      text-align: right;
     }
   }
 
   &__orangeLine1 img {
     width: 6em;
     position: relative;
-    top: 25em;
-    left: 33em;
+    top: -5em;
+    left: 38em;
     z-index: 2;
+  }
+
+  &__scanPics {
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 50vw;
+    }
   }
 
   &__orangeLine2 img {
     width: 6em;
     position: relative;
-    top: 30em;
-    left: 33em;
-  }
-
-  &__orangeLine3 img {
-    width: 6em;
-    position: relative;
-    top: 20em;
-    left: 33em;
+    top: 50em;
+    left: 50em;
     z-index: 2;
   }
-
   &__conceptVideo {
-    height: 90vh;
-    width: 60vw;
-    background-color: rgb(170, 167, 167);
+    height: 75vh;
+    width: 70vw;
     margin-top: 8em;
     margin-bottom: 8em;
     z-index: 1;
+
+    video {
+      object-fit: cover;
+    }
   }
 
   &__catchphrase {
@@ -137,4 +151,8 @@
     top: -15em;
     left: -48em;
   }
+}
+
+#conceptDescription2 {
+  margin-right: 8em;
 }

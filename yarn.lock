@@ -479,6 +479,11 @@
   "resolved" "https://registry.npmjs.org/@types/cookie/-/cookie-0.3.3.tgz"
   "version" "0.3.3"
 
+"@types/google.maps@^3.47.2":
+  "integrity" "sha512-mFmt428CY4UN49U8KH5J4RfcdkeRu6SZyPIXxU1MA0pnHb4pqn/c/whawTodB3pkKWe8F9fXfUlpBFsk9HucXw=="
+  "resolved" "https://registry.npmjs.org/@types/google.maps/-/google.maps-3.47.2.tgz"
+  "version" "3.47.2"
+
 "@types/google.maps@3.46.1":
   "integrity" "sha512-GAa5ZWYgXG50yLXybb7A824esGm/L0LKHS7qD0qkP0IA/Qp5r922P9tmYcbCkGEf3Zgf7Ukbp7l08/IGIJuQwQ=="
   "resolved" "https://registry.npmjs.org/@types/google.maps/-/google.maps-3.46.1.tgz"
@@ -519,10 +524,22 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-geocode@^0.2.0":
+  "integrity" "sha512-xypTvo8wQa2z2TJrYLiZYjyZvXbFNrf10a3U45Yzxq9+AARyr7ZZbMzUYejzPTBglI7/zNYnDEW6EdU0el/Hgg=="
+  "resolved" "https://registry.npmjs.org/@types/react-geocode/-/react-geocode-0.2.0.tgz"
+  "version" "0.2.0"
+
 "@types/react-helmet@^6.1.5":
   "integrity" "sha512-/ICuy7OHZxR0YCAZLNg9r7I9aijWUWvxaPR6uTuyxe8tAj5RL4Sw1+R6NhXUtOsarkGYPmaHdBDvuXh2DIN/uA=="
   "resolved" "https://registry.npmjs.org/@types/react-helmet/-/react-helmet-6.1.5.tgz"
   "version" "6.1.5"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-scroll@^1.8.3":
+  "integrity" "sha512-Xt0+Y58pwrIv+vRFxcyKDoo0gBWBR2eNMJ4XRMhQpZdGUtmjnszPi/wFEJSAY+5r83ypJsSA+hOpSc3hRpYlWw=="
+  "resolved" "https://registry.npmjs.org/@types/react-scroll/-/react-scroll-1.8.3.tgz"
+  "version" "1.8.3"
   dependencies:
     "@types/react" "*"
 
@@ -1819,6 +1836,11 @@
   "resolved" "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   "version" "4.6.2"
 
+"lodash.throttle@^4.1.1":
+  "integrity" "sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ="
+  "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
+  "version" "4.1.1"
+
 "lodash.truncate@^4.4.2":
   "integrity" "sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM="
   "resolved" "https://registry.npmjs.org/lodash.truncate/-/lodash.truncate-4.4.2.tgz"
@@ -2104,7 +2126,7 @@
     "hoist-non-react-statics" "^3.0.0"
     "universal-cookie" "^4.0.0"
 
-"react-dom@^16.0.0 || ^17.0.0", "react-dom@^16.6.3 || ^17.0.0", "react-dom@^16.8.0 || 17.x", "react-dom@^17.0.2", "react-dom@>=16.8":
+"react-dom@^15.5.4 || ^16.0.0 || ^17.0.0", "react-dom@^16.0.0 || ^17.0.0", "react-dom@^16.6.3 || ^17.0.0", "react-dom@^16.8.0 || 17.x", "react-dom@^17.0.2", "react-dom@>=16.8":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -2124,6 +2146,13 @@
   "integrity" "sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA=="
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   "version" "3.2.0"
+
+"react-geocode@^0.2.3":
+  "integrity" "sha512-sIpbgmn1IUzAxO4haOZ6jeeFnMD8ya9PC38yiNrmJ9vPWbvAO2D/2yfCBzZjGZVUm4PRzKAc0KghXfaEnug0TQ=="
+  "resolved" "https://registry.npmjs.org/react-geocode/-/react-geocode-0.2.3.tgz"
+  "version" "0.2.3"
+  dependencies:
+    "regenerator-runtime" "^0.13.3"
 
 "react-is@^16.7.0", "react-is@^16.8.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
@@ -2175,7 +2204,15 @@
   dependencies:
     "history" "^5.1.0"
 
-"react@^16.0.0 || ^17.0.0", "react@^16.6.3 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^17.0.2", "react@>= 16.3.0", "react@>= 16.8.0", "react@>=16.6.0", "react@>=16.8", "react@17.0.2":
+"react-scroll@^1.8.4":
+  "integrity" "sha512-J9rFqmdzularCXJoK2vleHVg2//y9Fs6zh7K13x7Yz3Y1kHPfQ/TTq029L09q1Gr5/5JjFLBOB2Sa3yYIqyTyQ=="
+  "resolved" "https://registry.npmjs.org/react-scroll/-/react-scroll-1.8.4.tgz"
+  "version" "1.8.4"
+  dependencies:
+    "lodash.throttle" "^4.1.1"
+    "prop-types" "^15.7.2"
+
+"react@^15.5.4 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0", "react@^16.6.3 || ^17.0.0", "react@^16.8.0 || 17.x", "react@^17.0.2", "react@>= 16.3.0", "react@>= 16.8.0", "react@>=16.6.0", "react@>=16.8", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -2190,7 +2227,7 @@
   dependencies:
     "picomatch" "^2.2.1"
 
-"regenerator-runtime@^0.13.4":
+"regenerator-runtime@^0.13.3", "regenerator-runtime@^0.13.4":
   "integrity" "sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA=="
   "resolved" "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz"
   "version" "0.13.9"

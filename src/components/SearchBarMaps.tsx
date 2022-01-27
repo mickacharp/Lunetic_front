@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+import '@reach/combobox/styles.css';
+
 import {
   Combobox,
   ComboboxInput,
-  ComboboxPopover,
   ComboboxList,
   ComboboxOption,
   ComboboxOptionText,
+  ComboboxPopover,
 } from '@reach/combobox';
-import '@reach/combobox/styles.css';
+import React from 'react';
+import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 
 type Props = { panTo: Function };
 
@@ -21,7 +22,8 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
     clearSuggestions,
   } = usePlacesAutocomplete({
     requestOptions: {
-      location: { lat: () => 43.46352270882575, lng: () => -1.511119064793627 },
+      location: { lat: () => 43.46352270882575, lng: () => -1.511119064793627 } as any,
+
       radius: 200 * 1000,
     },
   });
@@ -31,11 +33,12 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
       <div className="mapssearchbar">
         <Combobox
           onSelect={async (address) => {
+            setValue(address, false);
+            clearSuggestions();
             try {
               const results = await getGeocode({ address });
               const { lat, lng } = await getLatLng(results[0]);
               panTo(lat, lng);
-              console.log({ lat, lng });
             } catch (error) {
               console.log('error');
             }
