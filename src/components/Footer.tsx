@@ -10,7 +10,9 @@ const Footer = () => {
       </div>
       <div className="footer__container">
         <ul>
-          <li>Mentions légales</li>
+          <Link to="/legal-notices">
+            <li>Mentions légales</li>
+          </Link>
           <Link to="/find-us">
             <li>Maps</li>
           </Link>
