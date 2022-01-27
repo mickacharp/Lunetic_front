@@ -17,25 +17,28 @@ const ContactFormPro = () => {
 
   const sendProMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios
-      .post(
-        'http://localhost:4000/api/contact-pro',
-        {
-          proFirstname: proFirstname,
-          proLastname: proLastname,
-          proCompany: proCompany,
-          proStreetNumber: proStreetNumber,
-          proStreet: proStreet,
-          proCity: proCity,
-          proEmail: proEmail,
-          proPhone: proPhone,
-          proMobilePhone: proMobilePhone,
-          proSubject: proSubject,
-          proMessage: proMessage,
-        },
-        { withCredentials: true },
-      )
-      .catch((err) => console.log(err));
+
+    let contactProParams = {
+      proFirstname: proFirstname,
+      proLastname: proLastname,
+      proCompany: proCompany,
+      proStreetNumber: proStreetNumber,
+      proStreet: proStreet,
+      proCity: proCity,
+      proEmail: proEmail,
+      proPhone: proPhone,
+      proMobilePhone: proMobilePhone,
+      proSubject: proSubject,
+      proMessage: proMessage,
+    };
+
+    axios.post('http://localhost:4000/api/contact-confirmation', contactProParams, {
+      withCredentials: true,
+    });
+
+    axios.post('http://localhost:4000/api/contact-pro', contactProParams, {
+      withCredentials: true,
+    });
 
     setProFirstname(undefined);
     setProLastname(undefined);

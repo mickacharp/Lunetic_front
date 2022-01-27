@@ -30,10 +30,10 @@ const Contact = () => {
         <div className="contactPage__email">
           <p className="contactPage__requests">UNE QUESTION ?</p>
 
-          <a href="mailto:serge.govindin@lunetic.fr">
+          <Link to="/contact-form">
             <p className="contactPage__emailText">Écrivez-nous&nbsp;&nbsp;&nbsp;</p>
             <p className="contactPage__emailLink"> &#x27F6;</p>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
