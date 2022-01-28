@@ -1,0 +1,33 @@
+.newsCard {
+  display: grid;
+  grid-template-columns: 60% 38%;
+  grid-template-rows: 100%;
+  font-family: $fontParagraph;
+
+  &__leftContainer {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 2.5em;
+  }
+
+  &__text {
+    width: 50%;
+  }
+
+  &__img {
+    grid-column: 2;
+    object-fit: cover;
+    height: 60vh;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
