@@ -74,6 +74,12 @@
     font-size: 4em;
     text-decoration: underline;
     margin-top: 5%;
+    transition: 0.5s;
+    &:hover {
+      color: $red;
+      letter-spacing: 2px;
+      transform: scale(1.05);
+    }
   }
 
   &__emailLink {
