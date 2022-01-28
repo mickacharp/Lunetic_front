@@ -78,7 +78,7 @@ const Maps: React.FC<Props> = (props) => {
           setOpticianHours(data);
         });
   }, [selected]);
-
+  console.log(opticianHours);
   let location: any = useLocation();
 
   return isLoaded ? (

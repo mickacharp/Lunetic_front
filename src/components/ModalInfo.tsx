@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import IModels from '../interfaces/IModels';
+import heart from '../assets/heart.png';
 
 const ModalInfo = () => {
   const { id_model } = useParams();
-  const [infoGlass, setInfoGlass] = useState<Object<IModels>>();
+  const [infoGlass, setInfoGlass] = useState<IModels>();
 
   useEffect(() => {
     axios
@@ -44,6 +45,25 @@ const ModalInfo = () => {
             <p className="title">{infoGlass.name}</p>
             <p className="greyC4 uppercase">Specifics</p>
             <p className="uppercase">Adjustable cuffs, back vent, two side pockets</p>
+            <div className="modal-info__container-btn">
+              <div className="dropdown-list">
+                <select name="colors" id="colors-glasses">
+                  <option value="">Couleurs</option>
+                  <option value="red">Rouge</option>
+                  <option value="blue">Bleu</option>
+                  <option value="green">Vert</option>
+                  <option value="orange">Orange</option>
+                  <option value="purple">Violet</option>
+                  <option value="plum">Prune</option>
+                </select>
+              </div>
+              <div className="modal-info__btn">
+                <p>Ajouter à ma liste d'envie</p>
+                <div className="modal-info__btn--heart">
+                  <img src={heart} alt="heart" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
