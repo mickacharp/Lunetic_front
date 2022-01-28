@@ -1,6 +1,6 @@
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
 import axios from 'axios';
-import React, { ReactElement, useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import apiKey from '../../api.js';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
@@ -13,6 +13,8 @@ import SearchBarMaps from './SearchBarMaps';
 import IOptician from '../interfaces/IOptician';
 import IOpeningHour from '../interfaces/IOpeningHour';
 import PositionYContext from '../contexts/PositionY';
+import { useLocation } from 'react-router-dom';
+import Locate from './Locate';
 
 const containerStyle = {
   width: '100%',
@@ -29,13 +31,21 @@ const options = {
 
 const libraries: Libraries = ['places'];
 
-const Maps = () => {
+type Props = {
+  defaultZoom: number;
+  defaultCenter: { lat: number; lng: number };
+  mapClassName: string;
+};
+
+const Maps: React.FC<Props> = (props) => {
+  const { defaultZoom, defaultCenter, mapClassName }: any = props;
+
   const { setNumberDiv4 } = useContext(PositionYContext);
-  const [zoom, setZoom] = useState(10);
-  const [center, setCenter] = useState<google.maps.LatLngLiteral>({
-    lat: 43.46352270882575,
-    lng: -1.511119064793627,
-  });
+  const [zoom, setZoom] = useState(defaultZoom);
+  const [center, setCenter] = useState<google.maps.LatLngLiteral>(defaultCenter);
+  const [opticiansInfos, setOpticiansInfos] = useState<Array<IOptician>>();
+  const [selected, setSelected] = useState<IOptician>();
+  const [opticianHours, setOpticianHours] = useState<Array<IOpeningHour>>();
 
   const panTo: Function = (lat: number, lng: number) => {
     setCenter({ lat, lng });
@@ -47,10 +57,6 @@ const Maps = () => {
     googleMapsApiKey: apiKey,
     libraries: libraries,
   });
-
-  const [opticiansInfos, setOpticiansInfos] = useState<Array<IOptician>>();
-  const [selected, setSelected] = useState<IOptician>();
-  const [opticianHours, setOpticianHours] = useState<Array<IOpeningHour>>();
 
   useEffect(() => {
     axios
@@ -73,14 +79,27 @@ const Maps = () => {
         });
   }, [selected]);
 
+  let location: any = useLocation();
+
   return isLoaded ? (
     <div className="section_ou_nous_trouver">
       <h2 className="section_ou_nous_trouver__h2"> Où nous trouver</h2>
-      <img
-        className="section_ou_nous_trouver__carte_depliante"
-        src={carteDepliante}
-        alt="carte"
-      />
+      {location.pathname === '/' ? (
+        <>
+          <img
+            className="section_ou_nous_trouver__carte_depliante"
+            src={carteDepliante}
+            alt="carte"
+          />
+          <img
+            className="section_ou_nous_trouver__trait_oblique"
+            src={traitOblique}
+            alt="trait-oblique"
+          />
+        </>
+      ) : (
+        <></>
+      )}
       <img className="section_ou_nous_trouver__points" src={points} alt="points" />
       <img
         className="section_ou_nous_trouver__trait_vertical"
@@ -92,11 +111,7 @@ const Maps = () => {
         src={cercleGris}
         alt="cercle-gris"
       />
-      <img
-        className="section_ou_nous_trouver__trait_oblique"
-        src={traitOblique}
-        alt="trait-oblique"
-      />
+
       <img
         className="section_ou_nous_trouver__moyen_cercle_gris2"
         src={cercleGris}
@@ -118,7 +133,11 @@ const Maps = () => {
       />
 
       <SearchBarMaps panTo={panTo} />
-      <div className="section_ou_nous_trouver__maps">
+      <div className="section_ou_nous_trouver__locate">
+        <Locate panTo={panTo} />
+      </div>
+
+      <div className={'section_ou_nous_trouver__' + mapClassName}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}

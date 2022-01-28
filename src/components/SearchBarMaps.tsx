@@ -1,5 +1,4 @@
 import '@reach/combobox/styles.css';
-
 import {
   Combobox,
   ComboboxInput,
@@ -33,6 +32,8 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
       <div className="mapssearchbar">
         <Combobox
           onSelect={async (address) => {
+            setValue(address, false);
+            clearSuggestions();
             try {
               const results = await getGeocode({ address });
               const { lat, lng } = await getLatLng(results[0]);
@@ -52,8 +53,8 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
           <ComboboxPopover>
             <ComboboxList>
               {status === 'OK' &&
-                data.map((suggestions) => (
-                  <ComboboxOption value={suggestions.description} />
+                data.map((suggestions, index) => (
+                  <ComboboxOption key={index} value={suggestions.description} />
                 ))}
             </ComboboxList>
           </ComboboxPopover>

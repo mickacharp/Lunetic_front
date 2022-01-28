@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
@@ -51,9 +51,11 @@ const LoginForm = () => {
       <div className="login-container">
         <div className="login-container__img-container"></div>
         <div className="login-container__form-container">
-          <p id="close" className="login-container__close">
-            FERMER
-          </p>
+          <Link to="/">
+            <p id="close" className="login-container__close">
+              FERMER
+            </p>
+          </Link>
           <h1>OPTICIEN & LUNETIC</h1>
           <p id="welcome">Bienvenue sur le site Lunetic</p>
           <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => login(e)}>
