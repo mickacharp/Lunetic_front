@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-scroll';
+
 // import { Link } from 'react-router-dom';
 import arrowDown from '../assets/arrow-down.png';
 import arrowUp from '../assets/arrow-up.png';
@@ -7,7 +9,6 @@ import arrowUp from '../assets/arrow-up.png';
 // import CurrentOpticianContext from '../contexts/CurrentOptician';
 import PositionYContext from '../contexts/PositionY';
 import LetterProfil from './LetterProfil';
-import { Link } from 'react-scroll';
 
 const Sidebar = ({ anchor }: any) => {
   // const { idOptician } = useContext(CurrentOpticianContext);
