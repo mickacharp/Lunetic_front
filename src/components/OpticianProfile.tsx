@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 
 import profileLocation from '../assets/profile-location.png';
 import profileQuote from '../assets/profile-quotes.png';
@@ -81,7 +81,12 @@ const OpticianProfile = () => {
     <>
       <div className="profile-component-container">
         {idOptician == 0 ? (
-          <p className="please-connect">Connectez-vous pour accéder à votre profil</p>
+          <p className="please-connect">
+            <Link to="/login">
+              <strong>Connectez-vous</strong>
+            </Link>{' '}
+            pour accéder à votre profil
+          </p>
         ) : (
           <div className="optician-profile">
             <div className="optician-profile__store-name">

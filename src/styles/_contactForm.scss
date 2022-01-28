@@ -1,0 +1,206 @@
+.contactform-component-container {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.contactform-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+  position: relative;
+  font-family: $fontParagraph;
+  top: 3vh;
+
+  &__close {
+    @include closeTopRight;
+  }
+
+  h1 {
+    letter-spacing: 10px;
+    margin-top: 2%;
+  }
+
+  &__checkbox {
+    input {
+      margin-right: 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+    color: rgb(250, 80, 60);
+  }
+
+  input {
+    border: $beige solid 1px;
+    border-radius: $borderRadiusButton;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: $fontParagraph;
+    font-size: 0.8em;
+    transition: 0.3s;
+    &:focus:not(#pro-or-user) {
+      outline: solid 1px $red;
+    }
+    &:hover {
+      background-color: $beige;
+      border: $red solid 1px;
+    }
+  }
+}
+
+/////////// Contact Form of a regular user
+.contactformuser-container {
+  height: 100%;
+  width: 100%;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    margin: auto;
+
+    input,
+    textarea {
+      width: 100%;
+    }
+
+    input {
+      padding: 3px;
+      font-size: 1em;
+    }
+
+    textarea {
+      height: 20%;
+      padding: 5px;
+      font-family: $fontButton;
+      border: solid 1px $beige;
+      border-radius: $borderRadiusButton;
+      transition: 0.3s;
+      &:focus {
+        outline: solid 1px $red;
+      }
+      &:hover {
+        background-color: $beige;
+        border: $red solid 1px;
+      }
+    }
+
+    label {
+      margin-top: 4%;
+      margin-left: 2%;
+    }
+  }
+}
+
+/////////// Contact Form of a professional user (optician)
+.contactformpro-container {
+  height: 95%;
+  width: 100%;
+
+  &__form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    input,
+    textarea {
+      width: 80%;
+    }
+
+    input {
+      padding: 3px;
+      font-size: 1em;
+      margin-left: 2%;
+    }
+
+    textarea {
+      height: 30%;
+      padding: 5px;
+      font-family: $fontButton;
+      border: solid 1px $beige;
+      border-radius: $borderRadiusButton;
+      transition: 0.3s;
+      &:focus {
+        outline: solid 1px $red;
+      }
+      &:hover {
+        background-color: $beige;
+        border: $red solid 1px;
+      }
+    }
+
+    select {
+      width: 27%;
+      background-color: #fff;
+      font-family: $fontButton;
+      border: $beige 1px solid;
+      border-radius: $borderRadiusButton;
+      outline: none;
+      color: $red;
+      padding: 5px 0;
+      transition: 0.3s;
+      &:hover {
+        border: $red solid 1px;
+      }
+    }
+
+    fieldset {
+      width: 70%;
+      border: none;
+      border-top: solid 2px $red;
+      margin-top: 2%;
+    }
+
+    legend {
+      background-color: $red;
+      font-family: $fontButton;
+      border-radius: $borderRadiusButton;
+      color: #fff;
+      padding: 3px 6px;
+      margin-bottom: 2%;
+    }
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__left {
+    label {
+      margin-left: 5%;
+    }
+  }
+  &__right {
+    label {
+      margin-top: 2%;
+    }
+    img {
+      height: 30%;
+    }
+  }
+}
+
+#contact-submit-guest,
+#contact-submit-pro {
+  @include ButtonBottomRight;
+  width: 8%;
+  font-family: $fontButton;
+  font-size: 0.8em;
+  border: none;
+  border-radius: $borderRadiusButton;
+  background: $red;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}

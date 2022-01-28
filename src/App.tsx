@@ -12,7 +12,9 @@ import Montures from './components/Montures';
 import Navbar from './components/Navbar';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
+import ContactForm from './components/ContactForm';
 import FindUs from './components/FindUs';
+import LegalNotices from './components/LegalNotices';
 
 const App = () => {
   return (
@@ -31,7 +33,9 @@ const App = () => {
           <Route path="/optician-profile" element={<OpticianProfile />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
+          <Route path="/legal-notices" element={<LegalNotices />} />
         </Routes>
         <Footer />
       </BrowserRouter>
