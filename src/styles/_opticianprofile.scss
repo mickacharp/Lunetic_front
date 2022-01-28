@@ -17,10 +17,16 @@ $heightInfoImg: calc(100% - $heightStoreName);
 
 // Message when user is not connected
 .please-connect {
-  padding-top: calc(25% - 50px);
+  padding-top: 25%;
   padding-left: 25%;
   font-size: 50px;
   font-family: $fontParagraph;
+  transition: 0.5s;
+  strong:hover {
+    color: $red;
+    letter-spacing: 2px;
+    transform: scale(1.05);
+  }
 
   strong {
     font-weight: normal;
