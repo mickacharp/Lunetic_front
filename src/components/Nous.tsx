@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import collaborateurs from '../assets/collaborateurs.png';
 import ellipse from '../assets/ellipse.png';
@@ -12,10 +12,16 @@ import PositionYContext from '../contexts/PositionY';
 import Sidebar from './Sidebar';
 import leVillage from '../assets/le-village.png';
 import partenaires from '../assets/partenaires-lunetic.png';
+import { useLocation } from 'react-router-dom';
 
 const Nous = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
     useContext(PositionYContext);
+
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>

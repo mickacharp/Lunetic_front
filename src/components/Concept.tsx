@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import baskFlag from '../assets/baskFlag.jpg';
 import visuelConcept from '../assets/concept_image2.png';
@@ -17,6 +18,11 @@ import Sidebar from './Sidebar';
 const Concept = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4, setNumberDiv5 } =
     useContext(PositionYContext);
+
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>
