@@ -7,29 +7,13 @@ import INews from '../interfaces/INews';
 import NewsCard from './NewsCard';
 
 const News = () => {
-  const [newsData1, setNewsData1] = useState<Array<INews>>([]);
-  const [newsData2, setNewsData2] = useState<Array<INews>>([]);
-  const [newsData3, setNewsData3] = useState<Array<INews>>([]);
+  const [newsData, setNewsData] = useState<INews[]>([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/api/news/1')
+      .get('http://localhost:4000/api/news')
       .then((res) => res.data)
-      .then((data) => setNewsData1(data));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get('http://localhost:4000/api/news/2')
-      .then((res) => res.data)
-      .then((data) => setNewsData2(data));
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get('http://localhost:4000/api/news/3')
-      .then((res) => res.data)
-      .then((data) => setNewsData3(data));
+      .then((data) => setNewsData(data));
   }, []);
 
   return (
@@ -41,10 +25,8 @@ const News = () => {
       </div>
 
       <Carousel
-        infiniteLoop
-        stopOnHover
         showArrows={false}
-        showStatus={true}
+        showStatus={false}
         showThumbs={false}
         showIndicators={false}
         renderArrowPrev={(clickHandler) => {
@@ -61,32 +43,17 @@ const News = () => {
             </button>
           );
         }}>
-        <div className="news__carousel-1">
-          <NewsCard
-            title={newsData1.title}
-            subtitle={newsData1.subtitle}
-            text={newsData1.text}
-            link_picture={newsData1.link_picture}
-          />
-        </div>
-
-        <div className="news__carousel-2">
-          <NewsCard
-            title={newsData2.title}
-            subtitle={newsData2.subtitle}
-            text={newsData2.text}
-            link_picture={newsData2.link_picture}
-          />
-        </div>
-
-        <div className="news__carousel-3">
-          <NewsCard
-            title={newsData3.title}
-            subtitle={newsData3.subtitle}
-            text={newsData3.text}
-            link_picture={newsData3.link_picture}
-          />
-        </div>
+        {newsData &&
+          newsData.map((news, index) => (
+            <div className={`news__carousel-${index + 1}`} key={news.id_news}>
+              <NewsCard
+                title={news.title}
+                subtitle={news.subtitle}
+                text={news.text}
+                link_picture={news.link_picture}
+              />
+            </div>
+          ))}
       </Carousel>
     </div>
   );

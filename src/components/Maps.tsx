@@ -143,7 +143,6 @@ const Maps: React.FC<Props> = (props) => {
           center={center}
           zoom={zoom}
           options={options}>
-          {/* Child components, such as markers, info windows, etc. */}
           <div>
             {opticiansInfos &&
               opticiansInfos.map((optician, index: number) => {

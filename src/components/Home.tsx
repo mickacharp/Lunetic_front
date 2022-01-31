@@ -1,4 +1,4 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
