@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import ModelCardList from './ModelCardList';
 import Sidebar from './Sidebar';
 
 const Catalogue = () => {
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <>
       <Sidebar anchor={2} />

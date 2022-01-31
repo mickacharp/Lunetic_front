@@ -1,5 +1,6 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 
 import gout from '../assets/gout-little.png';
@@ -13,6 +14,11 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { setNumberDiv1 } = useContext(PositionYContext);
+
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>
