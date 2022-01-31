@@ -5,7 +5,6 @@ import {
   ComboboxInput,
   ComboboxList,
   ComboboxOption,
-  ComboboxOptionText,
   ComboboxPopover,
 } from '@reach/combobox';
 import React from 'react';
@@ -54,8 +53,8 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
           <ComboboxPopover>
             <ComboboxList>
               {status === 'OK' &&
-                data.map((suggestions) => (
-                  <ComboboxOption value={suggestions.description} />
+                data.map((suggestions, index) => (
+                  <ComboboxOption key={index} value={suggestions.description} />
                 ))}
             </ComboboxList>
           </ComboboxPopover>

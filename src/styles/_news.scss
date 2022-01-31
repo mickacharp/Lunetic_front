@@ -1,0 +1,82 @@
+.news {
+  // padding-top: 100px;
+  width: 80%;
+  margin: auto;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  font-family: $fontParagraph;
+  box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+  position: relative;
+  top: 6em;
+  z-index: 2;
+
+  &__close-container {
+    @include closeTopRight;
+    font-family: $fontParagraph;
+    font-size: 1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  &__carousel-1 {
+    background-color: orange;
+  }
+
+  &__carousel-2 {
+    background-color: blue;
+  }
+
+  &__carousel-3 {
+    background-color: violet;
+  }
+
+  &__carousel-4 {
+    background-color: salmon;
+  }
+}
+
+.carousel {
+  .slider-wrapper {
+    width: 80%;
+    height: 65vh;
+  }
+}
+
+.carousel-status {
+  position: absolute;
+  top: 50%;
+  color: red;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 96%;
+  left: 21%;
+  transform: translate(-50%, -50%);
+  background-image: url('../assets//arrow-left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 96%;
+  left: 41%;
+  transform: translate(-50%, -50%);
+  background-image: url('../assets/arrow-right.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.footer {
+  transform: translateY(80%);
+}

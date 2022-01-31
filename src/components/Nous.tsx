@@ -1,21 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import collaborateurs from '../assets/collaborateurs.png';
 import ellipse from '../assets/ellipse.png';
 import picto_goutte from '../assets/goutte-trait.png';
+import leVillage from '../assets/le-village.png';
 import ligneOblique from '../assets/ligne-oblique-grise.png';
-import logo from '../assets/LUNETIC.png';
 import picto_lunettes from '../assets/LUNETIC_Lunette_v2.png';
+import partenaires from '../assets/partenaires-lunetic.png';
 import rectangle1 from '../assets/Rectangle-gris-1.png';
 import rectangle2 from '../assets/Rectangle-gris-2.png';
 import PositionYContext from '../contexts/PositionY';
 import Sidebar from './Sidebar';
-import leVillage from '../assets/le-village.png';
-import partenaires from '../assets/partenaires-lunetic.png';
 
 const Nous = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
     useContext(PositionYContext);
+
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>
@@ -75,9 +80,9 @@ const Nous = () => {
           <p className="nous__bio3">
             <h3>David Beddok</h3>
             # 20 ans d’expérience dans l’optique. <br />
-            # Créateurs de 3 marques de lunettes. <br />
-            # A désigné de nombreuses collections de montures (Optique & Solaire). <br />#
-            Lancement de 2 magasins d’optique dont un concept store à Paris.
+            # Créateurs de 3 marques de lunettes. <br /># A désigné de nombreuses
+            collections de montures (Optique &amp; Solaire). <br /># Lancement de 2
+            magasins d’optique dont un concept store à Paris.
           </p>
           <p className="nous__bio2">
             <h3>Deborah Beddok</h3># 20 ans d’expérience dans l’innovation digitale.{' '}

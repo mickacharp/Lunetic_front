@@ -19,11 +19,6 @@
     justify-content: flex-end;
     width: 100%;
     padding-right: 5%;
-
-    a {
-      color: black;
-      margin-right: 10%;
-    }
   }
 
   ul {
@@ -34,8 +29,11 @@
     list-style: none;
     font-family: $fontParagraph;
 
-    li {
+    a {
+      color: black;
       margin-right: 10%;
+      word-wrap: normal;
+      white-space: nowrap;
       cursor: pointer;
     }
   }

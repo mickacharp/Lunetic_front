@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import MonturesDetailBleu from '../assets/DETAIL_1_LUNETTE_4_BLEU.png';
 import MonturesDetailGris from '../assets/DETAIL_1_LUNETTE_5_GRIS.png';
@@ -21,6 +22,11 @@ import Sidebar from './Sidebar';
 const Montures = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
     useContext(PositionYContext);
+
+  let location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>
