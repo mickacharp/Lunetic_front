@@ -1,6 +1,6 @@
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
 import axios from 'axios';
-import React, { ReactElement, useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import apiKey from '../../api.js';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
@@ -78,7 +78,7 @@ const Maps: React.FC<Props> = (props) => {
           setOpticianHours(data);
         });
   }, [selected]);
-
+  console.log(opticianHours);
   let location: any = useLocation();
 
   return isLoaded ? (

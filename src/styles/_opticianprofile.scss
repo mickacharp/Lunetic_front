@@ -9,7 +9,7 @@ $heightInfoImg: calc(100% - $heightStoreName);
 .profile-component-container {
   width: 80%;
   margin: auto;
-  padding-top: 100px;
+  height: calc(100vh - 180px);
   p {
     font-family: $fontParagraph;
   }
@@ -17,10 +17,25 @@ $heightInfoImg: calc(100% - $heightStoreName);
 
 // Message when user is not connected
 .please-connect {
-  padding-top: calc(25% - 50px);
+  padding-top: 25%;
   padding-left: 25%;
   font-size: 50px;
   font-family: $fontParagraph;
+  transition: 0.5s;
+  strong:hover {
+    color: $red;
+    letter-spacing: 2px;
+    transform: scale(1.05);
+  }
+
+  strong {
+    font-weight: normal;
+    text-decoration: underline;
+    transition: 0.5s;
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
 // "Modal" container
@@ -28,10 +43,10 @@ $heightInfoImg: calc(100% - $heightStoreName);
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   position: relative;
   box-shadow: rgb(200, 203, 209) 5px 5px 20px;
-  top: 3vh;
+  top: 8em;
 
   &__store-name {
     @include flexCenter;

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import lunettesArthur from '../assets/LUNETTE_03_ARTHUR.png';
 import ModelCardList from './ModelCardList';
 import Sidebar from './Sidebar';
