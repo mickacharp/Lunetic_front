@@ -10,6 +10,7 @@ import WhatIsLunetic from './WhatIsLunetic';
 import PositionYContext from '../contexts/PositionY';
 import Sidebar from './Sidebar';
 import BottomHome from './BottomHome';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { setNumberDiv1 } = useContext(PositionYContext);
@@ -76,11 +77,13 @@ const Home = () => {
                 </div>
                 <div className="home__right">
                   <img src={gout} alt="gout" />
-                  <div className="home__cube">
-                    <h2>News</h2>
-                    <div className="home__arrow" />
-                    <div className="home__points" />
-                  </div>
+                  <Link to="/news">
+                    <div className="home__cube">
+                      <h2>News</h2>
+                      <div className="home__arrow" />
+                      <div className="home__points" />
+                    </div>
+                  </Link>
                 </div>
               </div>
               <div className="home__carousel-2">
@@ -103,7 +106,9 @@ const Home = () => {
         }}
         mapClassName={'maps_home'}
       />
-      <BottomHome />
+      <Link to="/news">
+        <BottomHome />
+      </Link>
     </>
   );
 };
