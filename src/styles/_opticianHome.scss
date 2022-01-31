@@ -1,0 +1,68 @@
+$widthLeftContainer: 50%;
+$widthRightContainer: calc(100% - $widthLeftContainer);
+
+.optician_home_component_container {
+  width: 80%;
+  margin: auto;
+  height: calc(100vh - 180px);
+}
+
+.optician_home {
+  display: flex;
+  width: 100%;
+  height: 75vh;
+  box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+  position: relative;
+  font-family: $fontParagraph;
+  top: 8em;
+
+  &__img_goutte_container {
+    width: 40%;
+    max-width: 40%;
+
+    img {
+      width: 60em;
+      margin-top: 40%;
+    }
+  }
+
+  &__select {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 25em;
+    }
+    h4 {
+      font-size: 2em;
+    }
+  }
+
+  &__selectTop {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__profilDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__comandDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__wishlistDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

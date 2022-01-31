@@ -16,6 +16,8 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
+import OpticianHome from './components/OpticianHome';
+import OpticianOrders from './components/OpticianOrders';
 
 const App = () => {
   return (
@@ -26,7 +28,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/montures" element={<Montures />} />
           <Route path="/catalogue" element={<Catalogue />} />
-          <Route path="/opticians" element={<Home />} />
+          <Route path="/opticians" element={<OpticianHome />} />
           <Route path="/concept" element={<Concept />} />
           <Route path="/us" element={<Nous />} />
           <Route path="/find-us" element={<FindUs />} />
@@ -37,6 +39,7 @@ const App = () => {
           <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
           <Route path="/legal-notices" element={<LegalNotices />} />
+          <Route path="/optician-orders" element={<OpticianOrders />} />
         </Routes>
         <Footer />
       </BrowserRouter>
