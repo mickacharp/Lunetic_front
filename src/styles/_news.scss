@@ -1,5 +1,4 @@
 .news {
-  // width: 90%;
   // padding-top: 100px;
   width: 80%;
   margin: auto;
@@ -31,6 +30,10 @@
   &__carousel-3 {
     background-color: violet;
   }
+
+  &__carousel-4 {
+    background-color: salmon;
+  }
 }
 
 .carousel {
@@ -48,28 +51,28 @@
 
 .left-arrow {
   position: absolute;
-  top: 95%;
+  top: 96%;
   left: 21%;
   transform: translate(-50%, -50%);
   background-image: url('../assets//arrow-left.png');
   background-size: contain;
   background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
   z-index: 10;
 }
 
 .right-arrow {
   position: absolute;
-  top: 95%;
+  top: 96%;
   left: 41%;
   transform: translate(-50%, -50%);
   background-image: url('../assets/arrow-right.png');
   background-size: contain;
   background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   cursor: pointer;
   z-index: 10;
 }

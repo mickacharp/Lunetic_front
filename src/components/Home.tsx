@@ -1,15 +1,17 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import React, { useContext, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import gout from '../assets/gout-little.png';
+import PositionYContext from '../contexts/PositionY';
+import BottomHome from './BottomHome';
 import CarouselGlasses from './CarouselGlasses';
 import Maps from './Maps';
-import WhatIsLunetic from './WhatIsLunetic';
-import PositionYContext from '../contexts/PositionY';
 import Sidebar from './Sidebar';
-import BottomHome from './BottomHome';
+import WhatIsLunetic from './WhatIsLunetic';
 
 const Home = () => {
   const { setNumberDiv1 } = useContext(PositionYContext);
@@ -76,11 +78,13 @@ const Home = () => {
                 </div>
                 <div className="home__right">
                   <img src={gout} alt="gout" />
-                  <div className="home__cube">
-                    <h2>News</h2>
-                    <div className="home__arrow" />
-                    <div className="home__points" />
-                  </div>
+                  <Link to="/news">
+                    <div className="home__cube">
+                      <h2>News</h2>
+                      <div className="home__arrow" />
+                      <div className="home__points" />
+                    </div>
+                  </Link>
                 </div>
               </div>
               <div className="home__carousel-2">
@@ -103,7 +107,9 @@ const Home = () => {
         }}
         mapClassName={'maps_home'}
       />
-      <BottomHome />
+      <Link to="/news">
+        <BottomHome />
+      </Link>
     </>
   );
 };

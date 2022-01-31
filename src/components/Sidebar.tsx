@@ -1,17 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-scroll';
 
-// import { Link } from 'react-router-dom';
 import arrowDown from '../assets/arrow-down.png';
 import arrowUp from '../assets/arrow-up.png';
-// import letter from '../assets/letter.png';
-// import profil from '../assets/profil.png';
-// import CurrentOpticianContext from '../contexts/CurrentOptician';
 import PositionYContext from '../contexts/PositionY';
 import LetterProfil from './LetterProfil';
 
 const Sidebar = ({ anchor }: any) => {
-  // const { idOptician } = useContext(CurrentOpticianContext);
   const { scroll, setScroll } = useContext(PositionYContext);
 
   const arrayTest = [];
@@ -21,21 +16,6 @@ const Sidebar = ({ anchor }: any) => {
 
   return (
     <div className="sidebar">
-      {/* <Link to="/contact">
-        <div className="sidebar__letter">
-          <div className="sidebar__box">
-            <img src={letter} alt="letter" />
-          </div>
-        </div>
-      </Link>
-
-      <Link to={idOptician == 0 ? '/login' : '/optician-profile'}>
-        <div className="sidebar__profil">
-          <div className="sidebar__box">
-            <img src={profil} alt="profil" />
-          </div>
-        </div>
-      </Link> */}
       <LetterProfil />
       <div className="sidebar__navigation">
         <Link

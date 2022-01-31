@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from '../assets/LUNETIC.png';
 import { Link } from 'react-router-dom';
+
+import logo from '../assets/LUNETIC.png';
 
 const Footer = () => {
   return (

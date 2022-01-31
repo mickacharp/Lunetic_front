@@ -1,10 +1,10 @@
 import '@reach/combobox/styles.css';
+
 import {
   Combobox,
   ComboboxInput,
   ComboboxList,
   ComboboxOption,
-  ComboboxOptionText,
   ComboboxPopover,
 } from '@reach/combobox';
 import React from 'react';
