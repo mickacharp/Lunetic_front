@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IWishlist from '../interfaces/IWishlist';
 
@@ -55,7 +56,13 @@ const ModalWishlists: React.FC<Props> = ({
   return (
     <div className="modalWishlists">
       <div className="modalWishlists__container">
-        <div className="modal-info__close" onClick={() => setShowModal(false)}>
+        <div
+          className="modal-info__close"
+          onClick={() => setShowModal(false)}
+          onKeyPress={() => setShowModal(false)}
+          tabIndex={0}
+          role="button"
+          aria-pressed="false">
           <p>Fermer</p>
         </div>
         <h2>Ajouter la monture à une nouvelle liste de souhait ?</h2>
@@ -78,7 +85,8 @@ const ModalWishlists: React.FC<Props> = ({
         </div>
         {error && (
           <p className="modalWishlists__error">
-            Merci de sélectionner une couleur avant de l'ajouter à une liste de souhait.
+            Merci de sélectionner une couleur avant de l&apos;ajouter à une liste de
+            souhait.
           </p>
         )}
         <h2>Ajouter la monture à une liste de souhait déjà existante</h2>
@@ -87,7 +95,11 @@ const ModalWishlists: React.FC<Props> = ({
             <p
               key={wishlist.id_wishlist}
               className="modalWishlists__name-wishlist"
-              onClick={() => addModelInWishlist(wishlist.id_wishlist)}>
+              onClick={() => addModelInWishlist(wishlist.id_wishlist)}
+              onKeyPress={() => addModelInWishlist(wishlist.id_wishlist)}
+              tabIndex={0}
+              role="button"
+              aria-pressed="false">
               {wishlist.name}
             </p>
           ))}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import ContactFormPro from './ContactFormPro';
 import ContactFormUser from './ContactFormUser';
 
@@ -25,7 +26,7 @@ const ContactForm = () => {
             }}
           />
           <label htmlFor="pro-or-user">
-            Cochez cette case si vous êtes un professionnel de l'optique
+            Cochez cette case si vous êtes un professionnel de l&apos;optique
           </label>
         </div>
         {isPro ? <ContactFormPro /> : <ContactFormUser />}

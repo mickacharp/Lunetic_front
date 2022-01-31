@@ -32,11 +32,23 @@ const CarouselGlasses = () => {
             height="100%"
             width="100%"
             onClick={() => setChecked(false)}
+            onKeyPress={() => setChecked(false)}
+            tabIndex={0}
+            role="button"
+            aria-pressed="false"
           />
         </label>
-        <label htmlFor="s2" id="slide2" onClick={() => setChecked(true)}>
+        <label
+          htmlFor="s2"
+          id="slide2"
+          onClick={() => setChecked(true)}
+          onKeyPress={() => setChecked(true)}
+          tabIndex={0}
+          role="button"
+          aria-pressed="false">
           <div className={checked ? '' : 'pointer-events'}>
             <video controls height="100%" width="100%">
+              <track default kind="captions" srcLang="en" src={video} />
               <source src={video} type="video/mp4" />
             </video>
           </div>

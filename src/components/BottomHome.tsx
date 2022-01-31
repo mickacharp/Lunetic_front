@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import luneticCity from '../assets/lunetic-city.png';
+
 import glasses from '../assets/all-glasses.png';
+import luneticCity from '../assets/lunetic-city.png';
 import PositionYContext from '../contexts/PositionY';
 
 const BottomHome = () => {

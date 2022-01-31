@@ -105,7 +105,13 @@ const OpticianProfile = () => {
             </div>
             <div className="optician-profile__data-container">
               <div className="optician-profile__info-texts-container">
-                <p className="optician-profile__close" onClick={() => navigate(-1)}>
+                <p
+                  className="optician-profile__close"
+                  onClick={() => navigate(-1)}
+                  onKeyPress={() => navigate(-1)}
+                  tabIndex={0}
+                  role="button"
+                  aria-pressed="false">
                   FERMER
                 </p>
 

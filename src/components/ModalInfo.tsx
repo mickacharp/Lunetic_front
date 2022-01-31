@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import IModels from '../interfaces/IModels';
+
 import heart from '../assets/heart.png';
+import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IColor from '../interfaces/IColor';
+import IModels from '../interfaces/IModels';
 import ModalWishlists from './ModalWishlists';
 import Sidebar from './Sidebar';
-import CurrentOpticianContext from '../contexts/CurrentOptician';
 
 const ModalInfo = () => {
   const { id_model } = useParams();
@@ -87,7 +88,10 @@ const ModalInfo = () => {
                   </select>
                 </div>
                 {idOptician !== 0 && (
-                  <div className="modal-info__btn" onClick={() => setShowModal(true)}>
+                  <div
+                    className="modal-info__btn"
+                    onClick={() => setShowModal(true)}
+                    role="button">
                     <p>Ajouter à ma liste de souhait</p>
                     <div className="modal-info__btn--heart">
                       <img src={heart} alt="heart" />

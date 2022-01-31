@@ -1,6 +1,8 @@
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
 import axios from 'axios';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import apiKey from '../../api.js';
 import carteDepliante from '../assets/carte-depliante.png';
 import points from '../assets/cube-points-gris.png';
@@ -8,13 +10,12 @@ import cercleGris from '../assets/moyen-cercle-gris.png';
 import petitCercle from '../assets/petit-cercle-rouge.png';
 import traitVertical from '../assets/trait.png';
 import traitOblique from '../assets/trait-oblique-gris.png';
-import mapsStyles from '../mapsStyle';
-import SearchBarMaps from './SearchBarMaps';
-import IOptician from '../interfaces/IOptician';
-import IOpeningHour from '../interfaces/IOpeningHour';
 import PositionYContext from '../contexts/PositionY';
-import { useLocation } from 'react-router-dom';
+import IOpeningHour from '../interfaces/IOpeningHour';
+import IOptician from '../interfaces/IOptician';
+import mapsStyles from '../mapsStyle';
 import Locate from './Locate';
+import SearchBarMaps from './SearchBarMaps';
 
 const containerStyle = {
   width: '100%',
@@ -185,7 +186,7 @@ const Maps: React.FC<Props> = (props) => {
                     <i className="fas fa-phone"></i> {selected.home_phone}
                   </a>
                 </div>
-                <h4>Horaires d'ouverture :</h4>
+                <h4>Horaires d&apos;ouverture :</h4>
 
                 <div className="section_ou_nous_trouver__opening_hours">
                   <ul>
