@@ -11,8 +11,6 @@ const News = () => {
   const [newsData2, setNewsData2] = useState<Array<INews>>([]);
   const [newsData3, setNewsData3] = useState<Array<INews>>([]);
 
-  console.log(newsData1);
-
   useEffect(() => {
     axios
       .get('http://localhost:4000/api/news/1')
