@@ -14,10 +14,10 @@ import ModalInfo from './components/ModalInfo';
 import Models from './components/Models';
 import Navbar from './components/Navbar';
 import News from './components/News';
-import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
 import OpticianHome from './components/OpticianHome';
 import OpticianOrders from './components/OpticianOrders';
+import Us from './components/Us';
 
 const App = () => {
   return (
@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/optician-home" element={<OpticianHome />} />
           <Route path="/concept" element={<Concept />} />
-          <Route path="/us" element={<Nous />} />
+          <Route path="/us" element={<Us />} />
           <Route path="/find-us" element={<FindUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/optician-profile" element={<OpticianProfile />} />

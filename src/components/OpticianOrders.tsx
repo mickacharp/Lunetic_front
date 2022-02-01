@@ -8,7 +8,6 @@ import pictoRondLunette from '../assets/PICTO_ROND_LUNETTE.png';
 const OpticianOrders = () => {
   const { idOptician } = useContext(CurrentOpticianContext);
   const [ordersList, setOrdersList] = useState<Array<IOrders>>([]);
-  console.log(ordersList);
 
   useEffect(() => {
     if (idOptician != 0) {
@@ -31,8 +30,8 @@ const OpticianOrders = () => {
           <h3>Liste des Commandes</h3>
           <ul>
             {ordersList &&
-              ordersList.map((order) => (
-                <li>
+              ordersList.map((order, index) => (
+                <li key={index}>
                   <div className="optician_orders_container__order_item">
                     <h4>{`Numero de commande : ${order.order_number}`} </h4>
                     <h4>{`Date de la commande : ${order.date}`}</h4>
