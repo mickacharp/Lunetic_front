@@ -7,6 +7,8 @@ import video from '../videos/video-1.mp4';
 const CarouselGlasses = () => {
   const [checked, setChecked] = useState(true);
   const { setNumberDiv3 } = useContext(PositionYContext);
+
+  // Detect when the user clicked on the video in the carrousel
   document.addEventListener('DOMContentLoaded', function () {
     const checkedInput = document.getElementById('s2') as HTMLInputElement;
     setChecked(checkedInput.checked);
