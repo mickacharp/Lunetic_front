@@ -14,8 +14,8 @@ import ModalInfo from './components/ModalInfo';
 import Montures from './components/Montures';
 import Navbar from './components/Navbar';
 import News from './components/News';
-import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
+import Us from './components/Us';
 
 const App = () => {
   return (
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/opticians" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
-          <Route path="/us" element={<Nous />} />
+          <Route path="/us" element={<Us />} />
           <Route path="/find-us" element={<FindUs />} />
           <Route path="/news" element={<News />} />
           <Route path="/optician-profile" element={<OpticianProfile />} />
