@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IWishlist from '../interfaces/IWishlist';
+import gout from '../assets/gout-little.png';
 
 const Wishlist = () => {
   const [listWishlists, setListWishlists] = useState<IWishlist[]>([]);
@@ -18,12 +19,14 @@ const Wishlist = () => {
   return (
     <div className="wishlist">
       <div className="wishlist__container">
-        <Link to="/optician_home">
+        <Link to="/optician-home">
           <div className="modal-info__close">
             <p>Fermer</p>
           </div>
         </Link>
-        <div className="wishlist__left"></div>
+        <div className="wishlist__left">
+          <img src={gout} alt="gout-lunetic" />
+        </div>
         <div className="wishlist__right">
           <h1>Mes listes de souhaits</h1>
           {listWishlists &&
