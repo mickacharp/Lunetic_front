@@ -6,12 +6,17 @@ import arrowUp from '../assets/arrow-up.png';
 import PositionYContext from '../contexts/PositionY';
 import LetterProfil from './LetterProfil';
 
-const Sidebar = ({ anchor }: any) => {
+type Props = {
+  anchor: number;
+};
+
+const Sidebar: React.FC<Props> = ({ anchor }) => {
   const { scroll, setScroll } = useContext(PositionYContext);
 
-  const arrayTest = [];
+  // Detect the number of anchor in a page and then adapt the sidebar on the page
+  const numberAnchor = [];
   for (let i = 1; i <= anchor; i++) {
-    arrayTest.push(i);
+    numberAnchor.push(i);
   }
 
   return (
@@ -28,7 +33,7 @@ const Sidebar = ({ anchor }: any) => {
           </div>
         </Link>
         <div className="sidebar__container-anchor">
-          {arrayTest.map((el) => (
+          {numberAnchor.map((el) => (
             <div
               key={el}
               className={scroll === el ? 'sidebar__anchor-orange' : 'sidebar__anchor'}

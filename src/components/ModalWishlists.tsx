@@ -22,6 +22,8 @@ const ModalWishlists: React.FC<Props> = ({
   const [clicked, setClicked] = useState<boolean>(false);
 
   const d = new Date();
+
+  // Function to format the date like YYYY-MM-DD HH:MM:SS
   const dformat =
     [
       d.getFullYear(),
@@ -38,6 +40,7 @@ const ModalWishlists: React.FC<Props> = ({
       .then((data) => setListWishlists(data));
   }, [clicked]);
 
+  // Create a wishlist and add the model directly to this wishlist
   const createWishlist = () => {
     if (idColorModel === 0) {
       setError(true);

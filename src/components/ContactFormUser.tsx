@@ -9,6 +9,7 @@ const ContactFormUser = () => {
   const [guestSubject, setGuestSubject] = useState<string>();
   const [guestMessage, setGuestMessage] = useState<string>();
 
+  // sending a mail to both Lunetic and the sender.
   const sendGuestMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -29,6 +30,7 @@ const ContactFormUser = () => {
       withCredentials: true,
     });
 
+    // states reinitialized to allow to send a message again
     setGuestFirstname(undefined);
     setGuestLastname(undefined);
     setGuestEmail(undefined);
