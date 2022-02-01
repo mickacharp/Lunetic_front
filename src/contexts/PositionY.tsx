@@ -45,10 +45,12 @@ export const PositionYContextProvider: React.FC<Props> = ({ children }) => {
   const [scroll, setScroll] = useState<number>(1);
   const [test, setTest] = useState<number>(0);
 
+  // Permit to detect the scroll and his value
   const handleScroll = () => {
     setTest(window.scrollY);
   };
 
+  // Change the value of the state according to the value of the scrollY
   const handleStateScroll = () => {
     if (numberDiv5 !== 0) {
       if (test <= numberDiv2) {
