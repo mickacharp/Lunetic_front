@@ -37,8 +37,11 @@ const OpticianOrders = () => {
                     <h4>{`Numero de commande : ${order.order_number}`} </h4>
                     <h4>{`Date de la commande : ${order.date}`}</h4>
                   </div>
-
-                  <a href={order.link_pdf}>Voir la facture</a>
+                  <div className="optician_orders_container__pdf_link">
+                    <a href={order.link_pdf} target="_blank">
+                      Voir la facture
+                    </a>
+                  </div>
                 </li>
               ))}
           </ul>

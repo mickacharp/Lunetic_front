@@ -48,6 +48,8 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
         background-color: $red;
         padding: 0.2em;
         border-radius: 5px;
+        text-align: center;
+        vertical-align: center;
       }
     }
   }
@@ -55,6 +57,12 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     display: flex;
     flex-direction: column;
     font-size: 2em;
+  }
+
+  &__pdf_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__titleDiv {

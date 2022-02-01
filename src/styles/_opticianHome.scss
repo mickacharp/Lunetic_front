@@ -19,10 +19,12 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
   &__img_goutte_container {
     width: 40%;
     max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
-      width: 60em;
-      margin-top: 40%;
+      width: 20em;
     }
   }
 

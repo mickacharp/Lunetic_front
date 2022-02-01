@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import littleGout from '../assets/gout-little.png';
 import pictoRondLunette from '../assets/PICTO_ROND_LUNETTE.png';
-import ModalWishlists from './ModalWishlists';
 
 const OpticianHome = () => {
   return (
@@ -32,7 +31,7 @@ const OpticianHome = () => {
               </div>
             </Link>
           </div>
-          <Link to={''}>
+          <Link to="/home">
             <div className="optician_home__wishlistDiv">
               <h4>Liste d'envie</h4>
               <img src={pictoRondLunette} alt="" />
