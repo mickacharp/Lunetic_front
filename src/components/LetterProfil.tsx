@@ -18,7 +18,7 @@ const LetterProfil = () => {
         </div>
       </Link>
 
-      <Link to={idOptician == 0 ? '/login' : '/optician-profile'}>
+      <Link to={idOptician == 0 ? '/login' : '/optician-home'}>
         <div className="sidebar__profil">
           <div className="sidebar__box">
             <img src={profil} alt="profil" />
