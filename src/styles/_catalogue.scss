@@ -30,6 +30,17 @@
   max-width: 30%;
   box-shadow: rgb(242, 243, 251) -2px 2px 12px;
   margin: 10px;
+  font-family: $fontParagraph;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: rgb(222, 225, 243) -8px 8px 20px;
+  }
+
+  h2 {
+    margin-left: 4%;
+    margin-top: 2%;
+  }
 
   p,
   &__title,
@@ -40,7 +51,7 @@
   p {
     color: $grey99;
     text-align: justify;
-    margin-left: 2%;
+    margin-left: 4%;
     margin-right: 2%;
   }
 
@@ -50,12 +61,16 @@
 
   &__button {
     background-color: transparent;
+    font-family: $fontButton;
     font-weight: bold;
+    letter-spacing: 1px;
     padding: 15px 30px;
+    margin-left: 4%;
+    margin-bottom: 2%;
     border-radius: 5px;
     border: solid black 2px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
 
     &:hover {
       background-color: $red;
