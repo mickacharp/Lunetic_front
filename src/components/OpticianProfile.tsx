@@ -28,6 +28,7 @@ const OpticianProfile = () => {
 
   const navigate: NavigateFunction = useNavigate();
 
+  // this function will reinitialize states
   const resetStates: Function = () => {
     setNewLinkPicture(undefined);
     setNewCompany(undefined);
@@ -51,6 +52,7 @@ const OpticianProfile = () => {
     }
   }, [idOptician, saveEdits, editProfile]);
 
+  // this function will update an optician with the new modified data
   const updateOptician = () => {
     axios.put(
       `http://localhost:4000/api/opticians/${idOptician}`,
@@ -80,6 +82,8 @@ const OpticianProfile = () => {
   return (
     <>
       <div className="profile-component-container">
+        {/* if an optician is not logged in and manage to get on optician-profile page, it will display
+        a message telling him to log in */}
         {idOptician == 0 ? (
           <p className="please-connect">
             <Link to="/login">
@@ -105,6 +109,7 @@ const OpticianProfile = () => {
             </div>
             <div className="optician-profile__data-container">
               <div className="optician-profile__info-texts-container">
+                {/* navigate(-1) allows to go on previous page */}
                 <p
                   className="optician-profile__close"
                   onClick={() => navigate(-1)}
