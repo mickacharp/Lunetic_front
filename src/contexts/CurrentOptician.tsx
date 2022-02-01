@@ -12,7 +12,7 @@ type OpticianContent = {
 type Props = { children: JSX.Element };
 
 const CurrentOpticianContext = createContext<OpticianContent>({
-  idOptician: 0,
+  idOptician: 2,
   setIdOptician: () => {},
   admin: false,
   setAdmin: () => {},
@@ -20,7 +20,7 @@ const CurrentOpticianContext = createContext<OpticianContent>({
 });
 
 export const CurrentOpticianContextProvider: React.FC<Props> = ({ children }) => {
-  const [idOptician, setIdOptician] = useState<number>(0);
+  const [idOptician, setIdOptician] = useState<number>(2);
   const [admin, setAdmin] = useState<boolean>(false);
   const removeCookie = useCookies(['optician_token'])[2];
 

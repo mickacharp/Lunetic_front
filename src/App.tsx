@@ -16,6 +16,7 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 import Nous from './components/Nous';
 import OpticianProfile from './components/OpticianProfile';
+import Wishlist from './components/Wishlist';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
           <Route path="/legal-notices" element={<LegalNotices />} />
+          <Route path="/opticians/:id_optician/wishlists" element={<Wishlist />} />
         </Routes>
         <Footer />
       </BrowserRouter>
