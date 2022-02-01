@@ -68,7 +68,7 @@ const ModalWishlists: React.FC<Props> = ({
           aria-pressed="false">
           <p>Fermer</p>
         </div>
-        <h2>Ajouter la monture à une nouvelle liste de souhait ?</h2>
+        <h2>Ajouter la monture à une nouvelle liste de souhaits ?</h2>
         <div className="modalWishlists__input">
           <input
             type="text"
@@ -89,10 +89,10 @@ const ModalWishlists: React.FC<Props> = ({
         {error && (
           <p className="modalWishlists__error">
             Merci de sélectionner une couleur avant de l&apos;ajouter à une liste de
-            souhait.
+            souhaits.
           </p>
         )}
-        <h2>Ajouter la monture à une liste de souhait déjà existante</h2>
+        <h2>Ajouter la monture à une liste de souhaits déjà existante</h2>
         {listWishlists &&
           listWishlists.map((wishlist) => (
             <p

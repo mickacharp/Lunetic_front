@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import littleGout from '../assets/gout-little.png';
 import pictoRondLunette from '../assets/PICTO_ROND_LUNETTE.png';
+import CurrentOpticianContext from '../contexts/CurrentOptician';
 
 const OpticianHome = () => {
+  const { idOptician } = useContext(CurrentOpticianContext);
+
   return (
     <div className="optician_home_component_container">
       <div className="optician_home">
@@ -31,9 +34,9 @@ const OpticianHome = () => {
               </div>
             </Link>
           </div>
-          <Link to="/home">
+          <Link to={`/opticians/${idOptician}/wishlists`}>
             <div className="optician_home__wishlistDiv">
-              <h4>Liste d'envie</h4>
+              <h4>Liste de souhaits</h4>
               <img src={pictoRondLunette} alt="" />
             </div>
           </Link>

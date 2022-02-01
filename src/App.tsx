@@ -15,6 +15,7 @@ import Models from './components/Models';
 import Navbar from './components/Navbar';
 import News from './components/News';
 import OpticianProfile from './components/OpticianProfile';
+import Wishlist from './components/Wishlist';
 import OpticianHome from './components/OpticianHome';
 import OpticianOrders from './components/OpticianOrders';
 import Us from './components/Us';
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/contact-form" element={<ContactForm />} />
           <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
           <Route path="/legal-notices" element={<LegalNotices />} />
+          <Route path="/opticians/:id_optician/wishlists" element={<Wishlist />} />
           <Route path="/optician-orders" element={<OpticianOrders />} />
         </Routes>
         <Footer />
