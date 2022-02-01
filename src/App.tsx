@@ -11,7 +11,7 @@ import Home from './components/Home';
 import LegalNotices from './components/LegalNotices';
 import LoginForm from './components/LoginForm';
 import ModalInfo from './components/ModalInfo';
-import Montures from './components/Montures';
+import Models from './components/Models';
 import Navbar from './components/Navbar';
 import News from './components/News';
 import Nous from './components/Nous';
@@ -24,7 +24,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/montures" element={<Montures />} />
+          <Route path="/models" element={<Models />} />
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/opticians" element={<Home />} />
           <Route path="/concept" element={<Concept />} />
