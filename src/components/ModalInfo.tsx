@@ -31,6 +31,7 @@ const ModalInfo = () => {
       .then((data) => setColorsList(data));
   }, []);
 
+  // Function to add a glass model in the wishlist of an optician
   const addModelInWishlist = (idWishlist: number) => {
     axios.post('http://localhost:4000/api/models-wishlist', {
       id_model: id_model,
@@ -82,12 +83,13 @@ const ModalInfo = () => {
                       colorsList.map((color) => (
                         <option key={color.id_color} value={color.id_color}>
                           {color.name.charAt(0).toUpperCase() + color.name.slice(1)}
-                          {/* Fonction qui permet de mettre la première lettre des couleurs en majuscule */}
+                          {/* Put the first letter in uppercase */}
                         </option>
                       ))}
                   </select>
                 </div>
                 {idOptician !== 0 && (
+                  // Condition to display the button only when the optician is connected
                   <div
                     className="modal-info__btn"
                     onClick={() => setShowModal(true)}

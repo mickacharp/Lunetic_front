@@ -1,8 +1,7 @@
 .modal-info {
   width: 80%;
   margin: auto;
-  padding-top: 3%;
-  height: 85vh;
+  height: calc(100vh - 180px);
   display: flex;
   align-items: center;
   font-family: $fontParagraph;
@@ -11,8 +10,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+    width: 100%;
+    height: 75vh;
     position: relative;
+    box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+    top: calc(6em + 5px);
   }
 
   &__close {
@@ -29,15 +31,26 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
 
     img {
-      height: 100%;
-      width: 100%;
+      width: 90%;
     }
 
     &--main {
       grid-column: 1 / 3;
       grid-row: 1 / 3;
+    }
+
+    &--main,
+    &--2,
+    &--3,
+    &--4,
+    &--5 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -60,7 +73,7 @@
 
     .uppercase {
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
 
     .dropdown-list {

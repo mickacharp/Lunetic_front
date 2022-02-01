@@ -17,18 +17,7 @@ import mapsStyles from '../mapsStyle';
 import Locate from './Locate';
 import SearchBarMaps from './SearchBarMaps';
 
-const containerStyle = {
-  width: '100%',
-  height: '100%',
-};
-
 type Libraries = ('drawing' | 'geometry' | 'localContext' | 'places' | 'visualization')[];
-
-const options = {
-  styles: mapsStyles,
-  disableDefaultUI: true,
-  zoomControl: true,
-};
 
 const libraries: Libraries = ['places'];
 
@@ -40,7 +29,6 @@ type Props = {
 
 const Maps: React.FC<Props> = (props) => {
   const { defaultZoom, defaultCenter, mapClassName }: any = props;
-
   const { setNumberDiv4 } = useContext(PositionYContext);
   const [zoom, setZoom] = useState(defaultZoom);
   const [center, setCenter] = useState<google.maps.LatLngLiteral>(defaultCenter);
@@ -48,17 +36,32 @@ const Maps: React.FC<Props> = (props) => {
   const [selected, setSelected] = useState<IOptician>();
   const [opticianHours, setOpticianHours] = useState<Array<IOpeningHour>>();
 
+  /* Define react-google-maps package options */
+  const containerStyle = {
+    width: '100%',
+    height: '100%',
+  };
+
+  const options = {
+    styles: mapsStyles,
+    disableDefaultUI: true,
+    zoomControl: true,
+  };
+
+  /* function used to refocus the map on the desired city and define a closer zoom  */
   const panTo: Function = (lat: number, lng: number) => {
     setCenter({ lat, lng });
     setZoom(13);
   };
 
+  /* function used to initialise the map */
   const { isLoaded } = useJsApiLoader({
     id: 'lunetic',
     googleMapsApiKey: apiKey,
     libraries: libraries,
   });
 
+  /* get opticians infos from database */
   useEffect(() => {
     axios
       .get<IOptician[]>(`http://localhost:4000/api/opticians/`)
@@ -68,6 +71,7 @@ const Maps: React.FC<Props> = (props) => {
       });
   }, []);
 
+  /* get opticians opening hours from database */
   useEffect(() => {
     selected &&
       axios
@@ -80,7 +84,7 @@ const Maps: React.FC<Props> = (props) => {
         });
   }, [selected]);
 
-  let location: any = useLocation();
+  let location = useLocation();
 
   return isLoaded ? (
     <div className="section_ou_nous_trouver">
