@@ -1,15 +1,21 @@
-# Vite + React + Typescript + Eslint + Prettier
+# Fullstack Project 3 Wild Code School Biarritz : Lunetic
 
-A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
+## First step
 
-![Vite + React + Typescript + Eslint + Prettier](/resources/screenshot.png)
+- Create a "lunetic-front" folder and a "lunetic-back" folder in your IDE
 
-I found out about Vite and I wanted to have a boilerplate for the technologies that I use. You can find more about these in the following links: [Vite](https://github.com/vitejs/vite), [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [Eslint](https://eslint.org/), [Prettier](https://prettier.io/).
+- In your terminal, create a clone of the "Lunetic_front" Github repository in the "lunetic-front" folder that you just created:
+  git clone git@github.com:Christelle-Legros/Lunetic_front.git
 
-## Installation
+- You also have to clone the "Lunetic_back" Github repository in the "lunetic-back" folder that you just created:
+  git clone git@github.com:Christelle-Legros/Lunetic_back.git
 
-Clone the repo and run `yarn install`
+## Second step
 
-## Start
+- In your terminal, you need to do an "npm install" in your terminal in order to install the dependencies that we need to run the app, for both Lunetic_front and Lunetic_back repo (make sure to change your current directory in your terminal to Lunetic_front/Lunetic_back BEFORE npm install)
 
-After the successfull installation of the packages: `yarn dev`
+## Third step
+
+- Run the app with "npm run dev" for Lunetic_front and "npm start" for Lunetic_back
+
+- Enjoy!
