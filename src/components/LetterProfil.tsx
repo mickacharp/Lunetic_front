@@ -13,6 +13,7 @@ const LetterProfil = () => {
         <div className="sidebar__letter">
           <div className="sidebar__box">
             <img src={letter} alt="letter" />
+            <p>Contact</p>
           </div>
         </div>
       </Link>
@@ -21,6 +22,7 @@ const LetterProfil = () => {
         <div className="sidebar__profil">
           <div className="sidebar__box">
             <img src={profil} alt="profil" />
+            {idOptician != 0 ? <p>Mon compte</p> : <p>Se connecter</p>}
           </div>
         </div>
       </Link>
