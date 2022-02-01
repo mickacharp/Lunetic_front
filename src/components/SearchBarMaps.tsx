@@ -13,6 +13,7 @@ import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocom
 type Props = { panTo: Function };
 
 const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
+  /* destructure the variables and functions from usePlacesAutocomplete */
   const {
     ready,
     value,
@@ -22,7 +23,6 @@ const SearchBarMaps: React.FC<Props> = ({ panTo }) => {
   } = usePlacesAutocomplete({
     requestOptions: {
       location: { lat: () => 43.46352270882575, lng: () => -1.511119064793627 } as any,
-
       radius: 200 * 1000,
     },
   });
