@@ -16,6 +16,7 @@ const ContactFormPro = () => {
   const [proSubject, setProSubject] = useState<string>('En savoir plus');
   const [proMessage, setProMessage] = useState<string>();
 
+  // sending a mail to both Lunetic and the sender.
   const sendProMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -41,6 +42,7 @@ const ContactFormPro = () => {
       withCredentials: true,
     });
 
+    // states reinitialized to allow to send a message again
     setProFirstname(undefined);
     setProLastname(undefined);
     setProCompany(undefined);

@@ -13,6 +13,7 @@ const LoginForm = () => {
 
   const { setIdOptician } = useContext(CurrentOpticianContext);
 
+  // redirect the app to the home page
   function redirectHome() {
     navigate('/');
   }

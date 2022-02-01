@@ -6,6 +6,7 @@ import ModelCardList from './ModelCardList';
 import Sidebar from './Sidebar';
 
 const Catalogue = () => {
+  // set scroll to 0 when changing page
   let location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
