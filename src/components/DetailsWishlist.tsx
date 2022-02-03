@@ -36,41 +36,50 @@ const DetailsWishlist = () => {
     <>
       <Sidebar anchor={0} />
       <div className="details-wishlist">
-        <div className="details-wishlist__container">
-          <Link to={`/opticians/${idOptician}/wishlists`}>
-            <div className="modal-info__close">
-              <p>Fermer</p>
+        {idOptician == 0 ? (
+          <p className="details-wishlist__please-connect">
+            <Link to="/login">
+              <strong>Connectez-vous</strong>
+            </Link>{' '}
+            pour accéder à votre profil
+          </p>
+        ) : (
+          <div className="details-wishlist__container">
+            <Link to={`/opticians/${idOptician}/wishlists`}>
+              <div className="modal-info__close">
+                <p>Fermer</p>
+              </div>
+            </Link>
+            <div className="details-wishlist__title">
+              <h1>{nameWishlist && nameWishlist.name}</h1>
             </div>
-          </Link>
-          <div className="details-wishlist__title">
-            <h1>{nameWishlist && nameWishlist.name}</h1>
-          </div>
-          <div className="details-wishlist__list-favorites">
-            {infoWishlist &&
-              infoWishlist.map((wishlist) => (
-                <div
-                  className="details-wishlist__card"
-                  key={wishlist.id_model_temple_color}>
-                  <div className="details-wishlist__img">
-                    <img src={wishlist.main_img} alt="glass-picture" />
-                  </div>
-                  <div className="details-wishlist__description">
-                    <h2>{wishlist.name_model}</h2>
-                    <p>Couleur : {wishlist.name_color}</p>
-                    <div className="details-wishlist__btn-remove">
-                      <button
-                        onClick={() => {
-                          removeFromWishlist(wishlist.id_model_temple_color);
-                          setDeleted(!deleted);
-                        }}>
-                        Remove
-                      </button>
+            <div className="details-wishlist__list-favorites">
+              {infoWishlist &&
+                infoWishlist.map((wishlist) => (
+                  <div
+                    className="details-wishlist__card"
+                    key={wishlist.id_model_temple_color}>
+                    <div className="details-wishlist__img">
+                      <img src={wishlist.main_img} alt="glass-picture" />
+                    </div>
+                    <div className="details-wishlist__description">
+                      <h2>{wishlist.name_model}</h2>
+                      <p>Couleur : {wishlist.name_color}</p>
+                      <div className="details-wishlist__btn-remove">
+                        <button
+                          onClick={() => {
+                            removeFromWishlist(wishlist.id_model_temple_color);
+                            setDeleted(!deleted);
+                          }}>
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

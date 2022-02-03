@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   font-family: $fontParagraph;
+  justify-content: center;
 
   &__container {
     display: flex;
@@ -21,6 +22,7 @@
     margin: 3% 0;
     font-size: 1.5rem;
     @include fontPlayfairNormal;
+    text-align: center;
   }
 
   &__list-favorites {
@@ -68,6 +70,43 @@
       background: none;
       color: $greyB1;
       cursor: pointer;
+    }
+  }
+
+  &__please-connect {
+    font-size: 50px;
+    font-family: $fontParagraph;
+
+    strong {
+      transition: 0.5s;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    strong:hover {
+      color: $red;
+      letter-spacing: 2px;
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .details-wishlist {
+    &__list-favorites {
+      display: inline-block;
+    }
+
+    &__card {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .details-wishlist {
+    &__title {
+      font-size: 1rem;
     }
   }
 }

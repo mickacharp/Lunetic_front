@@ -24,6 +24,7 @@
     padding: 25px;
     position: relative;
     top: 1vh;
+    text-align: center;
   }
 
   h2 {
@@ -40,9 +41,9 @@
       width: 30%;
       margin-right: 5%;
       height: 50px;
-      padding-left: 1%;
       font-size: 1.4rem;
       border-radius: 5px;
+      text-align: center;
     }
 
     button {
@@ -65,12 +66,13 @@
   &__name-wishlist {
     border: 1px solid $red;
     width: 50%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     padding: 1%;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
     color: $red;
+    font-size: 1.4rem;
 
     &:hover {
       background-color: $red;
@@ -83,5 +85,68 @@
     margin-bottom: 5%;
     color: $red;
     font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .modalWishlists {
+    &__input {
+      input {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__name-wishlist {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .modalWishlists {
+    &__input {
+      flex-direction: column;
+      align-items: center;
+
+      input {
+        margin-right: 0;
+        margin-bottom: 2%;
+        width: 60%;
+      }
+
+      button {
+        height: 50px;
+        width: 96px;
+      }
+    }
+
+    &__name-wishlist {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .modalWishlists {
+    &__input {
+      input {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__name-wishlist {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .modalWishlists {
+    &__input {
+      input {
+        width: 80%;
+      }
+    }
   }
 }
