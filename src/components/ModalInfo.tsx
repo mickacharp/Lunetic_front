@@ -42,7 +42,7 @@ const ModalInfo = () => {
 
   return (
     <>
-      <Sidebar />
+      <Sidebar anchor={0} />
       <div className="modal-info">
         {infoGlass && (
           <div className="modal-info__content">
@@ -94,7 +94,7 @@ const ModalInfo = () => {
                     className="modal-info__btn"
                     onClick={() => setShowModal(true)}
                     role="button">
-                    <p>Ajouter à ma liste de souhait</p>
+                    <p>Ajouter à ma liste de souhaits</p>
                     <div className="modal-info__btn--heart">
                       <img src={heart} alt="heart" />
                     </div>

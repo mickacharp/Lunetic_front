@@ -67,4 +67,14 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     justify-content: center;
     align-items: center;
   }
+
+  &__please-login {
+    width: 80%;
+    margin: auto;
+    height: calc(100vh - 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $fontParagraph;
+  }
 }

@@ -1,7 +1,5 @@
-import 'react-toastify/dist/ReactToastify.css';
-
 import React from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 type Props = { panTo: Function };
 
@@ -31,7 +29,6 @@ const Locate: React.FC<Props> = ({ panTo }) => {
         }}>
         <i className="far fa-compass fa-3x" />
       </button>
-      <ToastContainer />
     </>
   );
 };

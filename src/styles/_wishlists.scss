@@ -1,0 +1,124 @@
+.wishlist {
+  width: 80%;
+  margin: auto;
+  height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $fontParagraph;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+    top: calc(6em + 5px);
+  }
+
+  &__left {
+    width: 50%;
+    height: 100%;
+  }
+
+  &__right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: relative;
+
+    h1 {
+      margin-bottom: 4%;
+      text-align: center;
+    }
+  }
+
+  &__name-wishlist {
+    width: 70%;
+    max-height: 50%;
+    overflow-y: scroll;
+
+    a {
+      width: 95%;
+      font-size: 1.3rem;
+      background-color: white;
+      color: $red;
+      height: 50px;
+      margin: 2% auto;
+      border: 1px solid $red;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $red;
+        color: white;
+      }
+    }
+  }
+
+  &__btn-modify {
+    @include ButtonBottomRight;
+    font-family: $fontButton;
+    border: none;
+    border-radius: $borderRadiusButton;
+    background: $red;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .wishlist {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__left {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__img {
+      background-color: lightgreen;
+
+      img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+      }
+    }
+
+    &__right {
+      justify-content: normal;
+      width: 100%;
+      height: 50%;
+    }
+
+    &__btn-modify {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
