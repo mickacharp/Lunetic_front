@@ -23,6 +23,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+      object-fit: cover;
+    }
   }
 
   &__right {
@@ -33,17 +37,25 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    position: relative;
 
     h1 {
       margin-bottom: 4%;
     }
+  }
+
+  &__name-wishlist {
+    width: 70%;
+    max-height: 50%;
+    overflow-y: scroll;
 
     a {
-      width: 60%;
+      width: 95%;
+      font-size: 1.3rem;
       background-color: white;
       color: $red;
       height: 50px;
-      margin: 1% auto;
+      margin: 2% auto;
       border: 1px solid $red;
       border-radius: 5px;
       display: flex;
@@ -56,5 +68,16 @@
         color: white;
       }
     }
+  }
+
+  &__btn-modify {
+    @include ButtonBottomRight;
+    font-family: $fontButton;
+    border: none;
+    border-radius: $borderRadiusButton;
+    background: $red;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
   }
 }

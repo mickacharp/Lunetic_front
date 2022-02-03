@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
@@ -19,6 +21,7 @@ import Wishlist from './components/Wishlist';
 import OpticianHome from './components/OpticianHome';
 import OpticianOrders from './components/OpticianOrders';
 import Us from './components/Us';
+import DetailsWishlist from './components/DetailsWishlist';
 
 const App = () => {
   return (
@@ -42,9 +45,14 @@ const App = () => {
           <Route path="/legal-notices" element={<LegalNotices />} />
           <Route path="/opticians/:id_optician/wishlists" element={<Wishlist />} />
           <Route path="/optician-orders" element={<OpticianOrders />} />
+          <Route
+            path="/opticians/:id_optician/wishlists/:id_wishlist"
+            element={<DetailsWishlist />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 };

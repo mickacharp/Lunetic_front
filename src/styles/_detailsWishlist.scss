@@ -1,0 +1,73 @@
+.details-wishlist {
+  width: 80%;
+  margin: auto;
+  height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  font-family: $fontParagraph;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    box-shadow: rgb(200, 203, 209) 5px 5px 20px;
+    top: calc(6em + 5px);
+  }
+
+  &__title {
+    margin: 3% 0;
+    font-size: 1.5rem;
+    @include fontPlayfairNormal;
+  }
+
+  &__list-favorites {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  &__card {
+    display: flex;
+    margin: 1% 0;
+    width: 45%;
+    height: 200px;
+  }
+
+  &__img {
+    height: 100%;
+    width: 80%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__description {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    width: 100%;
+    padding: 1% 0;
+    position: relative;
+  }
+
+  &__btn-remove {
+    position: absolute;
+    bottom: 5%;
+    right: 0;
+
+    button {
+      border: none;
+      background: none;
+      color: $greyB1;
+      cursor: pointer;
+    }
+  }
+}
