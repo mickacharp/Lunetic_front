@@ -64,6 +64,7 @@
 
     .title {
       font-size: 2rem;
+      text-align: center;
     }
 
     .greyC4 {
@@ -75,6 +76,7 @@
     .uppercase {
       text-transform: uppercase;
       font-size: 1rem;
+      text-align: center;
     }
 
     .dropdown-list {
@@ -126,5 +128,32 @@
 
   &__container-btn {
     margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .modal-info {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__img {
+      margin-bottom: 5%;
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .modal-info {
+    &__text {
+      .dropdown-list {
+        width: 170px;
+      }
+    }
+
+    &__btn {
+      width: 170px;
+      font-size: 0.8rem;
+    }
   }
 }
