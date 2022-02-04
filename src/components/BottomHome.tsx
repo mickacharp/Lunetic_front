@@ -26,7 +26,7 @@ const BottomHome = () => {
         <img src={luneticCity} alt="lunetic-city" />
       </div>
       <div className="bottom-home__paragraph-bottom">
-        <p className="first-part">you maybe</p>
+        <p className="first-part">you may</p>
         <div className="bottom-home__like">
           <p>like</p>
           <div className="bottom-home__underline" />
