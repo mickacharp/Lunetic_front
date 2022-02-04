@@ -8,4 +8,5 @@ export default interface IModels {
   img_4: string;
   img_5: string;
   text: string;
+  description: string;
 }

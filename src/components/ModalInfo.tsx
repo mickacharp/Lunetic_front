@@ -71,7 +71,7 @@ const ModalInfo = () => {
             <div className="modal-info__text">
               <p className="title">{infoGlass.name}</p>
               <p className="greyC4 uppercase">Specifics</p>
-              <p className="uppercase">Adjustable cuffs, back vent, two side pockets</p>
+              <p className="uppercase">{infoGlass.description}</p>
               <div className="modal-info__container-btn">
                 <div className="dropdown-list">
                   <select
