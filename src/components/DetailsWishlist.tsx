@@ -71,7 +71,7 @@ const DetailsWishlist = () => {
                             removeFromWishlist(wishlist.id_model_temple_color);
                             setDeleted(!deleted);
                           }}>
-                          Remove
+                          Supprimer
                         </button>
                       </div>
                     </div>
