@@ -5,8 +5,10 @@ import { Carousel } from 'react-responsive-carousel';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import gout from '../assets/gout-little.png';
+import goutCarousel1 from '../assets/Home-Goutte_F1_N3_BLANC.png';
+import goutCarousel2 from '../assets/Home-Goutte_F2_N1_JAUNE_1.png';
 import PositionYContext from '../contexts/PositionY';
+import homeVideo from '../videos/home-video-carousel2.mp4';
 import BottomHome from './BottomHome';
 import CarouselGlasses from './CarouselGlasses';
 import Maps from './Maps';
@@ -77,7 +79,8 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="home__right">
-                  <img src={gout} alt="gout" />
+                  <img src={goutCarousel1} alt="gout" />
+
                   <Link to="/news">
                     <div className="home__cube">
                       <h2>News</h2>
@@ -88,10 +91,12 @@ const Home = () => {
                 </div>
               </div>
               <div className="home__carousel-2">
-                <p>slide 2</p>
+                <video controls height="100%" width="100%">
+                  <source src={homeVideo} type="video/mp4" />
+                </video>
               </div>
               <div className="home__carousel-3">
-                <p>slide 3</p>
+                <img src={goutCarousel2} alt="gout" />
               </div>
             </Carousel>
           </div>

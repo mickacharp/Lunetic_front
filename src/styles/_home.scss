@@ -27,6 +27,26 @@
         text-align: left;
       }
     }
+
+    &-2 {
+      height: 100%;
+      width: 100%;
+
+      video {
+        height: 60vh;
+      }
+    }
+
+    &-3 {
+      height: 100%;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: -20%;
+        left: 8em;
+      }
+    }
   }
 
   &__title {
@@ -61,8 +81,8 @@
   }
 
   &__right {
-    margin-top: -100px;
     position: relative;
+    left: 10%;
   }
 
   &__left {
@@ -72,13 +92,13 @@
 
   &__cube {
     @include fontPlayfairNormal;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     background-color: $beige;
     color: $red;
     position: absolute;
-    top: 80%;
-    left: 53%;
+    top: 35%;
+    left: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
