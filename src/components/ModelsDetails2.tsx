@@ -11,7 +11,7 @@ const ModelsDetails2 = ({ text }: any) => {
       </div>
       <div className="modelsDetails2__text2">
         <p>{text}</p>
-        <button className="modelsDetails2__btn">See more &#x2794;</button>
+        {/* <button className="modelsDetails2__btn">See more &#x2794;</button> */}
       </div>
     </div>
   );
