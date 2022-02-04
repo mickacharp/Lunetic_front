@@ -61,6 +61,15 @@ const Wishlist = () => {
                     />
                   ))}
               </div>
+              <div className="wishlist__number">
+                <p>
+                  {listWishlists.length === 0
+                    ? "Vous n'avez pas encore créé de liste de souhaits"
+                    : listWishlists.length === 1
+                    ? 'Vous avez 1 liste de souhaits'
+                    : `Vous avez ${listWishlists.length} listes de souhaits`}
+                </p>
+              </div>
               <input
                 className="wishlist__btn-modify"
                 type="button"
