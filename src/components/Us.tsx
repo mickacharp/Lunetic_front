@@ -73,13 +73,15 @@ const Us = () => {
             if (!el) return;
             setNumberDiv3(el.getBoundingClientRect().top + 2000);
           }}>
-          <p className="us__bio3">
+          <div className="us__bio3">
             <h3>David Beddok</h3>
-            # 20 ans d’expérience dans l’optique. <br />
-            # Créateurs de 3 marques de lunettes. <br /># A désigné de nombreuses
-            collections de montures (Optique &amp; Solaire). <br /># Lancement de 2
-            magasins d’optique dont un concept store à Paris.
-          </p>
+            <p>
+              # 20 ans d’expérience dans l’optique. <br />
+              # Créateurs de 3 marques de lunettes. <br /># A désigné de nombreuses
+              collections de montures (Optique &amp; Solaire). <br /># Lancement de 2
+              magasins d’optique dont un concept store à Paris.
+            </p>
+          </div>
           <p className="us__bio2">
             <h3>Deborah Beddok</h3># 20 ans d’expérience dans l’innovation digitale.{' '}
             <br /># A créé et dirigé une joint-venture entre 2 acteurs majeurs de leurs
