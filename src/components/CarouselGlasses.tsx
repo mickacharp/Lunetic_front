@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 
-import glasses from '../assets/LUNETTE_03_ARTHUR.png';
 import PositionYContext from '../contexts/PositionY';
-import video from '../videos/video-1.mp4';
+import glassesCarousel1 from '../assets/F1_N4_ROUGE_3.png';
+import glassesCarousel2 from '../assets/F2_N3_JAUNE_2.png';
+import glassesCarousel3 from '../assets/F6_N2_BLEU_4.png';
 
 const CarouselGlasses = () => {
   const [checked, setChecked] = useState(true);
@@ -29,8 +30,8 @@ const CarouselGlasses = () => {
         <input type="radio" name="slider" id="s3" className="carouselGlasses__radio" />
         <label htmlFor="s1" id="slide1">
           <img
-            src="https://www.akamai.com/content/dam/site/im-demo/perceptual-standard.jpg?imbypass=true"
-            alt="glasses"
+            src={glassesCarousel1}
+            alt="Lunettes rouges"
             height="100%"
             width="100%"
             onClick={() => setChecked(false)}
@@ -48,15 +49,30 @@ const CarouselGlasses = () => {
           tabIndex={0}
           role="button"
           aria-pressed="false">
-          <div className={checked ? '' : 'pointer-events'}>
-            <video controls height="100%" width="100%">
+          <img src={glassesCarousel2} alt="goutte" height="100%" width="100%" />{' '}
+        </label>
+        {/* <div className={checked ? '' : 'pointer-events'}> */}
+        {/* <video controls height="100%" width="100%">
               <track default kind="captions" srcLang="en" src={video} />
               <source src={video} type="video/mp4" />
-            </video>
-          </div>
-        </label>
-        <label htmlFor="s3" id="slide3" onClick={() => setChecked(false)}>
-          <img src={glasses} alt="glasses" height="100%" width="100%" />
+            </video> */}
+
+        {/* <label
+            htmlFor="s3"
+            id="slide3"
+            onClick={() => setChecked(false)}
+            onKeyPress={() => setChecked(false)}>
+            <img src={glassesCarousel2} alt="goutte" height="100%" width="100%" />
+          </label> */}
+        {/* </div> */}
+        {/* </label> */}
+        <label
+          htmlFor="s3"
+          id="slide3"
+          onClick={() => setChecked(false)}
+          onKeyPress={() => setChecked(false)}
+          role="button">
+          <img src={glassesCarousel3} alt="goutte" height="100%" width="100%" />
         </label>
       </section>
       <div className="carouselGlasses__orange-line" />
