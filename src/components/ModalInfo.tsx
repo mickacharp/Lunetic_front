@@ -51,22 +51,33 @@ const ModalInfo = () => {
                 <p>Fermer</p>
               </div>
             </Link>
-            <div className="modal-info__img">
+            <div
+              className={
+                infoGlass.img_2 == null ? 'modal-info__img-flex' : 'modal-info__img'
+              }>
               <div className="modal-info__img--main">
                 <img src={infoGlass.main_img} alt={infoGlass.name} />
               </div>
-              <div className="modal-info__img--2">
-                <img src={infoGlass.img_2} alt={infoGlass.name} />
-              </div>
-              <div className="modal-info__img--3">
-                <img src={infoGlass.img_3} alt={infoGlass.name} />
-              </div>
-              <div className="modal-info__img--4">
-                <img src={infoGlass.img_4} alt={infoGlass.name} />
-              </div>
-              <div className="modal-info__img--5">
-                <img src={infoGlass.img_4} alt={infoGlass.name} />
-              </div>
+              {infoGlass.img_2 && (
+                <div className="modal-info__img--2">
+                  <img src={infoGlass.img_2} alt={infoGlass.name} />
+                </div>
+              )}
+              {infoGlass.img_3 && (
+                <div className="modal-info__img--3">
+                  <img src={infoGlass.img_3} alt={infoGlass.name} />
+                </div>
+              )}
+              {infoGlass.img_4 && (
+                <div className="modal-info__img--4">
+                  <img src={infoGlass.img_4} alt={infoGlass.name} />
+                </div>
+              )}
+              {infoGlass.img_5 && (
+                <div className="modal-info__img--5">
+                  <img src={infoGlass.img_5} alt={infoGlass.name} />
+                </div>
+              )}
             </div>
             <div className="modal-info__text">
               <p className="title">{infoGlass.name}</p>
