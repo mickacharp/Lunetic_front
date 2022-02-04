@@ -36,6 +36,17 @@
         height: 60vh;
       }
     }
+
+    &-3 {
+      height: 100%;
+      width: 100%;
+
+      img {
+        position: absolute;
+        top: -20%;
+        left: 8em;
+      }
+    }
   }
 
   &__title {
@@ -86,7 +97,7 @@
     background-color: $beige;
     color: $red;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 70%;
     display: flex;
     justify-content: center;
