@@ -79,11 +79,15 @@ const LoginForm = () => {
               value={password}
             />
             <br />
-            <p id="forgot-pswrd">Mot de passe oublié ?</p>
+            <Link to="/contact-form">
+              <p id="forgot-pswrd">Mot de passe oublié ?</p>
+            </Link>
             <input type="submit" value="Valider" id="login-submit" />
             {errorMessage && <span>{errorMessage}</span>}
           </form>
-          <p id="signup">Créer un compte</p>
+          <Link to="/contact-form">
+            <p id="signup">Créer un compte</p>
+          </Link>
         </div>
       </div>
     </div>
