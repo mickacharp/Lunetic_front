@@ -33,7 +33,7 @@ const ModalInfo = () => {
 
   // Function to add a glass model in the wishlist of an optician
   const addModelInWishlist = (idWishlist: number) => {
-    axios.post('http://localhost:4000/api/models-wishlist', {
+    axios.post('http://localhost:4000/api/glasses', {
       id_model: id_model,
       id_color_model: idColorModel,
       id_wishlist: idWishlist,

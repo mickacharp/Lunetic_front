@@ -32,7 +32,7 @@ const NameWishlist: React.FC<Props> = ({
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/models-wishlist/wishlists/${idWishlist}`)
+      .get(`http://localhost:4000/api/wishlists/${idWishlist}/glasses`)
       .then((res) => res.data)
       .then((data) => setListGlasses(data));
   }, []);
@@ -55,9 +55,7 @@ const NameWishlist: React.FC<Props> = ({
 
   const deleteWishlist = () => {
     listGlasses.map((glasses) =>
-      axios.delete(
-        `http://localhost:4000/api/models-wishlist/${glasses.id_model_temple_color}`,
-      ),
+      axios.delete(`http://localhost:4000/api/glasses/${glasses.id_model_temple_color}`),
     );
     axios.delete(`http://localhost:4000/api/wishlists/${idWishlist}`);
   };
