@@ -110,27 +110,33 @@ const ModalWishlists: React.FC<Props> = ({
               </button>
             </div>
             <h2>Ajouter la monture à une liste de souhaits déjà existante</h2>
-            <div className="modalWishlists__list">
-              {listWishlists &&
-                listWishlists.map((wishlist) => (
-                  <p
-                    key={wishlist.id_wishlist}
-                    className="modalWishlists__name-wishlist"
-                    onClick={() => {
-                      addModelInWishlist(wishlist.id_wishlist);
-                      toastAddingModelInWishlist();
-                    }}
-                    onKeyPress={() => {
-                      addModelInWishlist(wishlist.id_wishlist);
-                      toastAddingModelInWishlist();
-                    }}
-                    tabIndex={0}
-                    role="button"
-                    aria-pressed="false">
-                    {wishlist.name}
-                  </p>
-                ))}
-            </div>
+            {listWishlists && listWishlists.length === 0 ? (
+              <div className="modalWishlists__list">
+                <p>Vous n'avez pas encore créé de liste de souhaits</p>
+              </div>
+            ) : (
+              <div className="modalWishlists__list">
+                {listWishlists &&
+                  listWishlists.map((wishlist) => (
+                    <p
+                      key={wishlist.id_wishlist}
+                      className="modalWishlists__name-wishlist"
+                      onClick={() => {
+                        addModelInWishlist(wishlist.id_wishlist);
+                        toastAddingModelInWishlist();
+                      }}
+                      onKeyPress={() => {
+                        addModelInWishlist(wishlist.id_wishlist);
+                        toastAddingModelInWishlist();
+                      }}
+                      tabIndex={0}
+                      role="button"
+                      aria-pressed="false">
+                      {wishlist.name}
+                    </p>
+                  ))}
+              </div>
+            )}
           </div>
         </div>
       )}
