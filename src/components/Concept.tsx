@@ -6,13 +6,14 @@ import visuelConcept from '../assets/concept_image2.png';
 import scanPics from '../assets/concept_scanPics.png';
 import conceptBottomVisual from '../assets/concept_visuel_bas.png';
 import orangeLine from '../assets/ligne_orange.png';
+import logoNoir1 from '../assets/LOGO_NOIR_1.png';
+import logoRouge1 from '../assets/LOGO_ROUGE_1.png';
 import greyLineMedium from '../assets/moyen-trait-gris.png';
 import greyCircleLittle from '../assets/petit-cercle-gris.png';
 import greyLineLittle from '../assets/petit-trait-gris.png';
 import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
 import greyLineVertical from '../assets/trait-vertical-gris.png';
 import PositionYContext from '../contexts/PositionY';
-import conceptVideo1 from '../videos/video-1.mp4';
 import Sidebar from './Sidebar';
 
 const Concept = () => {
@@ -118,10 +119,9 @@ const Concept = () => {
           }}
         />
 
-        <div className="conceptContainer__conceptVideo">
-          <video controls height="100%" width="100%">
-            <source src={conceptVideo1} type="video/mp4" />
-          </video>
+        <div className="conceptContainer__conceptLogos">
+          <img src={logoNoir1} alt="Logo noir" />
+          <img src={logoRouge1} alt="Logo rouge" />
         </div>
 
         <div id="5" />

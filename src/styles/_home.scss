@@ -83,6 +83,14 @@
   &__right {
     position: relative;
     left: 10%;
+
+    img {
+      transform: translate(-15%, -20%);
+    }
+  }
+
+  &__cube {
+    transform: translate(-10%, 20%);
   }
 
   &__left {
