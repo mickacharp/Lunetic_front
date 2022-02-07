@@ -1,8 +1,13 @@
 .carouselGlasses {
   padding: 20px;
-  margin: 10% 0;
+  margin-bottom: 10%;
   user-select: none;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 40%;
+    margin-top: 20%;
+  }
 
   &__radio {
     display: none;
@@ -33,6 +38,11 @@
     @include fontPlayfairNormal;
     font-weight: bold;
     margin-bottom: 5%;
+
+    @media screen and (max-width: 768px) {
+      font-size: 3.5rem;
+      margin-bottom: 50%;
+    }
   }
 
   &__orange-line {
@@ -44,7 +54,12 @@
     position: absolute;
     top: 25%;
     left: 20%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
+
   &__grey-points {
     background-image: url('../assets/grey-points.png');
     background-size: contain;
@@ -54,6 +69,10 @@
     position: absolute;
     top: 10%;
     left: 75%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__little-grey-circle {
@@ -75,6 +94,14 @@
       position: absolute;
       top: 120%;
       left: 10%;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 
@@ -87,6 +114,10 @@
     position: absolute;
     top: 30%;
     left: 60%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__little-grey-line {
@@ -98,6 +129,10 @@
     position: absolute;
     top: 120%;
     left: 35%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
 

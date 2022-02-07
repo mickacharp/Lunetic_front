@@ -5,6 +5,7 @@
   grid-template-rows: 1fr 0fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+
   @media screen and (max-width: 750px) {
     display: flex;
     flex-direction: column;
@@ -23,8 +24,9 @@
     font-size: 4em;
     font: $playfair;
     font-weight: medium;
+
     @media screen and (max-width: 750px) {
-      font-size: 2em;
+      font-size: 3.5rem;
     }
   }
   &__carte_depliante {
