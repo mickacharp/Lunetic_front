@@ -16,21 +16,17 @@ const BottomHome = () => {
         setNumberDiv5(el.getBoundingClientRect().top + 3000);
       }}>
       <div className="bottom-home__paragraph-top">
-        <p>
-          Contrary to popular belief. Lorem Ipsum is not simply
-          <br />
-          random text. It has roots in a piece of classical.
-        </p>
+        <p>Des lunettes qui n’en font qu’à votre tête !</p>
       </div>
       <div className="bottom-home__img">
         <img src={luneticCity} alt="lunetic-city" />
       </div>
       <div className="bottom-home__paragraph-bottom">
-        <p className="first-part">you may</p>
-        <div className="bottom-home__like">
-          <p>like</p>
-          <div className="bottom-home__underline" />
-        </div>
+        <p>
+          <span className="text-grey">Wake up !</span>
+          <br />
+          Notre première collection
+        </p>
       </div>
       <div className="bottom-home__glasses-news">
         <div className="bottom-home__glasses">

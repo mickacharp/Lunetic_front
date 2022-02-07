@@ -28,24 +28,18 @@
   &__paragraph-bottom {
     width: 75%;
     display: flex;
-    margin-top: 5%;
+    margin: 5% 0;
 
-    .first-part {
-      font-family: $fontParagraph;
-      font-size: 6.4rem;
-      color: $greyD5;
+    p {
+      color: black;
+      font-size: 5rem;
+      @include fontPlayfairItalic;
     }
   }
 
-  &__like {
-    color: black;
-    position: relative;
-    font-size: 6.4rem;
-    margin-left: 1%;
-
-    p {
-      @include fontPlayfairItalic;
-    }
+  .text-grey {
+    font-family: $fontParagraph;
+    color: $greyD5;
   }
 
   &__underline {
