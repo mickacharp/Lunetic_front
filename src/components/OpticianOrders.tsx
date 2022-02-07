@@ -33,8 +33,14 @@ const OpticianOrders = () => {
               ordersList.map((order, index) => (
                 <li key={index}>
                   <div className="optician_orders_container__order_item">
-                    <h4>{`Numero de commande : ${order.order_number}`} </h4>
-                    <h4>{`Date de la commande : ${order.date}`}</h4>
+                    <div>
+                      <h4>Numero de commande : </h4>
+                      <p>${order.order_number}</p>
+                    </div>
+                    <div>
+                      <h4>Date de la commande : </h4>
+                      <p>${order.date}</p>
+                    </div>
                   </div>
                   <div className="optician_orders_container__pdf_link">
                     <a href={order.link_pdf} target="_blank">
