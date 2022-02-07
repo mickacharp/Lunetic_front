@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import pictoGout1 from '../assets/picto-gout.png';
 import pictoGout2 from '../assets/picto-gout-2.png';
 import PositionYContext from '../contexts/PositionY';
+import arrowBtn from '../assets/fleche.png';
 
 const WhatIsLunetic = () => {
   const { setNumberDiv2 } = useContext(PositionYContext);
@@ -18,28 +19,12 @@ const WhatIsLunetic = () => {
           <p className="whatIsLunetic__middle">
             Des lunettes qui n‘en font qu’à votre tête !​
           </p>
+          <div className="whatIsLunetic__square-grey-points2" />
         </div>
         <div className="whatIsLunetic__medium-square" />
         <div className="whatIsLunetic__little-square" />
       </div>
       <div className="whatIsLunetic__content">
-        <div className="whatIsLunetic__number-one">
-          <div className="whatIsLunetic__grey-quotes" />
-          <div className="whatIsLunetic__number">
-            <p>01</p>
-          </div>
-          <div className="whatIsLunetic__textContent">
-            <p>
-              Des styles iconiques pour souligner la personnalité des clients, tout en
-              proposant une monture design, légère et confortable.
-            </p>
-            <Link to="/concept" className="whatIsLunetic__btn-more">
-              <p>En savoir plus</p>
-              <div className="whatIsLunetic__arrow-btn" />
-              <div className="whatIsLunetic__underline" />
-            </Link>
-          </div>
-        </div>
         <div className="whatIsLunetic__text">
           <p>
             Le
@@ -55,6 +40,26 @@ const WhatIsLunetic = () => {
           <div className="whatIsLunetic__grey-line" />
           <div className="whatIsLunetic__plane" id="3" />
         </div>
+        <div className="whatIsLunetic__number-one">
+          <div className="whatIsLunetic__container-number-text">
+            <div className="whatIsLunetic__grey-quotes" />
+            <div className="whatIsLunetic__number">
+              <p>01</p>
+            </div>
+            <div className="whatIsLunetic__textContent">
+              <p>
+                Des styles iconiques pour souligner la personnalité des clients, tout en
+                proposant une monture design, légère et confortable.
+              </p>
+              <Link to="/concept" className="whatIsLunetic__btn-more">
+                <p>En savoir plus</p>
+                <div className="whatIsLunetic__arrow-btn">
+                  <img src={arrowBtn} alt="arrow" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
         <div className="whatIsLunetic__number-two">
           <div className="whatIsLunetic__number">
             <p>02</p>
@@ -67,8 +72,9 @@ const WhatIsLunetic = () => {
             </p>
             <Link to="/concept" className="whatIsLunetic__btn-more">
               <p>En savoir plus</p>
-              <div className="whatIsLunetic__arrow-btn" />
-              <div className="whatIsLunetic__underline" />
+              <div className="whatIsLunetic__arrow-btn">
+                <img src={arrowBtn} alt="arrow" />
+              </div>
             </Link>
           </div>
         </div>
@@ -79,15 +85,15 @@ const WhatIsLunetic = () => {
           <div className="whatIsLunetic__orange-quotes" />
           <div className="whatIsLunetic__textContent-2">
             <p>
-              Parce que nous avons tous une morphologie différente,
-              <br />
-              nous proposons une monture sur mesure en combinant un algorithme de calcul à
-              une application mobile.
+              Parce que nous avons tous une morphologie différente, nous proposons une
+              monture sur mesure en combinant un algorithme de calcul à une application
+              mobile.
             </p>
             <Link to="/concept" className="whatIsLunetic__btn-more">
               <p>En savoir plus</p>
-              <div className="whatIsLunetic__arrow-btn" />
-              <div className="whatIsLunetic__underline" />
+              <div className="whatIsLunetic__arrow-btn">
+                <img src={arrowBtn} alt="arrow" />
+              </div>
             </Link>
           </div>
         </div>
