@@ -39,7 +39,7 @@ const Us = () => {
         <img className="us__rectangle2" src={rectangle2} alt="" />
 
         <div className="us__subtitles">
-          <h3 className="us__h3">Des opticiens nouvelle génération !</h3>
+          <h3 className="us__main-subtitle">Des opticiens nouvelle génération !</h3>
           <p className="us__p">
             Optique <br />
             <br />
@@ -82,31 +82,41 @@ const Us = () => {
               magasins d’optique dont un concept store à Paris.
             </p>
           </div>
-          <p className="us__bio2">
-            <h3>Deborah Beddok</h3># 20 ans d’expérience dans l’innovation digitale.{' '}
-            <br /># A créé et dirigé une joint-venture entre 2 acteurs majeurs de leurs
-            secteurs. <br /> # A créé et dirigé le Lab d’innovation digitale d’un leader
-            européen de la vente à distance. <br /> # Actuellement en charge de l’Open
-            innovation de la filiale française d’un leader mondial de la santé.
-          </p>
-          <p className="us__bio5">
+          <div className="us__bio2">
+            <h3>Deborah Beddok</h3>
+            <p>
+              # 20 ans d’expérience dans l’innovation digitale. <br /># A créé et dirigé
+              une joint-venture entre 2 acteurs majeurs de leurs secteurs. <br /> # A créé
+              et dirigé le Lab d’innovation digitale d’un leader européen de la vente à
+              distance. <br /> # Actuellement en charge de l’Open innovation de la filiale
+              française d’un leader mondial de la santé.
+            </p>
+          </div>
+          <div className="us__bio5">
             <h3>Serge Govindin</h3>
-            # 15 ans d’expérience dans le Design produit et industriel. <br /># 6 ans
-            d’expérience dans la fabrication additive. <br /> # A désigné de nombreuses
-            gammes de produits dans l’aménagement ferroviaire et s’est récemment
-            spécialisé dans le design de dispositifs médicaux.
-          </p>
-          <p className="us__bio4">
-            <h3>Martial Naudin</h3># Spécialisé depuis plus de 20 ans dans le lancement
-            commercial d’offres et de services. <br /> # accompagne des projets ambitieux
-            ainsi que leurs équipes pour définir leurs stratégies et concevoir leurs
-            offres.
-          </p>
-          <p className="us__bio1">
+            <p>
+              # 15 ans d’expérience dans le Design produit et industriel. <br /># 6 ans
+              d’expérience dans la fabrication additive. <br /> # A désigné de nombreuses
+              gammes de produits dans l’aménagement ferroviaire et s’est récemment
+              spécialisé dans le design de dispositifs médicaux.
+            </p>
+          </div>
+          <div className="us__bio4">
+            <h3>Martial Naudin</h3>
+            <p>
+              # Spécialisé depuis plus de 20 ans dans le lancement commercial d’offres et
+              de services. <br /> # Accompagne des projets ambitieux ainsi que leurs
+              équipes pour définir leurs stratégies et concevoir leurs offres.
+            </p>
+          </div>
+          <div className="us__bio1">
             <h3>Eric Tougard</h3>
-            # Créateur de 2 entreprises dans le développement d’application digitales.
-            <br /># spécialisé dans l’intégration de technologie de scan et d’imagerie 3D.
-          </p>
+            <p>
+              # Créateur de 2 entreprises dans le développement d’application digitales.
+              <br /># Spécialisé dans l’intégration de technologie de scan et d’imagerie
+              3D.
+            </p>
+          </div>
         </div>
         <img className="us__ligne_oblique_1" src={ligneOblique} alt="" />
         <img
@@ -120,7 +130,7 @@ const Us = () => {
           }}
         />
 
-        <h3 className="us__h3">Partenaires</h3>
+        <h2 className="us__h2">Partenaires</h2>
 
         <img src={ellipse} alt="" className="us__ellipse" />
 
