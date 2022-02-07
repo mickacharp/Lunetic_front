@@ -6,6 +6,14 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  @media screen and (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: none;
+    margin: none;
+  }
 
   &__h2 {
     //grid-area: 1 / 4 / 2 / 8;
@@ -16,6 +24,10 @@
     font-size: 4em;
     font: $playfair;
     font-weight: medium;
+
+    @media screen and (max-width: 750px) {
+      font-size: 2em;
+    }
   }
   &__carte_depliante {
     //grid-area: 2 / 5 / 3 / 7;
@@ -23,6 +35,9 @@
     grid-column: 5/7;
     justify-self: center;
     max-height: 15%;
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__points {
     //grid-area: 1 / 2 / 2 / 3;
@@ -30,6 +45,9 @@
     grid-column: 2/3;
     max-width: 80%;
     transform: translatex(100%);
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__trait_vertical {
     //grid-area: 1 / 4 / 2 / 8;
@@ -37,6 +55,9 @@
     grid-column: 4/8;
     max-height: 80%;
     transform: translate(1em, 2em);
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__moyen_cercle_gris {
     //grid-area: 1 / 8 / 2 / 9;
@@ -44,12 +65,18 @@
     grid-column: 8/9;
     height: 2em;
     align-self: center;
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__trait_oblique {
     //grid-area: 2 / 10 / 3 / 11;
     grid-row: 2/3;
     grid-column: 10/11;
     width: 4em;
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__moyen_cercle_gris2 {
     //grid-area: 6/ 2 / 7 / 3;
@@ -57,12 +84,18 @@
     grid-column: 2/3;
     height: 3em;
     align-self: center;
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__grand_trait_oblique {
     //grid-area: 6/ 3 / 7 / 4;
     grid-row: 6/7;
     grid-column: 3/4;
     transform: translateY(1em);
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
   &__petit_cercle_rouge {
     //grid-area: 6/ 4 / 7 / 5;
@@ -71,6 +104,9 @@
     width: 1em;
     align-self: end;
     transform: translate(-1em, -2em);
+    @media screen and (max-width: 750px) {
+      display: none;
+    }
   }
 
   &__maps_home {
@@ -80,6 +116,13 @@
     width: 95%;
     height: 100%;
     padding-left: 3em;
+    @media screen and (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+    }
   }
   &__child1 {
     width: 100%;
@@ -90,6 +133,13 @@
     box-shadow: 0 0 20px 10px white inset;
     z-index: 25;
     transform: translateY(-100%);
+    @media screen and (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+    }
   }
 
   &__locate {
@@ -105,6 +155,14 @@
       border-width: 0;
       color: $red;
       cursor: pointer;
+      position: initial;
+    }
+
+    @media screen and (max-width: 750px) {
+      transform: translateY(0);
+      position: initial;
+      padding: 1em;
+      z-index: 0;
     }
   }
 
