@@ -5,13 +5,22 @@
   justify-content: center;
   align-items: center;
 
+  p {
+    font-family: $fontParagraph;
+  }
+
+  &__main-subtitle {
+    font-family: $playfair;
+    font-size: 3em;
+  }
+
   &__picto_goutte {
     width: 75%;
     height: auto;
   }
 
   &__h2 {
-    font-size: 3em;
+    @include fontPlayfairTitles;
     padding: 1em;
     padding-bottom: 2em;
   }
@@ -36,7 +45,7 @@
   }
 
   &__h3 {
-    font-size: 2em;
+    @include fontPlayfairTitles;
   }
   &__p {
     font-size: 3.5em;
@@ -54,7 +63,8 @@
   &__intro_bio {
     max-width: 70%;
     padding: 3em;
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: justify;
   }
   &__miniBioContainer {
     display: grid;
