@@ -3,6 +3,14 @@
   grid-template-columns: 60% 38%;
   grid-template-rows: 100%;
   font-family: $fontParagraph;
+  width: 100%;
+  @media screen and (max-width: 1040px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+  }
 
   &__leftContainer {
     grid-column: 1;
@@ -10,24 +18,56 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 1040px) {
+      min-width: 80%;
+    }
   }
 
   &__title {
-    font-size: 2.5em;
+    font-size: 2em;
+    @media screen and (max-width: 1040px) {
+      font-size: 1.3em;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.5em;
+    @media screen and (max-width: 1040px) {
+      font-size: 1.2em;
+    }
   }
 
   &__text {
-    width: 50%;
+    width: 80%;
+    overflow-y: auto;
+    font-size: 1.05em;
+    @media screen and (max-width: 1040px) {
+      font-size: 1em;
+      height: 30vh;
+    }
+    @media screen and (max-width: 768px) {
+      height: 35vh;
+    }
+    @media screen and (max-width: 400px) {
+      height: 25vh;
+    }
   }
 
   &__img {
     grid-column: 2;
-    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 60vh;
+    @media screen and (max-width: 1040px) {
+      height: auto;
+      max-height: 20%;
+      width: 50%;
+    }
 
     img {
       object-fit: cover;
-      height: 100%;
+      width: 100%;
     }
   }
 }

@@ -23,6 +23,14 @@
       letter-spacing: 2px;
       cursor: pointer;
     }
+
+    &__carousel-container {
+      width: 100%;
+    }
+
+    .alone {
+      width: 100%;
+    }
   }
 }
 
@@ -41,7 +49,7 @@
 
 .left-arrow {
   position: absolute;
-  top: 90%;
+  top: 95%;
   left: 21%;
   transform: translate(-50%, -50%);
   background-image: url('../assets//arrow-left.png');
@@ -51,11 +59,16 @@
   width: 35px;
   cursor: pointer;
   z-index: 10;
+  @media screen and (max-width: 1040px) {
+    top: 5%;
+    left: 8%;
+    height: 20px;
+  }
 }
 
 .right-arrow {
   position: absolute;
-  top: 90%;
+  top: 95%;
   left: 41%;
   transform: translate(-50%, -50%);
   background-image: url('../assets/arrow-right.png');
@@ -65,6 +78,11 @@
   width: 35px;
   cursor: pointer;
   z-index: 10;
+  @media screen and (max-width: 1040px) {
+    top: 5%;
+    left: 18%;
+    height: 20px;
+  }
 }
 
 .footer {
