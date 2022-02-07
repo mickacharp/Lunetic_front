@@ -130,7 +130,7 @@ const Us = () => {
           }}
         />
 
-        <h3 className="us__h3">Partenaires</h3>
+        <h2 className="us__h2">Partenaires</h2>
 
         <img src={ellipse} alt="" className="us__ellipse" />
 

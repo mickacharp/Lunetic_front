@@ -12,17 +12,35 @@
   &__main-subtitle {
     font-family: $playfair;
     font-size: 3em;
+    @media screen and (max-width: 1040px) {
+      font-size: 2em;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 1.5em;
+    }
+    @media screen and (max-width: 395px) {
+      font-size: 1em;
+    }
   }
 
   &__picto_goutte {
     width: 75%;
     height: auto;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__h2 {
     @include fontPlayfairTitles;
     padding: 1em;
     padding-bottom: 2em;
+    @media screen and (max-width: 768px) {
+      font-size: 3em;
+      padding-top: 1em;
+      padding-bottom: 0;
+    }
   }
 
   &__subtitles {
@@ -30,6 +48,9 @@
     justify-content: center;
     text-align: center;
     padding-top: 4em;
+    @media screen and (max-width: 768px) {
+      padding-top: 0;
+    }
   }
   &__rectangle1 {
     width: 3em;
@@ -44,15 +65,14 @@
     transform: translateY(10em);
   }
 
-  &__h3 {
-    @include fontPlayfairTitles;
-  }
   &__p {
     font-size: 3.5em;
     transform: translate(0, -60%);
-    //opacity: 0.33;
     color: $greyDB;
     @include fontMontserrat;
+    @media screen and (max-width: 1040px) {
+      font-size: 2em;
+    }
   }
 
   &__collaborateurs {
@@ -77,14 +97,34 @@
     width: 80%;
     font-size: 1.3em;
 
+    @media screen and (max-width: 1040px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+
     h3 {
       font-size: 2.3em;
+      @media screen and (max-width: 1040px) {
+        font-size: 2em;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 1.5em;
+      }
+      @media screen and (max-width: 395px) {
+        font-size: 1em;
+      }
     }
 
     h3::first-letter {
       color: $red;
-      font-size: 150%;
+      font-size: 1.5em;
       letter-spacing: 1px;
+      @media screen and (max-width: 1040px) {
+        font-size: 1.2em;
+      }
     }
   }
 
@@ -158,29 +198,5 @@
   }
   &__logos_partenaires {
     width: 100%;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .us {
-    &__picto_goutte {
-      width: 100%;
-      height: auto;
-    }
-    &__h2 {
-      font-size: 3em;
-      padding-top: 1em;
-      padding-bottom: 0;
-    }
-
-    &__subtitles {
-      padding-top: 0;
-    }
-    &__miniBioContainer {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-    }
   }
 }
