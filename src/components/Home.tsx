@@ -36,7 +36,7 @@ const Home = () => {
         <div className="home__content">
           <div className="home__carousel">
             <Carousel
-              // autoPlay
+              autoPlay
               infiniteLoop
               stopOnHover
               showArrows={false}
