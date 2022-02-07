@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../assets/LUNETIC.png';
 
 const Navbar = () => {
+  const [showLinks, setShowLinks] = useState(false);
+  console.log(showLinks);
+
+  const handleShowLinks = () => {
+    setShowLinks(!showLinks);
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__logo">
@@ -12,7 +19,8 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar__container">
-        <div className="navbar__menu">
+        {/* <div className="navbar__menu"> */}
+        <div className={`navbar__menu ${showLinks ? 'show-nav' : 'hide-nav'}`}>
           <ul>
             <Link to="/">
               <li>Accueil</li>
@@ -37,7 +45,11 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <div className="navbar__menu-burger">
+        <div
+          className="navbar__menu-burger"
+          onClick={handleShowLinks}
+          onKeyDown={handleShowLinks}
+          aria-hidden="true">
           <div className="navbar__box">
             <div className="navbar__line" />
             <div className="navbar__middle-line" />
