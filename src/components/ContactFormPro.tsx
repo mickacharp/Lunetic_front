@@ -188,6 +188,7 @@ const ContactFormPro = () => {
             <option value="En savoir plus">En savoir plus</option>
             <option value="Demander un accès">Demander un accès</option>
             <option value="Contacter le SAV">Contacter le SAV</option>
+            <option value="Mot de passe oublié">Mot de passe oublié</option>
           </select>
           <label htmlFor="contact-promessage">Votre message : </label>
           <textarea
