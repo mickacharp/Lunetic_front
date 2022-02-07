@@ -7,6 +7,10 @@
   z-index: 1000;
   background-color: white;
 
+  &__contact_profil {
+    display: none;
+  }
+
   &__container {
     display: flex;
     width: 100%;
@@ -43,11 +47,6 @@
       color: $greyNavbar;
     }
   }
-  @media screen and (max-width: 768px) {
-    &__menu {
-      display: none;
-    }
-  }
 
   &__menu-burger {
     height: 6rem;
@@ -72,21 +71,46 @@
     margin: 10px 0;
   }
 }
-
 @media screen and (max-width: 768px) {
   .navbar__menu.show-nav {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 100vw;
+    height: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      width: 100vw;
+      height: 100vw;
+    }
+    .navbar__contact_profil {
+      display: block;
+      display: flex;
+      justify-content: space-around;
+
+      margin-bottom: 2em;
+    }
+  }
+  .hide-nav {
+    position: absolute;
+    top: 2em;
+    left: -100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 100px;
     margin-top: 100px;
     background-color: white;
-  }
-
-  .navbar__menu.show-nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
+    width: 100vw;
+    height: 100vh;
   }
 }
