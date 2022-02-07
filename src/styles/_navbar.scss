@@ -10,11 +10,22 @@
   &__contact_profil {
     display: none;
   }
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+  }
 
   &__container {
     display: flex;
     width: 100%;
     justify-content: flex-end;
+
+    @media screen and (max-width: 768px) {
+      width: 5rem;
+      // justify-items: flex-end;
+    }
   }
 
   &__logo {
@@ -27,6 +38,11 @@
 
     img {
       width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 50%;
+      align-items: center;
+      margin-left: 2em;
     }
   }
 
@@ -56,6 +72,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+      height: 5em;
+      width: 5em;
+    }
   }
 
   &__line {
@@ -102,8 +123,7 @@
   }
   .hide-nav {
     position: absolute;
-    top: 2em;
-    left: -100vw;
+    transform: translateX(-100%);
     display: flex;
     flex-direction: column;
     align-items: center;
