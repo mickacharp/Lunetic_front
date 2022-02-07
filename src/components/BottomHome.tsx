@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import glasses from '../assets/all-glasses.png';
 import luneticCity from '../assets/lunetic-city.png';
 import PositionYContext from '../contexts/PositionY';
+import arrow from '../assets/arrow.png';
 
 const BottomHome = () => {
   const { setNumberDiv5 } = useContext(PositionYContext);
@@ -33,9 +34,13 @@ const BottomHome = () => {
           <img src={glasses} alt="list-glasses" />
         </div>
         <div className="bottom-home__news">
-          <p>News</p>
-          <div className="bottom-home__arrow" />
-          <div className="bottom-home__points" />
+          <div className="bottom-home__container-text-arrow">
+            <p>News</p>
+            <div className="bottom-home__arrow">
+              <img src={arrow} alt="arrow" />
+            </div>
+            <div className="bottom-home__points" />
+          </div>
         </div>
       </div>
     </div>
