@@ -14,6 +14,14 @@
     transform: translate(-50%);
     z-index: 20;
     text-align: center;
+
+    @media screen and (max-width: 750px) {
+      display: flex;
+      flex-direction: column;
+      transform: translateY(0);
+      position: initial;
+      width: 100%;
+    }
   }
   input:focus {
     outline-color: none;
@@ -21,6 +29,14 @@
   }
   input::placeholder {
     color: grey;
+  }
+
+  @media screen and (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    position: initial;
+    padding-top: 2em;
   }
 }
 [data-reach-combobox-option] {
