@@ -1,13 +1,12 @@
 .carouselGlasses {
   padding: 20px;
-  margin-top: 50%;
   margin-bottom: 10%;
   user-select: none;
   position: relative;
 
   @media screen and (max-width: 768px) {
-    margin-top: 150%;
-    margin-bottom: 20%;
+    margin-bottom: 40%;
+    margin-top: 20%;
   }
 
   &__radio {
@@ -42,7 +41,7 @@
 
     @media screen and (max-width: 768px) {
       font-size: 3.5rem;
-      margin-bottom: 30%;
+      margin-bottom: 50%;
     }
   }
 

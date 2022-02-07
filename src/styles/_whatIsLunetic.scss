@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: 7%;
-  margin-bottom: 30%;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
 
   &__subtitle {
     position: relative;
@@ -79,7 +82,7 @@
   }
 
   &__content {
-    height: 80vh;
+    height: 100%;
     margin-top: 10%;
     width: 100vw;
     display: grid;
@@ -225,6 +228,7 @@
 
     @media screen and (max-width: 768px) {
       width: 70%;
+      margin-top: 0;
     }
   }
 
@@ -449,5 +453,20 @@
     position: absolute;
     top: 100%;
     left: 70%;
+  }
+
+  &__picto-gout-responsive {
+    height: 20%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
   }
 }

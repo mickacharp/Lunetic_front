@@ -1,13 +1,18 @@
 .modelsDetails1 {
   display: flex;
-  padding-top: 12em;
 
   &__number1 {
-    width: 45%;
-    font-size: 7em;
+    width: 35%;
+    font-size: 4.5em;
     font-family: $abrilFatFace;
     text-align: right;
-    padding-right: 0.8em;
+    padding-right: 0.5em;
+    position: relative;
+    top: -0.2em;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2em;
+    }
   }
 
   &__text1 {
@@ -17,16 +22,10 @@
     font-family: $montserrat;
     font-size: 0.9em;
     line-height: 1.8;
-  }
 
-  &__btn {
-    width: 8em;
-    margin-top: 3em;
-    background-color: white;
-    border: none;
-    text-decoration: underline rgb(197, 191, 191);
-    font-family: $montserrat;
-    font-weight: bold;
-    text-align: left;
+    @media screen and (max-width: 768px) {
+      font-size: 0.7em;
+      line-height: 1.4;
+    }
   }
 }

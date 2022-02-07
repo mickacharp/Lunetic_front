@@ -25,6 +25,9 @@ const WhatIsLunetic = () => {
         <div className="whatIsLunetic__little-square" />
       </div>
       <div className="whatIsLunetic__content">
+        <div className="whatIsLunetic__picto-gout-responsive">
+          <img src={pictoGout1} alt="picto-gout" />
+        </div>
         <div className="whatIsLunetic__text">
           <p>
             Le
@@ -96,6 +99,9 @@ const WhatIsLunetic = () => {
               </div>
             </Link>
           </div>
+        </div>
+        <div className="whatIsLunetic__picto-gout-responsive">
+          <img src={pictoGout2} alt="picto-gout" />
         </div>
         <div className="whatIsLunetic__picto-gout-1">
           <div
