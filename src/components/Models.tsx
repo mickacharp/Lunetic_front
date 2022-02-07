@@ -77,15 +77,15 @@ const Models = () => {
           />
         </div>
 
+        <div className="models__glassesPresentation1">
+          <img src={glassesPresentation1} alt="glasses presentation 1" />
+        </div>
+
         <div className="models__presentationText2">
           <ModelsDetails2
             text="Elles sont réalisées en impression 3D, à partir de matériaux biosourcés, issus de Ricin. 
         Nos chutes de productions sont recyclées dans de futures montures."
           />
-        </div>
-
-        <div className="models__glassesPresentation1">
-          <img src={glassesPresentation1} alt="glasses presentation 1" />
         </div>
 
         <div className="models__glassesCenter1">
@@ -124,15 +124,15 @@ const Models = () => {
         </div>
 
         <div className="models__presentationText5">
-          <ModelsDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old. Richard McClintock, a Latin  professor at Hampden-Sydney College in Virginia." />
+          <ModelsDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old." />
         </div>
 
         <div className="models__presentationText6">
-          <ModelsDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old. Richard McClintock, a Latin  professor at Hampden-Sydney College in Virginia." />
+          <ModelsDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old." />
         </div>
 
         <div className="models__presentationText7">
-          <ModelsDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old. Richard McClintock, a Latin  professor at Hampden-Sydney College in Virginia." />
+          <ModelsDetails2 text="Contrary to popular belief, Lorem Ipsum is not  simply random text. It has roots in a piece of  classical Latin literature from 45 BC, making it over  2000 years old." />
         </div>
 
         <div className="models__glassesBottom1">
