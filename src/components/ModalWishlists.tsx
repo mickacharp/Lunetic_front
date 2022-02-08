@@ -30,10 +30,17 @@ const ModalWishlists: React.FC<Props> = ({
   // Create a wishlist and add the model directly to this wishlist
   const createWishlist = () => {
     axios
-      .post('http://localhost:4000/api/wishlists', {
-        id_optician: idOptician,
-        name: nameWishlist,
-      })
+      .post(
+        'http://localhost:4000/api/wishlists',
+        {
+          id_optician: idOptician,
+          name: nameWishlist,
+        },
+        {
+          method: 'POST',
+          withCredentials: true,
+        },
+      )
       .then((res) => res.data)
       .then((data) => addModelInWishlist(data.id_wishlist));
   };

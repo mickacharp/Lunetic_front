@@ -54,10 +54,25 @@ const NameWishlist: React.FC<Props> = ({
   };
 
   const deleteWishlist = () => {
-    listGlasses.map((glasses) =>
-      axios.delete(`http://localhost:4000/api/glasses/${glasses.id_model_temple_color}`),
+    const test = new Promise((resolve, reject) => {
+      resolve(
+        listGlasses.map((glasses) =>
+          axios.delete(
+            `http://localhost:4000/api/glasses/${glasses.id_model_temple_color}`,
+            {
+              method: 'DELETE',
+              withCredentials: true,
+            },
+          ),
+        ),
+      );
+    });
+    test.then(() =>
+      axios.delete(`http://localhost:4000/api/wishlists/${idWishlist}`, {
+        method: 'DELETE',
+        withCredentials: true,
+      }),
     );
-    axios.delete(`http://localhost:4000/api/wishlists/${idWishlist}`);
   };
 
   return (

@@ -29,7 +29,10 @@ const DetailsWishlist = () => {
   }, []);
 
   const removeFromWishlist = (id: number) => {
-    axios.delete(`http://localhost:4000/api/glasses/${id}`);
+    axios.delete(`http://localhost:4000/api/glasses/${id}`, {
+      method: 'DELETE',
+      withCredentials: true,
+    });
   };
 
   return (
