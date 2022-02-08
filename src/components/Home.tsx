@@ -54,14 +54,14 @@ const Home = () => {
               renderArrowPrev={(clickHandler) => {
                 return (
                   <button onClick={clickHandler} onKeyDown={clickHandler}>
-                    <div className="left-arrow" />
+                    <div className="left-arrow-home" />
                   </button>
                 );
               }}
               renderArrowNext={(clickHandler) => {
                 return (
                   <button onClick={clickHandler} onKeyDown={clickHandler}>
-                    <div className="right-arrow" />
+                    <div className="right-arrow-home" />
                   </button>
                 );
               }}>
@@ -76,18 +76,25 @@ const Home = () => {
                     <p>
                       <span className="black-text">Lunétic</span> créateur de lunettes
                       designs sur
-                      <br />
-                      mesure : style, couleur, légèreté… adaptées
-                      <br />à chaque visage !
+                      <br className="breakline" /> mesure : style, couleur, légèreté…
+                      adaptées
+                      <br className="breakline" /> à chaque visage !
                     </p>
                   </div>
+                  <Link to="news">
+                    <div className="home__cube-responsive">
+                      <h2>News</h2>
+                      <div className="home__arrow-responsive" />
+                    </div>
+                  </Link>
                 </div>
                 <div className="home__right">
-                  <img
+                  <div className="home__right--img">
+                    <img
                     src={carouselData && carouselData?.img_top1}
                     alt="carousel top 1"
                   />
-
+                  </div>
                   <Link to="/news">
                     <div className="home__cube">
                       <h2>News</h2>
@@ -106,10 +113,12 @@ const Home = () => {
                 </video>
               </div>
               <div className="home__carousel-3">
-                <img
+                <div className="home__carousel-3--img">
+                  <img
                   src={carouselData && carouselData?.img_top3}
                   alt="carousel bottom 3"
                 />
+                </div>
               </div>
             </Carousel>
           </div>

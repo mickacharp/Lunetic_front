@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
 import littleGout from '../assets/gout-little.png';
 import pictoRondLunette from '../assets/PICTO_ROND_LUNETTE.png';
 import CurrentOpticianContext from '../contexts/CurrentOptician';

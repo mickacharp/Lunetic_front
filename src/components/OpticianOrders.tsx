@@ -1,9 +1,10 @@
+import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
+import pictoRondLunette from '../assets/PICTO_ROND_LUNETTE.png';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOrders from '../interfaces/IOrders';
-import pictoRondLunette from '../assets/PICTO_ROND_LUNETTE.png';
 
 const OpticianOrders = () => {
   const { idOptician } = useContext(CurrentOpticianContext);
@@ -43,7 +44,7 @@ const OpticianOrders = () => {
                     </div>
                   </div>
                   <div className="optician_orders_container__pdf_link">
-                    <a href={order.link_pdf} target="_blank">
+                    <a href={order.link_pdf} target="_blank" rel="noreferrer">
                       Voir la facture
                     </a>
                   </div>
