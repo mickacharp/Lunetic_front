@@ -16,7 +16,7 @@ const DetailsWishlist = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/models-wishlist/wishlists/${id_wishlist}`)
+      .get(`http://localhost:4000/api/wishlists/${id_wishlist}/glasses`)
       .then((res) => res.data)
       .then((data) => setInfoWishlist(data));
   }, [deleted]);
@@ -29,7 +29,10 @@ const DetailsWishlist = () => {
   }, []);
 
   const removeFromWishlist = (id: number) => {
-    axios.delete(`http://localhost:4000/api/models-wishlist/${id}`);
+    axios.delete(`http://localhost:4000/api/glasses/${id}`, {
+      method: 'DELETE',
+      withCredentials: true,
+    });
   };
 
   return (
@@ -71,7 +74,7 @@ const DetailsWishlist = () => {
                             removeFromWishlist(wishlist.id_model_temple_color);
                             setDeleted(!deleted);
                           }}>
-                          Remove
+                          Supprimer
                         </button>
                       </div>
                     </div>

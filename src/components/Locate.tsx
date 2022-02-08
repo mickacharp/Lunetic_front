@@ -8,7 +8,7 @@ const Locate: React.FC<Props> = ({ panTo }) => {
     const customId = 'custom-id-yes';
 
     toast.info('Géolocalisation en cours', {
-      autoClose: 3000,
+      autoClose: 2000,
       toastId: customId,
       pauseOnHover: false,
     });

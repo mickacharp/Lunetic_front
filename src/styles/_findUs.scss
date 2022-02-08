@@ -6,6 +6,14 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__h2 {
     grid-row: 1/2;
     grid-column: 4/8;
@@ -14,47 +22,72 @@
     font-size: 4em;
     font: $playfair;
     font-weight: medium;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2em;
+    }
   }
   &__carte_depliante {
     grid-row: 2/3;
     grid-column: 5/7;
     justify-self: center;
-    // max-height: 15%;
-    // height: 15%;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
+
   &__points {
     grid-row: 1/2;
     grid-column: 2/3;
     max-width: 80%;
     transform: translatex(100%);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__trait_vertical {
     grid-row: 1/2;
     grid-column: 4/8;
     max-height: 80%;
     transform: translate(1em, 2em);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__moyen_cercle_gris {
     grid-row: 1/2;
     grid-column: 8/9;
     height: 2em;
     align-self: center;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__trait_oblique {
     grid-row: 2/3;
     grid-column: 10/11;
     width: 4em;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__moyen_cercle_gris2 {
     grid-row: 6/7;
     grid-column: 2/3;
     height: 3em;
     align-self: center;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__grand_trait_oblique {
     grid-row: 6/7;
     grid-column: 3/4;
     transform: translateY(1em);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
   &__petit_cercle_rouge {
     grid-row: 6/7;
@@ -62,14 +95,24 @@
     width: 1em;
     align-self: end;
     transform: translate(-1em, -2em);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__maps {
     grid-row: 3/6;
     grid-column: 1/11;
-    width: 95%;
+    width: 85%;
     height: 85vh;
     padding-left: 3em;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
   }
   &__child1 {
     width: 100%;
@@ -80,6 +123,14 @@
     box-shadow: 0 0 20px 10px white inset;
     z-index: 25;
     transform: translateY(-100%);
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &__info_window {

@@ -36,7 +36,7 @@ const Home = () => {
         <div className="home__content">
           <div className="home__carousel">
             <Carousel
-              autoPlay
+              // autoPlay
               infiniteLoop
               stopOnHover
               showArrows={false}
@@ -61,20 +61,16 @@ const Home = () => {
                 <div className="home__left">
                   <h2 className="home__lunetic">#lunetic</h2>
                   <div className="home__title">
-                    <h1>
-                      Hanoi Designers
-                      <br />
-                      Meetup
-                    </h1>
+                    <h1>Bonjour !</h1>
                     <div className="home__underline-orange" />
                   </div>
                   <div className="home__paragraph">
                     <p>
-                      Lorem Ipsum is simply dummy text of the
+                      <span className="black-text">Lunétic</span> créateur de lunettes
+                      designs sur
                       <br />
-                      printing and typesetting industry.{' '}
-                      <span className="black-text">Lorem Ipsum</span>
-                      <br /> has been the industry&apos;s standard dumm
+                      mesure : style, couleur, légèreté… adaptées
+                      <br />à chaque visage !
                     </p>
                   </div>
                 </div>

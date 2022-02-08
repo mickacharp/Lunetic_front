@@ -24,38 +24,39 @@ const News = () => {
             <p className="news__close">FERMER</p>
           </Link>
         </div>
-
-        <Carousel
-          showArrows={false}
-          showStatus={false}
-          showThumbs={false}
-          showIndicators={false}
-          renderArrowPrev={(clickHandler) => {
-            return (
-              <button onClick={clickHandler} onKeyDown={clickHandler}>
-                <div className="left-arrow" />
-              </button>
-            );
-          }}
-          renderArrowNext={(clickHandler) => {
-            return (
-              <button onClick={clickHandler} onKeyDown={clickHandler}>
-                <div className="right-arrow" />
-              </button>
-            );
-          }}>
-          {newsData &&
-            newsData.map((news, index) => (
-              <div className={`news__carousel-${index + 1}`} key={news.id_news}>
-                <NewsCard
-                  title={news.title}
-                  subtitle={news.subtitle}
-                  text={news.text}
-                  link_picture={news.link_picture}
-                />
-              </div>
-            ))}
-        </Carousel>
+        <div className="news__carousel-container">
+          <Carousel
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            renderArrowPrev={(clickHandler) => {
+              return (
+                <button onClick={clickHandler} onKeyDown={clickHandler}>
+                  <div className="left-arrow" />
+                </button>
+              );
+            }}
+            renderArrowNext={(clickHandler) => {
+              return (
+                <button onClick={clickHandler} onKeyDown={clickHandler}>
+                  <div className="right-arrow" />
+                </button>
+              );
+            }}>
+            {newsData &&
+              newsData.map((news, index) => (
+                <div className={`news__carousel-${index + 1} alone`} key={news.id_news}>
+                  <NewsCard
+                    title={news.title}
+                    subtitle={news.subtitle}
+                    text={news.text}
+                    link_picture={news.link_picture}
+                  />
+                </div>
+              ))}
+          </Carousel>
+        </div>
       </div>
     </div>
   );

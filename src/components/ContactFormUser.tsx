@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const ContactFormUser = () => {
   const [guestFirstname, setGuestFirstname] = useState<string>();
@@ -8,6 +9,7 @@ const ContactFormUser = () => {
   const [guestPhone, setGuestPhone] = useState<string>();
   const [guestSubject, setGuestSubject] = useState<string>();
   const [guestMessage, setGuestMessage] = useState<string>();
+  const customId = 'custom-id-yes';
 
   // sending a mail to both Lunetic and the sender.
   const sendGuestMail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -37,6 +39,13 @@ const ContactFormUser = () => {
     setGuestPhone(undefined);
     setGuestSubject(undefined);
     setGuestMessage(undefined);
+
+    // show succeed message popup
+    toast.success('Votre message a bien été envoyé', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
+    });
   };
 
   return (

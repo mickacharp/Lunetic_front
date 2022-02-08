@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
 
@@ -12,10 +12,17 @@ const LoginForm = () => {
   const navigate: NavigateFunction = useNavigate();
 
   const { setIdOptician } = useContext(CurrentOpticianContext);
+  const customId = 'custom-id-yes';
 
   // redirect the app to the home page
+  // show popup successful connection
   function redirectHome() {
     navigate('/');
+    toast.success('Vous êtes bien connecté', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
+    });
   }
 
   const login = (e: React.FormEvent<HTMLFormElement>) => {
@@ -79,11 +86,15 @@ const LoginForm = () => {
               value={password}
             />
             <br />
-            <p id="forgot-pswrd">Mot de passe oublié ?</p>
+            <Link to="/contact-form">
+              <p id="forgot-pswrd">Mot de passe oublié ?</p>
+            </Link>
             <input type="submit" value="Valider" id="login-submit" />
             {errorMessage && <span>{errorMessage}</span>}
           </form>
-          <p id="signup">Créer un compte</p>
+          <Link to="/contact-form">
+            <p id="signup">Créer un compte</p>
+          </Link>
         </div>
       </div>
     </div>

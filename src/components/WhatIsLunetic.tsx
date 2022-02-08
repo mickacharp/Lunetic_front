@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-
+import { Link } from 'react-router-dom';
 import pictoGout1 from '../assets/picto-gout.png';
 import pictoGout2 from '../assets/picto-gout-2.png';
 import PositionYContext from '../contexts/PositionY';
+import arrowBtn from '../assets/fleche.png';
 
 const WhatIsLunetic = () => {
   const { setNumberDiv2 } = useContext(PositionYContext);
@@ -11,42 +12,27 @@ const WhatIsLunetic = () => {
       <div className="whatIsLunetic__subtitle">
         <div className="whatIsLunetic__container">
           <p className="whatIsLunetic__p">
-            enjoy
+            Voir
             <br />
-            your life
+            en couleur
           </p>
-          <p className="whatIsLunetic__middle">Hey! We host all events near you!</p>
+          <p className="whatIsLunetic__middle">
+            Des lunettes qui n‘en font qu’à votre tête !​
+          </p>
+          <div className="whatIsLunetic__square-grey-points2" />
         </div>
         <div className="whatIsLunetic__medium-square" />
         <div className="whatIsLunetic__little-square" />
       </div>
       <div className="whatIsLunetic__content">
-        <div className="whatIsLunetic__number-one">
-          <div className="whatIsLunetic__grey-quotes" />
-          <div className="whatIsLunetic__number">
-            <p>01</p>
-          </div>
-          <div className="whatIsLunetic__textContent">
-            <p>
-              Contrary to popular belief, Lorem Ipsum is
-              <br />
-              not simply random text. It has roots in a piece
-              <br />
-              of classical Latin literature from 45 BC,
-              <br /> making it over 2000 years old.
-            </p>
-            <div className="whatIsLunetic__btn-more">
-              <p>See More</p>
-              <div className="whatIsLunetic__arrow-btn" />
-              <div className="whatIsLunetic__underline" />
-            </div>
-          </div>
+        <div className="whatIsLunetic__picto-gout-responsive">
+          <img src={pictoGout1} alt="picto-gout" />
         </div>
         <div className="whatIsLunetic__text">
           <p>
-            C&apos;est
+            Le
             <br />
-            quoi
+            concept
             <br />
             Lunetic
             <br />?
@@ -57,6 +43,26 @@ const WhatIsLunetic = () => {
           <div className="whatIsLunetic__grey-line" />
           <div className="whatIsLunetic__plane" id="3" />
         </div>
+        <div className="whatIsLunetic__number-one">
+          <div className="whatIsLunetic__container-number-text">
+            <div className="whatIsLunetic__grey-quotes" />
+            <div className="whatIsLunetic__number">
+              <p>01</p>
+            </div>
+            <div className="whatIsLunetic__textContent">
+              <p>
+                Des styles iconiques pour souligner la personnalité des clients, tout en
+                proposant une monture design, légère et confortable.
+              </p>
+              <Link to="/concept" className="whatIsLunetic__btn-more">
+                <p>En savoir plus</p>
+                <div className="whatIsLunetic__arrow-btn">
+                  <img src={arrowBtn} alt="arrow" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
         <div className="whatIsLunetic__number-two">
           <div className="whatIsLunetic__number">
             <p>02</p>
@@ -64,24 +70,38 @@ const WhatIsLunetic = () => {
           <div className="whatIsLunetic__orange-quotes" />
           <div className="whatIsLunetic__textContent-2">
             <p>
-              Contrary to popular belief, Lorem Ipsum is
-              <br />
-              not simply random text. It has roots in a piece
-              <br />
-              of classical Latin literature from 45 BC,
-              <br />
-              making it over 2000 years old. Richard
-              <br />
-              McClintock, a Latin professor at Hampden-
-              <br />
-              Sydney College in Virginia.
+              Eco-conçues, nos montures sont fabriquées à la commande, en France, au Pays
+              Basque et nous recyclons nos chutes de production.
             </p>
-            <div className="whatIsLunetic__btn-more-2">
-              <p>See More</p>
-              <div className="whatIsLunetic__arrow-btn" />
-              <div className="whatIsLunetic__underline" />
-            </div>
+            <Link to="/concept" className="whatIsLunetic__btn-more">
+              <p>En savoir plus</p>
+              <div className="whatIsLunetic__arrow-btn">
+                <img src={arrowBtn} alt="arrow" />
+              </div>
+            </Link>
           </div>
+        </div>
+        <div className="whatIsLunetic__number-three">
+          <div className="whatIsLunetic__number">
+            <p>03</p>
+          </div>
+          <div className="whatIsLunetic__orange-quotes" />
+          <div className="whatIsLunetic__textContent-2">
+            <p>
+              Parce que nous avons tous une morphologie différente, nous proposons une
+              monture sur mesure en combinant un algorithme de calcul à une application
+              mobile.
+            </p>
+            <Link to="/concept" className="whatIsLunetic__btn-more">
+              <p>En savoir plus</p>
+              <div className="whatIsLunetic__arrow-btn">
+                <img src={arrowBtn} alt="arrow" />
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div className="whatIsLunetic__picto-gout-responsive">
+          <img src={pictoGout2} alt="picto-gout" />
         </div>
         <div className="whatIsLunetic__picto-gout-1">
           <div
@@ -97,7 +117,6 @@ const WhatIsLunetic = () => {
         </div>
         <div className="whatIsLunetic__picto-gout-2">
           <img src={pictoGout2} alt="picto-gout" />
-          <div className="whatIsLunetic__line-orange-2" />
         </div>
         <div className="whatIsLunetic__picto-quotes">
           <div className="whatIsLunetic__picto-grey-quotes" />
