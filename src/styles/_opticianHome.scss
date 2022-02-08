@@ -24,6 +24,10 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     overflow-y: scroll;
   }
 
+  &__close {
+    @include closeTopRight;
+  }
+
   &__img_goutte_container {
     width: 40%;
     max-width: 40%;

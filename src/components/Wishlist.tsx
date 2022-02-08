@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IWishlist from '../interfaces/IWishlist';
-import gout from '../assets/gout-little.png';
+import gout3D from '../assets/Home-Goutte_F1_N3_BLANC.png';
 import Sidebar from './Sidebar';
 import NameWishlist from './NameWishlist';
 
@@ -41,7 +41,7 @@ const Wishlist = () => {
             </Link>
             <div className="wishlist__left">
               <div className="wishlist__img">
-                <img src={gout} alt="gout-lunetic" />
+                <img src={gout3D} alt="gout-lunetic" />
               </div>
             </div>
             <div className="wishlist__right">
