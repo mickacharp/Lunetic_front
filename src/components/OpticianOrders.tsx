@@ -21,8 +21,8 @@ const OpticianOrders = () => {
   return (
     <div className="optician_orders_component_container">
       <div className="optician_orders_container">
-        <Link to="/">
-          <p id="close" className="login-container__close">
+        <Link to="/optician-home">
+          <p id="close" className="optician_orders_container__close">
             FERMER
           </p>
         </Link>
@@ -35,11 +35,11 @@ const OpticianOrders = () => {
                   <div className="optician_orders_container__order_item">
                     <div>
                       <h4>Numero de commande : </h4>
-                      <p>${order.order_number}</p>
+                      <p>{order.order_number}</p>
                     </div>
                     <div>
                       <h4>Date de la commande : </h4>
-                      <p>${order.date}</p>
+                      <p>{order.date}</p>
                     </div>
                   </div>
                   <div className="optician_orders_container__pdf_link">

@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IInfoWishlist from '../interfaces/IInfoWishlist';
-import IWishlist from '../interfaces/IWishlist';
 
 type Props = {
   name: string;
@@ -54,10 +53,25 @@ const NameWishlist: React.FC<Props> = ({
   };
 
   const deleteWishlist = () => {
-    listGlasses.map((glasses) =>
-      axios.delete(`http://localhost:4000/api/glasses/${glasses.id_model_temple_color}`),
+    const deleteGlasses = new Promise((resolve, reject) => {
+      resolve(
+        listGlasses.map((glasses) =>
+          axios.delete(
+            `http://localhost:4000/api/glasses/${glasses.id_model_temple_color}`,
+            {
+              method: 'DELETE',
+              withCredentials: true,
+            },
+          ),
+        ),
+      );
+    });
+    deleteGlasses.then(() =>
+      axios.delete(`http://localhost:4000/api/wishlists/${idWishlist}`, {
+        method: 'DELETE',
+        withCredentials: true,
+      }),
     );
-    axios.delete(`http://localhost:4000/api/wishlists/${idWishlist}`);
   };
 
   return (

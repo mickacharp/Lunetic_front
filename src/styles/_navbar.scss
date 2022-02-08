@@ -7,10 +7,35 @@
   z-index: 1000;
   background-color: white;
 
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 80px;
+  }
+
+  &__contact_profil {
+    display: none;
+  }
+
   &__container {
     display: flex;
     width: 100%;
     justify-content: flex-end;
+
+    @media screen and (max-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &__logo {
@@ -23,6 +48,11 @@
 
     img {
       width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 50%;
+      align-items: center;
+      margin-left: 2em;
     }
   }
 
@@ -43,20 +73,19 @@
       color: $greyNavbar;
     }
   }
-  @media screen and (max-width: 768px) {
-    &__menu {
-      display: none;
-    }
-  }
 
   &__menu-burger {
-    height: 6rem;
-    width: 6rem;
+    height: 100px;
+    width: 100px;
     background-color: $red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 500px) {
+      height: 80px;
+    }
   }
 
   &__line {
@@ -72,21 +101,43 @@
     margin: 10px 0;
   }
 }
-
 @media screen and (max-width: 768px) {
   .navbar__menu.show-nav {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    padding-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 100px;
-    margin-top: 100px;
     background-color: white;
-  }
+    width: 100vw;
+    height: 100%;
 
-  .navbar__menu.show-nav ul {
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      width: 100vw;
+      height: 100vw;
+    }
+    .navbar__contact_profil {
+      display: block;
+      display: flex;
+      justify-content: space-around;
+
+      margin-bottom: 2em;
+    }
+  }
+  .hide-nav {
+    position: absolute;
+    transform: translateX(-200%);
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: white;
+    width: 100vw;
+    height: 100vh;
   }
 }

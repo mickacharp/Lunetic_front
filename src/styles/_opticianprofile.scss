@@ -121,9 +121,6 @@ $heightInfoImg: calc(100% - $heightStoreName);
   // Top-right closing button "FERMER"
   &__close {
     @include closeTopRight;
-    font-size: 1em;
-    letter-spacing: 3px;
-    cursor: pointer;
   }
 
   // Edit-Validate-DropChanges buttons

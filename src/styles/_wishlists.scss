@@ -42,7 +42,7 @@
   &__name-wishlist {
     width: 70%;
     max-height: 50%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     a {
       width: 95%;
@@ -84,7 +84,7 @@
     align-items: center;
 
     img {
-      width: 80%;
+      width: 50%;
     }
   }
 

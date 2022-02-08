@@ -1,12 +1,22 @@
 .footer {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 100px;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 
   &__logo {
     height: 30px;
     width: 110px;
     padding-left: 5%;
+
+    @media screen and (max-width: 600px) {
+      padding-left: 0;
+      margin-bottom: 5%;
+    }
 
     img {
       height: 100%;
@@ -19,6 +29,11 @@
     justify-content: flex-end;
     width: 100%;
     padding-right: 5%;
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column-reverse;
+      padding-right: 0;
+    }
   }
 
   ul {
@@ -29,17 +44,32 @@
     list-style: none;
     font-family: $fontParagraph;
 
+    @media screen and (max-width: 600px) {
+      justify-content: space-around;
+      margin-bottom: 5%;
+    }
+
     a {
       color: black;
       margin-right: 10%;
       word-wrap: normal;
       white-space: nowrap;
       cursor: pointer;
+
+      @media screen and (max-width: 600px) {
+        margin-right: 0;
+      }
     }
   }
 
   &__networks {
     display: flex;
+
+    @media screen and (max-width: 600px) {
+      height: 30px;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
 
     & > * {
       height: auto;
@@ -54,6 +84,10 @@
     background-repeat: no-repeat;
     margin-right: 2vw;
 
+    @media screen and (max-width: 600px) {
+      margin-right: 10%;
+    }
+
     &:hover {
       background-image: url('../assets/facebook-blue.png');
     }
@@ -64,6 +98,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 2vw;
+
+    @media screen and (max-width: 600px) {
+      margin-right: 10%;
+    }
 
     &:hover {
       background-image: url('../assets/twitter-blue.png');

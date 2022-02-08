@@ -16,6 +16,11 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
   font-family: $fontParagraph;
   top: 8em;
 
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__img-container {
     display: flex;
     align-items: center;
@@ -25,6 +30,12 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     background-position: center;
     background-size: 130% auto;
     background-repeat: no-repeat;
+
+    @media screen and (max-width: 768px) {
+      background-size: 50% auto;
+      width: 100%;
+      height: 20vh;
+    }
   }
 
   &__form-container {
@@ -34,10 +45,24 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
     width: $widthRightContainer;
     height: 100%;
     margin-left: 100px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin-left: 0;
+      align-items: center;
+      height: initial;
+    }
+
     h1 {
       margin-bottom: 2%;
       font-size: 2.5em;
       letter-spacing: 4px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.2em;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+      }
     }
 
     #welcome {
@@ -79,6 +104,10 @@ $widthRightContainer: calc(100% - $widthLeftContainer);
         background-color: $red;
         color: white;
         font-family: $fontButton;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
       }
     }
 
