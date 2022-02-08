@@ -151,3 +151,9 @@
     height: 100%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .navbar__menu.show-nav {
+    top: 80px;
+  }
+}
