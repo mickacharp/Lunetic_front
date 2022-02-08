@@ -30,7 +30,7 @@ const Contact = () => {
         <div className="contactPage__email">
           <p className="contactPage__requests">UNE QUESTION ?</p>
 
-          <Link to="/contact-form">
+          <Link to="/contact-form" className="contactPage__link">
             <p className="contactPage__emailText">Écrivez-nous&nbsp;&nbsp;&nbsp;</p>
             <p className="contactPage__emailLink"> &#x27F6;</p>
           </Link>
