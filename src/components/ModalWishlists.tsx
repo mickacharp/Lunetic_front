@@ -20,18 +20,6 @@ const ModalWishlists: React.FC<Props> = ({
   const { idOptician } = useContext(CurrentOpticianContext);
   const [clicked, setClicked] = useState<boolean>(false);
 
-  const d = new Date();
-
-  // Function to format the date like YYYY-MM-DD HH:MM:SS
-  const dformat =
-    [
-      d.getFullYear(),
-      d.getMonth() + 1 < 10 ? `0${d.getMonth() + 1}` : d.getMonth() + 1,
-      d.getDate(),
-    ].join('-') +
-    ' ' +
-    [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
-
   useEffect(() => {
     axios
       .get(`http://localhost:4000/api/opticians/${idOptician}/wishlists`)
@@ -42,11 +30,17 @@ const ModalWishlists: React.FC<Props> = ({
   // Create a wishlist and add the model directly to this wishlist
   const createWishlist = () => {
     axios
-      .post('http://localhost:4000/api/wishlists', {
-        id_optician: idOptician,
-        name: nameWishlist,
-        date: dformat,
-      })
+      .post(
+        'http://localhost:4000/api/wishlists',
+        {
+          id_optician: idOptician,
+          name: nameWishlist,
+        },
+        {
+          method: 'POST',
+          withCredentials: true,
+        },
+      )
       .then((res) => res.data)
       .then((data) => addModelInWishlist(data.id_wishlist));
   };
