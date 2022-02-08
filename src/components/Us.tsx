@@ -1,26 +1,33 @@
-import React, { useContext, useEffect } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import PositionYContext from '../contexts/PositionY';
+import IUs from '../interfaces/IUs';
+import Sidebar from './Sidebar';
 
-import collaborateurs from '../assets/collaborateurs.png';
 import ellipse from '../assets/ellipse.png';
-import picto_goutte from '../assets/goutte-trait.png';
 import leVillage from '../assets/le-village.png';
 import ligneOblique from '../assets/ligne-oblique-grise.png';
 import picto_lunettes from '../assets/LUNETIC_Lunette_v2.png';
-import partenaires from '../assets/partenaires-lunetic.png';
 import rectangle1 from '../assets/Rectangle-gris-1.png';
 import rectangle2 from '../assets/Rectangle-gris-2.png';
-import PositionYContext from '../contexts/PositionY';
-import Sidebar from './Sidebar';
 
 const Us = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
     useContext(PositionYContext);
+  const [usImg, setUsImg] = useState<IUs>();
 
   let location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/us-images`)
+      .then((response) => response.data)
+      .then(([data]) => setUsImg(data));
+  }, []);
 
   return (
     <>
@@ -32,7 +39,11 @@ const Us = () => {
           if (!el) return;
           setNumberDiv1(el.getBoundingClientRect().top);
         }}>
-        <img className="us__picto_goutte" src={picto_goutte} alt="picto-goutte-lunetic" />
+        <img
+          className="us__picto_goutte"
+          src={usImg && usImg?.main_img}
+          alt="main us img"
+        />
         <h2 className="us__h2">Nous</h2>
 
         <img className="us__rectangle1" src={rectangle1} alt="" />
@@ -49,8 +60,8 @@ const Us = () => {
 
         <img
           className="us__collaborateurs"
-          src={collaborateurs}
-          alt="collaborateurs-lunetic"
+          src={usImg && usImg?.middle_img}
+          alt="middle us img"
           id="2"
           ref={(el) => {
             if (!el) return;
@@ -137,8 +148,8 @@ const Us = () => {
         <div className="us__partenaires">
           <img src={leVillage} alt="le-village" className="us__logo" />
           <img
-            src={partenaires}
-            alt="partenaires-lunetic"
+            src={usImg && usImg?.partners_img}
+            alt="bottom us partners img"
             className="us__logos_partenaires"
           />
         </div>
