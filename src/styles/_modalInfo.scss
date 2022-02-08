@@ -99,12 +99,18 @@
         height: 100%;
         width: 100%;
         appearance: none;
-        border: 1px solid $red;
-        border-radius: 5px;
-        padding-left: 10%;
+        border: $beige 1px solid;
+        border-radius: $borderRadiusButton;
+        padding: 5px;
         color: $red;
         cursor: pointer;
-        background-color: white;
+        font-family: $fontButton;
+        background-color: #fff;
+        outline: none;
+        transition: 0.3s;
+        &:hover {
+          border: $red solid 1px;
+        }
       }
     }
   }
