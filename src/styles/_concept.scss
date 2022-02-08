@@ -43,11 +43,10 @@
     color: $greyDB;
     text-align: center;
     @include fontMontserrat;
-    font-weight: bolder;
     line-height: 1.8;
 
     @media screen and (max-width: 768px) {
-      font-size: 3.8em;
+      font-size: 3.5em;
       transform: translate(0, -75%);
     }
   }
