@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-
+import { toast } from 'react-toastify';
 import gout from '../assets/gout.png';
 
 const ContactFormPro = () => {
@@ -15,6 +15,7 @@ const ContactFormPro = () => {
   const [proEmail, setProEmail] = useState<string>();
   const [proSubject, setProSubject] = useState<string>('En savoir plus');
   const [proMessage, setProMessage] = useState<string>();
+  const customId = 'custom-id-yes';
 
   // sending a mail to both Lunetic and the sender.
   const sendProMail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -54,6 +55,13 @@ const ContactFormPro = () => {
     setProEmail(undefined);
     setProSubject('En savoir plus');
     setProMessage(undefined);
+
+    // show succeed message popup
+    toast.success('Votre message a bien été envoyé', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
+    });
   };
 
   return (
