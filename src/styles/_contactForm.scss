@@ -73,9 +73,11 @@
 .contactformuser-container {
   height: 100%;
   width: 100%;
+
   &__form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 40%;
     margin: auto;
@@ -85,14 +87,10 @@
       overflow-y: scroll;
     }
 
-    input,
-    textarea {
-      width: 100%;
-    }
-
     input {
       padding: 3px;
       font-size: 1em;
+      width: 100%;
     }
 
     textarea {
@@ -102,6 +100,9 @@
       border: solid 1px $beige;
       border-radius: $borderRadiusButton;
       transition: 0.3s;
+      width: 95%;
+      margin-bottom: 5%;
+
       &:focus {
         outline: solid 1px $red;
       }
@@ -126,6 +127,7 @@
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
   }
 
@@ -191,10 +193,10 @@
       border: none;
       border-top: solid 2px $red;
       margin-top: 1%;
+
       @media screen and (max-width: 768px) {
         border-top: none;
         width: 100%;
-        padding-left: 2em;
       }
     }
     legend {
