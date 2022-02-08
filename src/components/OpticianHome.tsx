@@ -24,7 +24,7 @@ const OpticianHome = () => {
         ) : (
           <div className="optician_home">
             <Link to="/">
-              <p id="close" className="login-container__close">
+              <p id="close" className="optician_home__close">
                 FERMER
               </p>
             </Link>
