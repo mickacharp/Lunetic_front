@@ -1,5 +1,3 @@
-// @media screen and (max-width: 768px) {
-
 .conceptContainer {
   display: flex;
   flex-direction: column;
@@ -205,14 +203,16 @@
     }
   }
 
-  &__greyLine2 img {
-    height: 10em;
-    position: relative;
-    top: 15em;
-    left: 52em;
-
+  &__greyLine2 {
     @media screen and (max-width: 768px) {
       display: none;
+    }
+
+    img {
+      height: 10em;
+      position: relative;
+      top: 15em;
+      left: 52em;
     }
   }
 
