@@ -23,7 +23,6 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar__container">
-        {/* <div className="navbar__menu"> */}
         <div className={`navbar__menu ${showLinks ? 'show-nav' : 'hide-nav'}`}>
           <ul>
             <Link to="/" onClick={handleShowLinks} onKeyDown={handleShowLinks}>

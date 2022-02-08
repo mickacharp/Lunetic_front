@@ -46,14 +46,14 @@ const Home = () => {
               renderArrowPrev={(clickHandler) => {
                 return (
                   <button onClick={clickHandler} onKeyDown={clickHandler}>
-                    <div className="left-arrow" />
+                    <div className="left-arrow-home" />
                   </button>
                 );
               }}
               renderArrowNext={(clickHandler) => {
                 return (
                   <button onClick={clickHandler} onKeyDown={clickHandler}>
-                    <div className="right-arrow" />
+                    <div className="right-arrow-home" />
                   </button>
                 );
               }}>
@@ -70,13 +70,20 @@ const Home = () => {
                       designs sur
                       <br />
                       mesure : style, couleur, légèreté… adaptées
-                      <br />à chaque visage !
+                      <br className="breakline" /> à chaque visage !
                     </p>
                   </div>
+                  <Link to="news">
+                    <div className="home__cube-responsive">
+                      <h2>News</h2>
+                      <div className="home__arrow-responsive" />
+                    </div>
+                  </Link>
                 </div>
                 <div className="home__right">
-                  <img src={goutCarousel1} alt="gout" />
-
+                  <div className="home__right--img">
+                    <img src={goutCarousel1} alt="gout" />
+                  </div>
                   <Link to="/news">
                     <div className="home__cube">
                       <h2>News</h2>
