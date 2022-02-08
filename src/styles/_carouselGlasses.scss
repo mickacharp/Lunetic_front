@@ -55,7 +55,7 @@
     top: 25%;
     left: 20%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       display: none;
     }
   }
@@ -70,7 +70,11 @@
     top: 10%;
     left: 75%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
+      left: 80%;
+    }
+
+    @media screen and (max-width: 1000px) {
       display: none;
     }
   }
@@ -95,12 +99,12 @@
       top: 120%;
       left: 10%;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1000px) {
         display: none;
       }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       display: none;
     }
   }
@@ -115,7 +119,7 @@
     top: 30%;
     left: 60%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       display: none;
     }
   }
@@ -130,7 +134,7 @@
     top: 120%;
     left: 35%;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1000px) {
       display: none;
     }
   }
