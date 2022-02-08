@@ -42,7 +42,6 @@ const Us = () => {
           <h3 className="us__main-subtitle">Des opticiens nouvelle génération !</h3>
           <p className="us__p">
             Optique <br />
-            <br />
             Design, Technologie
           </p>
         </div>
