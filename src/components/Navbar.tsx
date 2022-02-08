@@ -1,9 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../assets/LUNETIC.png';
-
 import letter from '../assets/letter.png';
+import logo from '../assets/LUNETIC.png';
 import profil from '../assets/profil.png';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 
-import PositionYContext from '../contexts/PositionY';
 import glassesCarousel1 from '../assets/F1_N4_ROUGE_3.png';
 import glassesCarousel2 from '../assets/F2_N3_JAUNE_2.png';
 import glassesCarousel3 from '../assets/F6_N2_BLEU_4.png';
+import PositionYContext from '../contexts/PositionY';
 
 const CarouselGlasses = () => {
   const [checked, setChecked] = useState(true);

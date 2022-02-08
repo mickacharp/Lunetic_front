@@ -1,12 +1,14 @@
+import 'react-toastify/dist/ReactToastify.css';
+
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
 import Catalogue from './components/Catalogue';
 import Concept from './components/Concept';
 import Contact from './components/Contact';
 import ContactForm from './components/ContactForm';
+import DetailsWishlist from './components/DetailsWishlist';
 import FindUs from './components/FindUs';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -16,12 +18,11 @@ import ModalInfo from './components/ModalInfo';
 import Models from './components/Models';
 import Navbar from './components/Navbar';
 import News from './components/News';
-import OpticianProfile from './components/OpticianProfile';
-import Wishlist from './components/Wishlist';
 import OpticianHome from './components/OpticianHome';
 import OpticianOrders from './components/OpticianOrders';
+import OpticianProfile from './components/OpticianProfile';
 import Us from './components/Us';
-import DetailsWishlist from './components/DetailsWishlist';
+import Wishlist from './components/Wishlist';
 
 const App = () => {
   return (
