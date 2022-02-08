@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import arrowBtn from '../assets/fleche.png';
 import pictoGout1 from '../assets/picto-gout.png';
 import pictoGout2 from '../assets/picto-gout-2.png';
 import PositionYContext from '../contexts/PositionY';
-import arrowBtn from '../assets/fleche.png';
 
 const WhatIsLunetic = () => {
   const { setNumberDiv2 } = useContext(PositionYContext);

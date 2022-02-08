@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
 import glasses from '../assets/all-glasses.png';
+import arrow from '../assets/arrow.png';
 import luneticCity from '../assets/lunetic-city.png';
 import PositionYContext from '../contexts/PositionY';
-import arrow from '../assets/arrow.png';
 
 const BottomHome = () => {
   const { setNumberDiv5 } = useContext(PositionYContext);

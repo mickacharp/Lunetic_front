@@ -20,7 +20,6 @@
 
   &__carousel {
     height: 100%;
-    // overflow: hidden;
 
     &-1 {
       height: calc(100vh - 100px);
@@ -67,12 +66,30 @@
     &-3 {
       height: 100%;
       width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &--img {
+        height: 80%;
+        width: 70%;
+      }
 
       img {
         height: 100%;
         width: 100%;
-        object-fit: cover;
-        object-position: top;
+        object-fit: contain;
+
+        @media screen and (min-width: 1000px) {
+          height: 70%;
+        }
+
+        @media screen and (min-width: 1870px) {
+          height: 60%;
+        }
+
+        @media screen and (min-width: 2180px) {
+          height: 50%;
+        }
       }
     }
   }
@@ -328,6 +345,10 @@
 
 .carousel.carousel-slider {
   height: 100%;
+}
+
+.carousel .slider-wrapper {
+  height: 100% !important;
 }
 
 @media screen and (max-width: 420px) {

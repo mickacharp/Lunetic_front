@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IInfoWishlist from '../interfaces/IInfoWishlist';
 
@@ -74,6 +76,15 @@ const NameWishlist: React.FC<Props> = ({
     );
   };
 
+  const customId = 'custom-id-yes';
+  const toastWishlistDeleted = () => {
+    toast.success('Votre liste de souhaits a bien été supprimée', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
+    });
+  };
+
   return (
     <div className="name-wishlist">
       <div className="name-wishlist__container">
@@ -112,6 +123,7 @@ const NameWishlist: React.FC<Props> = ({
             onClick={() => {
               deleteWishlist();
               setWishlistDeleted(!wishlistDeleted);
+              toastWishlistDeleted();
             }}
           />
         )}
