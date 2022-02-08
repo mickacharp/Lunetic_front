@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import logo from '../assets/LUNETIC.png';
 
 const Footer = () => {
@@ -19,9 +18,9 @@ const Footer = () => {
           </Link>
         </ul>
         <div className="footer__networks">
-          <div className="footer__facebook" />
-          <div className="footer__twitter" />
-          <div className="footer__instagram" />
+          <a href="http://facebook.com" className="footer__facebook" target="_blank" />
+          <a href="http://linkedin.com" className="footer__linkedin" target="_blank" />
+          <a href="http://instagram.com" className="footer__instagram" target="_blank" />
         </div>
       </div>
     </div>

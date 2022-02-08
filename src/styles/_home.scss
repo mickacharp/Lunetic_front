@@ -215,8 +215,21 @@
       top: 70%;
     }
 
+    @media screen and (max-width: 1000px) and (min-width: 768px) {
+      top: 55%;
+    }
+
+    @media screen and (max-width: 800px) and (min-width: 768px) {
+      top: 60%;
+    }
+
     @media screen and (min-width: 1000px) {
       display: none;
+    }
+
+    @media screen and (max-width: 380px) {
+      height: 125px;
+      width: 125px;
     }
   }
 

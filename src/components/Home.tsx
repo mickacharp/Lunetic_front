@@ -68,8 +68,8 @@ const Home = () => {
                     <p>
                       <span className="black-text">Lunétic</span> créateur de lunettes
                       designs sur
-                      <br />
-                      mesure : style, couleur, légèreté… adaptées
+                      <br className="breakline" /> mesure : style, couleur, légèreté…
+                      adaptées
                       <br className="breakline" /> à chaque visage !
                     </p>
                   </div>
