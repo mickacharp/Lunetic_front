@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IInfoWishlist from '../interfaces/IInfoWishlist';
@@ -33,6 +34,15 @@ const DetailsWishlist = () => {
     axios.delete(`http://localhost:4000/api/glasses/${id}`, {
       method: 'DELETE',
       withCredentials: true,
+    });
+  };
+
+  const customId = 'custom-id-yes';
+  const toastGlassDeleted = () => {
+    toast.success('La lunette a bien été supprimée de votre liste de souhaits', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
     });
   };
 
@@ -74,6 +84,7 @@ const DetailsWishlist = () => {
                           onClick={() => {
                             removeFromWishlist(wishlist.id_model_temple_color);
                             setDeleted(!deleted);
+                            toastGlassDeleted();
                           }}>
                           Supprimer
                         </button>
