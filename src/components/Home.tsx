@@ -99,7 +99,9 @@ const Home = () => {
                 </video>
               </div>
               <div className="home__carousel-3">
-                <img src={goutCarousel2} alt="gout" />
+                <div className="home__carousel-3--test">
+                  <img src={goutCarousel2} alt="gout" />
+                </div>
               </div>
             </Carousel>
           </div>
