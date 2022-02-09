@@ -86,6 +86,14 @@ const NameWishlist: React.FC<Props> = ({
     });
   };
 
+  const toastNameWishlistModified = () => {
+    toast.success('Liste de souhaits renommée avec succès', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
+    });
+  };
+
   return (
     <div className="name-wishlist">
       <div className="name-wishlist__container">
@@ -112,6 +120,7 @@ const NameWishlist: React.FC<Props> = ({
               if (editName) {
                 updateNameWishlist();
                 setEditFinished(!editFinished);
+                toastNameWishlistModified();
               }
             }}
           />
