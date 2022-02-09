@@ -13,7 +13,12 @@
   &__title {
     text-align: center;
     font-size: 4em;
+    @include fontPlayfairTitles;
     margin-bottom: 10%;
+
+    @media screen and (max-width: 768px) {
+      font-size: 3em;
+    }
   }
 }
 
@@ -32,6 +37,12 @@
   margin: 10px;
   font-family: $fontParagraph;
   transition: 0.3s;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &:hover {
     box-shadow: rgb(222, 225, 243) -8px 8px 20px;
@@ -76,15 +87,5 @@
       background-color: $red;
       color: $beige;
     }
-  }
-}
-
-// RESPONSIVE
-
-@media screen and (max-width: 768px) {
-  .modelcard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }

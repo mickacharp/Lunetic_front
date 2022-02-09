@@ -71,8 +71,8 @@
       margin-bottom: 5%;
     }
 
-    & > * {
-      height: auto;
+    a {
+      height: 30px;
       width: 30px;
       cursor: pointer;
     }
@@ -84,6 +84,12 @@
     background-repeat: no-repeat;
     margin-right: 2vw;
 
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
     @media screen and (max-width: 600px) {
       margin-right: 10%;
     }
@@ -93,18 +99,24 @@
     }
   }
 
-  &__twitter {
-    background-image: url('../assets/twitter.png');
+  &__linkedin {
+    background-image: url('../assets/linkedin.png');
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 2vw;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
 
     @media screen and (max-width: 600px) {
       margin-right: 10%;
     }
 
     &:hover {
-      background-image: url('../assets/twitter-blue.png');
+      background-image: url('../assets/linkedin-color.png');
     }
   }
 
@@ -112,6 +124,12 @@
     background-image: url('../assets/instagram.png');
     background-size: contain;
     background-repeat: no-repeat;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
 
     &:hover {
       background-image: url('../assets//instagram-color.png');

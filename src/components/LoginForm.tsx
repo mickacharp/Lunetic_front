@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IOptician from '../interfaces/IOptician';
 

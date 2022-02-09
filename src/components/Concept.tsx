@@ -1,29 +1,33 @@
-import React, { useContext, useEffect } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import baskFlag from '../assets/baskFlag.jpg';
-import visuelConcept from '../assets/concept_image2.png';
-import scanPics from '../assets/concept_scanPics.png';
-import conceptBottomVisual from '../assets/concept_visuel_bas.png';
 import orangeLine from '../assets/ligne_orange.png';
-import logoNoir1 from '../assets/LOGO_NOIR_1.png';
-import logoRouge1 from '../assets/LOGO_ROUGE_1.png';
 import greyLineMedium from '../assets/moyen-trait-gris.png';
 import greyCircleLittle from '../assets/petit-cercle-gris.png';
 import greyLineLittle from '../assets/petit-trait-gris.png';
-import logoVisageConcept from '../assets/PICTO GOUTTE_SCAN_2.png';
 import greyLineVertical from '../assets/trait-vertical-gris.png';
 import PositionYContext from '../contexts/PositionY';
+import IConcept from '../interfaces/IConcept';
 import Sidebar from './Sidebar';
 
 const Concept = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4, setNumberDiv5 } =
     useContext(PositionYContext);
+  const [conceptImg, setConceptImg] = useState<IConcept>();
 
   let location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/concept-images`)
+      .then((response) => response.data)
+      .then(([data]) => setConceptImg(data));
+  }, []);
 
   return (
     <>
@@ -36,7 +40,7 @@ const Concept = () => {
           setNumberDiv1(el.getBoundingClientRect().top);
         }}>
         <div className="conceptContainer__mainLogoConcept">
-          <img src={logoVisageConcept} alt="Logo visage page concept" />
+          <img src={conceptImg && conceptImg?.main_img} alt="main concept img" />
         </div>
         <div className="conceptContainer__subtitles">Concept</div>
         <h3 className="conceptContainer__conceptIntro">
@@ -55,7 +59,7 @@ const Concept = () => {
             if (!el) return;
             setNumberDiv2(el.getBoundingClientRect().top + 500);
           }}>
-          <img src={visuelConcept} alt="Visuel concept Lunetic" />
+          <img src={conceptImg && conceptImg?.img1} alt="concept content img1" />
         </div>
 
         <div className="conceptContainer__conceptDescription">
@@ -87,7 +91,7 @@ const Concept = () => {
         </div>
 
         <div className="conceptContainer__scanPics">
-          <img src={scanPics} alt="Scan visage" />
+          <img src={conceptImg && conceptImg?.img2} alt="concept content img2" />
         </div>
 
         <div className="conceptContainer__orangeLine2">
@@ -120,8 +124,14 @@ const Concept = () => {
         />
 
         <div className="conceptContainer__conceptLogos">
-          <img src={logoNoir1} alt="Logo noir" />
-          <img src={logoRouge1} alt="Logo rouge" />
+          <img
+            src={conceptImg && conceptImg?.left_img3}
+            alt="concept content left img3"
+          />
+          <img
+            src={conceptImg && conceptImg?.right_img3}
+            alt="concept content right img3"
+          />
         </div>
 
         <div id="5" />
@@ -155,7 +165,7 @@ const Concept = () => {
         </div>
 
         <div className="conceptContainer__conceptBottomVisual">
-          <img src={conceptBottomVisual} alt="Lunettes page concept" />
+          <img src={conceptImg && conceptImg?.video} alt="concept bottom img" />
         </div>
 
         <div className="conceptContainer__greyLine3">

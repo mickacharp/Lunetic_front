@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+
 import gout from '../assets/gout.png';
 
 const ContactFormPro = () => {
@@ -78,7 +79,6 @@ const ContactFormPro = () => {
               id="contact-profirstname"
               className="contactformpro-container__firstname"
               placeholder="ex: Alice"
-              required
               onChange={(e) => setProFirstname(e.target.value)}
             />
             <br />
@@ -90,11 +90,10 @@ const ContactFormPro = () => {
               id="contact-prolastname"
               className="contactformpro-container__lastname"
               placeholder="ex: Dupont"
-              required
               onChange={(e) => setProLastname(e.target.value)}
             />
             <br />
-            <label htmlFor="contact-company">Nom de votre magasin : </label>
+            <label htmlFor="contact-company">Nom de votre magasin* : </label>
             <br />
             <input
               type="text"
@@ -116,7 +115,6 @@ const ContactFormPro = () => {
               id="contact-streetnumber"
               className="contactformpro-container__streetnumber"
               placeholder="ex: 2, 3bis"
-              required
               onChange={(e) => setProStreetNumber(e.target.value)}
             />
             <br />
@@ -128,7 +126,6 @@ const ContactFormPro = () => {
               id="contact-street"
               className="contactformpro-container__street"
               placeholder="ex: rue du Chêne"
-              required
               onChange={(e) => setProStreet(e.target.value)}
             />
             <br />
@@ -140,7 +137,6 @@ const ContactFormPro = () => {
               id="contact-city"
               className="contactformpro-container__city"
               placeholder="ex: 64200 Biarritz"
-              required
               onChange={(e) => setProCity(e.target.value)}
             />
           </fieldset>
@@ -158,7 +154,7 @@ const ContactFormPro = () => {
               onChange={(e) => setProPhone(e.target.value)}
             />
             <br />
-            <label htmlFor="contact-promobilephone">Téléphone mobile : </label>
+            <label htmlFor="contact-promobilephone">Téléphone mobile* : </label>
             <br />
             <input
               type="tel"
@@ -170,7 +166,7 @@ const ContactFormPro = () => {
               onChange={(e) => setProMobilePhone(e.target.value)}
             />
             <br />
-            <label htmlFor="contact-proemail">Votre email : </label>
+            <label htmlFor="contact-proemail">Votre email* : </label>
             <br />
             <input
               type="email"
@@ -186,7 +182,7 @@ const ContactFormPro = () => {
         <div className="contactformpro-container__right">
           <img src={gout} alt="goutte lunetic" />
           <label htmlFor="contact-prosubject">
-            Sélectionnez le motif de votre demande :{' '}
+            Sélectionnez le motif de votre demande* :{' '}
           </label>
           <select
             id="contact-prosubject"
@@ -198,7 +194,7 @@ const ContactFormPro = () => {
             <option value="Contacter le SAV">Contacter le SAV</option>
             <option value="Mot de passe oublié">Mot de passe oublié</option>
           </select>
-          <label htmlFor="contact-promessage">Votre message : </label>
+          <label htmlFor="contact-promessage">Votre message* : </label>
           <textarea
             name="Message"
             id="contact-promessage"

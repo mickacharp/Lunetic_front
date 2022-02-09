@@ -60,7 +60,6 @@ const ContactFormUser = () => {
           id="contact-userfirstname"
           className="contactformuser-container__firstname"
           placeholder="ex: Alice"
-          required
           onChange={(e) => setGuestFirstname(e.target.value)}
         />
         <label htmlFor="contact-userlastname">Votre nom : </label>
@@ -70,10 +69,9 @@ const ContactFormUser = () => {
           id="contact-userlastname"
           className="contactformuser-container__lastname"
           placeholder="ex: Dupont"
-          required
           onChange={(e) => setGuestLastname(e.target.value)}
         />
-        <label htmlFor="contact-useremail">Votre email : </label>
+        <label htmlFor="contact-useremail">Votre email* : </label>
         <input
           type="email"
           name="Email"
@@ -90,10 +88,9 @@ const ContactFormUser = () => {
           id="contact-userphone"
           className="contactformuser-container__phone"
           placeholder="ex: 0610203040"
-          required
           onChange={(e) => setGuestPhone(e.target.value)}
         />
-        <label htmlFor="contact-usersubject">Motif de votre demande : </label>
+        <label htmlFor="contact-usersubject">Motif de votre demande* : </label>
         <input
           type="text"
           name="Motif"
@@ -103,7 +100,7 @@ const ContactFormUser = () => {
           required
           onChange={(e) => setGuestSubject(e.target.value)}
         />
-        <label htmlFor="contact-usermessage">Votre message : </label>
+        <label htmlFor="contact-usermessage">Votre message* : </label>
         <textarea
           name="Message"
           id="contact-usermessage"

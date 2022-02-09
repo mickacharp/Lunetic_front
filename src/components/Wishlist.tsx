@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import gout3D from '../assets/Home-Goutte_F1_N3_BLANC.png';
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IWishlist from '../interfaces/IWishlist';
-import gout3D from '../assets/Home-Goutte_F1_N3_BLANC.png';
-import Sidebar from './Sidebar';
 import NameWishlist from './NameWishlist';
+import Sidebar from './Sidebar';
 
 const Wishlist = () => {
   const [listWishlists, setListWishlists] = useState<IWishlist[]>([]);
@@ -19,7 +20,7 @@ const Wishlist = () => {
       .get(`http://localhost:4000/api/opticians/${idOptician}/wishlists`)
       .then((res) => res.data)
       .then((data) => setListWishlists(data));
-  }, [editFinished, wishlistDeleted]);
+  }, [wishlistDeleted, editFinished]);
 
   return (
     <>

@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IInfoWishlist from '../interfaces/IInfoWishlist';
 
@@ -24,7 +26,6 @@ const NameWishlist: React.FC<Props> = ({
   setWishlistDeleted,
 }) => {
   const { idOptician } = useContext(CurrentOpticianContext);
-
   const [newNameWishlist, setNewNameWishlist] = useState<string>(name);
   const [editName, setEditName] = useState<boolean>(false);
   const [listGlasses, setListGlasses] = useState<IInfoWishlist[]>([]);
@@ -34,7 +35,7 @@ const NameWishlist: React.FC<Props> = ({
       .get(`http://localhost:4000/api/wishlists/${idWishlist}/glasses`)
       .then((res) => res.data)
       .then((data) => setListGlasses(data));
-  }, []);
+  }, [wishlistDeleted, editFinished]);
 
   const updateNameWishlist = () => {
     axios.put(
@@ -72,6 +73,15 @@ const NameWishlist: React.FC<Props> = ({
         withCredentials: true,
       }),
     );
+  };
+
+  const customId = 'custom-id-yes';
+  const toastWishlistDeleted = () => {
+    toast.success('Votre liste de souhaits a bien été supprimée', {
+      autoClose: 2000,
+      toastId: customId,
+      pauseOnHover: false,
+    });
   };
 
   return (
@@ -112,6 +122,7 @@ const NameWishlist: React.FC<Props> = ({
             onClick={() => {
               deleteWishlist();
               setWishlistDeleted(!wishlistDeleted);
+              toastWishlistDeleted();
             }}
           />
         )}

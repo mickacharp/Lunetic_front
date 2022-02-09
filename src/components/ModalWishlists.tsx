@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+
 import CurrentOpticianContext from '../contexts/CurrentOptician';
 import IWishlist from '../interfaces/IWishlist';
 
@@ -47,7 +48,7 @@ const ModalWishlists: React.FC<Props> = ({
 
   const toastAddingModelInWishlist = () => {
     toast.success('Modèle ajouté à la liste de souhaits', {
-      autoClose: 3000,
+      autoClose: 2000,
       pauseOnHover: true,
     });
   };
