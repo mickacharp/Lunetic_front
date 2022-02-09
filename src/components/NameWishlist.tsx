@@ -26,7 +26,6 @@ const NameWishlist: React.FC<Props> = ({
   setWishlistDeleted,
 }) => {
   const { idOptician } = useContext(CurrentOpticianContext);
-
   const [newNameWishlist, setNewNameWishlist] = useState<string>(name);
   const [editName, setEditName] = useState<boolean>(false);
   const [listGlasses, setListGlasses] = useState<IInfoWishlist[]>([]);
@@ -36,7 +35,7 @@ const NameWishlist: React.FC<Props> = ({
       .get(`http://localhost:4000/api/wishlists/${idWishlist}/glasses`)
       .then((res) => res.data)
       .then((data) => setListGlasses(data));
-  }, []);
+  }, [wishlistDeleted, editFinished]);
 
   const updateNameWishlist = () => {
     axios.put(
