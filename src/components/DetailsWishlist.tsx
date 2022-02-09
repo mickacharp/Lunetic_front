@@ -14,7 +14,6 @@ const DetailsWishlist = () => {
 
   const [infoWishlist, setInfoWishlist] = useState<IInfoWishlist[]>([]);
   const [nameWishlist, setNameWishlist] = useState<IWishlist>();
-  const [deleted, setDeleted] = useState<boolean>(false);
 
   useEffect(() => {
     axios
@@ -89,7 +88,6 @@ const DetailsWishlist = () => {
                         <button
                           onClick={() => {
                             removeFromWishlist(wishlist.id_model_temple_color);
-                            setDeleted(!deleted);
                             toastGlassDeleted();
                             deleteGlass(wishlist.id_model_temple_color);
                           }}>
