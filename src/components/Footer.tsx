@@ -20,19 +20,19 @@ const Footer = () => {
         </ul>
         <div className="footer__networks">
           <a
-            href="http://facebook.com"
+            href="https://www.facebook.com/lunetic.lunetic.79"
             className="footer__facebook"
             target="_blank"
             rel="noreferrer"
           />
           <a
-            href="http://linkedin.com"
+            href="https://www.linkedin.com/company/lunetic-fr/"
             className="footer__linkedin"
             target="_blank"
             rel="noreferrer"
           />
           <a
-            href="http://instagram.com"
+            href="https://www.instagram.com/lunetic_optic/"
             className="footer__instagram"
             target="_blank"
             rel="noreferrer"
