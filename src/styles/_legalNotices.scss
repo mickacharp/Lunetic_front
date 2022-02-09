@@ -1,8 +1,19 @@
 .legal-notices {
   width: 80%;
-  height: 90vh;
+  height: calc(90vh - 100px);
   margin: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: justify;
+  font-family: $fontParagraph;
+  p {
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  @media screen and (max-width: 340px) {
+    padding-top: 30%;
+  }
 }
