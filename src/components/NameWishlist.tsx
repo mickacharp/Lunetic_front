@@ -14,6 +14,7 @@ type Props = {
   setEditFinished: Function;
   wishlistDeleted: boolean;
   setWishlistDeleted: Function;
+  deleteWishlistTest: Function;
 };
 
 const NameWishlist: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const NameWishlist: React.FC<Props> = ({
   setEditFinished,
   wishlistDeleted,
   setWishlistDeleted,
+  deleteWishlistTest,
 }) => {
   const { idOptician } = useContext(CurrentOpticianContext);
   const [newNameWishlist, setNewNameWishlist] = useState<string>(name);
@@ -123,6 +125,7 @@ const NameWishlist: React.FC<Props> = ({
               deleteWishlist();
               setWishlistDeleted(!wishlistDeleted);
               toastWishlistDeleted();
+              deleteWishlistTest(idWishlist);
             }}
           />
         )}

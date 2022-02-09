@@ -20,7 +20,13 @@ const Wishlist = () => {
       .get(`http://localhost:4000/api/opticians/${idOptician}/wishlists`)
       .then((res) => res.data)
       .then((data) => setListWishlists(data));
-  }, [wishlistDeleted, editFinished]);
+  }, []);
+
+  const deleteWishlistTest = (idWishlist: number) => {
+    setListWishlists(
+      listWishlists.filter((wishlist) => wishlist.id_wishlist !== idWishlist),
+    );
+  };
 
   return (
     <>
@@ -59,6 +65,7 @@ const Wishlist = () => {
                       setEditFinished={setEditFinished}
                       wishlistDeleted={wishlistDeleted}
                       setWishlistDeleted={setWishlistDeleted}
+                      deleteWishlistTest={deleteWishlistTest}
                     />
                   ))}
               </div>
