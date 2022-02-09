@@ -37,9 +37,15 @@ const DetailsWishlist = () => {
     });
   };
 
+  const deleteGlass = (idGlass: number) => {
+    setInfoWishlist(
+      infoWishlist.filter((glass) => glass.id_model_temple_color !== idGlass),
+    );
+  };
+
   const customId = 'custom-id-yes';
   const toastGlassDeleted = () => {
-    toast.success('La lunette a bien été supprimée de votre liste de souhaits', {
+    toast.success('Les lunettes ont bien été supprimées de votre liste de souhaits', {
       autoClose: 2000,
       toastId: customId,
       pauseOnHover: false,
@@ -85,6 +91,7 @@ const DetailsWishlist = () => {
                             removeFromWishlist(wishlist.id_model_temple_color);
                             setDeleted(!deleted);
                             toastGlassDeleted();
+                            deleteGlass(wishlist.id_model_temple_color);
                           }}>
                           Supprimer
                         </button>
