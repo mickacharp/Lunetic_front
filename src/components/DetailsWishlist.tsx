@@ -21,7 +21,7 @@ const DetailsWishlist = () => {
       .get(`http://localhost:4000/api/wishlists/${id_wishlist}/glasses`)
       .then((res) => res.data)
       .then((data) => setInfoWishlist(data));
-  }, [deleted]);
+  }, []);
 
   useEffect(() => {
     axios
