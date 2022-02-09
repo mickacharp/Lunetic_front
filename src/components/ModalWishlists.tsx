@@ -48,7 +48,7 @@ const ModalWishlists: React.FC<Props> = ({
 
   const toastAddingModelInWishlist = () => {
     toast.success('Modèle ajouté à la liste de souhaits', {
-      autoClose: 3000,
+      autoClose: 2000,
       pauseOnHover: true,
     });
   };
