@@ -44,7 +44,7 @@ const Home = () => {
         <div className="home__content">
           <div className="home__carousel">
             <Carousel
-              // autoPlay
+              autoPlay
               infiniteLoop
               stopOnHover
               showArrows={false}
@@ -91,9 +91,9 @@ const Home = () => {
                 <div className="home__right">
                   <div className="home__right--img">
                     <img
-                    src={carouselData && carouselData?.img_top1}
-                    alt="carousel top 1"
-                  />
+                      src={carouselData && carouselData?.img_top1}
+                      alt="carousel top 1"
+                    />
                   </div>
                   <Link to="/news">
                     <div className="home__cube">
@@ -115,9 +115,9 @@ const Home = () => {
               <div className="home__carousel-3">
                 <div className="home__carousel-3--img">
                   <img
-                  src={carouselData && carouselData?.img_top3}
-                  alt="carousel bottom 3"
-                />
+                    src={carouselData && carouselData?.img_top3}
+                    alt="carousel bottom 3"
+                  />
                 </div>
               </div>
             </Carousel>
