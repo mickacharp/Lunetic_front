@@ -20,7 +20,7 @@ const Wishlist = () => {
       .get(`http://localhost:4000/api/opticians/${idOptician}/wishlists`)
       .then((res) => res.data)
       .then((data) => setListWishlists(data));
-  }, []);
+  }, [editFinished]);
 
   const deleteWishlistTest = (idWishlist: number) => {
     setListWishlists(
