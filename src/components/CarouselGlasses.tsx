@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
-
-import glassesCarousel1 from '../assets/F1_N4_ROUGE_3.png';
-import glassesCarousel2 from '../assets/F2_N3_JAUNE_2.png';
-import glassesCarousel3 from '../assets/F6_N2_BLEU_4.png';
 import PositionYContext from '../contexts/PositionY';
+import ICarousel from '../interfaces/ICarousel';
 
-const CarouselGlasses = () => {
+type Props = {
+  carouselData: ICarousel;
+};
+
+const CarouselGlasses: React.FC<Props> = ({ carouselData }) => {
   const [checked, setChecked] = useState(true);
+
   const { setNumberDiv3 } = useContext(PositionYContext);
 
   // Detect when the user clicked on the video in the carrousel
@@ -30,8 +32,8 @@ const CarouselGlasses = () => {
         <input type="radio" name="slider" id="s3" className="carouselGlasses__radio" />
         <label htmlFor="s1" id="slide1">
           <img
-            src={glassesCarousel1}
-            alt="Lunettes rouges"
+            src={carouselData && carouselData?.img_bottom1}
+            alt="carousel bottom 1"
             height="100%"
             width="100%"
             onClick={() => setChecked(false)}
@@ -49,7 +51,12 @@ const CarouselGlasses = () => {
           tabIndex={0}
           role="button"
           aria-pressed="false">
-          <img src={glassesCarousel2} alt="goutte" height="100%" width="100%" />{' '}
+          <img
+            src={carouselData && carouselData?.img_bottom2}
+            alt="carousel bottom 2"
+            height="100%"
+            width="100%"
+          />{' '}
         </label>
         {/* <div className={checked ? '' : 'pointer-events'}> */}
         {/* <video controls height="100%" width="100%">
@@ -72,7 +79,12 @@ const CarouselGlasses = () => {
           onClick={() => setChecked(false)}
           onKeyPress={() => setChecked(false)}
           role="button">
-          <img src={glassesCarousel3} alt="goutte" height="100%" width="100%" />
+          <img
+            src={carouselData && carouselData?.img_bottom3}
+            alt="carousel bottom 3"
+            height="100%"
+            width="100%"
+          />
         </label>
       </section>
       <div className="carouselGlasses__orange-line" />

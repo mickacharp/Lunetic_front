@@ -211,7 +211,7 @@ const Maps: React.FC<Props> = (props) => {
                         opticianHours.map((hour, index: number) => {
                           return (
                             <li key={index}>
-                              {hour.start_morning} - {hour.end_morning} /{' '}
+                              {hour.start_morning} {hour.end_morning} /{' '}
                               {hour.start_afternoon} {hour.end_afternoon}{' '}
                             </li>
                           );
