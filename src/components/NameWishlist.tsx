@@ -37,7 +37,7 @@ const NameWishlist: React.FC<Props> = ({
       .get(`http://localhost:4000/api/wishlists/${idWishlist}/glasses`)
       .then((res) => res.data)
       .then((data) => setListGlasses(data));
-  }, [wishlistDeleted, editFinished]);
+  }, []);
 
   const updateNameWishlist = () => {
     axios.put(
