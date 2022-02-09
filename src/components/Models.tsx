@@ -1,20 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import ModelsDetailBleu from '../assets/DETAIL_1_LUNETTE_4_BLEU.png';
-import ModelsDetailGris from '../assets/DETAIL_1_LUNETTE_5_GRIS.png';
-import ModelsDetailRouge from '../assets/DETAIL_1_LUNETTE_7_ROUGE.png';
-import ModelsProfilNoir1 from '../assets/FOND_BLANC_GENERAL_LUNETTE_1_NOIR.png';
-import ModelsProfilRouge1 from '../assets/FOND_BLANC_GENERAL_LUNETTE_5_ROUGE.png';
-import glassesPresentation1 from '../assets/FOND_BLANC_GENERAL_LUNETTE_7_NOIR.png';
-import pictoGoutte from '../assets/gout-little.png';
-import glassesEric from '../assets/LUNETTE_01_ERIC.png';
-import glassesSimon from '../assets/LUNETTE_02_SIMON.png';
-import glassesArthur from '../assets/LUNETTE_03_ARTHUR.png';
-import glassesDavid from '../assets/LUNETTE_04_DAVID.png';
-import glassesLilou from '../assets/LUNETTE_06_LILOU.png';
-import pictoGoutteScan from '../assets/PICTO GOUTTE_SCAN_fond blanc.png';
 import PositionYContext from '../contexts/PositionY';
+import IModelsImg from '../interfaces/IModelsImg';
 import ModelsDetails1 from './ModelsDetails1';
 import ModelsDetails2 from './ModelsDetails2';
 import Sidebar from './Sidebar';
@@ -22,11 +11,19 @@ import Sidebar from './Sidebar';
 const Models = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =
     useContext(PositionYContext);
+  const [modelsImg, setModelsImg] = useState<IModelsImg>();
 
   let location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/models-images`)
+      .then((response) => response.data)
+      .then(([data]) => setModelsImg(data));
+  }, []);
 
   return (
     <>
@@ -39,21 +36,21 @@ const Models = () => {
           setNumberDiv1(el.getBoundingClientRect().top);
         }}>
         <div className="models__headGlasses1">
-          <img src={glassesEric} alt="Model Eric" />
+          <img src={modelsImg && modelsImg?.main_img1} alt="main model 1" />
         </div>
         <div className="models__headGlasses2">
-          <img src={glassesSimon} alt="Model Simon" />
+          <img src={modelsImg && modelsImg?.main_img2} alt="main model 2" />
         </div>
         <div className="models__headGlasses3">
-          <img src={glassesLilou} alt="Model Lilou" />
+          <img src={modelsImg && modelsImg?.main_img3} alt="main model 3" />
         </div>
 
         <div className="models__headGlasses4">
-          <img src={glassesArthur} alt="Model Arthur" />
+          <img src={modelsImg && modelsImg?.main_img4} alt="main model 4" />
         </div>
 
         <div className="models__headGlasses5">
-          <img src={glassesDavid} alt="Model David" />
+          <img src={modelsImg && modelsImg?.sidetitle_img1} alt="sidetitle img 1" />
         </div>
 
         <div
@@ -67,7 +64,7 @@ const Models = () => {
         </div>
 
         <div className="models__pictoGoutte">
-          <img src={pictoGoutte} alt="Picto goutte" />
+          <img src={modelsImg && modelsImg?.sidetitle_img2} alt="sidetitle img 2" />
         </div>
 
         <div className="models__presentationText1">
@@ -78,7 +75,7 @@ const Models = () => {
         </div>
 
         <div className="models__glassesPresentation1">
-          <img src={glassesPresentation1} alt="glasses presentation 1" />
+          <img src={modelsImg && modelsImg?.page_img1} alt="glasses presentation 1" />
         </div>
 
         <div className="models__presentationText2">
@@ -89,11 +86,11 @@ const Models = () => {
         </div>
 
         <div className="models__glassesCenter1">
-          <img src={glassesSimon} alt="Model Simon" />
+          <img src={modelsImg && modelsImg?.page_img2} alt="glasses center 1" />
         </div>
 
         <div className="models__glassesPresentation2">
-          <img src={ModelsProfilRouge1} alt="glasses presentation 2" />
+          <img src={modelsImg && modelsImg?.middle_img1} alt="glasses presentation 2" />
         </div>
 
         <div className="models__presentation3" id="3">
@@ -102,12 +99,12 @@ const Models = () => {
           </div>
 
           <div className="models__pictoGoutteScan">
-            <img src={pictoGoutteScan} alt="Picto goutte scan" />
+            <img src={modelsImg && modelsImg?.middle_img2} alt="Picto goutte scan" />
           </div>
         </div>
 
         <div className="models__glassesCenter2">
-          <img src={ModelsProfilNoir1} alt="Model center 2" />
+          <img src={modelsImg && modelsImg?.main_bottom_img} alt="glasses center 2" />
         </div>
 
         <div
@@ -136,11 +133,11 @@ const Models = () => {
         </div>
 
         <div className="models__glassesBottom1">
-          <img src={ModelsDetailBleu} alt="Model bottom 1" />
+          <img src={modelsImg && modelsImg?.bottom_img1} alt="Model bottom 1" />
         </div>
 
         <div className="models__glassesBottom2">
-          <img src={ModelsDetailGris} alt="Model bottom 2" />
+          <img src={modelsImg && modelsImg?.bottom_img2} alt="Model bottom 2" />
         </div>
 
         <div
@@ -149,7 +146,7 @@ const Models = () => {
             if (!el) return;
             setNumberDiv4(el.getBoundingClientRect().top + 4000);
           }}>
-          <img src={ModelsDetailRouge} alt="Model bottom 3" />
+          <img src={modelsImg && modelsImg?.bottom_img3} alt="Model bottom 3" />
         </div>
       </div>
     </>
