@@ -2,20 +2,20 @@
 
 ## First step
 
-- Create a "lunetic-front" folder and a "lunetic-back" folder in your IDE
-
-- In your terminal, create a clone of the "Lunetic_front" Github repository in the "lunetic-front" folder that you just created:
+- In a terminal of your favorite IDE, create a clone of the "Lunetic_front" Github repository where you want the project to be installed (e.g. a "Project-Lunetic" folder):
   git clone git@github.com:Christelle-Legros/Lunetic_front.git
 
-- You also have to clone the "Lunetic_back" Github repository in the "lunetic-back" folder that you just created:
+- In the same way, you also have to clone the "Lunetic_back" Github repository:
   git clone git@github.com:Christelle-Legros/Lunetic_back.git
 
 ## Second step
 
-- In your terminal, you need to do an "npm install" in your terminal in order to install the dependencies that we need to run the app, for both Lunetic_front and Lunetic_back repo (make sure to change your current directory in your terminal to Lunetic_front/Lunetic_back BEFORE npm install)
+- In your terminal, you need to do an "npm install" in your terminal in order to install the dependencies that we need to run the app, for both Lunetic_front and Lunetic_back repo (make sure to change your current directory in your terminal to Lunetic_front folder and Lunetic_back folder respectively BEFORE npm install)
 
 ## Third step
 
-- Run the app with "npm run dev" for Lunetic_front and "npm start" for Lunetic_back
+- Run the front-end part of the app with "npm run dev" for Lunetic_front 
+- Run the back-end part of the app with "npm run ts" to compile all typescript files (.ts) into javascript files (.js) first, then run with "npm start" for Lunetic_back
 
 - Enjoy!
+ 
