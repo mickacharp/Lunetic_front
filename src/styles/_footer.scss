@@ -14,8 +14,7 @@
     padding-left: 5%;
 
     @media screen and (max-width: 600px) {
-      padding-left: 0;
-      margin-bottom: 5%;
+      display: none;
     }
 
     img {
@@ -33,6 +32,7 @@
     @media screen and (max-width: 600px) {
       flex-direction: column-reverse;
       padding-right: 0;
+      margin-top: 7%;
     }
   }
 
@@ -46,7 +46,7 @@
 
     @media screen and (max-width: 600px) {
       justify-content: space-around;
-      margin-bottom: 5%;
+      margin-bottom: 1%;
     }
 
     a {
@@ -63,18 +63,21 @@
   }
 
   &__networks {
-    display: flex;
+    @include flexCenter;
 
     @media screen and (max-width: 600px) {
-      height: 30px;
-      justify-content: center;
-      margin-bottom: 5%;
+      height: 25px;
+      margin-bottom: 3%;
     }
 
     a {
       height: 30px;
       width: 30px;
       cursor: pointer;
+      @media screen and (max-width: 600px) {
+        height: 25px;
+        width: 25px;
+      }
     }
   }
 

@@ -55,6 +55,16 @@ $heightInfoImg: calc(100% - $heightStoreName);
       font-family: $playfair;
       font-size: 4em;
       text-align: center;
+      @media screen and (max-width: 1000px) {
+        font-size: 2em;
+      }
+      @media screen and (max-width: 500px) {
+        margin-top: 18vw;
+        font-size: 1.5em;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      height: calc($heightStoreName - 5%);
     }
   }
 
@@ -63,6 +73,11 @@ $heightInfoImg: calc(100% - $heightStoreName);
     display: flex;
     width: 95%;
     height: 70%;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 100%;
+    }
   }
 
   // contains all textual info (i.e. left container of the profile)
@@ -73,11 +88,21 @@ $heightInfoImg: calc(100% - $heightStoreName);
     width: $widthInfo;
     height: 80%;
     margin: auto;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 500px) {
+      height: 50%;
+      margin: 0;
+    }
   }
 
   &__info-icons {
     height: 80%;
     margin-left: 15%;
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &__info-subcontainers {
@@ -90,6 +115,18 @@ $heightInfoImg: calc(100% - $heightStoreName);
       line-height: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
+      @media screen and (max-width: 1000px) {
+        font-size: 1em;
+        text-align: center;
+      }
+      @media screen and (max-width: 500px) {
+        font-size: 0.8em;
+        line-height: 1rem;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      justify-content: center;
     }
   }
 
@@ -99,6 +136,12 @@ $heightInfoImg: calc(100% - $heightStoreName);
     flex-direction: column;
     width: $widthStore;
     position: relative;
+    @media screen and (max-width: 1000px) {
+      width: 35%;
+    }
+    @media screen and (max-width: 500px) {
+      width: 90%;
+    }
   }
 
   &__profile-picture-container {
@@ -133,6 +176,22 @@ $heightInfoImg: calc(100% - $heightStoreName);
     color: white;
     padding: 10px 20px;
     cursor: pointer;
+    @media screen and (max-width: 1000px) {
+      bottom: 4%;
+      right: 25%;
+      left: 25%;
+      margin: auto;
+      padding: 2px 20px;
+      font-size: 0.7em;
+    }
+    @media screen and (max-width: 600px) {
+      right: 10%;
+      left: 10%;
+    }
+    @media screen and (max-width: 400px) {
+      right: 5%;
+      left: 5%;
+    }
   }
 
   // SaveChanges button
@@ -147,6 +206,28 @@ $heightInfoImg: calc(100% - $heightStoreName);
     color: white;
     padding: 10px 20px;
     cursor: pointer;
+    @media screen and (max-width: 1500px) {
+      right: 30%;
+    }
+    @media screen and (max-width: 1200px) {
+      right: 35%;
+    }
+    @media screen and (max-width: 1000px) {
+      bottom: 8%;
+      right: 25%;
+      left: 25%;
+      margin: auto;
+      padding: 2px 10px;
+      font-size: 0.7em;
+    }
+    @media screen and (max-width: 600px) {
+      right: 10%;
+      left: 10%;
+    }
+    @media screen and (max-width: 400px) {
+      right: 5%;
+      left: 5%;
+    }
   }
   input[type='text'] {
     border: $beige solid 1px;
@@ -168,4 +249,7 @@ hr {
   width: 80%;
   margin: auto;
   border: solid 1px $greyF3;
+  @media screen and (max-width: 500px) {
+    margin: 0 auto;
+  }
 }
