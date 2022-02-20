@@ -43,11 +43,3 @@ $greyB1: #b1b1b1;
 // INPUT
 
 $borderRadiusButton: 5px;
-
-// DISPLAY
-
-@mixin flexCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
