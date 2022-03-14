@@ -4,10 +4,10 @@ dist
 dist-ssr
 *.local
 node_modules/*
-api.ts
 *.js
 *.css
 *.css.map
 src/styles/*.css
 src/styles/*.css.map
 package-lock.json
+api.ts
