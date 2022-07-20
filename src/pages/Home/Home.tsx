@@ -41,102 +41,100 @@ const Home = () => {
           if (!el) return;
           setNumberDiv1(el.getBoundingClientRect().top);
         }}>
-        <div className="home__content">
-          <div className="home__carousel">
-            <Carousel
-              autoPlay
-              infiniteLoop
-              stopOnHover
-              showArrows={false}
-              showStatus={false}
-              showThumbs={false}
-              showIndicators={false}
-              renderArrowPrev={(clickHandler) => {
-                return (
-                  <button onClick={clickHandler} onKeyDown={clickHandler}>
-                    <div className="left-arrow-home" />
-                  </button>
-                );
-              }}
-              renderArrowNext={(clickHandler) => {
-                return (
-                  <button onClick={clickHandler} onKeyDown={clickHandler}>
-                    <div className="right-arrow-home" />
-                  </button>
-                );
-              }}>
-              <div className="home__carousel-1">
-                <div className="home__left">
-                  <h2 className="home__lunetic">#lunetic</h2>
-                  <div className="home__title">
-                    <h1>Bonjour !</h1>
-                    <div className="home__underline-orange" />
-                  </div>
-                  <div className="home__paragraph">
-                    <p>
-                      <span className="black-text">Lunétic</span> créateur de lunettes
-                      designs sur
-                      <br className="breakline" /> mesure : style, couleur, légèreté…
-                      adaptées
-                      <br className="breakline" /> à chaque visage !
-                    </p>
-                  </div>
-                  <Link to="news">
-                    <div className="home__cube-responsive">
-                      <h2>News</h2>
-                      <div className="home__arrow-responsive" />
-                    </div>
-                  </Link>
+        <div className="home__carousel">
+          <Carousel
+            autoPlay
+            infiniteLoop
+            stopOnHover
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            renderArrowPrev={(clickHandler) => {
+              return (
+                <button onClick={clickHandler} onKeyDown={clickHandler}>
+                  <div className="left-arrow-home" />
+                </button>
+              );
+            }}
+            renderArrowNext={(clickHandler) => {
+              return (
+                <button onClick={clickHandler} onKeyDown={clickHandler}>
+                  <div className="right-arrow-home" />
+                </button>
+              );
+            }}>
+            <div className="home__carousel-1">
+              <div className="home__left">
+                <h2 className="home__lunetic">#lunetic</h2>
+                <div className="home__title">
+                  <h1>Bonjour !</h1>
+                  <div className="home__underline-orange" />
                 </div>
-                <div className="home__right">
-                  <div className="home__right--img">
-                    <img
-                      src={carouselData && carouselData?.img_top1}
-                      alt="carousel top 1"
-                    />
-                  </div>
-                  <Link to="/news">
-                    <div className="home__cube">
-                      <h2>News</h2>
-                      <div className="home__arrow" />
-                      <div className="home__points" />
-                    </div>
-                  </Link>
+                <div className="home__paragraph">
+                  <p>
+                    <span className="black-text">Lunétic</span> créateur de lunettes
+                    designs sur
+                    <br className="breakline" /> mesure : style, couleur, légèreté…
+                    adaptées
+                    <br className="breakline" /> à chaque visage !
+                  </p>
                 </div>
+                <Link to="news">
+                  <div className="home__cube-responsive">
+                    <h2>News</h2>
+                    <div className="home__arrow-responsive" />
+                  </div>
+                </Link>
               </div>
-              <div className="home__carousel-2">
-                <video controls height="100%" width="100%">
-                  <source
-                    src={(carouselData && carouselData?.video) || homeVideo}
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-              <div className="home__carousel-3">
-                <div className="home__carousel-3--img">
+              <div className="home__right">
+                <div className="home__right--img">
                   <img
-                    src={carouselData && carouselData?.img_top3}
-                    alt="carousel bottom 3"
+                    src={carouselData && carouselData?.img_top1}
+                    alt="carousel top 1"
                   />
                 </div>
+                <Link to="/news">
+                  <div className="home__cube">
+                    <h2>News</h2>
+                    <div className="home__arrow" />
+                    <div className="home__points" />
+                  </div>
+                </Link>
               </div>
-            </Carousel>
-          </div>
+            </div>
+            <div className="home__carousel-2">
+              <video controls height="100%" width="100%">
+                <source
+                  src={(carouselData && carouselData?.video) || homeVideo}
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div className="home__carousel-3">
+              <div className="home__carousel-3--img">
+                <img
+                  src={carouselData && carouselData?.img_top3}
+                  alt="carousel bottom 3"
+                />
+              </div>
+            </div>
+          </Carousel>
         </div>
+        <WhatIsLunetic />
+        {carouselData && <CarouselGlasses carouselData={carouselData} />}
+        <Maps
+          defaultZoom={10}
+          defaultCenter={{
+            lat: 43.46352270882575,
+            lng: -1.511119064793627,
+          }}
+          mapClassName={'maps_home'}
+        />
+        <Link to="/news">
+          <BottomHome />
+        </Link>
       </div>
-      <WhatIsLunetic />
-      {carouselData && <CarouselGlasses carouselData={carouselData} />}
-      <Maps
-        defaultZoom={10}
-        defaultCenter={{
-          lat: 43.46352270882575,
-          lng: -1.511119064793627,
-        }}
-        mapClassName={'maps_home'}
-      />
-      <Link to="/news">
-        <BottomHome />
-      </Link>
     </>
   );
 };

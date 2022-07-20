@@ -1,13 +1,10 @@
 .home {
-  display: flex;
-  width: 100%;
+  width: calc(100% - 100px);
   padding-top: 100px;
-  height: calc(100vh - 100px);
 
-  &__content {
-    flex: 1;
-    width: 100%;
-    height: 100%;
+  @media screen and (max-width: 1100px) {
+    width: 95%;
+    margin:auto;
   }
 
   &__lunetic {
@@ -19,7 +16,8 @@
   }
 
   &__carousel {
-    height: 100%;
+    width: 100%;
+    height: calc(100vh - 100px);
 
     &-1 {
       height: calc(100vh - 100px);
