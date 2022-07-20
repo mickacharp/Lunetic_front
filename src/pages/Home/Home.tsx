@@ -43,7 +43,7 @@ const Home = () => {
         }}>
         <div className="home__carousel">
           <Carousel
-            autoPlay
+            // autoPlay
             infiniteLoop
             stopOnHover
             showArrows={false}
@@ -65,22 +65,21 @@ const Home = () => {
               );
             }}>
             <div className="home__carousel-1">
-              <div className="home__left">
-                <h2 className="home__lunetic">#lunetic</h2>
-                <div className="home__title">
-                  <h1>Bonjour !</h1>
-                  <div className="home__underline-orange" />
-                </div>
+              <div className="home__carousel-1__left">
+                <p className="home__carousel-1__hashtag">#lunetic</p>
+                <h1>
+                  <span>Bonjour !</span>
+                </h1>
                 <div className="home__paragraph">
                   <p>
-                    <span className="black-text">Lunétic</span> créateur de lunettes
-                    designs sur
+                    <span className="black">Lunétic</span> créateur de lunettes designs
+                    sur
                     <br className="breakline" /> mesure : style, couleur, légèreté…
                     adaptées
                     <br className="breakline" /> à chaque visage !
                   </p>
                 </div>
-                <Link to="news">
+                <Link to="/news">
                   <div className="home__cube-responsive">
                     <h2>News</h2>
                     <div className="home__arrow-responsive" />
@@ -112,12 +111,7 @@ const Home = () => {
               </video>
             </div>
             <div className="home__carousel-3">
-              <div className="home__carousel-3--img">
-                <img
-                  src={carouselData && carouselData?.img_top3}
-                  alt="carousel bottom 3"
-                />
-              </div>
+              <img src={carouselData && carouselData.img_top3} alt="carousel bottom 3" />
             </div>
           </Carousel>
         </div>
