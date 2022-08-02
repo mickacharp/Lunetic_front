@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import gout3D from '../../assets/Home-Goutte_F1_N3_BLANC.png';
+import Sidebar from '../../components/ui/Sidebar';
 import CurrentOpticianContext from '../../contexts/CurrentOptician';
 import IWishlist from '../../interfaces/IWishlist';
 import EditWishlist from './EditWishlist';
-import Sidebar from '../../components/ui/Sidebar';
 
 const OpticianWishlists = () => {
   const [listWishlists, setListWishlists] = useState<IWishlist[]>([]);

@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import Sidebar from '../../components/ui/Sidebar';
 import PositionYContext from '../../contexts/PositionY';
 import IModelsImg from '../../interfaces/IModelsImg';
 import ModelsDetails1 from './ModelsDetails1';
 import ModelsDetails2 from './ModelsDetails2';
-import Sidebar from '../../components/ui/Sidebar';
 
 const Models = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =

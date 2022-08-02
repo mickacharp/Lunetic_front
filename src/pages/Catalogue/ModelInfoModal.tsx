@@ -3,11 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import heart from '../../assets/heart.png';
+import Sidebar from '../../components/ui/Sidebar';
 import CurrentOpticianContext from '../../contexts/CurrentOptician';
 import IColor from '../../interfaces/IColor';
 import IModels from '../../interfaces/IModels';
 import ModalWishlists from './AddToWishlist';
-import Sidebar from '../../components/ui/Sidebar';
 
 const ModelInfoModal = () => {
   const { id_model } = useParams();

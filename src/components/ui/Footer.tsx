@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import facebookLinkPicture from '../../assets/facebook-blue.png';
+import instagramLinkPicture from '../../assets/instagram-color.png';
+import linkedinLinkPicture from '../../assets/linkedin-color.png';
 import logo from '../../assets/LUNETIC.png';
 
 const Footer = () => {
@@ -24,19 +27,25 @@ const Footer = () => {
             className="footer__facebook"
             target="_blank"
             rel="noreferrer"
-          />
+            aria-label="Naviguer vers la page Facebook de Lunetic">
+            <img src={facebookLinkPicture} alt="logo facebook" />
+          </a>
           <a
             href="https://www.linkedin.com/company/lunetic-fr/"
             className="footer__linkedin"
             target="_blank"
             rel="noreferrer"
-          />
+            aria-label="Naviguer vers la page LinkedIn de Lunetic">
+            <img src={linkedinLinkPicture} alt="logo linkedin" />
+          </a>
           <a
             href="https://www.instagram.com/lunetic_optic/"
             className="footer__instagram"
             target="_blank"
             rel="noreferrer"
-          />
+            aria-label="Naviguer vers la page Instragram de Lunetic">
+            <img src={instagramLinkPicture} alt="logo instagram" />
+          </a>
         </div>
       </div>
     </div>

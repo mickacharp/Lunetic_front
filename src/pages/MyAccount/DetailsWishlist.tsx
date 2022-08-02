@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import Sidebar from '../../components/ui/Sidebar';
 import CurrentOpticianContext from '../../contexts/CurrentOptician';
 import IInfoWishlist from '../../interfaces/IInfoWishlist';
 import IWishlist from '../../interfaces/IWishlist';
-import Sidebar from '../../components/ui/Sidebar';
 
 const DetailsWishlist = () => {
   const { id_wishlist } = useParams();
@@ -79,7 +79,10 @@ const DetailsWishlist = () => {
                     className="details-wishlist__card"
                     key={wishlist.id_model_temple_color}>
                     <div className="details-wishlist__img">
-                      <img src={wishlist.main_img} alt="glass-picture" />
+                      <img
+                        src={wishlist.main_img}
+                        alt="illustration principale de la liste de souhaits"
+                      />
                     </div>
                     <div className="details-wishlist__description">
                       <h2>{wishlist.name_model}</h2>

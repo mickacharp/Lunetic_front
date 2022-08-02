@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import lunettesArthur from '../../assets/LUNETTE_03_ARTHUR.png';
+import Sidebar from '../../components/ui/Sidebar';
 import PositionYContext from '../../contexts/PositionY';
 import ModelCardList from './ModelCardList';
-import Sidebar from '../../components/ui/Sidebar';
 
 const Catalogue = () => {
   // set scroll to 0 when changing page

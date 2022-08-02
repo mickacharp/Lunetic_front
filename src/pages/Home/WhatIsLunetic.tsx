@@ -18,7 +18,7 @@ const WhatIsLunetic = () => {
             en couleur
           </p>
           <p className="whatIsLunetic__middle">
-            Des lunettes qui n‘en font qu’à votre tête !​
+            Des lunettes qui n&apos;en font qu’à votre tête !
           </p>
           <div className="whatIsLunetic__square-grey-points2" />
         </div>

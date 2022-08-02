@@ -107,7 +107,7 @@ const AddToWishlist: React.FC<Props> = ({
             <h2>Ajouter la monture à une liste de souhaits déjà existante</h2>
             {listWishlists && listWishlists.length === 0 ? (
               <div className="modalWishlists__list">
-                <p>Vous n'avez pas encore créé de liste de souhaits</p>
+                <p>Vous n&apos;avez pas encore créé de liste de souhaits</p>
               </div>
             ) : (
               <div className="modalWishlists__list">

@@ -11,12 +11,12 @@ import petitCercle from '../../assets/petit-cercle-rouge.png';
 import traitVertical from '../../assets/trait.png';
 import traitOblique from '../../assets/trait-oblique-gris.png';
 import PositionYContext from '../../contexts/PositionY';
+import mapsStyles from '../../data/mapsStyle';
 import IOpeningHour from '../../interfaces/IOpeningHour';
 import IOptician from '../../interfaces/IOptician';
-import mapsStyles from '../../data/mapsStyle';
+import Sidebar from '../ui/Sidebar';
 import Locate from './Locate';
 import SearchBarMaps from './SearchBarMaps';
-import Sidebar from '../ui/Sidebar';
 
 type Libraries = ('drawing' | 'geometry' | 'localContext' | 'places' | 'visualization')[];
 const libraries: Libraries = ['places'];

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+
 import PositionYContext from '../../contexts/PositionY';
 import ICarousel from '../../interfaces/ICarousel';
 

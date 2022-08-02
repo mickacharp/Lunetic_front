@@ -4,25 +4,25 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import LegalNotices from './components/LegalNotices';
+import LoginForm from './components/LoginForm';
+import Footer from './components/ui/Footer';
+import Navbar from './components/ui/Navbar';
 import Catalogue from './pages/Catalogue/Catalogue';
+import ModelInfoModal from './pages/Catalogue/ModelInfoModal';
 import Concept from './pages/Concept/Concept';
 import Contact from './pages/Contact/Contact';
 import ContactForm from './pages/Contact/ContactForm';
-import DetailsWishlist from './pages/MyAccount/DetailsWishlist';
 import FindUs from './pages/FindUs/FindUs';
-import Footer from './components/ui/Footer';
 import Home from './pages/Home/Home';
-import LegalNotices from './components/LegalNotices';
-import LoginForm from './components/LoginForm';
-import ModelInfoModal from './pages/Catalogue/ModelInfoModal';
 import Models from './pages/Models/Models';
-import Navbar from './components/ui/Navbar';
-import News from './pages/News/News';
+import DetailsWishlist from './pages/MyAccount/DetailsWishlist';
 import OpticianHome from './pages/MyAccount/OpticianHome';
 import OpticianOrders from './pages/MyAccount/OpticianOrders';
 import OpticianProfile from './pages/MyAccount/OpticianProfile';
-import Us from './pages/Us/Us';
 import OpticianWishlists from './pages/MyAccount/OpticianWishlists';
+import News from './pages/News/News';
+import Us from './pages/Us/Us';
 
 const App = () => {
   return (

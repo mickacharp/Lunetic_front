@@ -1,9 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import PositionYContext from '../../contexts/PositionY';
-import IUs from '../../interfaces/IUs';
-import Sidebar from '../../components/ui/Sidebar';
 
 import ellipse from '../../assets/ellipse.png';
 import leVillage from '../../assets/le-village.png';
@@ -11,6 +8,9 @@ import ligneOblique from '../../assets/ligne-oblique-grise.png';
 import picto_lunettes from '../../assets/LUNETIC_Lunette_v2.png';
 import rectangle1 from '../../assets/Rectangle-gris-1.png';
 import rectangle2 from '../../assets/Rectangle-gris-2.png';
+import Sidebar from '../../components/ui/Sidebar';
+import PositionYContext from '../../contexts/PositionY';
+import IUs from '../../interfaces/IUs';
 
 const Us = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4 } =

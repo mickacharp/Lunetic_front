@@ -8,9 +8,9 @@ import greyLineMedium from '../../assets/moyen-trait-gris.png';
 import greyCircleLittle from '../../assets/petit-cercle-gris.png';
 import greyLineLittle from '../../assets/petit-trait-gris.png';
 import greyLineVertical from '../../assets/trait-vertical-gris.png';
+import Sidebar from '../../components/ui/Sidebar';
 import PositionYContext from '../../contexts/PositionY';
 import IConcept from '../../interfaces/IConcept';
-import Sidebar from '../../components/ui/Sidebar';
 
 const Concept = () => {
   const { setNumberDiv1, setNumberDiv2, setNumberDiv3, setNumberDiv4, setNumberDiv5 } =
