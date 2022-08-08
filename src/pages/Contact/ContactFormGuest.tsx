@@ -1,20 +1,70 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import IContactGuestParams from '../../interfaces/IContactGuestParams';
 
 const ContactFormGuest = () => {
-  const [guestFirstname, setGuestFirstname] = useState<string>();
-  const [guestLastname, setGuestLastname] = useState<string>();
-  const [guestEmail, setGuestEmail] = useState<string>();
-  const [guestPhone, setGuestPhone] = useState<string>();
-  const [guestSubject, setGuestSubject] = useState<string>();
-  const [guestMessage, setGuestMessage] = useState<string>();
+  const [guestFirstname, setGuestFirstname] = useState<string>('');
+  const [guestLastname, setGuestLastname] = useState<string>('');
+  const [guestEmail, setGuestEmail] = useState<string>('');
+  const [guestPhone, setGuestPhone] = useState<string>('');
+  const [guestSubject, setGuestSubject] = useState<string>('');
+  const [guestMessage, setGuestMessage] = useState<string>('');
 
-  // sending a mail to both Lunetic and the sender.
-  const sendGuestMail = (e: React.FormEvent<HTMLFormElement>) => {
+  const reinitializeStates = () => {
+    setGuestFirstname('');
+    setGuestLastname('');
+    setGuestEmail('');
+    setGuestPhone('');
+    setGuestSubject('');
+    setGuestMessage('');
+  };
+
+  // axios POST to send emails to user and admin
+  const sendConfirmationEmailToUser = (paramsToSend: IContactGuestParams) => {
+    axios.post('http://localhost:4000/api/contact-confirmation', paramsToSend, {
+      withCredentials: true,
+    });
+  };
+  const sendConfirmationEmailToAdmin = (paramsToSend: IContactGuestParams) => {
+    axios.post('http://localhost:4000/api/contact-guest', paramsToSend, {
+      withCredentials: true,
+    });
+  };
+
+  // displaying toasts regarding success or failure of sent emails
+  const displaySuccessToast = () => {
+    toast.success('Votre message a bien été envoyé', {
+      autoClose: 3000,
+      pauseOnHover: true,
+    });
+  };
+  const displayErrorToast = () => {
+    toast.error('Une erreur est survenue, veuillez réessayer', {
+      autoClose: 3000,
+      pauseOnHover: true,
+    });
+  };
+
+  const sendEmails = (paramsToSend: IContactGuestParams) => {
+    Promise.all([
+      sendConfirmationEmailToUser(paramsToSend),
+      sendConfirmationEmailToAdmin(paramsToSend),
+    ])
+      .then(() => {
+        displaySuccessToast();
+        reinitializeStates();
+      })
+      .catch(() => {
+        displayErrorToast();
+      });
+  };
+
+  // on form submit: get user contact details and send emails
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let contactGuestParams = {
+    let contactGuestParams: IContactGuestParams = {
       guestFirstname: guestFirstname,
       guestLastname: guestLastname,
       guestEmail: guestEmail,
@@ -23,50 +73,12 @@ const ContactFormGuest = () => {
       guestMessage: guestMessage,
     };
 
-    const sendConfirmationEmailToUser = axios.post(
-      'http://localhost:4000/api/contact-confirmation',
-      contactGuestParams,
-      {
-        withCredentials: true,
-      },
-    );
-
-    const sendNotificationEmailToAdmin = axios.post(
-      'http://localhost:4000/api/contact-guest',
-      contactGuestParams,
-      {
-        withCredentials: true,
-      },
-    );
-
-    Promise.all([sendConfirmationEmailToUser, sendNotificationEmailToAdmin])
-      .then(() => {
-        toast.success('Votre message a bien été envoyé', {
-          autoClose: 3000,
-          pauseOnHover: true,
-        });
-      })
-      .catch(() => {
-        toast.error('Une erreur est survenue, veuillez réessayer', {
-          autoClose: 3000,
-          pauseOnHover: true,
-        });
-      });
-
-    // states reinitialized to allow to send a message again
-    setGuestFirstname(undefined);
-    setGuestLastname(undefined);
-    setGuestEmail(undefined);
-    setGuestPhone(undefined);
-    setGuestSubject(undefined);
-    setGuestMessage(undefined);
+    sendEmails(contactGuestParams);
   };
 
   return (
     <div className="contactformuser-container">
-      <form
-        className="contactformuser-container__form"
-        onSubmit={(e) => sendGuestMail(e)}>
+      <form className="contactformuser-container__form" onSubmit={(e) => submitForm(e)}>
         <label htmlFor="contact-userfirstname">Votre prénom : </label>
         <input
           type="text"

@@ -1,24 +1,79 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import IContactProParams from '../../interfaces/IContactProParams';
 
 import gout from '../../assets/gout.png';
 
 const ContactFormPro = () => {
-  const [proFirstname, setProFirstname] = useState<string>();
-  const [proLastname, setProLastname] = useState<string>();
-  const [proCompany, setProCompany] = useState<string>();
-  const [proStreetNumber, setProStreetNumber] = useState<string>();
-  const [proStreet, setProStreet] = useState<string>();
-  const [proCity, setProCity] = useState<string>();
-  const [proPhone, setProPhone] = useState<string>();
-  const [proMobilePhone, setProMobilePhone] = useState<string>();
-  const [proEmail, setProEmail] = useState<string>();
+  const [proFirstname, setProFirstname] = useState<string>('');
+  const [proLastname, setProLastname] = useState<string>('');
+  const [proCompany, setProCompany] = useState<string>('');
+  const [proStreetNumber, setProStreetNumber] = useState<string>('');
+  const [proStreet, setProStreet] = useState<string>('');
+  const [proCity, setProCity] = useState<string>('');
+  const [proPhone, setProPhone] = useState<string>('');
+  const [proMobilePhone, setProMobilePhone] = useState<string>('');
+  const [proEmail, setProEmail] = useState<string>('');
   const [proSubject, setProSubject] = useState<string>('En savoir plus');
-  const [proMessage, setProMessage] = useState<string>();
+  const [proMessage, setProMessage] = useState<string>('');
 
-  // sending a mail to both Lunetic and the sender.
-  const sendProMail = (e: React.FormEvent<HTMLFormElement>) => {
+  const reinitializeStates = () => {
+    setProFirstname('');
+    setProLastname('');
+    setProCompany('');
+    setProStreetNumber('');
+    setProStreet('');
+    setProCity('');
+    setProPhone('');
+    setProMobilePhone('');
+    setProEmail('');
+    setProSubject('En savoir plus');
+    setProMessage('');
+  };
+
+  // axios POST to send emails to user and admin
+  const sendConfirmationEmailToUser = (paramsToSend: IContactProParams) => {
+    axios.post('http://localhost:4000/api/contact-confirmation', paramsToSend, {
+      withCredentials: true,
+    });
+  };
+  const sendConfirmationEmailToAdmin = (paramsToSend: IContactProParams) => {
+    axios.post('http://localhost:4000/api/contact-pro', paramsToSend, {
+      withCredentials: true,
+    });
+  };
+
+  // displaying toasts regarding success or failure of sent emails
+  const displaySuccessToast = () => {
+    toast.success('Votre message a bien été envoyé', {
+      autoClose: 3000,
+      pauseOnHover: true,
+    });
+  };
+  const displayErrorToast = () => {
+    toast.error('Une erreur est survenue, veuillez réessayer', {
+      autoClose: 3000,
+      pauseOnHover: true,
+    });
+  };
+
+  const sendEmails = (paramsToSend: IContactProParams) => {
+    Promise.all([
+      sendConfirmationEmailToUser(paramsToSend),
+      sendConfirmationEmailToAdmin(paramsToSend),
+    ])
+      .then(() => {
+        displaySuccessToast();
+        reinitializeStates();
+      })
+      .catch(() => {
+        displayErrorToast();
+      });
+  };
+
+  // on form submit: get user contact details and send emails
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     let contactProParams = {
@@ -35,53 +90,12 @@ const ContactFormPro = () => {
       proMessage: proMessage,
     };
 
-    const sendConfirmationEmailToPro = axios.post(
-      'http://localhost:4000/api/contact-confirmation',
-      contactProParams,
-      {
-        withCredentials: true,
-      },
-    );
-
-    const sendNotificationEmailToAdmin = axios.post(
-      'http://localhost:4000/api/contact-pro',
-      contactProParams,
-      {
-        withCredentials: true,
-      },
-    );
-
-    Promise.all([sendConfirmationEmailToPro, sendNotificationEmailToAdmin])
-      .then(() => {
-        toast.success('Votre message a bien été envoyé', {
-          autoClose: 3000,
-          pauseOnHover: true,
-        });
-      })
-      .catch(() => {
-        toast.error('Une erreur est survenue, veuillez réessayer', {
-          autoClose: 3000,
-          pauseOnHover: true,
-        });
-      });
-
-    // states reinitialized to allow to send a message again
-    setProFirstname(undefined);
-    setProLastname(undefined);
-    setProCompany(undefined);
-    setProStreetNumber(undefined);
-    setProStreet(undefined);
-    setProCity(undefined);
-    setProPhone(undefined);
-    setProMobilePhone(undefined);
-    setProEmail(undefined);
-    setProSubject('En savoir plus');
-    setProMessage(undefined);
+    sendEmails(contactProParams);
   };
 
   return (
     <div className="contactformpro-container">
-      <form className="contactformpro-container__form" onSubmit={(e) => sendProMail(e)}>
+      <form className="contactformpro-container__form" onSubmit={(e) => submitForm(e)}>
         <div className="contactformpro-container__left">
           <fieldset>
             <legend>Vous</legend>
