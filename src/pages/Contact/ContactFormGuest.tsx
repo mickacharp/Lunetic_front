@@ -9,7 +9,6 @@ const ContactFormGuest = () => {
   const [guestPhone, setGuestPhone] = useState<string>();
   const [guestSubject, setGuestSubject] = useState<string>();
   const [guestMessage, setGuestMessage] = useState<string>();
-  const customId = 'custom-id-yes';
 
   // sending a mail to both Lunetic and the sender.
   const sendGuestMail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,13 +23,35 @@ const ContactFormGuest = () => {
       guestMessage: guestMessage,
     };
 
-    axios.post('http://localhost:4000/api/contact-confirmation', contactGuestParams, {
-      withCredentials: true,
-    });
+    const sendConfirmationEmailToUser = axios.post(
+      'http://localhost:4000/api/contact-confirmation',
+      contactGuestParams,
+      {
+        withCredentials: true,
+      },
+    );
 
-    axios.post('http://localhost:4000/api/contact-guest', contactGuestParams, {
-      withCredentials: true,
-    });
+    const sendNotificationEmailToAdmin = axios.post(
+      'http://localhost:4000/api/contact-guest',
+      contactGuestParams,
+      {
+        withCredentials: true,
+      },
+    );
+
+    Promise.all([sendConfirmationEmailToUser, sendNotificationEmailToAdmin])
+      .then(() => {
+        toast.success('Votre message a bien été envoyé', {
+          autoClose: 3000,
+          pauseOnHover: true,
+        });
+      })
+      .catch(() => {
+        toast.error('Une erreur est survenue, veuillez réessayer', {
+          autoClose: 3000,
+          pauseOnHover: true,
+        });
+      });
 
     // states reinitialized to allow to send a message again
     setGuestFirstname(undefined);
@@ -39,13 +60,6 @@ const ContactFormGuest = () => {
     setGuestPhone(undefined);
     setGuestSubject(undefined);
     setGuestMessage(undefined);
-
-    // show succeed message popup
-    toast.success('Votre message a bien été envoyé', {
-      autoClose: 2000,
-      toastId: customId,
-      pauseOnHover: false,
-    });
   };
 
   return (

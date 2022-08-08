@@ -16,7 +16,6 @@ const ContactFormPro = () => {
   const [proEmail, setProEmail] = useState<string>();
   const [proSubject, setProSubject] = useState<string>('En savoir plus');
   const [proMessage, setProMessage] = useState<string>();
-  const customId = 'custom-id-yes';
 
   // sending a mail to both Lunetic and the sender.
   const sendProMail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,13 +35,35 @@ const ContactFormPro = () => {
       proMessage: proMessage,
     };
 
-    axios.post('http://localhost:4000/api/contact-confirmation', contactProParams, {
-      withCredentials: true,
-    });
+    const sendConfirmationEmailToPro = axios.post(
+      'http://localhost:4000/api/contact-confirmation',
+      contactProParams,
+      {
+        withCredentials: true,
+      },
+    );
 
-    axios.post('http://localhost:4000/api/contact-pro', contactProParams, {
-      withCredentials: true,
-    });
+    const sendNotificationEmailToAdmin = axios.post(
+      'http://localhost:4000/api/contact-pro',
+      contactProParams,
+      {
+        withCredentials: true,
+      },
+    );
+
+    Promise.all([sendConfirmationEmailToPro, sendNotificationEmailToAdmin])
+      .then(() => {
+        toast.success('Votre message a bien été envoyé', {
+          autoClose: 3000,
+          pauseOnHover: true,
+        });
+      })
+      .catch(() => {
+        toast.error('Une erreur est survenue, veuillez réessayer', {
+          autoClose: 3000,
+          pauseOnHover: true,
+        });
+      });
 
     // states reinitialized to allow to send a message again
     setProFirstname(undefined);
@@ -56,13 +77,6 @@ const ContactFormPro = () => {
     setProEmail(undefined);
     setProSubject('En savoir plus');
     setProMessage(undefined);
-
-    // show succeed message popup
-    toast.success('Votre message a bien été envoyé', {
-      autoClose: 2000,
-      toastId: customId,
-      pauseOnHover: false,
-    });
   };
 
   return (
