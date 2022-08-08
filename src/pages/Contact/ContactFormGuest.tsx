@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const ContactFormUser = () => {
+const ContactFormGuest = () => {
   const [guestFirstname, setGuestFirstname] = useState<string>();
   const [guestLastname, setGuestLastname] = useState<string>();
   const [guestEmail, setGuestEmail] = useState<string>();
@@ -115,4 +115,4 @@ const ContactFormUser = () => {
   );
 };
 
-export default ContactFormUser;
+export default ContactFormGuest;

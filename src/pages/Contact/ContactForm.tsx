@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ContactFormPro from './ContactFormPro';
-import ContactFormUser from './ContactFormUser';
+import ContactFormGuest from './ContactFormGuest';
 
 const ContactForm = () => {
   const [isPro, setIsPro] = useState<boolean>(false);
@@ -27,7 +27,7 @@ const ContactForm = () => {
             Cochez cette case si vous êtes un professionnel de l&apos;optique
           </label>
         </div>
-        {isPro ? <ContactFormPro /> : <ContactFormUser />}
+        {isPro ? <ContactFormPro /> : <ContactFormGuest />}
       </div>
     </div>
   );
