@@ -11,9 +11,7 @@ const ContactForm = () => {
     <div className="contactform-component-container">
       <div className="contactform-container">
         <Link to="/">
-          <p id="close" className="contactform-container__close">
-            FERMER
-          </p>
+          <p className="contactform-container__close">FERMER</p>
         </Link>
         <h1>CONTACTER LUNETIC</h1>
         <div className="contactform-container__checkbox">
