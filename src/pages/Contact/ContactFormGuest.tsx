@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastOptions } from 'react-toastify';
 import IContactGuestParams from '../../interfaces/IContactGuestParams';
 
 const ContactFormGuest = () => {
@@ -33,17 +33,15 @@ const ContactFormGuest = () => {
   };
 
   // displaying toasts regarding success or failure of sent emails
+  const toastOptions: ToastOptions = {
+    autoClose: 3000,
+    pauseOnHover: true,
+  };
   const displaySuccessToast = () => {
-    toast.success('Votre message a bien été envoyé', {
-      autoClose: 3000,
-      pauseOnHover: true,
-    });
+    toast.success('Votre message a bien été envoyé', toastOptions);
   };
   const displayErrorToast = () => {
-    toast.error('Une erreur est survenue, veuillez réessayer', {
-      autoClose: 3000,
-      pauseOnHover: true,
-    });
+    toast.error('Une erreur est survenue, veuillez réessayer', toastOptions);
   };
 
   const sendEmails = (paramsToSend: IContactGuestParams) => {
