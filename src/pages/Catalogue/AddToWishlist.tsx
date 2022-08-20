@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
 
 import CurrentOpticianContext from '../../contexts/CurrentOptician';
 import IWishlist from '../../interfaces/IWishlist';
@@ -46,16 +45,9 @@ const AddToWishlist: React.FC<Props> = ({
       .then((data) => addModelInWishlist(data.id_wishlist));
   };
 
-  const toastAddingModelInWishlist = () => {
-    toast.success('Modèle ajouté à la liste de souhaits', {
-      autoClose: 2000,
-      pauseOnHover: true,
-    });
-  };
-
   return (
     <>
-      {idColorModel === 0 ? (
+      {idColorModel !== 0 && (
         <div className="modalWishlists">
           <div className="modalWishlists__container">
             <div
@@ -67,30 +59,12 @@ const AddToWishlist: React.FC<Props> = ({
               aria-pressed="false">
               <p>Fermer</p>
             </div>
-            <p className="modalWishlists__error">
-              Merci de sélectionner une couleur avant de l&apos;ajouter à une liste de
-              souhaits.
-            </p>
-          </div>
-        </div>
-      ) : (
-        <div className="modalWishlists">
-          <div className="modalWishlists__container">
-            <div
-              className="modal-info__close"
-              onClick={() => setShowModal(false)}
-              onKeyPress={() => setShowModal(false)}
-              tabIndex={0}
-              role="button"
-              aria-pressed="false">
-              <p>Fermer</p>
-            </div>
-            <h2>Ajouter la monture à une nouvelle liste de souhaits ?</h2>
+            <h2>Ajouter la monture à une nouvelle liste de souhait ?</h2>
             <div className="modalWishlists__input">
               <input
                 type="text"
                 name="name-wishlist"
-                placeholder="Nom de ma liste de souhaits"
+                placeholder="Nom de ma liste de souhait"
                 value={nameWishlist}
                 onChange={(e) => setNameWishlist(e.target.value)}
               />
@@ -98,16 +72,15 @@ const AddToWishlist: React.FC<Props> = ({
                 onClick={() => {
                   createWishlist();
                   setNameWishlist('');
-                  setClicked(!clicked);
-                  toastAddingModelInWishlist();
+                  setTimeout(() => setClicked(!clicked), 200);
                 }}>
                 Valider
               </button>
             </div>
-            <h2>Ajouter la monture à une liste de souhaits déjà existante</h2>
+            <h2>Ajouter la monture à une liste de souhait déjà existante</h2>
             {listWishlists && listWishlists.length === 0 ? (
               <div className="modalWishlists__list">
-                <p>Vous n&apos;avez pas encore créé de liste de souhaits</p>
+                <p>Vous n&apos;avez pas encore créé de liste de souhait</p>
               </div>
             ) : (
               <div className="modalWishlists__list">
@@ -118,11 +91,9 @@ const AddToWishlist: React.FC<Props> = ({
                       className="modalWishlists__name-wishlist"
                       onClick={() => {
                         addModelInWishlist(wishlist.id_wishlist);
-                        toastAddingModelInWishlist();
                       }}
                       onKeyPress={() => {
                         addModelInWishlist(wishlist.id_wishlist);
-                        toastAddingModelInWishlist();
                       }}
                       tabIndex={0}
                       role="button"

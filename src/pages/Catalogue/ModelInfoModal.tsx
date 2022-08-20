@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import heart from '../../assets/heart.png';
 import Sidebar from '../../components/ui/Sidebar';
 import CurrentOpticianContext from '../../contexts/CurrentOptician';
 import IColor from '../../interfaces/IColor';
 import IModels from '../../interfaces/IModels';
-import ModalWishlists from './AddToWishlist';
+import AddToWishlist from './AddToWishlist';
 
 const ModelInfoModal = () => {
   const { id_model } = useParams();
@@ -33,18 +34,35 @@ const ModelInfoModal = () => {
 
   // Function to add a glass model in the wishlist of an optician
   const addModelInWishlist = (idWishlist: number) => {
-    axios.post(
-      'http://localhost:4000/api/glasses',
-      {
-        id_model: id_model,
-        id_color_model: idColorModel,
-        id_wishlist: idWishlist,
-      },
-      {
-        method: 'POST',
-        withCredentials: true,
-      },
-    );
+    axios
+      .post(
+        'http://localhost:4000/api/glasses',
+        {
+          id_model: id_model,
+          id_color_model: idColorModel,
+          id_wishlist: idWishlist,
+        },
+        {
+          method: 'POST',
+          withCredentials: true,
+        },
+      )
+      .then(() => showToastModelSuccessfullyAddedInWishlist());
+  };
+
+  const showToastModelSuccessfullyAddedInWishlist = () => {
+    toast.success('Modèle ajouté à la liste de souhait', {
+      autoClose: 3000,
+      pauseOnHover: true,
+    });
+  };
+
+  const showWarningToastIfNoSelectedColor = () => {
+    idColorModel === 0 &&
+      toast.warning('Sélectionnez une couleur pour pouvoir poursuivre', {
+        autoClose: 3000,
+        pauseOnHover: true,
+      });
   };
 
   return (
@@ -53,14 +71,17 @@ const ModelInfoModal = () => {
       <div className="modal-info">
         {infoGlass && (
           <div className="modal-info__content">
+            {/* Closing text button */}
             <Link to="/catalogue">
               <div className="modal-info__close">
                 <p>Fermer</p>
               </div>
             </Link>
+
+            {/* Images */}
             <div
               className={
-                infoGlass.img_2 == null ? 'modal-info__img-flex' : 'modal-info__img'
+                infoGlass.main_img == null ? 'modal-info__img-flex' : 'modal-info__img'
               }>
               <div className="modal-info__img--main">
                 <img src={infoGlass.main_img} alt={infoGlass.name} />
@@ -86,9 +107,11 @@ const ModelInfoModal = () => {
                 </div>
               )}
             </div>
+
+            {/* Informations of the model */}
             <div className="modal-info__text">
               <p className="title">{infoGlass.name}</p>
-              <p className="greyC4 uppercase">Specifics</p>
+              <p className="greyC4 uppercase">Spécificités</p>
               <p className="uppercase">{infoGlass.description}</p>
               <div className="modal-info__container-btn">
                 <div className="dropdown-list">
@@ -96,23 +119,28 @@ const ModelInfoModal = () => {
                     name="colors"
                     id="colors-glasses"
                     onChange={(e) => setIdColorModel(Number(e.target.value))}>
-                    <option value="">Couleurs</option>
+                    <option value="">Choisissez une couleur...</option>
                     {colorsList &&
                       colorsList.map((color) => (
                         <option key={color.id_color} value={color.id_color}>
-                          {color.name.charAt(0).toUpperCase() + color.name.slice(1)}
+                          {color.name.charAt(0).toUpperCase() +
+                            color.name.slice(1).toLowerCase()}
                           {/* Put the first letter in uppercase */}
                         </option>
                       ))}
                   </select>
                 </div>
+
+                {/* Condition to display the button only when optician is connected */}
                 {idOptician !== 0 && (
-                  // Condition to display the button only when the optician is connected
                   <div
                     className="modal-info__btn"
-                    onClick={() => setShowModal(true)}
+                    onClick={() => {
+                      setShowModal(true);
+                      showWarningToastIfNoSelectedColor();
+                    }}
                     role="button">
-                    <p>Ajouter à ma liste de souhaits</p>
+                    <p>Ajouter à ma liste de souhait</p>
                     <div className="modal-info__btn--heart">
                       <img src={heart} alt="heart" />
                     </div>
@@ -123,8 +151,9 @@ const ModelInfoModal = () => {
           </div>
         )}
       </div>
+
       {showModal && (
-        <ModalWishlists
+        <AddToWishlist
           setShowModal={setShowModal}
           addModelInWishlist={addModelInWishlist}
           idColorModel={idColorModel}
