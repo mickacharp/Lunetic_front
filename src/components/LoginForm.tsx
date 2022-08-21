@@ -9,22 +9,29 @@ import IOptician from '../interfaces/IOptician';
 const LoginForm = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [errorMessage, setErrorMessage] = useState<string>();
+
   const navigate: NavigateFunction = useNavigate();
 
   const { setIdOptician } = useContext(CurrentOpticianContext);
-  const customId = 'custom-id-yes';
 
-  // redirect the app to the home page
-  // show popup successful connection
-  function redirectHome() {
-    navigate('/');
-    toast.success('Vous êtes bien connecté', {
-      autoClose: 2000,
-      toastId: customId,
-      pauseOnHover: false,
+  const showErrorToastIfInvalidCredentials = () => {
+    toast.error('Email ou mot de passe incorrect', {
+      autoClose: 3000,
+      pauseOnHover: true,
     });
-  }
+  };
+
+  const showSuccessToastIfValidCredentials = () => {
+    toast.success('Vous êtes bien connecté', {
+      autoClose: 3000,
+      pauseOnHover: true,
+    });
+  };
+
+  const redirectUserToHomeIfConnected = () => {
+    navigate('/');
+    showSuccessToastIfValidCredentials();
+  };
 
   const login = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,16 +50,9 @@ const LoginForm = () => {
       .then((response) => response.data)
       .then((data) => {
         setIdOptician(data.id_optician);
-        setErrorMessage('');
-        redirectHome();
+        redirectUserToHomeIfConnected();
       })
-      .catch((err) => {
-        if (err.response.status === 401) {
-          setErrorMessage('Email ou mot de passe incorrect');
-        } else {
-          setErrorMessage(err);
-        }
-      });
+      .catch(() => showErrorToastIfInvalidCredentials());
   };
 
   return (
@@ -91,7 +91,6 @@ const LoginForm = () => {
               <p id="forgot-pswrd">Mot de passe oublié ?</p>
             </Link>
             <input type="submit" value="Valider" id="login-submit" />
-            {errorMessage && <span>{errorMessage}</span>}
           </form>
           <Link to="/contact-form">
             <p id="signup">Créer un compte</p>
