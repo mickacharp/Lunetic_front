@@ -12,7 +12,7 @@ import AddToWishlist from './AddToWishlist';
 
 const ModelInfoModal = () => {
   const { id_model } = useParams();
-  const [infoGlass, setInfoGlass] = useState<IModels>();
+  const [infoGlasses, setInfoGlasses] = useState<IModels>();
   const [colorsList, setColorsList] = useState<IColor[]>();
   const [showModal, setShowModal] = useState<boolean>(false);
   const [idColorModel, setIdColorModel] = useState<number>(0);
@@ -22,7 +22,7 @@ const ModelInfoModal = () => {
     axios
       .get(`http://localhost:4000/api/models/${id_model}`)
       .then((res) => res.data)
-      .then((data) => setInfoGlass(data));
+      .then((data) => setInfoGlasses(data));
   }, []);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const ModelInfoModal = () => {
     <>
       <Sidebar anchor={0} />
       <div className="modal-info">
-        {infoGlass && (
+        {infoGlasses && (
           <div className="modal-info__content">
             {/* Closing text button */}
             <Link to="/catalogue">
@@ -81,38 +81,38 @@ const ModelInfoModal = () => {
             {/* Images */}
             <div
               className={
-                infoGlass.main_img == null ? 'modal-info__img-flex' : 'modal-info__img'
+                infoGlasses.main_img == null ? 'modal-info__img-flex' : 'modal-info__img'
               }>
               <div className="modal-info__img--main">
-                <img src={infoGlass.main_img} alt={infoGlass.name} />
+                <img src={infoGlasses.main_img} alt={infoGlasses.name} />
               </div>
-              {infoGlass.img_2 && (
+              {infoGlasses.img_2 && (
                 <div className="modal-info__img--2">
-                  <img src={infoGlass.img_2} alt={infoGlass.name} />
+                  <img src={infoGlasses.img_2} alt={infoGlasses.name} />
                 </div>
               )}
-              {infoGlass.img_3 && (
+              {infoGlasses.img_3 && (
                 <div className="modal-info__img--3">
-                  <img src={infoGlass.img_3} alt={infoGlass.name} />
+                  <img src={infoGlasses.img_3} alt={infoGlasses.name} />
                 </div>
               )}
-              {infoGlass.img_4 && (
+              {infoGlasses.img_4 && (
                 <div className="modal-info__img--4">
-                  <img src={infoGlass.img_4} alt={infoGlass.name} />
+                  <img src={infoGlasses.img_4} alt={infoGlasses.name} />
                 </div>
               )}
-              {infoGlass.img_5 && (
+              {infoGlasses.img_5 && (
                 <div className="modal-info__img--5">
-                  <img src={infoGlass.img_5} alt={infoGlass.name} />
+                  <img src={infoGlasses.img_5} alt={infoGlasses.name} />
                 </div>
               )}
             </div>
 
             {/* Informations of the model */}
             <div className="modal-info__text">
-              <p className="title">{infoGlass.name}</p>
+              <p className="title">{infoGlasses.name}</p>
               <p className="greyC4 uppercase">Spécificités</p>
-              <p className="uppercase">{infoGlass.description}</p>
+              <p className="uppercase">{infoGlasses.description}</p>
               <div className="modal-info__container-btn">
                 <div className="dropdown-list">
                   <select
