@@ -5,18 +5,19 @@ type Props = { panTo: Function };
 
 const Locate: React.FC<Props> = ({ panTo }) => {
   const GeoLoc = () => {
-    const customId = 'custom-id-yes';
-
-    toast.info('Géolocalisation en cours', {
-      autoClose: 2000,
-      toastId: customId,
-      pauseOnHover: false,
-    });
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        toast.success('Géolocalisation réussie', {
+          autoClose: 3000,
+          pauseOnHover: true,
+        });
         return panTo(position.coords.latitude, position.coords.longitude);
       },
-      () => null,
+      () =>
+        toast.error('Géolocalisation impossible', {
+          autoClose: 3000,
+          pauseOnHover: true,
+        }),
     );
   };
 
@@ -27,7 +28,7 @@ const Locate: React.FC<Props> = ({ panTo }) => {
         onClick={() => {
           GeoLoc();
         }}>
-        <i className="far fa-compass fa-3x" />
+        <i className="fa fa-compass fa-3x" />
       </button>
     </>
   );
