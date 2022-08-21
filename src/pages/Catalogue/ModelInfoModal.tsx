@@ -32,7 +32,7 @@ const ModelInfoModal = () => {
       .then((data) => setColorsList(data));
   }, []);
 
-  // Function to add a glass model in the wishlist of an optician
+  // Add a model in the wishlist
   const addModelInWishlist = (idWishlist: number) => {
     axios
       .post(
