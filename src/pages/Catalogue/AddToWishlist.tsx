@@ -7,14 +7,9 @@ import IWishlist from '../../interfaces/IWishlist';
 type Props = {
   setShowModal: Function;
   addModelInWishlist: Function;
-  idColorModel: number;
 };
 
-const AddToWishlist: React.FC<Props> = ({
-  setShowModal,
-  addModelInWishlist,
-  idColorModel,
-}) => {
+const AddToWishlist: React.FC<Props> = ({ setShowModal, addModelInWishlist }) => {
   const [listWishlists, setListWishlists] = useState<IWishlist[]>();
   const [nameWishlist, setNameWishlist] = useState<string>('');
   const { idOptician } = useContext(CurrentOpticianContext);
@@ -47,65 +42,63 @@ const AddToWishlist: React.FC<Props> = ({
 
   return (
     <>
-      {idColorModel !== 0 && (
-        <div className="modalWishlists">
-          <div className="modalWishlists__container">
-            <div
-              className="modal-info__close"
-              onClick={() => setShowModal(false)}
-              onKeyPress={() => setShowModal(false)}
-              tabIndex={0}
-              role="button"
-              aria-pressed="false">
-              <p>Fermer</p>
-            </div>
-            <h2>Ajouter la monture à une nouvelle liste de souhait ?</h2>
-            <div className="modalWishlists__input">
-              <input
-                type="text"
-                name="name-wishlist"
-                placeholder="Nom de ma liste de souhait"
-                value={nameWishlist}
-                onChange={(e) => setNameWishlist(e.target.value)}
-              />
-              <button
-                onClick={() => {
-                  createWishlist();
-                  setNameWishlist('');
-                  setTimeout(() => setClicked(!clicked), 200);
-                }}>
-                Valider
-              </button>
-            </div>
-            <h2>Ajouter la monture à une liste de souhait déjà existante</h2>
-            {listWishlists && listWishlists.length === 0 ? (
-              <div className="modalWishlists__list">
-                <p>Vous n&apos;avez pas encore créé de liste de souhait</p>
-              </div>
-            ) : (
-              <div className="modalWishlists__list">
-                {listWishlists &&
-                  listWishlists.map((wishlist) => (
-                    <p
-                      key={wishlist.id_wishlist}
-                      className="modalWishlists__name-wishlist"
-                      onClick={() => {
-                        addModelInWishlist(wishlist.id_wishlist);
-                      }}
-                      onKeyPress={() => {
-                        addModelInWishlist(wishlist.id_wishlist);
-                      }}
-                      tabIndex={0}
-                      role="button"
-                      aria-pressed="false">
-                      {wishlist.name}
-                    </p>
-                  ))}
-              </div>
-            )}
+      <div className="modalWishlists">
+        <div className="modalWishlists__container">
+          <div
+            className="modal-info__close"
+            onClick={() => setShowModal(false)}
+            onKeyPress={() => setShowModal(false)}
+            tabIndex={0}
+            role="button"
+            aria-pressed="false">
+            <p>Fermer</p>
           </div>
+          <h2>Ajouter la monture à une nouvelle liste de souhait ?</h2>
+          <div className="modalWishlists__input">
+            <input
+              type="text"
+              name="name-wishlist"
+              placeholder="Nom de ma liste de souhait"
+              value={nameWishlist}
+              onChange={(e) => setNameWishlist(e.target.value)}
+            />
+            <button
+              onClick={() => {
+                createWishlist();
+                setNameWishlist('');
+                setTimeout(() => setClicked(!clicked), 200);
+              }}>
+              Valider
+            </button>
+          </div>
+          <h2>Ajouter la monture à une liste de souhait déjà existante</h2>
+          {listWishlists && listWishlists.length === 0 ? (
+            <div className="modalWishlists__list">
+              <p>Vous n&apos;avez pas encore créé de liste de souhait</p>
+            </div>
+          ) : (
+            <div className="modalWishlists__list">
+              {listWishlists &&
+                listWishlists.map((wishlist) => (
+                  <p
+                    key={wishlist.id_wishlist}
+                    className="modalWishlists__name-wishlist"
+                    onClick={() => {
+                      addModelInWishlist(wishlist.id_wishlist);
+                    }}
+                    onKeyPress={() => {
+                      addModelInWishlist(wishlist.id_wishlist);
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-pressed="false">
+                    {wishlist.name}
+                  </p>
+                ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 };

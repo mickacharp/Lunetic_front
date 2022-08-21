@@ -156,7 +156,6 @@ const ModelInfoModal = () => {
         <AddToWishlist
           setShowModal={setShowModal}
           addModelInWishlist={addModelInWishlist}
-          idColorModel={idColorModel}
         />
       )}
     </>
