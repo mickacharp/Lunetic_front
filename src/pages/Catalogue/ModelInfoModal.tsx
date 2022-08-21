@@ -136,8 +136,8 @@ const ModelInfoModal = () => {
                   <div
                     className="modal-info__btn"
                     onClick={() => {
-                      setShowModal(true);
                       showWarningToastIfNoSelectedColor();
+                      idColorModel !== 0 && setShowModal(true);
                     }}
                     role="button">
                     <p>Ajouter à ma liste de souhait</p>
