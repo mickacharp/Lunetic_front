@@ -125,9 +125,7 @@ const Home = () => {
           }}
           mapClassName={'maps_home'}
         />
-        <Link to="/news">
-          <BottomHome />
-        </Link>
+        <BottomHome />
       </div>
     </>
   );

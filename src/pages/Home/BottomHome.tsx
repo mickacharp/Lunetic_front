@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import glasses from '../../assets/all-glasses.png';
 import arrow from '../../assets/arrow.png';
@@ -33,15 +34,17 @@ const BottomHome = () => {
         <div className="bottom-home__glasses">
           <img src={glasses} alt="list-glasses" />
         </div>
-        <div className="bottom-home__news">
-          <div className="bottom-home__container-text-arrow">
-            <p>News</p>
-            <div className="bottom-home__arrow">
-              <img src={arrow} alt="arrow" />
+        <Link to="/news">
+          <div className="bottom-home__news">
+            <div className="bottom-home__container-text-arrow">
+              <p>News</p>
+              <div className="bottom-home__arrow">
+                <img src={arrow} alt="arrow" />
+              </div>
+              <div className="bottom-home__points" />
             </div>
-            <div className="bottom-home__points" />
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
