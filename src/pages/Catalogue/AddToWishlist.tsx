@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import CurrentOpticianContext from '../../contexts/CurrentOptician';
 import IWishlist from '../../interfaces/IWishlist';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 type Props = {
   setShowModal: Function;
@@ -17,7 +18,7 @@ const AddToWishlist: React.FC<Props> = ({ setShowModal, addModelInWishlist }) =>
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/opticians/${idOptician}/wishlists`)
+      .get(`${BASE_URL}opticians/${idOptician}/wishlists`)
       .then((res) => res.data)
       .then((data) => setListWishlists(data));
   }, [validateNewWishlist]);
@@ -26,7 +27,7 @@ const AddToWishlist: React.FC<Props> = ({ setShowModal, addModelInWishlist }) =>
   const createWishlist = () => {
     axios
       .post(
-        'http://localhost:4000/api/wishlists',
+        `${BASE_URL}wishlists`,
         {
           id_optician: idOptician,
           name: nameWishlist,

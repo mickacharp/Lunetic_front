@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast, ToastOptions } from 'react-toastify';
 import IContactGuestParams from '../../interfaces/IContactGuestParams';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const ContactFormGuest = () => {
   const [guestFirstname, setGuestFirstname] = useState<string>('');
@@ -22,12 +23,12 @@ const ContactFormGuest = () => {
 
   // axios POST to send emails to user and admin
   const sendConfirmationEmailToUser = (paramsToSend: IContactGuestParams) => {
-    axios.post('http://localhost:4000/api/contact-confirmation', paramsToSend, {
+    axios.post(`${BASE_URL}contact-confirmation`, paramsToSend, {
       withCredentials: true,
     });
   };
   const sendConfirmationEmailToAdmin = (paramsToSend: IContactGuestParams) => {
-    axios.post('http://localhost:4000/api/contact-guest', paramsToSend, {
+    axios.post(`${BASE_URL}contact-guest`, paramsToSend, {
       withCredentials: true,
     });
   };
@@ -62,7 +63,7 @@ const ContactFormGuest = () => {
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let contactGuestParams: IContactGuestParams = {
+    const contactGuestParams: IContactGuestParams = {
       guestFirstname: guestFirstname,
       guestLastname: guestLastname,
       guestEmail: guestEmail,

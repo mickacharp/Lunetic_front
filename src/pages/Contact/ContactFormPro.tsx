@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import IContactProParams from '../../interfaces/IContactProParams';
-
 import gout from '../../assets/gout.png';
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const ContactFormPro = () => {
   const [proFirstname, setProFirstname] = useState<string>('');
@@ -34,12 +34,12 @@ const ContactFormPro = () => {
 
   // axios POST to send emails to user and admin
   const sendConfirmationEmailToUser = (paramsToSend: IContactProParams) => {
-    axios.post('http://localhost:4000/api/contact-confirmation', paramsToSend, {
+    axios.post(`${BASE_URL}contact-confirmation`, paramsToSend, {
       withCredentials: true,
     });
   };
   const sendConfirmationEmailToAdmin = (paramsToSend: IContactProParams) => {
-    axios.post('http://localhost:4000/api/contact-pro', paramsToSend, {
+    axios.post(`${BASE_URL}contact-pro`, paramsToSend, {
       withCredentials: true,
     });
   };
@@ -76,7 +76,7 @@ const ContactFormPro = () => {
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let contactProParams = {
+    const contactProParams = {
       proFirstname: proFirstname,
       proLastname: proLastname,
       proCompany: proCompany,

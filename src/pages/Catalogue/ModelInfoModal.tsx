@@ -10,6 +10,8 @@ import IColor from '../../interfaces/IColor';
 import IModels from '../../interfaces/IModels';
 import AddToWishlist from './AddToWishlist';
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const ModelInfoModal = () => {
   const { id_model } = useParams();
   const [infoGlasses, setInfoGlasses] = useState<IModels>();
@@ -20,14 +22,14 @@ const ModelInfoModal = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/models/${id_model}`)
+      .get(`${BASE_URL}models/${id_model}`)
       .then((res) => res.data)
       .then((data) => setInfoGlasses(data));
   }, []);
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/api/colors')
+      .get(`${BASE_URL}colors`)
       .then((res) => res.data)
       .then((data) => setColorsList(data));
   }, []);
@@ -36,7 +38,7 @@ const ModelInfoModal = () => {
   const addModelInWishlist = (idWishlist: number) => {
     axios
       .post(
-        'http://localhost:4000/api/glasses',
+        `${BASE_URL}glasses`,
         {
           id_model: id_model,
           id_color_model: idColorModel,
