@@ -42,4 +42,8 @@ module.exports = {
       },
     ],
   },
+  globals: {
+    google: 'readonly',
+    JSX: 'readonly',
+  },
 };

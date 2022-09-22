@@ -4,25 +4,25 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import Catalogue from './components/Catalogue';
-import Concept from './components/Concept';
-import Contact from './components/Contact';
-import ContactForm from './components/ContactForm';
-import DetailsWishlist from './components/DetailsWishlist';
-import FindUs from './components/FindUs';
-import Footer from './components/Footer';
-import Home from './components/Home';
 import LegalNotices from './components/LegalNotices';
 import LoginForm from './components/LoginForm';
-import ModalInfo from './components/ModalInfo';
-import Models from './components/Models';
-import Navbar from './components/Navbar';
-import News from './components/News';
-import OpticianHome from './components/OpticianHome';
-import OpticianOrders from './components/OpticianOrders';
-import OpticianProfile from './components/OpticianProfile';
-import Us from './components/Us';
-import Wishlist from './components/Wishlist';
+import Footer from './components/ui/Footer';
+import Navbar from './components/ui/Navbar';
+import Catalogue from './pages/Catalogue/Catalogue';
+import ModelInfoModal from './pages/Catalogue/ModelInfoModal';
+import Concept from './pages/Concept/Concept';
+import Contact from './pages/Contact/Contact';
+import ContactForm from './pages/Contact/ContactForm';
+import FindUs from './pages/FindUs/FindUs';
+import Home from './pages/Home/Home';
+import Models from './pages/Models/Models';
+import DetailsWishlist from './pages/MyAccount/DetailsWishlist';
+import OpticianHome from './pages/MyAccount/OpticianHome';
+import OpticianOrders from './pages/MyAccount/OpticianOrders';
+import OpticianProfile from './pages/MyAccount/OpticianProfile';
+import OpticianWishlists from './pages/MyAccount/OpticianWishlists';
+import News from './pages/News/News';
+import Us from './pages/Us/Us';
 
 const App = () => {
   return (
@@ -42,9 +42,12 @@ const App = () => {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact-form" element={<ContactForm />} />
-          <Route path="/catalogue/models/:id_model" element={<ModalInfo />} />
+          <Route path="/catalogue/models/:id_model" element={<ModelInfoModal />} />
           <Route path="/legal-notices" element={<LegalNotices />} />
-          <Route path="/opticians/:id_optician/wishlists" element={<Wishlist />} />
+          <Route
+            path="/opticians/:id_optician/wishlists"
+            element={<OpticianWishlists />}
+          />
           <Route path="/optician-orders" element={<OpticianOrders />} />
           <Route
             path="/opticians/:id_optician/wishlists/:id_wishlist"
