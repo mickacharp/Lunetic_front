@@ -11,3 +11,4 @@ src/styles/*.css
 src/styles/*.css.map
 package-lock.json
 api.ts
+.env

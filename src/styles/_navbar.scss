@@ -72,6 +72,12 @@
       width: 100%;
       color: $greyNavbar;
     }
+
+    li:hover {
+      font-weight: 600;
+      color: $red;
+      background: linear-gradient(0deg, rgba(255,0,255,0) 0%, $red 0%, $red 5%, rgba(255,0,255,0) 5%);
+    }
   }
 
   &__menu-burger {
